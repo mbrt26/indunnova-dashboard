@@ -1,13 +1,14 @@
 #!/usr/bin/env python3
 """
 Script para actualizar los datos del dashboard de Indunnova.
-Obtiene información de Cloud Run y GitHub para generar los archivos JSON.
+Obtiene información de Cloud Run, logs y GitHub para generar los archivos JSON.
 """
 
 import json
 import subprocess
 import os
-from datetime import datetime
+from datetime import datetime, timezone, timedelta
+from collections import defaultdict
 
 # Mapeo de servicios Cloud Run a repositorios
 SERVICE_TO_REPO = {
@@ -44,10 +45,10 @@ SERVICE_TO_REPO = {
 
 GITHUB_ORG = 'mbrt26'
 
-def run_command(cmd):
+def run_command(cmd, timeout=120):
     """Ejecuta un comando y retorna su salida."""
     try:
-        result = subprocess.run(cmd, shell=True, capture_output=True, text=True, timeout=60)
+        result = subprocess.run(cmd, shell=True, capture_output=True, text=True, timeout=timeout)
         return result.stdout.strip()
     except Exception as e:
         print(f"Error ejecutando comando: {e}")
@@ -98,6 +99,191 @@ def get_cloud_run_services():
         print(f"Error parseando JSON de Cloud Run: {e}")
         return []
 
+def get_error_logs():
+    """Obtiene los errores de los últimos 7 días agrupados por servicio."""
+    # Obtener errores de los últimos 7 días
+    cmd = '''gcloud logging read 'resource.type="cloud_run_revision" AND severity>=ERROR' --limit=1000 --format="json" --freshness=7d 2>/dev/null'''
+    output = run_command(cmd, timeout=180)
+
+    if not output:
+        return {}
+
+    try:
+        data = json.loads(output)
+        errors_by_service = defaultdict(lambda: {
+            'total': 0,
+            'last24h': 0,
+            'last7d': 0,
+            'recentErrors': []
+        })
+
+        now = datetime.now(timezone.utc)
+        day_ago = now - timedelta(days=1)
+
+        for log in data:
+            resource = log.get('resource', {})
+            labels = resource.get('labels', {})
+            service_name = labels.get('service_name', 'unknown')
+            timestamp_str = log.get('timestamp', '')
+            severity = log.get('severity', 'ERROR')
+
+            # Parsear timestamp
+            try:
+                timestamp = datetime.fromisoformat(timestamp_str.replace('Z', '+00:00'))
+            except:
+                timestamp = now
+
+            errors_by_service[service_name]['total'] += 1
+            errors_by_service[service_name]['last7d'] += 1
+
+            if timestamp > day_ago:
+                errors_by_service[service_name]['last24h'] += 1
+
+            # Guardar los últimos 3 errores
+            if len(errors_by_service[service_name]['recentErrors']) < 3:
+                error_text = log.get('textPayload', '')
+                if not error_text:
+                    json_payload = log.get('jsonPayload', {})
+                    error_text = json_payload.get('message', str(json_payload)[:200])
+
+                # Truncar mensaje largo
+                if len(error_text) > 300:
+                    error_text = error_text[:300] + '...'
+
+                errors_by_service[service_name]['recentErrors'].append({
+                    'timestamp': timestamp_str,
+                    'message': error_text,
+                    'severity': severity
+                })
+
+        return dict(errors_by_service)
+    except json.JSONDecodeError as e:
+        print(f"Error parseando JSON de logs: {e}")
+        return {}
+
+def get_deployments():
+    """Obtiene el historial de despliegues (revisiones) por servicio."""
+    cmd = '''gcloud run revisions list --region=us-central1 --limit=200 --format="json" 2>/dev/null'''
+    output = run_command(cmd, timeout=120)
+
+    if not output:
+        return {}
+
+    try:
+        data = json.loads(output)
+        deployments_by_service = defaultdict(lambda: {
+            'total': 0,
+            'last24h': 0,
+            'last7d': 0,
+            'lastDeployment': None,
+            'recentDeployments': []
+        })
+
+        now = datetime.now(timezone.utc)
+        day_ago = now - timedelta(days=1)
+        week_ago = now - timedelta(days=7)
+
+        for rev in data:
+            metadata = rev.get('metadata', {})
+            name = metadata.get('name', '')
+            creation_time = metadata.get('creationTimestamp', '')
+
+            # Extraer nombre del servicio de la revisión
+            # Formato: service-name-00001-xyz
+            parts = name.rsplit('-', 2)
+            if len(parts) >= 3:
+                service_name = '-'.join(parts[:-2])
+            else:
+                service_name = name
+
+            # Parsear timestamp
+            try:
+                timestamp = datetime.fromisoformat(creation_time.replace('Z', '+00:00'))
+            except:
+                timestamp = now
+
+            deployments_by_service[service_name]['total'] += 1
+
+            if timestamp > week_ago:
+                deployments_by_service[service_name]['last7d'] += 1
+
+            if timestamp > day_ago:
+                deployments_by_service[service_name]['last24h'] += 1
+
+            # Guardar el último despliegue
+            if deployments_by_service[service_name]['lastDeployment'] is None:
+                deployments_by_service[service_name]['lastDeployment'] = creation_time
+
+            # Guardar los últimos 5 despliegues
+            if len(deployments_by_service[service_name]['recentDeployments']) < 5:
+                status_conditions = rev.get('status', {}).get('conditions', [])
+                ready = 'Unknown'
+                for c in status_conditions:
+                    if c.get('type') == 'Ready':
+                        ready = c.get('status', 'Unknown')
+                        break
+
+                deployments_by_service[service_name]['recentDeployments'].append({
+                    'revision': name,
+                    'timestamp': creation_time,
+                    'status': ready
+                })
+
+        return dict(deployments_by_service)
+    except json.JSONDecodeError as e:
+        print(f"Error parseando JSON de revisiones: {e}")
+        return {}
+
+def get_request_metrics():
+    """Obtiene métricas de requests HTTP de los últimos 7 días."""
+    # Obtener requests con errores 5xx
+    cmd = '''gcloud logging read 'resource.type="cloud_run_revision" AND httpRequest.status>=500' --limit=500 --format="json" --freshness=7d 2>/dev/null'''
+    output = run_command(cmd, timeout=180)
+
+    metrics_by_service = defaultdict(lambda: {
+        'errors5xx': 0,
+        'errors4xx': 0,
+        'avgLatencyMs': 0,
+        'latencySamples': []
+    })
+
+    if output:
+        try:
+            data = json.loads(output)
+            for log in data:
+                resource = log.get('resource', {})
+                labels = resource.get('labels', {})
+                service_name = labels.get('service_name', 'unknown')
+                http_request = log.get('httpRequest', {})
+                status = http_request.get('status', 0)
+
+                if status >= 500:
+                    metrics_by_service[service_name]['errors5xx'] += 1
+                elif status >= 400:
+                    metrics_by_service[service_name]['errors4xx'] += 1
+
+                # Obtener latencia
+                latency = http_request.get('latency', '')
+                if latency:
+                    try:
+                        # Formato: "0.123456s"
+                        latency_sec = float(latency.rstrip('s'))
+                        latency_ms = int(latency_sec * 1000)
+                        metrics_by_service[service_name]['latencySamples'].append(latency_ms)
+                    except:
+                        pass
+        except json.JSONDecodeError:
+            pass
+
+    # Calcular promedios de latencia
+    for service_name, metrics in metrics_by_service.items():
+        samples = metrics['latencySamples']
+        if samples:
+            metrics['avgLatencyMs'] = sum(samples) // len(samples)
+        del metrics['latencySamples']
+
+    return dict(metrics_by_service)
+
 def get_github_repos():
     """Obtiene la lista de repositorios de GitHub."""
     cmd = 'gh repo list --limit 100 --json name,url,updatedAt,description 2>/dev/null'
@@ -142,9 +328,43 @@ def main():
     services = get_cloud_run_services()
     print(f"  Encontrados {len(services)} servicios")
 
+    print("Obteniendo errores de logs...")
+    errors = get_error_logs()
+    print(f"  Servicios con errores: {len(errors)}")
+
+    print("Obteniendo historial de despliegues...")
+    deployments = get_deployments()
+    print(f"  Servicios con despliegues: {len(deployments)}")
+
+    print("Obteniendo métricas de requests...")
+    request_metrics = get_request_metrics()
+    print(f"  Servicios con métricas: {len(request_metrics)}")
+
     print("Obteniendo repositorios de GitHub...")
     repos = get_github_repos()
     print(f"  Encontrados {len(repos)} repositorios")
+
+    # Combinar métricas en los servicios
+    for service in services:
+        name = service['name']
+        service['errors'] = errors.get(name, {
+            'total': 0,
+            'last24h': 0,
+            'last7d': 0,
+            'recentErrors': []
+        })
+        service['deployments'] = deployments.get(name, {
+            'total': 0,
+            'last24h': 0,
+            'last7d': 0,
+            'lastDeployment': None,
+            'recentDeployments': []
+        })
+        service['metrics'] = request_metrics.get(name, {
+            'errors5xx': 0,
+            'errors4xx': 0,
+            'avgLatencyMs': 0
+        })
 
     # Guardar datos
     services_path = os.path.join(data_dir, 'services.json')
@@ -159,14 +379,25 @@ def main():
         json.dump(repos, f, indent=2)
     print(f"  Guardado: {repos_path}")
 
+    # Calcular totales para metadatos
+    total_errors_24h = sum(s['errors']['last24h'] for s in services)
+    total_errors_7d = sum(s['errors']['last7d'] for s in services)
+    total_deployments_24h = sum(s['deployments']['last24h'] for s in services)
+    total_deployments_7d = sum(s['deployments']['last7d'] for s in services)
+
     # Metadatos
     meta = {
-        'lastUpdate': datetime.utcnow().isoformat() + 'Z',
+        'lastUpdate': datetime.now(timezone.utc).isoformat(),
         'project': 'appsindunnova',
         'totalServices': len(services),
         'totalRepos': len(repos),
         'healthyServices': len([s for s in services if s['status'] == 'True']),
-        'unhealthyServices': len([s for s in services if s['status'] != 'True'])
+        'unhealthyServices': len([s for s in services if s['status'] != 'True']),
+        'totalErrors24h': total_errors_24h,
+        'totalErrors7d': total_errors_7d,
+        'totalDeployments24h': total_deployments_24h,
+        'totalDeployments7d': total_deployments_7d,
+        'servicesWithErrors': len([s for s in services if s['errors']['last7d'] > 0])
     }
 
     with open(meta_path, 'w') as f:
@@ -174,6 +405,10 @@ def main():
     print(f"  Guardado: {meta_path}")
 
     print("\nActualización completada!")
+    print(f"  Errores últimas 24h: {total_errors_24h}")
+    print(f"  Errores últimos 7 días: {total_errors_7d}")
+    print(f"  Despliegues últimas 24h: {total_deployments_24h}")
+    print(f"  Despliegues últimos 7 días: {total_deployments_7d}")
 
 if __name__ == '__main__':
     main()

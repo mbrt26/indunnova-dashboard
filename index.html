@@ -17,7 +17,7 @@
                 <h1>Indunnova Dashboard</h1>
             </div>
             <div class="header-info">
-                <span class="last-update" id="lastUpdate">Última actualización: --</span>
+                <span class="last-update" id="lastUpdate">Ultima actualizacion: --</span>
                 <button class="refresh-btn" onclick="loadData()">
                     <span class="refresh-icon">↻</span> Actualizar
                 </button>
@@ -26,7 +26,7 @@
     </header>
 
     <main class="main-content">
-        <!-- Resumen -->
+        <!-- Resumen Principal -->
         <section class="summary-section">
             <div class="summary-card total-services">
                 <div class="summary-icon">☁️</div>
@@ -46,7 +46,7 @@
                 <div class="summary-icon">⚠️</div>
                 <div class="summary-info">
                     <span class="summary-value" id="unhealthyServices">--</span>
-                    <span class="summary-label">Servicios con Problemas</span>
+                    <span class="summary-label">Con Problemas</span>
                 </div>
             </div>
             <div class="summary-card total-repos">
@@ -54,6 +54,58 @@
                 <div class="summary-info">
                     <span class="summary-value" id="totalRepos">--</span>
                     <span class="summary-label">Repositorios</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Metricas de Desempeno -->
+        <section class="metrics-section">
+            <h2>Metricas de Desempeno (Ultimos 7 dias)</h2>
+            <div class="metrics-grid">
+                <div class="metric-card errors">
+                    <div class="metric-header">
+                        <span class="metric-icon">🔴</span>
+                        <span class="metric-title">Errores</span>
+                    </div>
+                    <div class="metric-body">
+                        <div class="metric-main">
+                            <span class="metric-value" id="totalErrors7d">--</span>
+                            <span class="metric-period">7 dias</span>
+                        </div>
+                        <div class="metric-secondary">
+                            <span id="totalErrors24h">--</span> ultimas 24h
+                        </div>
+                    </div>
+                </div>
+                <div class="metric-card deployments">
+                    <div class="metric-header">
+                        <span class="metric-icon">🚀</span>
+                        <span class="metric-title">Despliegues</span>
+                    </div>
+                    <div class="metric-body">
+                        <div class="metric-main">
+                            <span class="metric-value" id="totalDeployments7d">--</span>
+                            <span class="metric-period">7 dias</span>
+                        </div>
+                        <div class="metric-secondary">
+                            <span id="totalDeployments24h">--</span> ultimas 24h
+                        </div>
+                    </div>
+                </div>
+                <div class="metric-card services-errors">
+                    <div class="metric-header">
+                        <span class="metric-icon">⚡</span>
+                        <span class="metric-title">Servicios con Errores</span>
+                    </div>
+                    <div class="metric-body">
+                        <div class="metric-main">
+                            <span class="metric-value" id="servicesWithErrors">--</span>
+                            <span class="metric-period">servicios</span>
+                        </div>
+                        <div class="metric-secondary">
+                            requieren atencion
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -66,6 +118,16 @@
                     <option value="all">Todos</option>
                     <option value="healthy">Activos</option>
                     <option value="unhealthy">Con Problemas</option>
+                    <option value="errors">Con Errores</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label>Ordenar por:</label>
+                <select id="sortFilter" onchange="filterServices()">
+                    <option value="name">Nombre</option>
+                    <option value="errors">Mas Errores</option>
+                    <option value="deployments">Mas Despliegues</option>
+                    <option value="recent">Despliegue Reciente</option>
                 </select>
             </div>
             <div class="filter-group">
@@ -82,6 +144,18 @@
             </div>
         </section>
 
+        <!-- Modal de Detalles -->
+        <div class="modal" id="serviceModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 id="modalTitle">Detalles del Servicio</h3>
+                    <button class="modal-close" onclick="closeModal()">&times;</button>
+                </div>
+                <div class="modal-body" id="modalBody">
+                </div>
+            </div>
+        </div>
+
         <!-- Repositorios -->
         <section class="repos-section">
             <h2>Repositorios GitHub</h2>
@@ -93,7 +167,7 @@
 
     <footer class="footer">
         <p>Indunnova - Dashboard de Monitoreo</p>
-        <p>Proyecto: appsindunnova | Región: us-central1</p>
+        <p>Proyecto: appsindunnova | Region: us-central1</p>
     </footer>
 
     <script src="js/app.js"></script>
