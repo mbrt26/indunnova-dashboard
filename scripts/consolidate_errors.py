@@ -328,18 +328,14 @@ def create_github_issue(error_hash: str, error_data: dict, analysis: Optional[di
 
     body = '\n'.join(body_parts)
 
-    # Determinar labels
+    # Determinar labels (usar solo labels que existen)
     labels = ["bug", "auto-generated"]
     if error_data['count'] >= 50:
-        labels.append("priority:high")
+        labels.append("priority-high")
     elif error_data['count'] >= 10:
-        labels.append("priority:medium")
+        labels.append("priority-medium")
     else:
-        labels.append("priority:low")
-
-    # Agregar label del servicio principal
-    if error_data['services']:
-        labels.append(f"service:{error_data['services'][0]}")
+        labels.append("priority-low")
 
     # Crear issue
     try:
