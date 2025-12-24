@@ -1,5 +1,56 @@
 [
   {
+    "id": "694c78900004b7292d72f473",
+    "service": "carnes-sebastian-staging",
+    "revision": "carnes-sebastian-staging-00002-dns",
+    "timestamp": "2025-12-24T23:34:40.309033Z",
+    "severity": "ERROR",
+    "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/core/handlers/exception.py\", line 55, in inner\n    response = get_response(request)\n               ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/utils/deprecation.py\", line 133, in __call__\n    response = self.process_request(request)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/middleware/security.py\", line 28, in process_request\n    host = self.redirect_host or request.get_host()\n                                 ^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/http/request.py\", line 150, in get_host\n    raise DisallowedHost(msg)\ndjango.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'carnes-sebastian-staging-rvfp6uj2va-uc.a.run.app'. You may need to add 'carnes-sebastian-staging-rvfp6uj2va-uc.a.run.app' to ALLOWED_HOSTS.",
+    "httpRequest": null,
+    "trace": "",
+    "spanId": ""
+  },
+  {
+    "id": "694c788600053f44a9d05d95",
+    "service": "carnes-sebastian-staging",
+    "revision": "carnes-sebastian-staging-00002-dns",
+    "timestamp": "2025-12-24T23:34:30.343876Z",
+    "severity": "ERROR",
+    "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/core/handlers/exception.py\", line 55, in inner\n    response = get_response(request)\n               ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/utils/deprecation.py\", line 133, in __call__\n    response = self.process_request(request)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/middleware/security.py\", line 28, in process_request\n    host = self.redirect_host or request.get_host()\n                                 ^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/http/request.py\", line 150, in get_host\n    raise DisallowedHost(msg)\ndjango.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'carnes-sebastian-staging-rvfp6uj2va-uc.a.run.app'. You may need to add 'carnes-sebastian-staging-rvfp6uj2va-uc.a.run.app' to ALLOWED_HOSTS.",
+    "httpRequest": null,
+    "trace": "",
+    "spanId": ""
+  },
+  {
+    "id": "694c77c90004de6ed4872fb4",
+    "service": "creaciones-apice",
+    "revision": "creaciones-apice-00001-482",
+    "timestamp": "2025-12-24T23:31:21.319086Z",
+    "severity": "ERROR",
+    "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/core/handlers/exception.py\", line 55, in inner\n    response = get_response(request)\n               ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/core/handlers/base.py\", line 220, in _get_response\n    response = response.render()\n               ^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/response.py\", line 114, in render\n    self.content = self.rendered_content\n                   ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/response.py\", line 92, in rendered_content\n    return template.render(context, self._request)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/backends/django.py\", line 61, in render\n    return self.template.render(context)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/base.py\", line 175, in render\n    return self._render(context)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/base.py\", line 167, in _render\n    return self.nodelist.render(context)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/base.py\", line 1005, in render\n    return SafeString(\"\".join([node.render_annotated(context) for node in self]))\n                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/base.py\", line 1005, in <listcomp>\n    return SafeString(\"\".join([node.render_annotated(context) for node in self]))\n                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/base.py\", line 966, in render_annotated\n    return self.render(context)\n           ^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/templatetags/static.py\", line 116, in render\n    url = self.url(context)\n          ^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/templatetags/static.py\", line 113, in url\n    return self.handle_simple(path)\n           ^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/templatetags/static.py\", line 129, in handle_simple\n    return staticfiles_storage.url(path)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/contrib/staticfiles/storage.py\", line 203, in url\n    return self._url(self.stored_name, name, force)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/contrib/staticfiles/storage.py\", line 182, in _url\n    hashed_name = hashed_name_func(*args)\n                  ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/contrib/staticfiles/storage.py\", line 513, in stored_name\n    raise ValueError(\nValueError: Missing staticfiles manifest entry for 'css/style.css'",
+    "httpRequest": null,
+    "trace": "",
+    "spanId": ""
+  },
+  {
+    "id": "694c77c90004e2c63001a718",
+    "service": "creaciones-apice",
+    "revision": "creaciones-apice-00001-482",
+    "timestamp": "2025-12-24T23:31:21.148021Z",
+    "severity": "ERROR",
+    "message": "",
+    "httpRequest": {
+      "method": "GET",
+      "url": "https://creaciones-apice-rvfp6uj2va-uc.a.run.app/login/?next=/",
+      "status": 500,
+      "latency": "0.170150643s",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
+      "remoteIp": "3.86.95.215"
+    },
+    "trace": "projects/appsindunnova/traces/51ba0996082f823e2c8f720fcbbd9a6e",
+    "spanId": "d804a9dc7a3a7a6d"
+  },
+  {
     "id": "694c779700041881b122b790",
     "service": "carnesdelsebastian",
     "revision": "carnesdelsebastian-00247-ncd",
