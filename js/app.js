@@ -25,6 +25,7 @@ async function loadData() {
         // Render everything
         updateSummary();
         updateMetrics();
+        renderRecentDeployments();
         renderServices();
         renderRepos();
     } catch (error) {
@@ -47,6 +48,87 @@ function updateMetrics() {
     document.getElementById('totalDeployments7d').textContent = metaData.totalDeployments7d || 0;
     document.getElementById('totalDeployments24h').textContent = metaData.totalDeployments24h || 0;
     document.getElementById('servicesWithErrors').textContent = metaData.servicesWithErrors || 0;
+}
+
+function renderRecentDeployments() {
+    const grid = document.getElementById('recentDeploymentsGrid');
+
+    // Get services with recent deployments, sorted by last deployment
+    const servicesWithDeployments = servicesData
+        .filter(s => s.deployments && s.deployments.recentDeployments && s.deployments.recentDeployments.length > 0)
+        .sort((a, b) => {
+            const dateA = new Date(a.deployments.lastDeployment || 0);
+            const dateB = new Date(b.deployments.lastDeployment || 0);
+            return dateB - dateA;
+        })
+        .slice(0, 10); // Show top 10 services with recent activity
+
+    if (servicesWithDeployments.length === 0) {
+        grid.innerHTML = '<div class="no-data">No hay despliegues recientes</div>';
+        return;
+    }
+
+    grid.innerHTML = servicesWithDeployments.map(service => {
+        const deployments = service.deployments.recentDeployments.slice(0, 5);
+        const hasErrors = service.errors && service.errors.last7d > 0;
+
+        return `
+        <div class="recent-deploy-card ${hasErrors ? 'has-errors' : ''}">
+            <div class="recent-deploy-header">
+                <span class="recent-deploy-service">${service.name}</span>
+                <span class="recent-deploy-count">${service.deployments.last7d || 0} deploys (7d)</span>
+            </div>
+            <div class="recent-deploy-list">
+                ${deployments.map(deploy => {
+                    const isRecent = isWithinHours(deploy.timestamp, 24);
+                    const statusClass = deploy.status === 'True' ? 'success' : 'warning';
+                    return `
+                    <div class="recent-deploy-item ${isRecent ? 'recent' : ''}">
+                        <span class="deploy-status ${statusClass}">${deploy.status === 'True' ? '✓' : '!'}</span>
+                        <span class="deploy-revision" title="${deploy.revision}">${truncateRevision(deploy.revision)}</span>
+                        <span class="deploy-time">${formatTimeAgo(deploy.timestamp)}</span>
+                    </div>
+                    `;
+                }).join('')}
+            </div>
+            ${hasErrors ? `<div class="recent-deploy-warning">⚠️ ${service.errors.last7d} errores en 7d</div>` : ''}
+        </div>
+        `;
+    }).join('');
+}
+
+function isWithinHours(dateString, hours) {
+    if (!dateString) return false;
+    const date = new Date(dateString);
+    const now = new Date();
+    const diffMs = now - date;
+    return diffMs < (hours * 60 * 60 * 1000);
+}
+
+function formatTimeAgo(dateString) {
+    if (!dateString) return '--';
+    const date = new Date(dateString);
+    const now = new Date();
+    const diffMs = now - date;
+    const diffMins = Math.floor(diffMs / (1000 * 60));
+    const diffHours = Math.floor(diffMs / (1000 * 60 * 60));
+    const diffDays = Math.floor(diffHours / 24);
+
+    if (diffMins < 1) return 'ahora';
+    if (diffMins < 60) return `hace ${diffMins}m`;
+    if (diffHours < 24) return `hace ${diffHours}h`;
+    if (diffDays < 7) return `hace ${diffDays}d`;
+    return date.toLocaleDateString('es-ES', { month: 'short', day: 'numeric' });
+}
+
+function truncateRevision(revision) {
+    if (!revision) return '--';
+    // Extract just the last part (e.g., "00072-qjd" from "service-name-00072-qjd")
+    const parts = revision.split('-');
+    if (parts.length >= 2) {
+        return parts.slice(-2).join('-');
+    }
+    return revision.length > 15 ? revision.slice(-15) : revision;
 }
 
 function renderServices() {
