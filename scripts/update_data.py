@@ -44,6 +44,7 @@ SERVICE_TO_REPO = {
 }
 
 GITHUB_ORG = 'mbrt26'
+PROJECT_NUMBER = '381877373634'  # Google Cloud project number for appsindunnova
 
 def run_command(cmd, timeout=120):
     """Ejecuta un comando y retorna su salida."""
@@ -68,7 +69,6 @@ def get_cloud_run_services():
 
         for svc in data:
             name = svc['metadata']['name']
-            url = svc['status'].get('url', 'N/A')
 
             # Obtener estado
             conditions = svc['status'].get('conditions', [])
@@ -80,6 +80,10 @@ def get_cloud_run_services():
 
             # Obtener región
             region = svc['metadata'].get('labels', {}).get('cloud.googleapis.com/location', 'us-central1')
+
+            # Generar URL con el nuevo formato (usando project number)
+            # Nuevo formato: https://{service}-{project_number}.{region}.run.app
+            url = f"https://{name}-{PROJECT_NUMBER}.{region}.run.app"
 
             # Mapear a repositorio
             repo_name = SERVICE_TO_REPO.get(name)
