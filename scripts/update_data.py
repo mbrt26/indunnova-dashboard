@@ -498,31 +498,123 @@ def get_cloud_sql_costs():
         return {'instances': [], 'totalCost': 0}
 
 
+def get_real_billing_data():
+    """Obtiene costos reales de facturación desde BigQuery."""
+    query = """
+    WITH daily_costs AS (
+      SELECT
+        DATE(usage_start_time) as cost_date,
+        service.description as service_name,
+        SUM(cost) + SUM(IFNULL((SELECT SUM(c.amount) FROM UNNEST(credits) c), 0)) as daily_cost
+      FROM `appsindunnova.billing.gcp_billing_export_v1_01C9CE_390A53_7FC29D`
+      WHERE invoice.month = FORMAT_DATE("%Y%m", CURRENT_DATE())
+      GROUP BY 1, 2
+    ),
+    service_summary AS (
+      SELECT
+        service_name,
+        SUM(daily_cost) as mtd_cost,
+        COUNT(DISTINCT cost_date) as days_with_data,
+        AVG(daily_cost) as avg_daily_cost
+      FROM daily_costs
+      GROUP BY service_name
+    )
+    SELECT
+      service_name,
+      ROUND(mtd_cost, 2) as mtd_cost,
+      days_with_data,
+      ROUND(avg_daily_cost * 31, 2) as projected_monthly
+    FROM service_summary
+    ORDER BY mtd_cost DESC
+    """
+
+    try:
+        result = run_command(f"bq query --use_legacy_sql=false --format=json '{query}'", timeout=60)
+        if not result:
+            return None
+        data = json.loads(result)
+
+        # Convertir a diccionario por servicio
+        costs = {}
+        for row in data:
+            service = row['service_name']
+            costs[service] = {
+                'mtd': float(row['mtd_cost']),
+                'projected': float(row['projected_monthly']),
+                'days': int(row['days_with_data'])
+            }
+        return costs
+    except Exception as e:
+        print(f"  Error obteniendo datos de facturación: {e}")
+        return None
+
+
 def get_project_cost_summary(cloud_run_cost, cloud_sql_data):
-    """Genera un resumen de costos del proyecto."""
+    """Genera un resumen de costos del proyecto usando datos reales de BigQuery."""
     sql_cost = cloud_sql_data.get('totalCost', 0)
 
-    # Estimaciones para otros servicios
-    other_costs = {
-        'artifactRegistry': 10.0,  # Container images storage
-        'networking': 8.0,         # Egress/networking
-        'logging': 7.0,            # Cloud Logging storage
-        'secretManager': 2.0,      # Secrets
-        'cloudBuild': 5.0,         # CI/CD builds
-    }
-    other_total = sum(other_costs.values())
+    # Intentar obtener costos reales de BigQuery
+    real_costs = get_real_billing_data()
 
-    total = cloud_run_cost + sql_cost + other_total
+    if real_costs:
+        print("  Usando datos reales de facturación de BigQuery")
 
-    return {
-        'cloudRun': round(cloud_run_cost, 2),
-        'cloudSql': round(sql_cost, 2),
-        'other': round(other_total, 2),
-        'otherBreakdown': other_costs,
-        'total': round(total, 2),
-        'sqlInstances': cloud_sql_data.get('runningCount', 0),
-        'sqlStopped': cloud_sql_data.get('stoppedCount', 0)
-    }
+        # Costos reales proyectados del mes
+        cloud_sql_real = real_costs.get('Cloud SQL', {}).get('projected', sql_cost)
+        cloud_run_real = real_costs.get('Cloud Run', {}).get('projected', cloud_run_cost)
+
+        # Otros servicios con datos reales
+        other_costs = {
+            'artifactRegistry': real_costs.get('Artifact Registry', {}).get('projected', 0),
+            'appEngine': real_costs.get('App Engine', {}).get('projected', 0),
+            'cloudBuild': real_costs.get('Cloud Build', {}).get('projected', 0),
+            'secretManager': real_costs.get('Secret Manager', {}).get('projected', 0),
+            'cloudStorage': real_costs.get('Cloud Storage', {}).get('projected', 0),
+            'vertexAI': real_costs.get('Vertex AI', {}).get('projected', 0),
+        }
+        other_total = sum(other_costs.values())
+
+        total = cloud_run_real + cloud_sql_real + other_total
+
+        return {
+            'cloudRun': round(cloud_run_real, 2),
+            'cloudSql': round(cloud_sql_real, 2),
+            'other': round(other_total, 2),
+            'otherBreakdown': other_costs,
+            'total': round(total, 2),
+            'sqlInstances': cloud_sql_data.get('runningCount', 0),
+            'sqlStopped': cloud_sql_data.get('stoppedCount', 0),
+            'dataSource': 'bigquery',
+            'mtdCosts': {
+                'cloudSql': real_costs.get('Cloud SQL', {}).get('mtd', 0),
+                'cloudRun': real_costs.get('Cloud Run', {}).get('mtd', 0),
+                'other': sum(v.get('mtd', 0) for k, v in real_costs.items()
+                           if k not in ['Cloud SQL', 'Cloud Run'])
+            }
+        }
+    else:
+        # Fallback a estimaciones
+        print("  Usando estimaciones (BigQuery no disponible)")
+        other_costs = {
+            'artifactRegistry': 10.0,
+            'networking': 8.0,
+            'logging': 7.0,
+            'secretManager': 2.0,
+            'cloudBuild': 5.0,
+        }
+        other_total = sum(other_costs.values())
+        total = cloud_run_cost + sql_cost + other_total
+
+        return {
+            'cloudRun': round(cloud_run_cost, 2),
+            'cloudSql': round(sql_cost, 2),
+            'other': round(other_total, 2),
+            'otherBreakdown': other_costs,
+            'total': round(total, 2),
+            'sqlInstances': cloud_sql_data.get('runningCount', 0),
+            'sqlStopped': cloud_sql_data.get('stoppedCount', 0),
+            'dataSource': 'estimated'
+        }
 
 
 def get_billable_time_from_monitoring(service_name):
