@@ -284,6 +284,49 @@ def get_request_metrics():
 
     return dict(metrics_by_service)
 
+def get_user_interactions():
+    """Obtiene el conteo de interacciones de usuarios (requests HTTP) por servicio."""
+    interactions_by_service = defaultdict(lambda: {
+        'requests7d': 0,
+        'requests30d': 0
+    })
+
+    # Obtener requests de los últimos 30 días
+    # Usamos httpRequest para contar solo requests HTTP reales (no logs internos)
+    print("  Obteniendo requests de 30 días...")
+    cmd_30d = '''gcloud logging read 'resource.type="cloud_run_revision" AND httpRequest.requestMethod!=""' --limit=10000 --format="json" --freshness=30d 2>/dev/null'''
+    output_30d = run_command(cmd_30d, timeout=300)
+
+    now = datetime.now(timezone.utc)
+    week_ago = now - timedelta(days=7)
+
+    if output_30d:
+        try:
+            data = json.loads(output_30d)
+            for log in data:
+                resource = log.get('resource', {})
+                labels = resource.get('labels', {})
+                service_name = labels.get('service_name', 'unknown')
+                timestamp_str = log.get('timestamp', '')
+
+                # Parsear timestamp
+                try:
+                    timestamp = datetime.fromisoformat(timestamp_str.replace('Z', '+00:00'))
+                except:
+                    timestamp = now
+
+                # Contar para 30 días
+                interactions_by_service[service_name]['requests30d'] += 1
+
+                # Contar para 7 días
+                if timestamp > week_ago:
+                    interactions_by_service[service_name]['requests7d'] += 1
+
+        except json.JSONDecodeError as e:
+            print(f"  Error parseando JSON de interacciones: {e}")
+
+    return dict(interactions_by_service)
+
 def get_all_errors_detailed():
     """Obtiene todos los errores detallados de los últimos 7 días."""
     cmd = '''gcloud logging read 'resource.type="cloud_run_revision" AND severity>=ERROR' --limit=2000 --format="json" --freshness=7d 2>/dev/null'''
@@ -403,6 +446,10 @@ def main():
     request_metrics = get_request_metrics()
     print(f"  Servicios con métricas: {len(request_metrics)}")
 
+    print("Obteniendo interacciones de usuarios...")
+    user_interactions = get_user_interactions()
+    print(f"  Servicios con interacciones: {len(user_interactions)}")
+
     print("Obteniendo repositorios de GitHub...")
     repos = get_github_repos()
     print(f"  Encontrados {len(repos)} repositorios")
@@ -431,6 +478,10 @@ def main():
             'errors5xx': 0,
             'errors4xx': 0,
             'avgLatencyMs': 0
+        })
+        service['interactions'] = user_interactions.get(name, {
+            'requests7d': 0,
+            'requests30d': 0
         })
 
     # Guardar datos

@@ -279,6 +279,8 @@ function renderServices() {
         const errors7d = service.errors?.last7d || 0;
         const deployments7d = service.deployments?.last7d || 0;
         const lastDeploy = service.deployments?.lastDeployment;
+        const requests7d = service.interactions?.requests7d || 0;
+        const requests30d = service.interactions?.requests30d || 0;
 
         return `
         <div class="${cardClass}">
@@ -296,17 +298,21 @@ function renderServices() {
                 ${service.repo ? `<span>📦 <a href="${service.repo}" target="_blank" style="color: inherit;">${service.repoName || extractRepoName(service.repo)}</a></span>` : ''}
             </div>
             <div class="service-metrics">
+                <div class="service-metric interactions">
+                    <span class="service-metric-value">${formatNumber(requests7d)}</span>
+                    <span class="service-metric-label">Visitas 7d</span>
+                </div>
+                <div class="service-metric interactions-30d">
+                    <span class="service-metric-value">${formatNumber(requests30d)}</span>
+                    <span class="service-metric-label">Visitas 30d</span>
+                </div>
                 <div class="service-metric errors">
                     <span class="service-metric-value">${errors7d}</span>
                     <span class="service-metric-label">Errores 7d</span>
                 </div>
                 <div class="service-metric deployments">
                     <span class="service-metric-value">${deployments7d}</span>
-                    <span class="service-metric-label">Despliegues 7d</span>
-                </div>
-                <div class="service-metric">
-                    <span class="service-metric-value">${lastDeploy ? formatDateShort(lastDeploy) : '--'}</span>
-                    <span class="service-metric-label">Ultimo Deploy</span>
+                    <span class="service-metric-label">Deploys 7d</span>
                 </div>
             </div>
             <div class="service-actions">
@@ -326,6 +332,9 @@ function showServiceDetails(serviceName) {
     let html = '';
 
     // Info general
+    const requests7d = service.interactions?.requests7d || 0;
+    const requests30d = service.interactions?.requests30d || 0;
+
     html += `
         <div class="modal-section">
             <h4>Informacion General</h4>
@@ -333,6 +342,23 @@ function showServiceDetails(serviceName) {
             <p><strong>Region:</strong> ${service.region}</p>
             <p><strong>Estado:</strong> ${service.status === 'True' ? 'Activo' : 'Inactivo'}</p>
             ${service.repo ? `<p><strong>Repositorio:</strong> <a href="${service.repo}" target="_blank">${service.repoName}</a></p>` : ''}
+        </div>
+    `;
+
+    // Interacciones de usuarios
+    html += `
+        <div class="modal-section">
+            <h4>Interacciones de Usuarios</h4>
+            <div class="interactions-stats">
+                <div class="interaction-stat">
+                    <span class="interaction-value" style="color: #06B6D4;">${formatNumber(requests7d)}</span>
+                    <span class="interaction-label">Visitas ultimos 7 dias</span>
+                </div>
+                <div class="interaction-stat">
+                    <span class="interaction-value" style="color: #8B5CF6;">${formatNumber(requests30d)}</span>
+                    <span class="interaction-label">Visitas ultimos 30 dias</span>
+                </div>
+            </div>
         </div>
     `;
 
@@ -461,4 +487,15 @@ function escapeHtml(text) {
     const div = document.createElement('div');
     div.textContent = text;
     return div.innerHTML;
+}
+
+function formatNumber(num) {
+    if (num === 0) return '0';
+    if (num >= 1000000) {
+        return (num / 1000000).toFixed(1).replace(/\.0$/, '') + 'M';
+    }
+    if (num >= 1000) {
+        return (num / 1000).toFixed(1).replace(/\.0$/, '') + 'K';
+    }
+    return num.toString();
 }
