@@ -69,6 +69,16 @@
     "interactions": {
       "requests7d": 76,
       "requests30d": 76
+    },
+    "costEstimate": {
+      "estimatedMonthly": 0.0,
+      "cpuCost": 0.0,
+      "memoryCost": 0.0,
+      "requestCost": 0.0,
+      "estimatedRequests": 76,
+      "avgLatencyMs": 1915,
+      "cpuCores": 1.0,
+      "memoryGiB": 0.5
     }
   },
   {
@@ -141,6 +151,16 @@
     "interactions": {
       "requests7d": 238,
       "requests30d": 238
+    },
+    "costEstimate": {
+      "estimatedMonthly": 0.0,
+      "cpuCost": 0.0,
+      "memoryCost": 0.0,
+      "requestCost": 0.0,
+      "estimatedRequests": 238,
+      "avgLatencyMs": 152,
+      "cpuCores": 2.0,
+      "memoryGiB": 2.0
     }
   },
   {
@@ -171,6 +191,16 @@
     "interactions": {
       "requests7d": 9,
       "requests30d": 9
+    },
+    "costEstimate": {
+      "estimatedMonthly": 0.0,
+      "cpuCost": 0.0,
+      "memoryCost": 0.0,
+      "requestCost": 0.0,
+      "estimatedRequests": 9,
+      "avgLatencyMs": 500,
+      "cpuCores": 0.1666,
+      "memoryGiB": 0.25
     }
   },
   {
@@ -207,6 +237,16 @@
     "interactions": {
       "requests7d": 12,
       "requests30d": 12
+    },
+    "costEstimate": {
+      "estimatedMonthly": 0.0,
+      "cpuCost": 0.0,
+      "memoryCost": 0.0,
+      "requestCost": 0.0,
+      "estimatedRequests": 12,
+      "avgLatencyMs": 500,
+      "cpuCores": 1.0,
+      "memoryGiB": 0.5
     }
   },
   {
@@ -239,9 +279,9 @@
       ]
     },
     "deployments": {
-      "total": 4,
+      "total": 3,
       "last24h": 0,
-      "last7d": 4,
+      "last7d": 3,
       "lastDeployment": "2025-12-22T00:41:38.209399Z",
       "recentDeployments": [
         {
@@ -258,11 +298,6 @@
           "revision": "colsegur-00012-h2j",
           "timestamp": "2025-12-21T19:45:15.417294Z",
           "status": "True"
-        },
-        {
-          "revision": "colsegur-00011-8q8",
-          "timestamp": "2025-12-21T19:38:08.069220Z",
-          "status": "True"
         }
       ]
     },
@@ -274,6 +309,16 @@
     "interactions": {
       "requests7d": 27,
       "requests30d": 27
+    },
+    "costEstimate": {
+      "estimatedMonthly": 0.0,
+      "cpuCost": 0.0,
+      "memoryCost": 0.0,
+      "requestCost": 0.0,
+      "estimatedRequests": 27,
+      "avgLatencyMs": 1360,
+      "cpuCores": 1.0,
+      "memoryGiB": 0.5
     }
   },
   {
@@ -341,6 +386,16 @@
     "interactions": {
       "requests7d": 98,
       "requests30d": 98
+    },
+    "costEstimate": {
+      "estimatedMonthly": 0.0,
+      "cpuCost": 0.0,
+      "memoryCost": 0.0,
+      "requestCost": 0.0,
+      "estimatedRequests": 98,
+      "avgLatencyMs": 256,
+      "cpuCores": 1.0,
+      "memoryGiB": 0.5
     }
   },
   {
@@ -403,43 +458,58 @@
     "interactions": {
       "requests7d": 47,
       "requests30d": 47
+    },
+    "costEstimate": {
+      "estimatedMonthly": 0.0,
+      "cpuCost": 0.0,
+      "memoryCost": 0.0,
+      "requestCost": 0.0,
+      "estimatedRequests": 47,
+      "avgLatencyMs": 1208,
+      "cpuCores": 1.0,
+      "memoryGiB": 0.5
     }
   },
   {
     "name": "crm-gyt",
     "url": "https://crm-gyt-381877373634.us-central1.run.app",
-    "status": "True",
+    "status": "False",
     "region": "us-central1",
     "repo": "https://github.com/mbrt26/GYT",
     "repoName": "GYT",
     "errors": {
-      "total": 15,
-      "last24h": 0,
-      "last7d": 15,
+      "total": 20,
+      "last24h": 5,
+      "last7d": 20,
       "recentErrors": [
         {
-          "timestamp": "2025-12-21T19:45:30.681379Z",
+          "timestamp": "2025-12-25T15:34:15.237028Z",
           "message": "{}",
           "severity": "ERROR"
         },
         {
-          "timestamp": "2025-12-21T19:45:30.597663Z",
+          "timestamp": "2025-12-25T15:34:15.151951Z",
           "message": "{}",
           "severity": "ERROR"
         },
         {
-          "timestamp": "2025-12-21T19:45:30.586857Z",
+          "timestamp": "2025-12-25T15:34:15.133178Z",
           "message": "Default STARTUP TCP probe failed 1 time consecutively for container \"crm-gyt-1\" on port 8080. The instance was not started.\nConnection failed with status CANCELLED.",
           "severity": "ERROR"
         }
       ]
     },
     "deployments": {
-      "total": 1,
-      "last24h": 0,
-      "last7d": 1,
-      "lastDeployment": "2025-12-22T01:12:11.405549Z",
+      "total": 2,
+      "last24h": 1,
+      "last7d": 2,
+      "lastDeployment": "2025-12-25T15:33:48.398329Z",
       "recentDeployments": [
+        {
+          "revision": "crm-gyt-00002-vsb",
+          "timestamp": "2025-12-25T15:33:48.398329Z",
+          "status": "False"
+        },
         {
           "revision": "crm-gyt-00001-4wj",
           "timestamp": "2025-12-22T01:12:11.405549Z",
@@ -453,8 +523,18 @@
       "avgLatencyMs": 0
     },
     "interactions": {
-      "requests7d": 21,
-      "requests30d": 21
+      "requests7d": 23,
+      "requests30d": 23
+    },
+    "costEstimate": {
+      "estimatedMonthly": 0.0,
+      "cpuCost": 0.0,
+      "memoryCost": 0.0,
+      "requestCost": 0.0,
+      "estimatedRequests": 23,
+      "avgLatencyMs": 500,
+      "cpuCores": 1.0,
+      "memoryGiB": 0.5
     }
   },
   {
@@ -522,6 +602,16 @@
     "interactions": {
       "requests7d": 32,
       "requests30d": 32
+    },
+    "costEstimate": {
+      "estimatedMonthly": 0.0,
+      "cpuCost": 0.0,
+      "memoryCost": 0.0,
+      "requestCost": 0.0,
+      "estimatedRequests": 32,
+      "avgLatencyMs": 263,
+      "cpuCores": 1.0,
+      "memoryGiB": 0.5
     }
   },
   {
@@ -594,6 +684,16 @@
     "interactions": {
       "requests7d": 191,
       "requests30d": 191
+    },
+    "costEstimate": {
+      "estimatedMonthly": 0.0,
+      "cpuCost": 0.0,
+      "memoryCost": 0.0,
+      "requestCost": 0.0,
+      "estimatedRequests": 191,
+      "avgLatencyMs": 500,
+      "cpuCores": 1.0,
+      "memoryGiB": 0.5
     }
   },
   {
@@ -626,9 +726,9 @@
       ]
     },
     "deployments": {
-      "total": 6,
+      "total": 5,
       "last24h": 0,
-      "last7d": 6,
+      "last7d": 5,
       "lastDeployment": "2025-12-22T00:29:16.083252Z",
       "recentDeployments": [
         {
@@ -666,6 +766,16 @@
     "interactions": {
       "requests7d": 55,
       "requests30d": 55
+    },
+    "costEstimate": {
+      "estimatedMonthly": 0.0,
+      "cpuCost": 0.0,
+      "memoryCost": 0.0,
+      "requestCost": 0.0,
+      "estimatedRequests": 55,
+      "avgLatencyMs": 872,
+      "cpuCores": 1.0,
+      "memoryGiB": 0.5
     }
   },
   {
@@ -728,6 +838,16 @@
     "interactions": {
       "requests7d": 15,
       "requests30d": 15
+    },
+    "costEstimate": {
+      "estimatedMonthly": 0.0,
+      "cpuCost": 0.0,
+      "memoryCost": 0.0,
+      "requestCost": 0.0,
+      "estimatedRequests": 15,
+      "avgLatencyMs": 19,
+      "cpuCores": 1.0,
+      "memoryGiB": 0.5
     }
   },
   {
@@ -790,6 +910,16 @@
     "interactions": {
       "requests7d": 33,
       "requests30d": 33
+    },
+    "costEstimate": {
+      "estimatedMonthly": 0.0,
+      "cpuCost": 0.0,
+      "memoryCost": 0.0,
+      "requestCost": 0.0,
+      "estimatedRequests": 33,
+      "avgLatencyMs": 541,
+      "cpuCores": 1.0,
+      "memoryGiB": 0.5
     }
   },
   {
@@ -800,9 +930,9 @@
     "repo": "https://github.com/mbrt26/HuellaCarbono",
     "repoName": "HuellaCarbono",
     "errors": {
-      "total": 22,
+      "total": 17,
       "last24h": 0,
-      "last7d": 22,
+      "last7d": 17,
       "recentErrors": [
         {
           "timestamp": "2025-12-21T21:35:32.134497Z",
@@ -822,9 +952,9 @@
       ]
     },
     "deployments": {
-      "total": 7,
+      "total": 6,
       "last24h": 0,
-      "last7d": 7,
+      "last7d": 6,
       "lastDeployment": "2025-12-21T21:32:05.808482Z",
       "recentDeployments": [
         {
@@ -862,6 +992,16 @@
     "interactions": {
       "requests7d": 48,
       "requests30d": 48
+    },
+    "costEstimate": {
+      "estimatedMonthly": 0.0,
+      "cpuCost": 0.0,
+      "memoryCost": 0.0,
+      "requestCost": 0.0,
+      "estimatedRequests": 48,
+      "avgLatencyMs": 1396,
+      "cpuCores": 1.0,
+      "memoryGiB": 0.5
     }
   },
   {
@@ -872,9 +1012,9 @@
     "repo": "https://github.com/mbrt26/HuellaCarbono",
     "repoName": "HuellaCarbono",
     "errors": {
-      "total": 22,
+      "total": 17,
       "last24h": 0,
-      "last7d": 22,
+      "last7d": 17,
       "recentErrors": [
         {
           "timestamp": "2025-12-21T21:35:32.134497Z",
@@ -894,9 +1034,9 @@
       ]
     },
     "deployments": {
-      "total": 7,
+      "total": 6,
       "last24h": 0,
-      "last7d": 7,
+      "last7d": 6,
       "lastDeployment": "2025-12-21T21:32:05.808482Z",
       "recentDeployments": [
         {
@@ -934,6 +1074,16 @@
     "interactions": {
       "requests7d": 48,
       "requests30d": 48
+    },
+    "costEstimate": {
+      "estimatedMonthly": 0.0,
+      "cpuCost": 0.0,
+      "memoryCost": 0.0,
+      "requestCost": 0.0,
+      "estimatedRequests": 48,
+      "avgLatencyMs": 1396,
+      "cpuCores": 1.0,
+      "memoryGiB": 0.5
     }
   },
   {
@@ -975,6 +1125,16 @@
     "interactions": {
       "requests7d": 19,
       "requests30d": 19
+    },
+    "costEstimate": {
+      "estimatedMonthly": 0.0,
+      "cpuCost": 0.0,
+      "memoryCost": 0.0,
+      "requestCost": 0.0,
+      "estimatedRequests": 19,
+      "avgLatencyMs": 500,
+      "cpuCores": 1.0,
+      "memoryGiB": 0.5
     }
   },
   {
@@ -1042,6 +1202,16 @@
     "interactions": {
       "requests7d": 92,
       "requests30d": 92
+    },
+    "costEstimate": {
+      "estimatedMonthly": 0.02,
+      "cpuCost": 0.02,
+      "memoryCost": 0.0,
+      "requestCost": 0.0,
+      "estimatedRequests": 92,
+      "avgLatencyMs": 7661,
+      "cpuCores": 1.0,
+      "memoryGiB": 0.5
     }
   },
   {
@@ -1109,6 +1279,16 @@
     "interactions": {
       "requests7d": 28,
       "requests30d": 28
+    },
+    "costEstimate": {
+      "estimatedMonthly": 0.0,
+      "cpuCost": 0.0,
+      "memoryCost": 0.0,
+      "requestCost": 0.0,
+      "estimatedRequests": 28,
+      "avgLatencyMs": 1457,
+      "cpuCores": 1.0,
+      "memoryGiB": 0.5
     }
   },
   {
@@ -1141,11 +1321,16 @@
       ]
     },
     "deployments": {
-      "total": 14,
-      "last24h": 0,
-      "last7d": 14,
-      "lastDeployment": "2025-12-22T00:06:05.820738Z",
+      "total": 15,
+      "last24h": 1,
+      "last7d": 15,
+      "lastDeployment": "2025-12-25T15:27:44.992614Z",
       "recentDeployments": [
+        {
+          "revision": "moldes-mecanizados-app-00021-dbc",
+          "timestamp": "2025-12-25T15:27:44.992614Z",
+          "status": "True"
+        },
         {
           "revision": "moldes-mecanizados-app-00020-5wx",
           "timestamp": "2025-12-22T00:06:05.820738Z",
@@ -1165,11 +1350,6 @@
           "revision": "moldes-mecanizados-app-00017-52c",
           "timestamp": "2025-12-21T23:50:06.669827Z",
           "status": "True"
-        },
-        {
-          "revision": "moldes-mecanizados-app-00016-pmp",
-          "timestamp": "2025-12-21T23:34:47.817208Z",
-          "status": "True"
         }
       ]
     },
@@ -1179,8 +1359,18 @@
       "avgLatencyMs": 432
     },
     "interactions": {
-      "requests7d": 73,
-      "requests30d": 73
+      "requests7d": 76,
+      "requests30d": 76
+    },
+    "costEstimate": {
+      "estimatedMonthly": 0.0,
+      "cpuCost": 0.0,
+      "memoryCost": 0.0,
+      "requestCost": 0.0,
+      "estimatedRequests": 76,
+      "avgLatencyMs": 432,
+      "cpuCores": 1.0,
+      "memoryGiB": 0.5
     }
   },
   {
@@ -1253,6 +1443,16 @@
     "interactions": {
       "requests7d": 293,
       "requests30d": 293
+    },
+    "costEstimate": {
+      "estimatedMonthly": 0.01,
+      "cpuCost": 0.01,
+      "memoryCost": 0.0,
+      "requestCost": 0.0,
+      "estimatedRequests": 293,
+      "avgLatencyMs": 1706,
+      "cpuCores": 1.0,
+      "memoryGiB": 0.5
     }
   },
   {
@@ -1323,8 +1523,18 @@
       "avgLatencyMs": 615
     },
     "interactions": {
-      "requests7d": 1982,
-      "requests30d": 1982
+      "requests7d": 1972,
+      "requests30d": 1972
+    },
+    "costEstimate": {
+      "estimatedMonthly": 0.03,
+      "cpuCost": 0.03,
+      "memoryCost": 0.0,
+      "requestCost": 0.0,
+      "estimatedRequests": 1972,
+      "avgLatencyMs": 615,
+      "cpuCores": 1.0,
+      "memoryGiB": 0.5
     }
   },
   {
@@ -1357,11 +1567,16 @@
       ]
     },
     "deployments": {
-      "total": 29,
-      "last24h": 0,
-      "last7d": 29,
-      "lastDeployment": "2025-12-23T21:49:03.854921Z",
+      "total": 30,
+      "last24h": 1,
+      "last7d": 30,
+      "lastDeployment": "2025-12-25T15:18:21.810565Z",
       "recentDeployments": [
+        {
+          "revision": "plasticos-ambientales-00057-wdn",
+          "timestamp": "2025-12-25T15:18:21.810565Z",
+          "status": "True"
+        },
         {
           "revision": "plasticos-ambientales-00056-cvj",
           "timestamp": "2025-12-23T21:49:03.854921Z",
@@ -1381,11 +1596,6 @@
           "revision": "plasticos-ambientales-00053-5n6",
           "timestamp": "2025-12-23T20:27:25.706580Z",
           "status": "True"
-        },
-        {
-          "revision": "plasticos-ambientales-00052-f2t",
-          "timestamp": "2025-12-23T20:15:01.679248Z",
-          "status": "True"
         }
       ]
     },
@@ -1395,8 +1605,18 @@
       "avgLatencyMs": 1188
     },
     "interactions": {
-      "requests7d": 1075,
-      "requests30d": 1075
+      "requests7d": 1080,
+      "requests30d": 1080
+    },
+    "costEstimate": {
+      "estimatedMonthly": 0.03,
+      "cpuCost": 0.03,
+      "memoryCost": 0.0,
+      "requestCost": 0.0,
+      "estimatedRequests": 1080,
+      "avgLatencyMs": 1188,
+      "cpuCores": 1.0,
+      "memoryGiB": 0.5
     }
   },
   {
@@ -1469,6 +1689,16 @@
     "interactions": {
       "requests7d": 4578,
       "requests30d": 4578
+    },
+    "costEstimate": {
+      "estimatedMonthly": 0.09,
+      "cpuCost": 0.08,
+      "memoryCost": 0.0,
+      "requestCost": 0.0,
+      "estimatedRequests": 4578,
+      "avgLatencyMs": 735,
+      "cpuCores": 1.0,
+      "memoryGiB": 0.5
     }
   },
   {
@@ -1499,6 +1729,16 @@
     "interactions": {
       "requests7d": 11,
       "requests30d": 11
+    },
+    "costEstimate": {
+      "estimatedMonthly": 0.0,
+      "cpuCost": 0.0,
+      "memoryCost": 0.0,
+      "requestCost": 0.0,
+      "estimatedRequests": 11,
+      "avgLatencyMs": 313,
+      "cpuCores": 1.0,
+      "memoryGiB": 0.5
     }
   },
   {
@@ -1571,6 +1811,16 @@
     "interactions": {
       "requests7d": 111,
       "requests30d": 111
+    },
+    "costEstimate": {
+      "estimatedMonthly": 0.01,
+      "cpuCost": 0.01,
+      "memoryCost": 0.0,
+      "requestCost": 0.0,
+      "estimatedRequests": 111,
+      "avgLatencyMs": 2405,
+      "cpuCores": 1.0,
+      "memoryGiB": 0.5
     }
   },
   {
@@ -1601,6 +1851,16 @@
     "interactions": {
       "requests7d": 11,
       "requests30d": 11
+    },
+    "costEstimate": {
+      "estimatedMonthly": 0.0,
+      "cpuCost": 0.0,
+      "memoryCost": 0.0,
+      "requestCost": 0.0,
+      "estimatedRequests": 11,
+      "avgLatencyMs": 500,
+      "cpuCores": 1.0,
+      "memoryGiB": 0.25
     }
   },
   {
@@ -1673,6 +1933,16 @@
     "interactions": {
       "requests7d": 305,
       "requests30d": 305
+    },
+    "costEstimate": {
+      "estimatedMonthly": 0.06,
+      "cpuCost": 0.06,
+      "memoryCost": 0.0,
+      "requestCost": 0.0,
+      "estimatedRequests": 305,
+      "avgLatencyMs": 8175,
+      "cpuCores": 1.0,
+      "memoryGiB": 0.5
     }
   },
   {
@@ -1703,6 +1973,16 @@
     "interactions": {
       "requests7d": 10,
       "requests30d": 10
+    },
+    "costEstimate": {
+      "estimatedMonthly": 0.0,
+      "cpuCost": 0.0,
+      "memoryCost": 0.0,
+      "requestCost": 0.0,
+      "estimatedRequests": 10,
+      "avgLatencyMs": 225,
+      "cpuCores": 1.0,
+      "memoryGiB": 1.0
     }
   }
 ]
