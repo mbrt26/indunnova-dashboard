@@ -95,9 +95,9 @@
     "repo": "https://github.com/mbrt26/carnesdelsebastian",
     "repoName": "carnesdelsebastian",
     "errors": {
-      "total": 145,
+      "total": 136,
       "last24h": 31,
-      "last7d": 145,
+      "last7d": 136,
       "recentErrors": [
         {
           "timestamp": "2025-12-25T17:06:17.462549Z",
@@ -281,33 +281,43 @@
     "repo": null,
     "repoName": null,
     "errors": {
-      "total": 23,
-      "last24h": 23,
-      "last7d": 23,
+      "total": 50,
+      "last24h": 50,
+      "last7d": 50,
       "recentErrors": [
         {
-          "timestamp": "2025-12-25T22:00:43.895310Z",
+          "timestamp": "2025-12-25T23:03:03.507825Z",
           "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/core/handlers/exception.py\", line 55, in inner\n    response = get_response(request)\n               ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/core/handlers/base.py\", line 197, ...",
           "severity": "ERROR"
         },
         {
-          "timestamp": "2025-12-25T22:00:43.895165Z",
-          "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 289, in ensure_connection\n    self.connect()\n  File \"/usr/local/lib/python3.11/site-packages/django/utils/asyncio.py\", line 26, in inner\n    return func(*args, **kwargs)\n        ...",
+          "timestamp": "2025-12-25T23:03:03.507705Z",
+          "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/utils.py\", line 89, in _execute\n    return self.cursor.execute(sql, params)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\npsycopg2.errors.UndefinedTable: relation \"auth_user\" does not exist",
           "severity": "ERROR"
         },
         {
-          "timestamp": "2025-12-25T22:00:43.848963Z",
+          "timestamp": "2025-12-25T23:02:55.411442Z",
           "message": "{}",
           "severity": "ERROR"
         }
       ]
     },
     "deployments": {
-      "total": 2,
-      "last24h": 2,
-      "last7d": 2,
-      "lastDeployment": "2025-12-25T22:02:41.625398Z",
+      "total": 4,
+      "last24h": 4,
+      "last7d": 4,
+      "lastDeployment": "2025-12-25T22:21:10.808678Z",
       "recentDeployments": [
+        {
+          "revision": "colorplastic-app-00004-8zk",
+          "timestamp": "2025-12-25T22:21:10.808678Z",
+          "status": "True"
+        },
+        {
+          "revision": "colorplastic-app-00003-tf2",
+          "timestamp": "2025-12-25T22:17:00.522194Z",
+          "status": "True"
+        },
         {
           "revision": "colorplastic-app-00002-4n9",
           "timestamp": "2025-12-25T22:02:41.625398Z",
@@ -321,21 +331,21 @@
       ]
     },
     "metrics": {
-      "errors5xx": 5,
+      "errors5xx": 14,
       "errors4xx": 0,
-      "avgLatencyMs": 416
+      "avgLatencyMs": 1441
     },
     "interactions": {
-      "requests7d": 27,
-      "requests30d": 27
+      "requests7d": 44,
+      "requests30d": 44
     },
     "costEstimate": {
-      "estimatedMonthly": 0.0,
-      "cpuCost": 0.0,
+      "estimatedMonthly": 0.02,
+      "cpuCost": 0.02,
       "memoryCost": 0.0,
       "requestCost": 0.0,
-      "estimatedRequests": 116,
-      "avgLatencyMs": 716,
+      "estimatedRequests": 189,
+      "avgLatencyMs": 1741,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
       "note": "Estimacion incluye cold starts y overhead tipico",
@@ -343,7 +353,7 @@
       "usesConsolidatedDb": false,
       "hasDedicatedDb": false,
       "dedicatedDbName": null,
-      "totalWithSql": 0.0
+      "totalWithSql": 0.02
     }
   },
   {
@@ -422,9 +432,9 @@
     "repo": "https://github.com/mbrt26/ObrajeCRM",
     "repoName": "ObrajeCRM",
     "errors": {
-      "total": 40,
+      "total": 30,
       "last24h": 0,
-      "last7d": 40,
+      "last7d": 30,
       "recentErrors": [
         {
           "timestamp": "2025-12-21T20:30:52.985802Z",
@@ -444,19 +454,14 @@
       ]
     },
     "deployments": {
-      "total": 2,
+      "total": 1,
       "last24h": 0,
-      "last7d": 2,
+      "last7d": 1,
       "lastDeployment": "2025-12-22T01:12:05.870981Z",
       "recentDeployments": [
         {
           "revision": "crm-contenedores-00051-9ct",
           "timestamp": "2025-12-22T01:12:05.870981Z",
-          "status": "True"
-        },
-        {
-          "revision": "crm-contenedores-00050-65b",
-          "timestamp": "2025-12-21T20:34:08.065312Z",
           "status": "True"
         }
       ]
@@ -517,19 +522,14 @@
       ]
     },
     "deployments": {
-      "total": 2,
+      "total": 1,
       "last24h": 0,
-      "last7d": 2,
+      "last7d": 1,
       "lastDeployment": "2025-12-21T22:48:20.826551Z",
       "recentDeployments": [
         {
           "revision": "crm-ecourmet-00021-rgk",
           "timestamp": "2025-12-21T22:48:20.826551Z",
-          "status": "True"
-        },
-        {
-          "revision": "crm-ecourmet-00020-bkx",
-          "timestamp": "2025-12-21T20:23:38.039150Z",
           "status": "True"
         }
       ]
@@ -668,19 +668,14 @@
       ]
     },
     "deployments": {
-      "total": 2,
+      "total": 1,
       "last24h": 0,
-      "last7d": 2,
+      "last7d": 1,
       "lastDeployment": "2025-12-22T00:37:04.960487Z",
       "recentDeployments": [
         {
           "revision": "crm-komsa-00053-9jl",
           "timestamp": "2025-12-22T00:37:04.960487Z",
-          "status": "True"
-        },
-        {
-          "revision": "crm-komsa-00052-6m6",
-          "timestamp": "2025-12-21T20:25:25.586966Z",
           "status": "True"
         }
       ]
@@ -829,9 +824,9 @@
       ]
     },
     "deployments": {
-      "total": 4,
+      "total": 2,
       "last24h": 0,
-      "last7d": 4,
+      "last7d": 2,
       "lastDeployment": "2025-12-22T00:29:16.083252Z",
       "recentDeployments": [
         {
@@ -842,16 +837,6 @@
         {
           "revision": "fundiciones-medellin-00040-njl",
           "timestamp": "2025-12-22T00:25:18.771821Z",
-          "status": "True"
-        },
-        {
-          "revision": "fundiciones-medellin-00039-tjb",
-          "timestamp": "2025-12-21T20:48:35.484217Z",
-          "status": "True"
-        },
-        {
-          "revision": "fundiciones-medellin-00038-7hj",
-          "timestamp": "2025-12-21T20:38:44.898728Z",
           "status": "True"
         }
       ]
@@ -1023,15 +1008,15 @@
       "avgLatencyMs": 541
     },
     "interactions": {
-      "requests7d": 34,
-      "requests30d": 34
+      "requests7d": 33,
+      "requests30d": 33
     },
     "costEstimate": {
       "estimatedMonthly": 0.01,
       "cpuCost": 0.01,
       "memoryCost": 0.0,
       "requestCost": 0.0,
-      "estimatedRequests": 146,
+      "estimatedRequests": 141,
       "avgLatencyMs": 841,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -1279,9 +1264,9 @@
     "repo": "https://github.com/mbrt26/Logiempresas",
     "repoName": "Logiempresas",
     "errors": {
-      "total": 62,
+      "total": 60,
       "last24h": 12,
-      "last7d": 62,
+      "last7d": 60,
       "recentErrors": [
         {
           "timestamp": "2025-12-25T17:11:30.530581Z",
@@ -1526,7 +1511,7 @@
     },
     "deployments": {
       "total": 10,
-      "last24h": 1,
+      "last24h": 0,
       "last7d": 10,
       "lastDeployment": "2025-12-24T22:21:10.780833Z",
       "recentDeployments": [
@@ -1592,7 +1577,7 @@
     "repoName": "NOVAPCR",
     "errors": {
       "total": 31,
-      "last24h": 6,
+      "last24h": 3,
       "last7d": 31,
       "recentErrors": [
         {
@@ -1614,7 +1599,7 @@
     },
     "deployments": {
       "total": 15,
-      "last24h": 3,
+      "last24h": 0,
       "last7d": 15,
       "lastDeployment": "2025-12-24T23:00:27.505158Z",
       "recentDeployments": [
@@ -1651,15 +1636,15 @@
       "avgLatencyMs": 592
     },
     "interactions": {
-      "requests7d": 1888,
-      "requests30d": 1888
+      "requests7d": 1891,
+      "requests30d": 1891
     },
     "costEstimate": {
       "estimatedMonthly": 0.37,
       "cpuCost": 0.35,
       "memoryCost": 0.02,
       "requestCost": 0.0,
-      "estimatedRequests": 8118,
+      "estimatedRequests": 8131,
       "avgLatencyMs": 892,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -1767,9 +1752,9 @@
     "repo": "https://github.com/mbrt26/RGDAire",
     "repoName": "RGDAire",
     "errors": {
-      "total": 117,
+      "total": 114,
       "last24h": 0,
-      "last7d": 117,
+      "last7d": 114,
       "recentErrors": [
         {
           "timestamp": "2025-12-23T13:19:54.233819Z",
@@ -1827,15 +1812,15 @@
       "avgLatencyMs": 735
     },
     "interactions": {
-      "requests7d": 4559,
-      "requests30d": 4559
+      "requests7d": 4535,
+      "requests30d": 4535
     },
     "costEstimate": {
-      "estimatedMonthly": 1.04,
+      "estimatedMonthly": 1.03,
       "cpuCost": 0.97,
       "memoryCost": 0.05,
       "requestCost": 0.01,
-      "estimatedRequests": 19603,
+      "estimatedRequests": 19500,
       "avgLatencyMs": 1035,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -1844,7 +1829,7 @@
       "usesConsolidatedDb": false,
       "hasDedicatedDb": true,
       "dedicatedDbName": "rgd-aire-db",
-      "totalWithSql": 10.41
+      "totalWithSql": 10.4
     }
   },
   {
@@ -2015,7 +2000,7 @@
   {
     "name": "syncmeetings",
     "url": "https://syncmeetings-381877373634.us-central1.run.app",
-    "status": "True",
+    "status": "Unknown",
     "region": "us-central1",
     "repo": null,
     "repoName": null,
@@ -2026,11 +2011,26 @@
       "recentErrors": []
     },
     "deployments": {
-      "total": 10,
-      "last24h": 10,
-      "last7d": 10,
-      "lastDeployment": "2025-12-25T22:01:22.300512Z",
+      "total": 13,
+      "last24h": 13,
+      "last7d": 13,
+      "lastDeployment": "2025-12-25T23:03:13.974802Z",
       "recentDeployments": [
+        {
+          "revision": "syncmeetings-00013-nod",
+          "timestamp": "2025-12-25T23:03:13.974802Z",
+          "status": "Unknown"
+        },
+        {
+          "revision": "syncmeetings-00012-kop",
+          "timestamp": "2025-12-25T22:17:41.661948Z",
+          "status": "True"
+        },
+        {
+          "revision": "syncmeetings-00011-ruz",
+          "timestamp": "2025-12-25T22:07:29.955834Z",
+          "status": "True"
+        },
         {
           "revision": "syncmeetings-00010-wof",
           "timestamp": "2025-12-25T22:01:22.300512Z",
@@ -2039,21 +2039,6 @@
         {
           "revision": "syncmeetings-00009-pej",
           "timestamp": "2025-12-25T21:58:58.484579Z",
-          "status": "True"
-        },
-        {
-          "revision": "syncmeetings-00008-yeh",
-          "timestamp": "2025-12-25T21:54:44.848481Z",
-          "status": "True"
-        },
-        {
-          "revision": "syncmeetings-00007-kah",
-          "timestamp": "2025-12-25T21:50:51.030640Z",
-          "status": "True"
-        },
-        {
-          "revision": "syncmeetings-00006-vek",
-          "timestamp": "2025-12-25T21:46:31.706204Z",
           "status": "True"
         }
       ]
@@ -2064,15 +2049,15 @@
       "avgLatencyMs": 0
     },
     "interactions": {
-      "requests7d": 11,
-      "requests30d": 11
+      "requests7d": 16,
+      "requests30d": 16
     },
     "costEstimate": {
       "estimatedMonthly": 0.0,
       "cpuCost": 0.0,
       "memoryCost": 0.0,
       "requestCost": 0.0,
-      "estimatedRequests": 47,
+      "estimatedRequests": 68,
       "avgLatencyMs": 650,
       "cpuCores": 0.3333,
       "memoryGiB": 0.5,
