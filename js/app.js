@@ -48,11 +48,9 @@ async function loadData() {
         document.getElementById('lastUpdate').textContent = `Ultima actualizacion: ${formatDate(metaData.lastUpdate)}`;
 
         // Render everything
-        console.log('About to render all components...');
         updateSummary();
         updateMetrics();
         renderDailyErrorsChart();
-        console.log('About to call renderUsageHeatmap...');
         renderUsageHeatmap();
         renderRecentDeployments();
         renderServices();
@@ -150,24 +148,14 @@ function renderDailyErrorsChart() {
 }
 
 function renderUsageHeatmap() {
-    console.log('renderUsageHeatmap called');
     const container = document.getElementById('usageHeatmap');
-    console.log('usageHeatmap container:', container);
-    if (!container) {
-        console.log('Container not found, returning early');
-        return;
-    }
+    if (!container) return;
 
     try {
-        console.log('servicesData length:', servicesData.length);
-        console.log('servicesData sample:', servicesData[0]);
-
         // Sort services by usage (requests30d)
         const sortedServices = servicesData
             .filter(s => s && s.interactions)
             .sort((a, b) => (b.interactions.requests30d || 0) - (a.interactions.requests30d || 0));
-
-        console.log('sortedServices length:', sortedServices.length);
 
         if (sortedServices.length === 0) {
             container.innerHTML = '<div class="no-data">No hay datos de uso disponibles</div>';
@@ -359,6 +347,7 @@ function renderServices() {
         const lastDeploy = service.deployments?.lastDeployment;
         const requests7d = service.interactions?.requests7d || 0;
         const requests30d = service.interactions?.requests30d || 0;
+        const estimatedCost = service.costEstimate?.estimatedMonthly || 0;
 
         return `
         <div class="${cardClass}">
@@ -376,11 +365,11 @@ function renderServices() {
                 ${service.repo ? `<span>📦 <a href="${service.repo}" target="_blank" style="color: inherit;">${service.repoName || extractRepoName(service.repo)}</a></span>` : ''}
             </div>
             <div class="service-metrics">
-                <div class="service-metric interactions">
-                    <span class="service-metric-value">${formatNumber(requests7d)}</span>
-                    <span class="service-metric-label">Visitas 7d</span>
+                <div class="service-metric cost">
+                    <span class="service-metric-value">$${estimatedCost.toFixed(2)}</span>
+                    <span class="service-metric-label">Costo/mes</span>
                 </div>
-                <div class="service-metric interactions-30d">
+                <div class="service-metric interactions">
                     <span class="service-metric-value">${formatNumber(requests30d)}</span>
                     <span class="service-metric-label">Visitas 30d</span>
                 </div>
@@ -436,6 +425,37 @@ function showServiceDetails(serviceName) {
                     <span class="interaction-value" style="color: #8B5CF6;">${formatNumber(requests30d)}</span>
                     <span class="interaction-label">Visitas ultimos 30 dias</span>
                 </div>
+            </div>
+        </div>
+    `;
+
+    // Estimación de costos
+    const costEstimate = service.costEstimate || {};
+    html += `
+        <div class="modal-section">
+            <h4>Estimacion de Costos Mensual</h4>
+            <div class="cost-breakdown">
+                <div class="cost-total">
+                    <span class="cost-value" style="color: #10B981; font-size: 1.5rem;">$${(costEstimate.estimatedMonthly || 0).toFixed(2)}</span>
+                    <span class="cost-label">Total Estimado/Mes</span>
+                </div>
+                <div class="cost-details">
+                    <div class="cost-item">
+                        <span class="cost-item-label">CPU (${costEstimate.cpuCores || 1} vCPU)</span>
+                        <span class="cost-item-value">$${(costEstimate.cpuCost || 0).toFixed(2)}</span>
+                    </div>
+                    <div class="cost-item">
+                        <span class="cost-item-label">Memoria (${(costEstimate.memoryGiB || 0.5).toFixed(2)} GiB)</span>
+                        <span class="cost-item-value">$${(costEstimate.memoryCost || 0).toFixed(2)}</span>
+                    </div>
+                    <div class="cost-item">
+                        <span class="cost-item-label">Requests (${formatNumber(costEstimate.estimatedRequests || 0)})</span>
+                        <span class="cost-item-value">$${(costEstimate.requestCost || 0).toFixed(2)}</span>
+                    </div>
+                </div>
+                <p class="cost-note" style="font-size: 0.75rem; color: var(--text-secondary); margin-top: 0.5rem;">
+                    * Estimacion basada en uso actual. No incluye tier gratuito.
+                </p>
             </div>
         </div>
     `;

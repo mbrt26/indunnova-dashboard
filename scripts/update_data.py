@@ -327,6 +327,108 @@ def get_user_interactions():
 
     return dict(interactions_by_service)
 
+def get_service_configurations():
+    """Obtiene la configuración de CPU y memoria de cada servicio para estimar costos."""
+    cmd = 'gcloud run services list --format="json" 2>/dev/null'
+    output = run_command(cmd)
+
+    if not output:
+        return {}
+
+    try:
+        data = json.loads(output)
+        configs = {}
+
+        for svc in data:
+            name = svc['metadata']['name']
+            spec = svc.get('spec', {}).get('template', {}).get('spec', {})
+            containers = spec.get('containers', [{}])
+
+            if containers:
+                resources = containers[0].get('resources', {}).get('limits', {})
+                cpu = resources.get('cpu', '1')
+                memory = resources.get('memory', '512Mi')
+
+                # Convertir CPU a número
+                if cpu.endswith('m'):
+                    cpu_cores = float(cpu.rstrip('m')) / 1000
+                else:
+                    cpu_cores = float(cpu)
+
+                # Convertir memoria a GiB
+                if memory.endswith('Gi'):
+                    memory_gib = float(memory.rstrip('Gi'))
+                elif memory.endswith('Mi'):
+                    memory_gib = float(memory.rstrip('Mi')) / 1024
+                elif memory.endswith('G'):
+                    memory_gib = float(memory.rstrip('G'))
+                elif memory.endswith('M'):
+                    memory_gib = float(memory.rstrip('M')) / 1024
+                else:
+                    memory_gib = 0.5  # Default
+
+                configs[name] = {
+                    'cpu': cpu_cores,
+                    'memoryGiB': memory_gib,
+                    'cpuRaw': cpu,
+                    'memoryRaw': memory
+                }
+
+        return configs
+    except json.JSONDecodeError as e:
+        print(f"Error parseando configuración de servicios: {e}")
+        return {}
+
+
+def estimate_monthly_cost(config, interactions, avg_latency_ms):
+    """
+    Estima el costo mensual de un servicio Cloud Run.
+
+    Precios de Cloud Run (us-central1):
+    - CPU: $0.00002400 por vCPU-segundo
+    - Memoria: $0.00000250 por GiB-segundo
+    - Requests: $0.40 por millón de requests
+    - Tier gratuito: 2 millones de requests, 360,000 vCPU-segundos, 180,000 GiB-segundos
+    """
+    CPU_PRICE_PER_VCPU_SECOND = 0.00002400
+    MEMORY_PRICE_PER_GIB_SECOND = 0.00000250
+    REQUEST_PRICE_PER_MILLION = 0.40
+
+    # Estimar requests mensuales (30 días) basado en datos de 30d
+    requests_30d = interactions.get('requests30d', 0)
+    # Proyectar a mes completo si tenemos menos de 30 días de datos
+    estimated_monthly_requests = requests_30d
+
+    # Estimar tiempo de ejecución
+    # Usar latencia promedio, o asumir 500ms si no hay datos
+    if avg_latency_ms <= 0:
+        avg_latency_ms = 500  # Default 500ms por request
+
+    # Tiempo total de ejecución en segundos
+    # Considerando que Cloud Run cobra mínimo 100ms por request
+    min_billable_ms = max(avg_latency_ms, 100)
+    total_execution_seconds = (estimated_monthly_requests * min_billable_ms) / 1000
+
+    # Costos
+    cpu_cost = config.get('cpu', 1) * total_execution_seconds * CPU_PRICE_PER_VCPU_SECOND
+    memory_cost = config.get('memoryGiB', 0.5) * total_execution_seconds * MEMORY_PRICE_PER_GIB_SECOND
+    request_cost = (estimated_monthly_requests / 1_000_000) * REQUEST_PRICE_PER_MILLION
+
+    # Total
+    total_cost = cpu_cost + memory_cost + request_cost
+
+    return {
+        'estimatedMonthly': round(total_cost, 2),
+        'cpuCost': round(cpu_cost, 2),
+        'memoryCost': round(memory_cost, 2),
+        'requestCost': round(request_cost, 2),
+        'estimatedRequests': estimated_monthly_requests,
+        'avgLatencyMs': avg_latency_ms,
+        'cpuCores': config.get('cpu', 1),
+        'memoryGiB': config.get('memoryGiB', 0.5)
+    }
+
+
 def get_all_errors_detailed():
     """Obtiene todos los errores detallados de los últimos 7 días."""
     cmd = '''gcloud logging read 'resource.type="cloud_run_revision" AND severity>=ERROR' --limit=2000 --format="json" --freshness=7d 2>/dev/null'''
@@ -450,6 +552,10 @@ def main():
     user_interactions = get_user_interactions()
     print(f"  Servicios con interacciones: {len(user_interactions)}")
 
+    print("Obteniendo configuración de servicios para estimar costos...")
+    service_configs = get_service_configurations()
+    print(f"  Servicios con configuración: {len(service_configs)}")
+
     print("Obteniendo repositorios de GitHub...")
     repos = get_github_repos()
     print(f"  Encontrados {len(repos)} repositorios")
@@ -483,6 +589,19 @@ def main():
             'requests7d': 0,
             'requests30d': 0
         })
+
+        # Calcular estimación de costos
+        config = service_configs.get(name, {'cpu': 1, 'memoryGiB': 0.5})
+        avg_latency = service['metrics'].get('avgLatencyMs', 0)
+        service['costEstimate'] = estimate_monthly_cost(
+            config,
+            service['interactions'],
+            avg_latency
+        )
+
+    # Calcular costo total estimado
+    total_estimated_cost = sum(s['costEstimate']['estimatedMonthly'] for s in services)
+    print(f"\n  Costo mensual estimado total: ${total_estimated_cost:.2f}")
 
     # Guardar datos
     services_path = os.path.join(data_dir, 'services.json')

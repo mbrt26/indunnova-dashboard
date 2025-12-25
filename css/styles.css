@@ -580,6 +580,55 @@ a.metric-card.clickable:hover {
     color: #8B5CF6;
 }
 
+.service-metric.cost .service-metric-value {
+    color: #10B981;
+    font-weight: 600;
+}
+
+/* Cost breakdown in modal */
+.cost-breakdown {
+    background: var(--bg-color);
+    border-radius: 0.75rem;
+    padding: 1rem;
+}
+
+.cost-total {
+    text-align: center;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 0.75rem;
+}
+
+.cost-value {
+    display: block;
+    font-weight: 700;
+}
+
+.cost-label {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+}
+
+.cost-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.cost-item {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.875rem;
+}
+
+.cost-item-label {
+    color: var(--text-secondary);
+}
+
+.cost-item-value {
+    font-weight: 500;
+}
+
 .service-actions {
     margin-top: 0.75rem;
 }
