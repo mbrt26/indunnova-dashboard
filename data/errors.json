@@ -1,5 +1,115 @@
 [
   {
+    "id": "694d6d8d00020ea5efcbe47b",
+    "service": "carnesdelsebastian",
+    "revision": "carnesdelsebastian-00252-wwj",
+    "timestamp": "2025-12-25T16:59:57.134821Z",
+    "severity": "ERROR",
+    "message": "Traceback (most recent call last):\n  File \"/app/manage.py\", line 22, in <module>\n    main()\n  File \"/app/manage.py\", line 18, in main\n    execute_from_command_line(sys.argv)\n  File \"/usr/local/lib/python3.11/site-packages/django/core/management/__init__.py\", line 442, in execute_from_command_line\n    utility.execute()\n  File \"/usr/local/lib/python3.11/site-packages/django/core/management/__init__.py\", line 436, in execute\n    self.fetch_command(subcommand).run_from_argv(self.argv)\n  File \"/usr/local/lib/python3.11/site-packages/django/core/management/base.py\", line 412, in run_from_argv\n    self.execute(*args, **cmd_options)\n  File \"/usr/local/lib/python3.11/site-packages/django/core/management/base.py\", line 458, in execute\n    output = self.handle(*args, **options)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/core/management/base.py\", line 106, in wrapper\n    res = handle_func(*args, **kwargs)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/core/management/commands/migrate.py\", line 117, in handle\n    executor = MigrationExecutor(connection, self.migration_progress_callback)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/migrations/executor.py\", line 18, in __init__\n    self.loader = MigrationLoader(self.connection)\n                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/migrations/loader.py\", line 58, in __init__\n    self.build_graph()\n  File \"/usr/local/lib/python3.11/site-packages/django/db/migrations/loader.py\", line 235, in build_graph\n    self.applied_migrations = recorder.applied_migrations()\n                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/migrations/recorder.py\", line 82, in applied_migrations\n    return {\n           ^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/models/query.py\", line 398, in __iter__\n    self._fetch_all()\n  File \"/usr/local/lib/python3.11/site-packages/django/db/models/query.py\", line 1881, in _fetch_all\n    self._result_cache = list(self._iterable_class(self))\n                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/models/query.py\", line 91, in __iter__\n    results = compiler.execute_sql(\n              ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/models/sql/compiler.py\", line 1562, in execute_sql\n    cursor.execute(sql, params)\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/utils.py\", line 67, in execute\n    return self._execute_with_wrappers(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/utils.py\", line 80, in _execute_with_wrappers\n    return executor(sql, params, many, context)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/utils.py\", line 84, in _execute\n    with self.db.wrap_database_errors:\n  File \"/usr/local/lib/python3.11/site-packages/django/db/utils.py\", line 91, in __exit__\n    raise dj_exc_value.with_traceback(traceback) from exc_value\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/utils.py\", line 89, in _execute\n    return self.cursor.execute(sql, params)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\ndjango.db.utils.ProgrammingError: permission denied for table django_migrations",
+    "httpRequest": null,
+    "trace": "",
+    "spanId": ""
+  },
+  {
+    "id": "694d6d8d0001cd372536b8a8",
+    "service": "carnesdelsebastian",
+    "revision": "carnesdelsebastian-00252-wwj",
+    "timestamp": "2025-12-25T16:59:57.118071Z",
+    "severity": "ERROR",
+    "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/utils.py\", line 89, in _execute\n    return self.cursor.execute(sql, params)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\npsycopg2.errors.InsufficientPrivilege: permission denied for table django_migrations",
+    "httpRequest": null,
+    "trace": "",
+    "spanId": ""
+  },
+  {
+    "id": "694d6d7e0001137b0d176949",
+    "service": "carnesdelsebastian",
+    "revision": "carnesdelsebastian-00252-wwj",
+    "timestamp": "2025-12-25T16:59:42.070523Z",
+    "severity": "ERROR",
+    "message": "Traceback (most recent call last):\n  File \"/app/manage.py\", line 22, in <module>\n    main()\n  File \"/app/manage.py\", line 18, in main\n    execute_from_command_line(sys.argv)\n  File \"/usr/local/lib/python3.11/site-packages/django/core/management/__init__.py\", line 442, in execute_from_command_line\n    utility.execute()\n  File \"/usr/local/lib/python3.11/site-packages/django/core/management/__init__.py\", line 436, in execute\n    self.fetch_command(subcommand).run_from_argv(self.argv)\n  File \"/usr/local/lib/python3.11/site-packages/django/core/management/base.py\", line 412, in run_from_argv\n    self.execute(*args, **cmd_options)\n  File \"/usr/local/lib/python3.11/site-packages/django/core/management/base.py\", line 458, in execute\n    output = self.handle(*args, **options)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/core/management/base.py\", line 106, in wrapper\n    res = handle_func(*args, **kwargs)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/core/management/commands/migrate.py\", line 117, in handle\n    executor = MigrationExecutor(connection, self.migration_progress_callback)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/migrations/executor.py\", line 18, in __init__\n    self.loader = MigrationLoader(self.connection)\n                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/migrations/loader.py\", line 58, in __init__\n    self.build_graph()\n  File \"/usr/local/lib/python3.11/site-packages/django/db/migrations/loader.py\", line 235, in build_graph\n    self.applied_migrations = recorder.applied_migrations()\n                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/migrations/recorder.py\", line 82, in applied_migrations\n    return {\n           ^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/models/query.py\", line 398, in __iter__\n    self._fetch_all()\n  File \"/usr/local/lib/python3.11/site-packages/django/db/models/query.py\", line 1881, in _fetch_all\n    self._result_cache = list(self._iterable_class(self))\n                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/models/query.py\", line 91, in __iter__\n    results = compiler.execute_sql(\n              ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/models/sql/compiler.py\", line 1562, in execute_sql\n    cursor.execute(sql, params)\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/utils.py\", line 67, in execute\n    return self._execute_with_wrappers(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/utils.py\", line 80, in _execute_with_wrappers\n    return executor(sql, params, many, context)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/utils.py\", line 84, in _execute\n    with self.db.wrap_database_errors:\n  File \"/usr/local/lib/python3.11/site-packages/django/db/utils.py\", line 91, in __exit__\n    raise dj_exc_value.with_traceback(traceback) from exc_value\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/utils.py\", line 89, in _execute\n    return self.cursor.execute(sql, params)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\ndjango.db.utils.ProgrammingError: permission denied for table django_migrations",
+    "httpRequest": null,
+    "trace": "",
+    "spanId": ""
+  },
+  {
+    "id": "694d6d7e0000c6eeb310ca4d",
+    "service": "carnesdelsebastian",
+    "revision": "carnesdelsebastian-00252-wwj",
+    "timestamp": "2025-12-25T16:59:42.050926Z",
+    "severity": "ERROR",
+    "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/utils.py\", line 89, in _execute\n    return self.cursor.execute(sql, params)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\npsycopg2.errors.InsufficientPrivilege: permission denied for table django_migrations",
+    "httpRequest": null,
+    "trace": "",
+    "spanId": ""
+  },
+  {
+    "id": "694d6d6e00052aa6bd2f34f2",
+    "service": "carnesdelsebastian",
+    "revision": "carnesdelsebastian-00252-wwj",
+    "timestamp": "2025-12-25T16:59:26.338598Z",
+    "severity": "ERROR",
+    "message": "Traceback (most recent call last):\n  File \"/app/manage.py\", line 22, in <module>\n    main()\n  File \"/app/manage.py\", line 18, in main\n    execute_from_command_line(sys.argv)\n  File \"/usr/local/lib/python3.11/site-packages/django/core/management/__init__.py\", line 442, in execute_from_command_line\n    utility.execute()\n  File \"/usr/local/lib/python3.11/site-packages/django/core/management/__init__.py\", line 436, in execute\n    self.fetch_command(subcommand).run_from_argv(self.argv)\n  File \"/usr/local/lib/python3.11/site-packages/django/core/management/base.py\", line 412, in run_from_argv\n    self.execute(*args, **cmd_options)\n  File \"/usr/local/lib/python3.11/site-packages/django/core/management/base.py\", line 458, in execute\n    output = self.handle(*args, **options)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/core/management/base.py\", line 106, in wrapper\n    res = handle_func(*args, **kwargs)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/core/management/commands/migrate.py\", line 117, in handle\n    executor = MigrationExecutor(connection, self.migration_progress_callback)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/migrations/executor.py\", line 18, in __init__\n    self.loader = MigrationLoader(self.connection)\n                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/migrations/loader.py\", line 58, in __init__\n    self.build_graph()\n  File \"/usr/local/lib/python3.11/site-packages/django/db/migrations/loader.py\", line 235, in build_graph\n    self.applied_migrations = recorder.applied_migrations()\n                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/migrations/recorder.py\", line 82, in applied_migrations\n    return {\n           ^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/models/query.py\", line 398, in __iter__\n    self._fetch_all()\n  File \"/usr/local/lib/python3.11/site-packages/django/db/models/query.py\", line 1881, in _fetch_all\n    self._result_cache = list(self._iterable_class(self))\n                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/models/query.py\", line 91, in __iter__\n    results = compiler.execute_sql(\n              ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/models/sql/compiler.py\", line 1562, in execute_sql\n    cursor.execute(sql, params)\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/utils.py\", line 67, in execute\n    return self._execute_with_wrappers(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/utils.py\", line 80, in _execute_with_wrappers\n    return executor(sql, params, many, context)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/utils.py\", line 84, in _execute\n    with self.db.wrap_database_errors:\n  File \"/usr/local/lib/python3.11/site-packages/django/db/utils.py\", line 91, in __exit__\n    raise dj_exc_value.with_traceback(traceback) from exc_value\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/utils.py\", line 89, in _execute\n    return self.cursor.execute(sql, params)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\ndjango.db.utils.ProgrammingError: permission denied for table django_migrations",
+    "httpRequest": null,
+    "trace": "",
+    "spanId": ""
+  },
+  {
+    "id": "694d6d6e00041cba9d510bea",
+    "service": "carnesdelsebastian",
+    "revision": "carnesdelsebastian-00252-wwj",
+    "timestamp": "2025-12-25T16:59:26.269498Z",
+    "severity": "ERROR",
+    "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/utils.py\", line 89, in _execute\n    return self.cursor.execute(sql, params)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\npsycopg2.errors.InsufficientPrivilege: permission denied for table django_migrations",
+    "httpRequest": null,
+    "trace": "",
+    "spanId": ""
+  },
+  {
+    "id": "694d6785000806b419e0d12b",
+    "service": "logiempresas",
+    "revision": "logiempresas-00111-sls",
+    "timestamp": "2025-12-25T16:34:13.526004Z",
+    "severity": "ERROR",
+    "message": "Traceback (most recent call last):\n  File \"/app/manage.py\", line 22, in <module>\n    main()\n  File \"/app/manage.py\", line 18, in main\n    execute_from_command_line(sys.argv)\n  File \"/usr/local/lib/python3.11/site-packages/django/core/management/__init__.py\", line 442, in execute_from_command_line\n    utility.execute()\n  File \"/usr/local/lib/python3.11/site-packages/django/core/management/__init__.py\", line 436, in execute\n    self.fetch_command(subcommand).run_from_argv(self.argv)\n  File \"/usr/local/lib/python3.11/site-packages/django/core/management/base.py\", line 412, in run_from_argv\n    self.execute(*args, **cmd_options)\n  File \"/usr/local/lib/python3.11/site-packages/django/core/management/base.py\", line 458, in execute\n    output = self.handle(*args, **options)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/core/management/base.py\", line 106, in wrapper\n    res = handle_func(*args, **kwargs)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/core/management/commands/migrate.py\", line 356, in handle\n    post_migrate_state = executor.migrate(\n                         ^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/migrations/executor.py\", line 135, in migrate\n    state = self._migrate_all_forwards(\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/migrations/executor.py\", line 167, in _migrate_all_forwards\n    state = self.apply_migration(\n            ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/migrations/executor.py\", line 252, in apply_migration\n    state = migration.apply(state, schema_editor)\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/migrations/migration.py\", line 132, in apply\n    operation.database_forwards(\n  File \"/usr/local/lib/python3.11/site-packages/django/db/migrations/operations/models.py\", line 96, in database_forwards\n    schema_editor.create_model(model)\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/schema.py\", line 451, in create_model\n    self.execute(sql, params or None)\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/postgresql/schema.py\", line 45, in execute\n    return super().execute(sql, params)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/schema.py\", line 201, in execute\n    cursor.execute(sql, params)\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/utils.py\", line 67, in execute\n    return self._execute_with_wrappers(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/utils.py\", line 80, in _execute_with_wrappers\n    return executor(sql, params, many, context)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/utils.py\", line 84, in _execute\n    with self.db.wrap_database_errors:\n  File \"/usr/local/lib/python3.11/site-packages/django/db/utils.py\", line 91, in __exit__\n    raise dj_exc_value.with_traceback(traceback) from exc_value\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/utils.py\", line 87, in _execute\n    return self.cursor.execute(sql)\n           ^^^^^^^^^^^^^^^^^^^^^^^^\ndjango.db.utils.ProgrammingError: relation \"notificaciones_configuracionnotificacion\" already exists",
+    "httpRequest": null,
+    "trace": "",
+    "spanId": ""
+  },
+  {
+    "id": "694d678500078ff738fe2426",
+    "service": "logiempresas",
+    "revision": "logiempresas-00111-sls",
+    "timestamp": "2025-12-25T16:34:13.495607Z",
+    "severity": "ERROR",
+    "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/utils.py\", line 87, in _execute\n    return self.cursor.execute(sql)\n           ^^^^^^^^^^^^^^^^^^^^^^^^\npsycopg2.errors.DuplicateTable: relation \"notificaciones_configuracionnotificacion\" already exists",
+    "httpRequest": null,
+    "trace": "",
+    "spanId": ""
+  },
+  {
+    "id": "694d65770006eaf6c1ea1a05",
+    "service": "logiempresas",
+    "revision": "logiempresas-00110-f4g",
+    "timestamp": "2025-12-25T16:25:27.453366Z",
+    "severity": "ERROR",
+    "message": "Traceback (most recent call last):\n  File \"/app/manage.py\", line 22, in <module>\n    main()\n  File \"/app/manage.py\", line 18, in main\n    execute_from_command_line(sys.argv)\n  File \"/usr/local/lib/python3.11/site-packages/django/core/management/__init__.py\", line 442, in execute_from_command_line\n    utility.execute()\n  File \"/usr/local/lib/python3.11/site-packages/django/core/management/__init__.py\", line 436, in execute\n    self.fetch_command(subcommand).run_from_argv(self.argv)\n  File \"/usr/local/lib/python3.11/site-packages/django/core/management/base.py\", line 412, in run_from_argv\n    self.execute(*args, **cmd_options)\n  File \"/usr/local/lib/python3.11/site-packages/django/core/management/base.py\", line 458, in execute\n    output = self.handle(*args, **options)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/core/management/base.py\", line 106, in wrapper\n    res = handle_func(*args, **kwargs)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/core/management/commands/migrate.py\", line 356, in handle\n    post_migrate_state = executor.migrate(\n                         ^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/migrations/executor.py\", line 135, in migrate\n    state = self._migrate_all_forwards(\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/migrations/executor.py\", line 167, in _migrate_all_forwards\n    state = self.apply_migration(\n            ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/migrations/executor.py\", line 252, in apply_migration\n    state = migration.apply(state, schema_editor)\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/migrations/migration.py\", line 132, in apply\n    operation.database_forwards(\n  File \"/usr/local/lib/python3.11/site-packages/django/db/migrations/operations/models.py\", line 96, in database_forwards\n    schema_editor.create_model(model)\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/schema.py\", line 451, in create_model\n    self.execute(sql, params or None)\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/postgresql/schema.py\", line 45, in execute\n    return super().execute(sql, params)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/schema.py\", line 201, in execute\n    cursor.execute(sql, params)\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/utils.py\", line 67, in execute\n    return self._execute_with_wrappers(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/utils.py\", line 80, in _execute_with_wrappers\n    return executor(sql, params, many, context)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/utils.py\", line 84, in _execute\n    with self.db.wrap_database_errors:\n  File \"/usr/local/lib/python3.11/site-packages/django/db/utils.py\", line 91, in __exit__\n    raise dj_exc_value.with_traceback(traceback) from exc_value\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/utils.py\", line 87, in _execute\n    return self.cursor.execute(sql)\n           ^^^^^^^^^^^^^^^^^^^^^^^^\ndjango.db.utils.ProgrammingError: relation \"notificaciones_configuracionnotificacion\" already exists",
+    "httpRequest": null,
+    "trace": "",
+    "spanId": ""
+  },
+  {
+    "id": "694d65770006971a814ca3c6",
+    "service": "logiempresas",
+    "revision": "logiempresas-00110-f4g",
+    "timestamp": "2025-12-25T16:25:27.431898Z",
+    "severity": "ERROR",
+    "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/utils.py\", line 87, in _execute\n    return self.cursor.execute(sql)\n           ^^^^^^^^^^^^^^^^^^^^^^^^\npsycopg2.errors.DuplicateTable: relation \"notificaciones_configuracionnotificacion\" already exists",
+    "httpRequest": null,
+    "trace": "",
+    "spanId": ""
+  },
+  {
     "id": "694d60fc000b192f997532db",
     "service": "logiempresas",
     "revision": "logiempresas-00110-f4g",
