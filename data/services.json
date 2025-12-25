@@ -1,7 +1,7 @@
 [
   {
     "name": "arcopack-erp",
-    "url": "https://arcopack-erp-rvfp6uj2va-uc.a.run.app",
+    "url": "https://arcopack-erp-381877373634.us-central1.run.app",
     "status": "True",
     "region": "us-central1",
     "repo": "https://github.com/mbrt26/Arcopack",
@@ -69,7 +69,7 @@
   },
   {
     "name": "carnes-sebastian",
-    "url": "https://carnes-sebastian-rvfp6uj2va-uc.a.run.app",
+    "url": "https://carnes-sebastian-381877373634.us-central1.run.app",
     "status": "True",
     "region": "us-central1",
     "repo": "https://github.com/mbrt26/carnesdelsebastian",
@@ -106,7 +106,7 @@
   },
   {
     "name": "carnes-sebastian-staging",
-    "url": "https://carnes-sebastian-staging-rvfp6uj2va-uc.a.run.app",
+    "url": "https://carnes-sebastian-staging-381877373634.us-central1.run.app",
     "status": "True",
     "region": "us-central1",
     "repo": "https://github.com/mbrt26/carnesdelsebastian",
@@ -148,39 +148,44 @@
   },
   {
     "name": "carnesdelsebastian",
-    "url": "https://carnesdelsebastian-rvfp6uj2va-uc.a.run.app",
+    "url": "https://carnesdelsebastian-381877373634.us-central1.run.app",
     "status": "True",
     "region": "us-central1",
     "repo": "https://github.com/mbrt26/carnesdelsebastian",
     "repoName": "carnesdelsebastian",
     "errors": {
-      "total": 120,
-      "last24h": 15,
-      "last7d": 120,
+      "total": 125,
+      "last24h": 11,
+      "last7d": 125,
       "recentErrors": [
         {
-          "timestamp": "2025-12-24T23:30:31.268417Z",
-          "message": "Traceback (most recent call last):\n  File \"/app/manage.py\", line 22, in <module>\n    main()\n  File \"/app/manage.py\", line 18, in main\n    execute_from_command_line(sys.argv)\n  File \"/usr/local/lib/python3.11/site-packages/django/core/management/__init__.py\", line 442, in execute_from_command_line\n  ...",
+          "timestamp": "2025-12-25T14:36:53.255760Z",
+          "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/core/handlers/exception.py\", line 55, in inner\n    response = get_response(request)\n               ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/core/handlers/base.py\", line 197, ...",
           "severity": "ERROR"
         },
         {
-          "timestamp": "2025-12-24T23:30:13.949793Z",
-          "message": "Traceback (most recent call last):\n  File \"/app/manage.py\", line 22, in <module>\n    main()\n  File \"/app/manage.py\", line 18, in main\n    execute_from_command_line(sys.argv)\n  File \"/usr/local/lib/python3.11/site-packages/django/core/management/__init__.py\", line 442, in execute_from_command_line\n  ...",
+          "timestamp": "2025-12-25T14:36:53.118169Z",
+          "message": "{}",
           "severity": "ERROR"
         },
         {
-          "timestamp": "2025-12-24T23:29:55.990861Z",
+          "timestamp": "2025-12-25T14:17:47.203083Z",
           "message": "Traceback (most recent call last):\n  File \"/app/manage.py\", line 22, in <module>\n    main()\n  File \"/app/manage.py\", line 18, in main\n    execute_from_command_line(sys.argv)\n  File \"/usr/local/lib/python3.11/site-packages/django/core/management/__init__.py\", line 442, in execute_from_command_line\n  ...",
           "severity": "ERROR"
         }
       ]
     },
     "deployments": {
-      "total": 8,
-      "last24h": 0,
-      "last7d": 8,
-      "lastDeployment": "2025-12-22T23:56:57.584645Z",
+      "total": 9,
+      "last24h": 1,
+      "last7d": 9,
+      "lastDeployment": "2025-12-25T14:16:23.264465Z",
       "recentDeployments": [
+        {
+          "revision": "carnesdelsebastian-00248-rtj",
+          "timestamp": "2025-12-25T14:16:23.264465Z",
+          "status": "True"
+        },
         {
           "revision": "carnesdelsebastian-00247-ncd",
           "timestamp": "2025-12-22T23:56:57.584645Z",
@@ -200,49 +205,18 @@
           "revision": "carnesdelsebastian-00244-jcf",
           "timestamp": "2025-12-22T01:10:55.245960Z",
           "status": "True"
-        },
-        {
-          "revision": "carnesdelsebastian-00243-b8m",
-          "timestamp": "2025-12-21T22:27:44.839370Z",
-          "status": "True"
         }
       ]
     },
     "metrics": {
-      "errors5xx": 12,
+      "errors5xx": 13,
       "errors4xx": 0,
-      "avgLatencyMs": 155
-    }
-  },
-  {
-    "name": "carnesdelsebastian-staging",
-    "url": "https://carnesdelsebastian-staging-rvfp6uj2va-uc.a.run.app",
-    "status": "True",
-    "region": "us-central1",
-    "repo": "https://github.com/mbrt26/carnesdelsebastian",
-    "repoName": "carnesdelsebastian",
-    "errors": {
-      "total": 0,
-      "last24h": 0,
-      "last7d": 0,
-      "recentErrors": []
-    },
-    "deployments": {
-      "total": 0,
-      "last24h": 0,
-      "last7d": 0,
-      "lastDeployment": null,
-      "recentDeployments": []
-    },
-    "metrics": {
-      "errors5xx": 0,
-      "errors4xx": 0,
-      "avgLatencyMs": 0
+      "avgLatencyMs": 153
     }
   },
   {
     "name": "chatbot",
-    "url": "https://chatbot-rvfp6uj2va-uc.a.run.app",
+    "url": "https://chatbot-381877373634.us-central1.run.app",
     "status": "True",
     "region": "us-central1",
     "repo": null,
@@ -268,7 +242,7 @@
   },
   {
     "name": "codeta-crm",
-    "url": "https://codeta-crm-rvfp6uj2va-uc.a.run.app",
+    "url": "https://codeta-crm-381877373634.us-central1.run.app",
     "status": "True",
     "region": "us-central1",
     "repo": "https://github.com/mbrt26/CODETA",
@@ -300,7 +274,7 @@
   },
   {
     "name": "colsegur",
-    "url": "https://colsegur-rvfp6uj2va-uc.a.run.app",
+    "url": "https://colsegur-381877373634.us-central1.run.app",
     "status": "True",
     "region": "us-central1",
     "repo": "https://github.com/mbrt26/Colsegur",
@@ -363,7 +337,7 @@
   },
   {
     "name": "creaciones-apice",
-    "url": "https://creaciones-apice-rvfp6uj2va-uc.a.run.app",
+    "url": "https://creaciones-apice-381877373634.us-central1.run.app",
     "status": "True",
     "region": "us-central1",
     "repo": "https://github.com/mbrt26/CreacionesApice",
@@ -411,15 +385,15 @@
   },
   {
     "name": "crm-contenedores",
-    "url": "https://crm-contenedores-rvfp6uj2va-uc.a.run.app",
+    "url": "https://crm-contenedores-381877373634.us-central1.run.app",
     "status": "True",
     "region": "us-central1",
     "repo": "https://github.com/mbrt26/ObrajeCRM",
     "repoName": "ObrajeCRM",
     "errors": {
-      "total": 61,
+      "total": 57,
       "last24h": 0,
-      "last7d": 61,
+      "last7d": 57,
       "recentErrors": [
         {
           "timestamp": "2025-12-21T20:30:52.985802Z",
@@ -474,7 +448,7 @@
   },
   {
     "name": "crm-ecourmet",
-    "url": "https://crm-ecourmet-rvfp6uj2va-uc.a.run.app",
+    "url": "https://crm-ecourmet-381877373634.us-central1.run.app",
     "status": "True",
     "region": "us-central1",
     "repo": "https://github.com/mbrt26/EcourmetV2",
@@ -537,7 +511,7 @@
   },
   {
     "name": "crm-gyt",
-    "url": "https://crm-gyt-rvfp6uj2va-uc.a.run.app",
+    "url": "https://crm-gyt-381877373634.us-central1.run.app",
     "status": "True",
     "region": "us-central1",
     "repo": "https://github.com/mbrt26/GYT",
@@ -585,7 +559,7 @@
   },
   {
     "name": "crm-komsa",
-    "url": "https://crm-komsa-rvfp6uj2va-uc.a.run.app",
+    "url": "https://crm-komsa-381877373634.us-central1.run.app",
     "status": "True",
     "region": "us-central1",
     "repo": "https://github.com/mbrt26/KOMSA",
@@ -648,7 +622,7 @@
   },
   {
     "name": "formas-futuro",
-    "url": "https://formas-futuro-rvfp6uj2va-uc.a.run.app",
+    "url": "https://formas-futuro-381877373634.us-central1.run.app",
     "status": "True",
     "region": "us-central1",
     "repo": "https://github.com/mbrt26/FormasFuturo",
@@ -716,7 +690,7 @@
   },
   {
     "name": "fundiciones-medellin",
-    "url": "https://fundiciones-medellin-rvfp6uj2va-uc.a.run.app",
+    "url": "https://fundiciones-medellin-381877373634.us-central1.run.app",
     "status": "True",
     "region": "us-central1",
     "repo": "https://github.com/mbrt26/FundicionesMedellin",
@@ -784,7 +758,7 @@
   },
   {
     "name": "gestion-proveedores-isa",
-    "url": "https://gestion-proveedores-isa-rvfp6uj2va-uc.a.run.app",
+    "url": "https://gestion-proveedores-isa-381877373634.us-central1.run.app",
     "status": "False",
     "region": "us-central1",
     "repo": "https://github.com/mbrt26/GestionProveedoresISA",
@@ -842,7 +816,7 @@
   },
   {
     "name": "hemisferio-erp",
-    "url": "https://hemisferio-erp-rvfp6uj2va-uc.a.run.app",
+    "url": "https://hemisferio-erp-381877373634.us-central1.run.app",
     "status": "True",
     "region": "us-central1",
     "repo": "https://github.com/mbrt26/Hemisferio",
@@ -900,7 +874,7 @@
   },
   {
     "name": "huella-carbono",
-    "url": "https://huella-carbono-rvfp6uj2va-tl.a.run.app",
+    "url": "https://huella-carbono-381877373634.southamerica-west1.run.app",
     "status": "True",
     "region": "southamerica-west1",
     "repo": "https://github.com/mbrt26/HuellaCarbono",
@@ -968,7 +942,7 @@
   },
   {
     "name": "huella-carbono",
-    "url": "https://huella-carbono-rvfp6uj2va-uc.a.run.app",
+    "url": "https://huella-carbono-381877373634.us-central1.run.app",
     "status": "True",
     "region": "us-central1",
     "repo": "https://github.com/mbrt26/HuellaCarbono",
@@ -1036,7 +1010,7 @@
   },
   {
     "name": "jardin-botanico",
-    "url": "https://jardin-botanico-rvfp6uj2va-uc.a.run.app",
+    "url": "https://jardin-botanico-381877373634.us-central1.run.app",
     "status": "True",
     "region": "us-central1",
     "repo": "https://github.com/mbrt26/JardinBotanico",
@@ -1078,7 +1052,7 @@
   },
   {
     "name": "logiempresas",
-    "url": "https://logiempresas-rvfp6uj2va-uc.a.run.app",
+    "url": "https://logiempresas-381877373634.us-central1.run.app",
     "status": "True",
     "region": "us-central1",
     "repo": "https://github.com/mbrt26/Logiempresas",
@@ -1141,15 +1115,15 @@
   },
   {
     "name": "mentes-estrategicas",
-    "url": "https://mentes-estrategicas-rvfp6uj2va-uc.a.run.app",
+    "url": "https://mentes-estrategicas-381877373634.us-central1.run.app",
     "status": "True",
     "region": "us-central1",
     "repo": "https://github.com/mbrt26/mentes_estrategicas",
     "repoName": "mentes_estrategicas",
     "errors": {
-      "total": 6,
+      "total": 5,
       "last24h": 0,
-      "last7d": 6,
+      "last7d": 5,
       "recentErrors": [
         {
           "timestamp": "2025-12-21T20:50:26.085277Z",
@@ -1204,7 +1178,7 @@
   },
   {
     "name": "moldes-mecanizados-app",
-    "url": "https://moldes-mecanizados-app-rvfp6uj2va-uc.a.run.app",
+    "url": "https://moldes-mecanizados-app-381877373634.us-central1.run.app",
     "status": "True",
     "region": "us-central1",
     "repo": "https://github.com/mbrt26/MoldesyMecanizados",
@@ -1272,7 +1246,7 @@
   },
   {
     "name": "mouse-digital",
-    "url": "https://mouse-digital-rvfp6uj2va-uc.a.run.app",
+    "url": "https://mouse-digital-381877373634.us-central1.run.app",
     "status": "True",
     "region": "us-central1",
     "repo": "https://github.com/mbrt26/MouseDigital",
@@ -1300,9 +1274,9 @@
       ]
     },
     "deployments": {
-      "total": 12,
+      "total": 11,
       "last24h": 1,
-      "last7d": 12,
+      "last7d": 11,
       "lastDeployment": "2025-12-24T22:21:10.780833Z",
       "recentDeployments": [
         {
@@ -1340,14 +1314,14 @@
   },
   {
     "name": "novapcr-app",
-    "url": "https://novapcr-app-rvfp6uj2va-uc.a.run.app",
+    "url": "https://novapcr-app-381877373634.us-central1.run.app",
     "status": "True",
     "region": "us-central1",
     "repo": "https://github.com/mbrt26/NOVAPCR",
     "repoName": "NOVAPCR",
     "errors": {
       "total": 34,
-      "last24h": 6,
+      "last24h": 3,
       "last7d": 34,
       "recentErrors": [
         {
@@ -1369,7 +1343,7 @@
     },
     "deployments": {
       "total": 19,
-      "last24h": 12,
+      "last24h": 10,
       "last7d": 19,
       "lastDeployment": "2025-12-24T23:00:27.505158Z",
       "recentDeployments": [
@@ -1408,7 +1382,7 @@
   },
   {
     "name": "plasticos-ambientales",
-    "url": "https://plasticos-ambientales-rvfp6uj2va-uc.a.run.app",
+    "url": "https://plasticos-ambientales-381877373634.us-central1.run.app",
     "status": "True",
     "region": "us-central1",
     "repo": "https://github.com/mbrt26/PlasticosAmbientales",
@@ -1476,7 +1450,7 @@
   },
   {
     "name": "rgd-aire",
-    "url": "https://rgd-aire-rvfp6uj2va-uc.a.run.app",
+    "url": "https://rgd-aire-381877373634.us-central1.run.app",
     "status": "True",
     "region": "us-central1",
     "repo": "https://github.com/mbrt26/RGDAire",
@@ -1544,7 +1518,7 @@
   },
   {
     "name": "seyca",
-    "url": "https://seyca-rvfp6uj2va-uc.a.run.app",
+    "url": "https://seyca-381877373634.us-central1.run.app",
     "status": "True",
     "region": "us-central1",
     "repo": "https://github.com/mbrt26/seyca_produccion",
@@ -1570,7 +1544,7 @@
   },
   {
     "name": "seyca-produccion",
-    "url": "https://seyca-produccion-rvfp6uj2va-uc.a.run.app",
+    "url": "https://seyca-produccion-381877373634.us-central1.run.app",
     "status": "True",
     "region": "us-central1",
     "repo": "https://github.com/mbrt26/seyca_produccion",
@@ -1638,7 +1612,7 @@
   },
   {
     "name": "sistema-planes",
-    "url": "https://sistema-planes-rvfp6uj2va-uc.a.run.app",
+    "url": "https://sistema-planes-381877373634.us-central1.run.app",
     "status": "True",
     "region": "us-central1",
     "repo": null,
@@ -1664,7 +1638,7 @@
   },
   {
     "name": "tersasoft",
-    "url": "https://tersasoft-rvfp6uj2va-uc.a.run.app",
+    "url": "https://tersasoft-381877373634.us-central1.run.app",
     "status": "True",
     "region": "us-central1",
     "repo": "https://github.com/mbrt26/tersaSoft",
@@ -1732,7 +1706,7 @@
   },
   {
     "name": "vid-comunicaciones",
-    "url": "https://vid-comunicaciones-rvfp6uj2va-uc.a.run.app",
+    "url": "https://vid-comunicaciones-381877373634.us-central1.run.app",
     "status": "True",
     "region": "us-central1",
     "repo": "https://github.com/mbrt26/VID",
