@@ -121,11 +121,14 @@
                 </div>
                 <div class="filter-group date-range" id="dateRangeGroup" style="display: none;">
                     <label>Desde:</label>
-                    <input type="date" id="dateFrom" onchange="applyFilters()">
+                    <input type="date" id="dateFrom">
                 </div>
                 <div class="filter-group date-range" id="dateRangeGroup2" style="display: none;">
                     <label>Hasta:</label>
-                    <input type="date" id="dateTo" onchange="applyFilters()">
+                    <input type="date" id="dateTo">
+                </div>
+                <div class="filter-group date-range" id="applyDateBtn" style="display: none;">
+                    <button class="apply-filter-btn" onclick="applyFilters()">Aplicar</button>
                 </div>
             </div>
             <div class="filters-row">

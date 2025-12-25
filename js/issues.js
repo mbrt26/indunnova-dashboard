@@ -25,13 +25,18 @@ function applyPeriodFilter() {
     const period = document.getElementById('periodFilter').value;
     const dateFromGroup = document.getElementById('dateRangeGroup');
     const dateToGroup = document.getElementById('dateRangeGroup2');
+    const applyBtn = document.getElementById('applyDateBtn');
 
     if (period === 'custom') {
         dateFromGroup.style.display = 'flex';
         dateToGroup.style.display = 'flex';
+        applyBtn.style.display = 'flex';
+        // Don't auto-apply, wait for user to click Apply button
+        return;
     } else {
         dateFromGroup.style.display = 'none';
         dateToGroup.style.display = 'none';
+        applyBtn.style.display = 'none';
 
         const today = new Date();
         let fromDate = new Date(today);
