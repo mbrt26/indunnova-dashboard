@@ -374,7 +374,11 @@ function renderServices() {
         const lastDeploy = service.deployments?.lastDeployment;
         const requests7d = service.interactions?.requests7d || 0;
         const requests30d = service.interactions?.requests30d || 0;
-        const estimatedCost = service.costEstimate?.estimatedMonthly || 0;
+        const costEstimate = service.costEstimate || {};
+        const totalCost = costEstimate.totalWithSql || costEstimate.estimatedMonthly || 0;
+        const cloudRunCost = costEstimate.estimatedMonthly || 0;
+        const sqlCost = costEstimate.sqlCostShare || 0;
+        const usesDb = costEstimate.usesConsolidatedDb || false;
 
         return `
         <div class="${cardClass}">
@@ -392,9 +396,9 @@ function renderServices() {
                 ${service.repo ? `<span>📦 <a href="${service.repo}" target="_blank" style="color: inherit;">${service.repoName || extractRepoName(service.repo)}</a></span>` : ''}
             </div>
             <div class="service-metrics">
-                <div class="service-metric cost">
-                    <span class="service-metric-value">$${estimatedCost.toFixed(2)}</span>
-                    <span class="service-metric-label">Costo/mes</span>
+                <div class="service-metric cost" title="Cloud Run: $${cloudRunCost.toFixed(2)} + SQL: $${sqlCost.toFixed(2)}">
+                    <span class="service-metric-value">$${totalCost.toFixed(2)}</span>
+                    <span class="service-metric-label">Costo/mes${usesDb ? ' (+ DB)' : ''}</span>
                 </div>
                 <div class="service-metric interactions">
                     <span class="service-metric-value">${formatNumber(requests30d)}</span>
@@ -458,15 +462,20 @@ function showServiceDetails(serviceName) {
 
     // Estimación de costos
     const costEstimate = service.costEstimate || {};
+    const totalWithSql = costEstimate.totalWithSql || costEstimate.estimatedMonthly || 0;
+    const usesDb = costEstimate.usesConsolidatedDb || false;
+    const sqlCostShare = costEstimate.sqlCostShare || 0;
+
     html += `
         <div class="modal-section">
             <h4>Estimacion de Costos Mensual</h4>
             <div class="cost-breakdown">
                 <div class="cost-total">
-                    <span class="cost-value" style="color: #10B981; font-size: 1.5rem;">$${(costEstimate.estimatedMonthly || 0).toFixed(2)}</span>
+                    <span class="cost-value" style="color: #10B981; font-size: 1.5rem;">$${totalWithSql.toFixed(2)}</span>
                     <span class="cost-label">Total Estimado/Mes</span>
                 </div>
                 <div class="cost-details">
+                    <div class="cost-subheader" style="font-weight: 600; margin-top: 0.5rem; color: var(--text-secondary);">Cloud Run</div>
                     <div class="cost-item">
                         <span class="cost-item-label">CPU (${costEstimate.cpuCores || 1} vCPU)</span>
                         <span class="cost-item-value">$${(costEstimate.cpuCost || 0).toFixed(2)}</span>
@@ -479,9 +488,20 @@ function showServiceDetails(serviceName) {
                         <span class="cost-item-label">Requests (${formatNumber(costEstimate.estimatedRequests || 0)})</span>
                         <span class="cost-item-value">$${(costEstimate.requestCost || 0).toFixed(2)}</span>
                     </div>
+                    <div class="cost-item subtotal" style="border-top: 1px solid var(--border-color); padding-top: 0.25rem; margin-top: 0.25rem;">
+                        <span class="cost-item-label" style="font-weight: 500;">Subtotal Cloud Run</span>
+                        <span class="cost-item-value" style="font-weight: 500;">$${(costEstimate.estimatedMonthly || 0).toFixed(2)}</span>
+                    </div>
+                    ${usesDb ? `
+                    <div class="cost-subheader" style="font-weight: 600; margin-top: 0.75rem; color: var(--text-secondary);">Cloud SQL (postgres-consolidated)</div>
+                    <div class="cost-item">
+                        <span class="cost-item-label">Parte proporcional DB compartida</span>
+                        <span class="cost-item-value">$${sqlCostShare.toFixed(2)}</span>
+                    </div>
+                    ` : ''}
                 </div>
                 <p class="cost-note" style="font-size: 0.75rem; color: var(--text-secondary); margin-top: 0.5rem;">
-                    * Estimacion basada en uso actual. No incluye tier gratuito.
+                    * Estimacion basada en uso actual. ${usesDb ? 'Costo SQL dividido entre servicios que usan la DB consolidada.' : ''}
                 </p>
             </div>
         </div>

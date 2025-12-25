@@ -39,6 +39,36 @@ SERVICE_TO_REPO = {
     'vid-comunicaciones': 'VID',
 }
 
+# Servicios que usan la base de datos consolidada (postgres-consolidated)
+# Todos los servicios Django/Python usan esta instancia compartida
+SERVICES_USING_CONSOLIDATED_DB = [
+    'arcopack-erp',
+    'carnesdelsebastian',
+    'codeta-crm',
+    'colsegur',
+    'crm-contenedores',
+    'crm-ecourmet',
+    'crm-gyt',
+    'crm-komsa',
+    'formas-futuro',
+    'fundiciones-medellin',
+    'gestion-proveedores-isa',
+    'hemisferio-erp',
+    'huella-carbono',
+    'jardin-botanico',
+    'logiempresas',
+    'mentes-estrategicas',
+    'moldes-mecanizados-app',
+    'mouse-digital',
+    'novapcr-app',
+    'plasticos-ambientales',
+    'rgd-aire',
+    'seyca',
+    'seyca-produccion',
+    'tersasoft',
+    'vid-comunicaciones',
+]
+
 GITHUB_ORG = 'mbrt26'
 PROJECT_NUMBER = '381877373634'  # Google Cloud project number for appsindunnova
 
@@ -729,6 +759,22 @@ def main():
     all_errors = get_all_errors_detailed()
     print(f"  Encontrados {len(all_errors)} errores detallados")
 
+    # Calcular costo de la base de datos consolidada para distribuir
+    consolidated_db_cost = 0
+    for instance in cloud_sql_data.get('instances', []):
+        if instance['name'] == 'postgres-consolidated' and instance['state'] == 'RUNNABLE':
+            consolidated_db_cost = instance['totalCost']
+            break
+
+    # Contar servicios activos que usan la DB consolidada
+    active_services_using_db = [s['name'] for s in services if s['name'] in SERVICES_USING_CONSOLIDATED_DB]
+    num_services_using_db = len(active_services_using_db)
+    cost_per_service = consolidated_db_cost / num_services_using_db if num_services_using_db > 0 else 0
+
+    print(f"  Costo DB consolidada: ${consolidated_db_cost:.2f}/mes")
+    print(f"  Servicios usando DB: {num_services_using_db}")
+    print(f"  Costo por servicio: ${cost_per_service:.2f}/mes")
+
     # Combinar métricas en los servicios
     for service in services:
         name = service['name']
@@ -755,14 +801,27 @@ def main():
             'requests30d': 0
         })
 
-        # Calcular estimación de costos
+        # Calcular estimación de costos de Cloud Run
         config = service_configs.get(name, {'cpu': 1, 'memoryGiB': 0.5})
         avg_latency = service['metrics'].get('avgLatencyMs', 0)
-        service['costEstimate'] = estimate_monthly_cost(
+        cost_estimate = estimate_monthly_cost(
             config,
             service['interactions'],
             avg_latency
         )
+
+        # Agregar costo de Cloud SQL si usa la DB consolidada
+        if name in SERVICES_USING_CONSOLIDATED_DB:
+            sql_cost_share = round(cost_per_service, 2)
+            cost_estimate['sqlCostShare'] = sql_cost_share
+            cost_estimate['usesConsolidatedDb'] = True
+            cost_estimate['totalWithSql'] = round(cost_estimate['estimatedMonthly'] + sql_cost_share, 2)
+        else:
+            cost_estimate['sqlCostShare'] = 0
+            cost_estimate['usesConsolidatedDb'] = False
+            cost_estimate['totalWithSql'] = cost_estimate['estimatedMonthly']
+
+        service['costEstimate'] = cost_estimate
 
     # Calcular costo total estimado de Cloud Run
     cloud_run_cost = sum(s['costEstimate']['estimatedMonthly'] for s in services)
