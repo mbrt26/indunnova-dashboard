@@ -48,9 +48,11 @@ jobs:
         run: |
           git config --global user.name 'GitHub Actions'
           git config --global user.email 'actions@github.com'
+          # Pull latest changes first to avoid conflicts
+          git fetch origin main
+          git reset --soft origin/main
           git add data/
           if ! git diff --staged --quiet; then
             git commit -m "chore: update dashboard data [skip ci]"
-            git pull --rebase origin main || true
-            git push
+            git push origin main
           fi
