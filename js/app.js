@@ -49,6 +49,7 @@ async function loadData() {
 
         // Render everything
         updateSummary();
+        updateCosts();
         updateMetrics();
         renderDailyErrorsChart();
         renderUsageHeatmap();
@@ -76,6 +77,32 @@ function updateSummary() {
     document.getElementById('healthyServices').textContent = metaData.healthyServices || servicesData.filter(s => s.status === 'True').length;
     document.getElementById('unhealthyServices').textContent = metaData.unhealthyServices || servicesData.filter(s => s.status !== 'True').length;
     document.getElementById('totalRepos').textContent = metaData.totalRepos || reposData.length;
+}
+
+function updateCosts() {
+    const costs = metaData.costs || {};
+
+    // Format currency
+    const formatCurrency = (value) => {
+        if (value === undefined || value === null) return '--';
+        return '$' + value.toFixed(2);
+    };
+
+    // Update cost cards
+    const totalCostEl = document.getElementById('totalCost');
+    const sqlCostEl = document.getElementById('sqlCost');
+    const runCostEl = document.getElementById('runCost');
+    const otherCostEl = document.getElementById('otherCost');
+    const sqlInstancesEl = document.getElementById('sqlInstances');
+
+    if (totalCostEl) totalCostEl.textContent = formatCurrency(costs.total);
+    if (sqlCostEl) sqlCostEl.textContent = formatCurrency(costs.cloudSql);
+    if (runCostEl) runCostEl.textContent = formatCurrency(costs.cloudRun);
+    if (otherCostEl) otherCostEl.textContent = formatCurrency(costs.other);
+
+    if (sqlInstancesEl && costs.sqlInstances) {
+        sqlInstancesEl.textContent = `${costs.sqlInstances.running} activas, ${costs.sqlInstances.stopped} detenidas`;
+    }
 }
 
 function updateMetrics() {

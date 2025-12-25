@@ -380,12 +380,117 @@ def get_service_configurations():
         return {}
 
 
+def get_cloud_sql_costs():
+    """Obtiene las instancias de Cloud SQL y estima sus costos mensuales."""
+    cmd = 'gcloud sql instances list --format="json" 2>/dev/null'
+    output = run_command(cmd, timeout=60)
+
+    if not output:
+        return {'instances': [], 'totalCost': 0}
+
+    try:
+        data = json.loads(output)
+        instances = []
+        total_cost = 0
+
+        # Precios aproximados Cloud SQL (us-central1)
+        PRICES = {
+            'db-f1-micro': {'compute': 7.67, 'name': 'Micro (shared)'},
+            'db-g1-small': {'compute': 25.55, 'name': 'Small (shared)'},
+            'db-n1-standard-1': {'compute': 50.00, 'name': '1 vCPU, 3.75GB'},
+            'db-custom-1-3840': {'compute': 49.00, 'name': '1 vCPU, 3.75GB'},
+            'db-custom-2-7680': {'compute': 98.00, 'name': '2 vCPU, 7.5GB'},
+        }
+        STORAGE_SSD_PER_GB = 0.17
+        STORAGE_HDD_PER_GB = 0.09
+
+        for instance in data:
+            name = instance.get('name', '')
+            state = instance.get('state', 'UNKNOWN')
+            settings = instance.get('settings', {})
+            tier = settings.get('tier', 'db-f1-micro')
+            disk_size = int(settings.get('dataDiskSizeGb', 10))
+            disk_type = settings.get('dataDiskType', 'PD_SSD')
+            region = instance.get('region', 'us-central1')
+            db_version = instance.get('databaseVersion', '')
+
+            # Calcular costo de compute (solo si está activo)
+            compute_cost = 0
+            if state == 'RUNNABLE':
+                if tier in PRICES:
+                    compute_cost = PRICES[tier]['compute']
+                elif tier.startswith('db-custom-'):
+                    # Parse custom tier: db-custom-{cpus}-{memory_mb}
+                    parts = tier.split('-')
+                    if len(parts) >= 4:
+                        cpus = int(parts[2])
+                        memory_mb = int(parts[3])
+                        # Aproximación: $0.0413/hr por vCPU + $0.007/hr por GB RAM
+                        compute_cost = (cpus * 0.0413 + (memory_mb/1024) * 0.007) * 730
+                else:
+                    compute_cost = 7.67  # Default a micro
+
+            # Calcular costo de storage
+            storage_price = STORAGE_SSD_PER_GB if disk_type == 'PD_SSD' else STORAGE_HDD_PER_GB
+            storage_cost = disk_size * storage_price
+
+            # Costo total de la instancia
+            instance_cost = compute_cost + storage_cost
+            total_cost += instance_cost
+
+            instances.append({
+                'name': name,
+                'state': state,
+                'tier': tier,
+                'diskSizeGb': disk_size,
+                'diskType': disk_type,
+                'region': region,
+                'databaseVersion': db_version,
+                'computeCost': round(compute_cost, 2),
+                'storageCost': round(storage_cost, 2),
+                'totalCost': round(instance_cost, 2)
+            })
+
+        return {
+            'instances': instances,
+            'totalCost': round(total_cost, 2),
+            'runningCount': len([i for i in instances if i['state'] == 'RUNNABLE']),
+            'stoppedCount': len([i for i in instances if i['state'] != 'RUNNABLE'])
+        }
+    except json.JSONDecodeError as e:
+        print(f"Error parseando JSON de Cloud SQL: {e}")
+        return {'instances': [], 'totalCost': 0}
+
+
+def get_project_cost_summary(cloud_run_cost, cloud_sql_data):
+    """Genera un resumen de costos del proyecto."""
+    sql_cost = cloud_sql_data.get('totalCost', 0)
+
+    # Estimaciones para otros servicios
+    other_costs = {
+        'artifactRegistry': 10.0,  # Container images storage
+        'networking': 8.0,         # Egress/networking
+        'logging': 7.0,            # Cloud Logging storage
+        'secretManager': 2.0,      # Secrets
+        'cloudBuild': 5.0,         # CI/CD builds
+    }
+    other_total = sum(other_costs.values())
+
+    total = cloud_run_cost + sql_cost + other_total
+
+    return {
+        'cloudRun': round(cloud_run_cost, 2),
+        'cloudSql': round(sql_cost, 2),
+        'other': round(other_total, 2),
+        'otherBreakdown': other_costs,
+        'total': round(total, 2),
+        'sqlInstances': cloud_sql_data.get('runningCount', 0),
+        'sqlStopped': cloud_sql_data.get('stoppedCount', 0)
+    }
+
+
 def get_billable_time_from_monitoring(service_name):
     """Obtiene el tiempo de ejecución facturable desde Cloud Monitoring."""
-    # Obtener container/cpu/usage_time (billable CPU seconds) de los últimos 7 días
-    # y proyectar a 30 días
-    cmd = f'''gcloud monitoring metrics list --filter="metric.type=run.googleapis.com/container/billable_instance_time" 2>/dev/null | head -5'''
-
     # Por ahora usamos una estimación más realista basada en patrones típicos
     return None
 
@@ -610,6 +715,12 @@ def main():
     service_configs = get_service_configurations()
     print(f"  Servicios con configuración: {len(service_configs)}")
 
+    print("Obteniendo costos de Cloud SQL...")
+    cloud_sql_data = get_cloud_sql_costs()
+    print(f"  Instancias SQL activas: {cloud_sql_data.get('runningCount', 0)}")
+    print(f"  Instancias SQL detenidas: {cloud_sql_data.get('stoppedCount', 0)}")
+    print(f"  Costo SQL estimado: ${cloud_sql_data.get('totalCost', 0):.2f}/mes")
+
     print("Obteniendo repositorios de GitHub...")
     repos = get_github_repos()
     print(f"  Encontrados {len(repos)} repositorios")
@@ -653,9 +764,15 @@ def main():
             avg_latency
         )
 
-    # Calcular costo total estimado
-    total_estimated_cost = sum(s['costEstimate']['estimatedMonthly'] for s in services)
-    print(f"\n  Costo mensual estimado total: ${total_estimated_cost:.2f}")
+    # Calcular costo total estimado de Cloud Run
+    cloud_run_cost = sum(s['costEstimate']['estimatedMonthly'] for s in services)
+    print(f"\n  Costo Cloud Run estimado: ${cloud_run_cost:.2f}/mes")
+
+    # Calcular resumen de costos del proyecto
+    project_costs = get_project_cost_summary(cloud_run_cost, cloud_sql_data)
+    print(f"  Costo Cloud SQL estimado: ${project_costs['cloudSql']:.2f}/mes")
+    print(f"  Otros costos estimados: ${project_costs['other']:.2f}/mes")
+    print(f"  COSTO TOTAL ESTIMADO: ${project_costs['total']:.2f}/mes")
 
     # Guardar datos
     services_path = os.path.join(data_dir, 'services.json')
@@ -693,7 +810,19 @@ def main():
         'totalErrors7d': total_errors_7d,
         'totalDeployments24h': total_deployments_24h,
         'totalDeployments7d': total_deployments_7d,
-        'servicesWithErrors': len([s for s in services if s['errors']['last7d'] > 0])
+        'servicesWithErrors': len([s for s in services if s['errors']['last7d'] > 0]),
+        'costs': {
+            'cloudRun': project_costs['cloudRun'],
+            'cloudSql': project_costs['cloudSql'],
+            'other': project_costs['other'],
+            'total': project_costs['total'],
+            'sqlInstances': {
+                'running': project_costs['sqlInstances'],
+                'stopped': project_costs['sqlStopped']
+            },
+            'breakdown': project_costs['otherBreakdown']
+        },
+        'cloudSqlInstances': cloud_sql_data.get('instances', [])
     }
 
     with open(meta_path, 'w') as f:

@@ -160,6 +160,98 @@ body {
     color: var(--text-secondary);
 }
 
+/* Costs Section */
+.costs-section {
+    margin-bottom: 2rem;
+}
+
+.costs-section h2 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.costs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.cost-card {
+    background: var(--card-bg);
+    border-radius: 1rem;
+    padding: 1.25rem;
+    box-shadow: var(--shadow);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.cost-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.cost-card.total-cost {
+    background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+    color: white;
+}
+
+.cost-card.total-cost .cost-value,
+.cost-card.total-cost .cost-label {
+    color: white;
+}
+
+.cost-card.sql-cost {
+    border-left: 4px solid #8B5CF6;
+}
+
+.cost-card.run-cost {
+    border-left: 4px solid #3B82F6;
+}
+
+.cost-card.other-cost {
+    border-left: 4px solid #6B7280;
+}
+
+.cost-icon {
+    font-size: 2rem;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.75rem;
+    background: var(--bg-color);
+}
+
+.cost-card.total-cost .cost-icon {
+    background: rgba(255,255,255,0.2);
+}
+
+.cost-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.cost-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.cost-label {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+}
+
+.cost-detail {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    margin-top: 0.25rem;
+}
+
 /* Filters */
 .filters-section {
     background: var(--card-bg);
