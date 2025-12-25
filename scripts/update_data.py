@@ -501,38 +501,52 @@ def get_cloud_sql_costs():
 def get_real_billing_data():
     """Obtiene costos reales de facturación desde BigQuery."""
     query = """
-    WITH daily_costs AS (
-      SELECT
-        DATE(usage_start_time) as cost_date,
-        service.description as service_name,
-        SUM(cost) + SUM(IFNULL((SELECT SUM(c.amount) FROM UNNEST(credits) c), 0)) as daily_cost
-      FROM `appsindunnova.billing.gcp_billing_export_v1_01C9CE_390A53_7FC29D`
-      WHERE invoice.month = FORMAT_DATE("%Y%m", CURRENT_DATE())
-      GROUP BY 1, 2
-    ),
-    service_summary AS (
-      SELECT
-        service_name,
-        SUM(daily_cost) as mtd_cost,
-        COUNT(DISTINCT cost_date) as days_with_data,
-        AVG(daily_cost) as avg_daily_cost
-      FROM daily_costs
-      GROUP BY service_name
-    )
-    SELECT
-      service_name,
-      ROUND(mtd_cost, 2) as mtd_cost,
-      days_with_data,
-      ROUND(avg_daily_cost * 31, 2) as projected_monthly
-    FROM service_summary
-    ORDER BY mtd_cost DESC
-    """
+WITH daily_costs AS (
+  SELECT
+    DATE(usage_start_time) as cost_date,
+    service.description as service_name,
+    SUM(cost) + SUM(IFNULL((SELECT SUM(c.amount) FROM UNNEST(credits) c), 0)) as daily_cost
+  FROM `appsindunnova.billing.gcp_billing_export_v1_01C9CE_390A53_7FC29D`
+  WHERE invoice.month = FORMAT_DATE('%Y%m', CURRENT_DATE())
+  GROUP BY 1, 2
+),
+service_summary AS (
+  SELECT
+    service_name,
+    SUM(daily_cost) as mtd_cost,
+    COUNT(DISTINCT cost_date) as days_with_data,
+    AVG(daily_cost) as avg_daily_cost
+  FROM daily_costs
+  GROUP BY service_name
+)
+SELECT
+  service_name,
+  ROUND(mtd_cost, 2) as mtd_cost,
+  days_with_data,
+  ROUND(avg_daily_cost * 31, 2) as projected_monthly
+FROM service_summary
+ORDER BY mtd_cost DESC
+"""
 
     try:
-        result = run_command(f"bq query --use_legacy_sql=false --format=json '{query}'", timeout=60)
-        if not result:
+        # Ejecutar bq directamente con subprocess y stdin
+        result = subprocess.run(
+            ['bq', 'query', '--use_legacy_sql=false', '--format=json'],
+            input=query,
+            capture_output=True,
+            text=True,
+            timeout=60
+        )
+
+        if result.returncode != 0:
+            print(f"  BigQuery: Error ejecutando query - {result.stderr[:200]}")
             return None
-        data = json.loads(result)
+
+        if not result.stdout.strip():
+            print("  BigQuery: Sin resultados")
+            return None
+
+        data = json.loads(result.stdout)
 
         # Convertir a diccionario por servicio
         costs = {}
@@ -544,8 +558,14 @@ def get_real_billing_data():
                 'days': int(row['days_with_data'])
             }
         return costs
+    except json.JSONDecodeError as e:
+        print(f"  BigQuery: Error parseando JSON - {e}")
+        return None
+    except subprocess.TimeoutExpired:
+        print("  BigQuery: Timeout")
+        return None
     except Exception as e:
-        print(f"  Error obteniendo datos de facturación: {e}")
+        print(f"  BigQuery: Error - {e}")
         return None
 
 
