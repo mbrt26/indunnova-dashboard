@@ -539,7 +539,11 @@ ORDER BY mtd_cost DESC
         )
 
         if result.returncode != 0:
-            print(f"  BigQuery: Error ejecutando query - {result.stderr[:200]}")
+            stderr = result.stderr.strip() if result.stderr else "(sin mensaje)"
+            stdout = result.stdout.strip()[:100] if result.stdout else ""
+            print(f"  BigQuery: Error (code {result.returncode}) - {stderr[:200]}")
+            if stdout:
+                print(f"  BigQuery stdout: {stdout}")
             return None
 
         if not result.stdout.strip():
