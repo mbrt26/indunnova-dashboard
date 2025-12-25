@@ -48,9 +48,11 @@ async function loadData() {
         document.getElementById('lastUpdate').textContent = `Ultima actualizacion: ${formatDate(metaData.lastUpdate)}`;
 
         // Render everything
+        console.log('About to render all components...');
         updateSummary();
         updateMetrics();
         renderDailyErrorsChart();
+        console.log('About to call renderUsageHeatmap...');
         renderUsageHeatmap();
         renderRecentDeployments();
         renderServices();
@@ -148,14 +150,24 @@ function renderDailyErrorsChart() {
 }
 
 function renderUsageHeatmap() {
+    console.log('renderUsageHeatmap called');
     const container = document.getElementById('usageHeatmap');
-    if (!container) return;
+    console.log('usageHeatmap container:', container);
+    if (!container) {
+        console.log('Container not found, returning early');
+        return;
+    }
 
     try {
+        console.log('servicesData length:', servicesData.length);
+        console.log('servicesData sample:', servicesData[0]);
+
         // Sort services by usage (requests30d)
         const sortedServices = servicesData
             .filter(s => s && s.interactions)
             .sort((a, b) => (b.interactions.requests30d || 0) - (a.interactions.requests30d || 0));
+
+        console.log('sortedServices length:', sortedServices.length);
 
         if (sortedServices.length === 0) {
             container.innerHTML = '<div class="no-data">No hay datos de uso disponibles</div>';
