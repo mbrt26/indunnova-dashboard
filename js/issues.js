@@ -17,8 +17,16 @@ function initializeDateFilters() {
     const sevenDaysAgo = new Date(today);
     sevenDaysAgo.setDate(today.getDate() - 7);
 
-    document.getElementById('dateTo').value = today.toISOString().split('T')[0];
-    document.getElementById('dateFrom').value = sevenDaysAgo.toISOString().split('T')[0];
+    // Format as YYYY-MM-DD using local timezone (not UTC)
+    const formatLocalDate = (date) => {
+        const year = date.getFullYear();
+        const month = String(date.getMonth() + 1).padStart(2, '0');
+        const day = String(date.getDate()).padStart(2, '0');
+        return `${year}-${month}-${day}`;
+    };
+
+    document.getElementById('dateTo').value = formatLocalDate(today);
+    document.getElementById('dateFrom').value = formatLocalDate(sevenDaysAgo);
 }
 
 function applyPeriodFilter() {
@@ -51,8 +59,15 @@ function applyPeriodFilter() {
             fromDate = null; // all time
         }
 
-        document.getElementById('dateTo').value = today.toISOString().split('T')[0];
-        document.getElementById('dateFrom').value = fromDate ? fromDate.toISOString().split('T')[0] : '';
+        // Format as YYYY-MM-DD using local timezone
+        const formatLocalDate = (date) => {
+            const year = date.getFullYear();
+            const month = String(date.getMonth() + 1).padStart(2, '0');
+            const day = String(date.getDate()).padStart(2, '0');
+            return `${year}-${month}-${day}`;
+        };
+        document.getElementById('dateTo').value = formatLocalDate(today);
+        document.getElementById('dateFrom').value = fromDate ? formatLocalDate(fromDate) : '';
     }
 
     applyFilters();
@@ -183,7 +198,8 @@ function applyFilters() {
 
     // Convert to array with hash
     allGroups = Object.entries(consolidatedErrors).map(([hash, data]) => {
-        const issue = createdIssues.find(i => i.hash === hash);
+        // Use findLast to get the most recent issue for this hash (in case there are duplicates)
+        const issue = createdIssues.filter(i => i.hash === hash).pop();
         const issueState = issue ? getIssueState(issue.url) : null;
         return {
             hash,
