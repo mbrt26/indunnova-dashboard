@@ -100,21 +100,23 @@ function applyFilters() {
             return false;
         }
 
-        // Date from filter
+        // Date from filter (use UTC to avoid timezone issues)
         if (dateFrom) {
             const errorDate = new Date(error.timestamp);
-            const fromDate = new Date(dateFrom);
-            fromDate.setHours(0, 0, 0, 0);
+            // Parse as local date and set to start of day in local timezone
+            const [year, month, day] = dateFrom.split('-').map(Number);
+            const fromDate = new Date(year, month - 1, day, 0, 0, 0, 0);
             if (errorDate < fromDate) {
                 return false;
             }
         }
 
-        // Date to filter
+        // Date to filter (use UTC to avoid timezone issues)
         if (dateTo) {
             const errorDate = new Date(error.timestamp);
-            const toDate = new Date(dateTo);
-            toDate.setHours(23, 59, 59, 999);
+            // Parse as local date and set to end of day in local timezone
+            const [year, month, day] = dateTo.split('-').map(Number);
+            const toDate = new Date(year, month - 1, day, 23, 59, 59, 999);
             if (errorDate > toDate) {
                 return false;
             }
