@@ -21,12 +21,15 @@ function initializeDateFilters() {
 
 async function loadErrors() {
     try {
+        // Add cache-busting timestamp to force fresh data
+        const cacheBuster = `?t=${Date.now()}`;
+
         // Load errors data
-        const errorsResponse = await fetch('data/errors.json');
+        const errorsResponse = await fetch('data/errors.json' + cacheBuster);
         allErrors = await errorsResponse.json();
 
         // Load metadata
-        const metaResponse = await fetch('data/meta.json');
+        const metaResponse = await fetch('data/meta.json' + cacheBuster);
         const meta = await metaResponse.json();
 
         document.getElementById('lastUpdate').textContent = `Ultima actualizacion: ${formatDate(meta.lastUpdate)}`;
