@@ -29,9 +29,9 @@
       ]
     },
     "deployments": {
-      "total": 5,
+      "total": 4,
       "last24h": 1,
-      "last7d": 5,
+      "last7d": 4,
       "lastDeployment": "2025-12-25T16:54:26.140548Z",
       "recentDeployments": [
         {
@@ -52,11 +52,6 @@
         {
           "revision": "arcopack-erp-00353-6bg",
           "timestamp": "2025-12-21T23:26:42.479146Z",
-          "status": "True"
-        },
-        {
-          "revision": "arcopack-erp-00352-xlk",
-          "timestamp": "2025-12-21T23:16:36.449894Z",
           "status": "True"
         }
       ]
@@ -90,15 +85,20 @@
   {
     "name": "carnesdelsebastian",
     "url": "https://carnesdelsebastian-381877373634.us-central1.run.app",
-    "status": "True",
+    "status": "Unknown",
     "region": "us-central1",
     "repo": "https://github.com/mbrt26/carnesdelsebastian",
     "repoName": "carnesdelsebastian",
     "errors": {
-      "total": 178,
-      "last24h": 57,
-      "last7d": 178,
+      "total": 179,
+      "last24h": 55,
+      "last7d": 179,
       "recentErrors": [
+        {
+          "timestamp": "2025-12-26T15:03:03.717553Z",
+          "message": "Traceback (most recent call last):\n  File \"/app/manage.py\", line 22, in <module>\n    main()\n  File \"/app/manage.py\", line 18, in main\n    execute_from_command_line(sys.argv)\n  File \"/usr/local/lib/python3.11/site-packages/django/core/management/__init__.py\", line 442, in execute_from_command_line\n  ...",
+          "severity": "ERROR"
+        },
         {
           "timestamp": "2025-12-26T14:33:12.342113Z",
           "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/core/handlers/exception.py\", line 55, in inner\n    response = get_response(request)\n               ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/core/handlers/base.py\", line 197, ...",
@@ -108,20 +108,20 @@
           "timestamp": "2025-12-26T14:33:12.342052Z",
           "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/utils.py\", line 89, in _execute\n    return self.cursor.execute(sql, params)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\npsycopg2.errors.UndefinedTable: relation \"calidad_semana_control_pediluvios\" d...",
           "severity": "ERROR"
-        },
-        {
-          "timestamp": "2025-12-26T14:33:09.416898Z",
-          "message": "{}",
-          "severity": "ERROR"
         }
       ]
     },
     "deployments": {
-      "total": 12,
-      "last24h": 4,
-      "last7d": 12,
-      "lastDeployment": "2025-12-26T14:25:40.931718Z",
+      "total": 13,
+      "last24h": 5,
+      "last7d": 13,
+      "lastDeployment": "2025-12-26T15:02:15.481281Z",
       "recentDeployments": [
+        {
+          "revision": "carnesdelsebastian-00256-qcg",
+          "timestamp": "2025-12-26T15:02:15.481281Z",
+          "status": "Unknown"
+        },
         {
           "revision": "carnesdelsebastian-00255-hwq",
           "timestamp": "2025-12-26T14:25:40.931718Z",
@@ -141,11 +141,6 @@
           "revision": "carnesdelsebastian-00252-wwj",
           "timestamp": "2025-12-25T16:59:05.576076Z",
           "status": "True"
-        },
-        {
-          "revision": "carnesdelsebastian-00251-fhv",
-          "timestamp": "2025-12-25T14:59:55.700446Z",
-          "status": "True"
         }
       ]
     },
@@ -155,15 +150,15 @@
       "avgLatencyMs": 6638
     },
     "interactions": {
-      "requests7d": 230,
-      "requests30d": 230
+      "requests7d": 229,
+      "requests30d": 229
     },
     "costEstimate": {
       "estimatedMonthly": 0.52,
       "cpuCost": 0.47,
       "memoryCost": 0.05,
       "requestCost": 0.0,
-      "estimatedRequests": 989,
+      "estimatedRequests": 984,
       "avgLatencyMs": 4946,
       "cpuCores": 2.0,
       "memoryGiB": 2.0,
@@ -341,15 +336,15 @@
       "avgLatencyMs": 1270
     },
     "interactions": {
-      "requests7d": 136,
-      "requests30d": 136
+      "requests7d": 149,
+      "requests30d": 149
     },
     "costEstimate": {
       "estimatedMonthly": 0.05,
-      "cpuCost": 0.04,
+      "cpuCost": 0.05,
       "memoryCost": 0.0,
       "requestCost": 0.0,
-      "estimatedRequests": 584,
+      "estimatedRequests": 640,
       "avgLatencyMs": 1570,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -1568,7 +1563,7 @@
   {
     "name": "novapcr-app",
     "url": "https://novapcr-app-381877373634.us-central1.run.app",
-    "status": "Unknown",
+    "status": "True",
     "region": "us-central1",
     "repo": "https://github.com/mbrt26/NOVAPCR",
     "repoName": "NOVAPCR",
@@ -1603,7 +1598,7 @@
         {
           "revision": "novapcr-app-00076-9ns",
           "timestamp": "2025-12-26T14:59:14.985512Z",
-          "status": "Unknown"
+          "status": "True"
         },
         {
           "revision": "novapcr-app-00075-zm9",
@@ -1633,15 +1628,15 @@
       "avgLatencyMs": 592
     },
     "interactions": {
-      "requests7d": 1758,
-      "requests30d": 1758
+      "requests7d": 1732,
+      "requests30d": 1732
     },
     "costEstimate": {
-      "estimatedMonthly": 0.35,
+      "estimatedMonthly": 0.34,
       "cpuCost": 0.32,
       "memoryCost": 0.02,
       "requestCost": 0.0,
-      "estimatedRequests": 7559,
+      "estimatedRequests": 7447,
       "avgLatencyMs": 892,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -1650,7 +1645,7 @@
       "usesConsolidatedDb": true,
       "hasDedicatedDb": false,
       "dedicatedDbName": null,
-      "totalWithSql": 1.66
+      "totalWithSql": 1.65
     }
   },
   {
@@ -1716,21 +1711,21 @@
       ]
     },
     "metrics": {
-      "errors5xx": 60,
+      "errors5xx": 59,
       "errors4xx": 0,
-      "avgLatencyMs": 1188
+      "avgLatencyMs": 1207
     },
     "interactions": {
-      "requests7d": 1066,
-      "requests30d": 1066
+      "requests7d": 1059,
+      "requests30d": 1059
     },
     "costEstimate": {
       "estimatedMonthly": 0.35,
       "cpuCost": 0.33,
       "memoryCost": 0.02,
       "requestCost": 0.0,
-      "estimatedRequests": 4583,
-      "avgLatencyMs": 1488,
+      "estimatedRequests": 4553,
+      "avgLatencyMs": 1507,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
       "note": "Estimacion incluye cold starts y overhead tipico",
@@ -1749,9 +1744,9 @@
     "repo": "https://github.com/mbrt26/RGDAire",
     "repoName": "RGDAire",
     "errors": {
-      "total": 64,
+      "total": 63,
       "last24h": 0,
-      "last7d": 64,
+      "last7d": 63,
       "recentErrors": [
         {
           "timestamp": "2025-12-23T13:19:54.233819Z",
@@ -1809,15 +1804,15 @@
       "avgLatencyMs": 735
     },
     "interactions": {
-      "requests7d": 5091,
-      "requests30d": 5091
+      "requests7d": 5111,
+      "requests30d": 5111
     },
     "costEstimate": {
-      "estimatedMonthly": 1.16,
+      "estimatedMonthly": 1.17,
       "cpuCost": 1.09,
       "memoryCost": 0.06,
       "requestCost": 0.01,
-      "estimatedRequests": 21891,
+      "estimatedRequests": 21977,
       "avgLatencyMs": 1035,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -1826,7 +1821,7 @@
       "usesConsolidatedDb": false,
       "hasDedicatedDb": true,
       "dedicatedDbName": "rgd-aire-db",
-      "totalWithSql": 10.53
+      "totalWithSql": 10.54
     }
   },
   {
@@ -2057,15 +2052,15 @@
       "avgLatencyMs": 0
     },
     "interactions": {
-      "requests7d": 33,
-      "requests30d": 33
+      "requests7d": 34,
+      "requests30d": 34
     },
     "costEstimate": {
       "estimatedMonthly": 0.0,
       "cpuCost": 0.0,
       "memoryCost": 0.0,
       "requestCost": 0.0,
-      "estimatedRequests": 141,
+      "estimatedRequests": 146,
       "avgLatencyMs": 650,
       "cpuCores": 0.3333,
       "memoryGiB": 0.5,
