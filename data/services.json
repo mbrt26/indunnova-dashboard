@@ -62,21 +62,21 @@
       ]
     },
     "metrics": {
-      "errors5xx": 11,
+      "errors5xx": 10,
       "errors4xx": 0,
-      "avgLatencyMs": 2065
+      "avgLatencyMs": 2243
     },
     "interactions": {
       "requests7d": 86,
       "requests30d": 86
     },
     "costEstimate": {
-      "estimatedMonthly": 0.03,
+      "estimatedMonthly": 0.04,
       "cpuCost": 0.03,
       "memoryCost": 0.0,
       "requestCost": 0.0,
       "estimatedRequests": 369,
-      "avgLatencyMs": 1745,
+      "avgLatencyMs": 1870,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
       "note": "Estimacion incluye cold starts y overhead tipico",
@@ -84,7 +84,7 @@
       "usesConsolidatedDb": true,
       "hasDedicatedDb": false,
       "dedicatedDbName": null,
-      "totalWithSql": 1.39
+      "totalWithSql": 1.4
     }
   },
   {
@@ -96,7 +96,7 @@
     "repoName": "carnesdelsebastian",
     "errors": {
       "total": 136,
-      "last24h": 31,
+      "last24h": 28,
       "last7d": 136,
       "recentErrors": [
         {
@@ -281,33 +281,38 @@
     "repo": null,
     "repoName": null,
     "errors": {
-      "total": 50,
-      "last24h": 50,
-      "last7d": 50,
+      "total": 54,
+      "last24h": 54,
+      "last7d": 54,
       "recentErrors": [
         {
-          "timestamp": "2025-12-25T23:03:03.507825Z",
+          "timestamp": "2025-12-25T23:51:01.446686Z",
           "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/core/handlers/exception.py\", line 55, in inner\n    response = get_response(request)\n               ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/core/handlers/base.py\", line 197, ...",
           "severity": "ERROR"
         },
         {
-          "timestamp": "2025-12-25T23:03:03.507705Z",
-          "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/utils.py\", line 89, in _execute\n    return self.cursor.execute(sql, params)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\npsycopg2.errors.UndefinedTable: relation \"auth_user\" does not exist",
+          "timestamp": "2025-12-25T23:51:01.446604Z",
+          "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/utils.py\", line 89, in _execute\n    return self.cursor.execute(sql, params)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\npsycopg2.errors.UndefinedTable: relation \"django_session\" does not exist",
           "severity": "ERROR"
         },
         {
-          "timestamp": "2025-12-25T23:02:55.411442Z",
-          "message": "{}",
+          "timestamp": "2025-12-25T23:51:01.446583Z",
+          "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/contrib/sessions/backends/base.py\", line 187, in _get_session\n    return self._session_cache\n           ^^^^^^^^^^^^^^^^^^^\nAttributeError: 'SessionStore' object has no attribute '_session_cache'",
           "severity": "ERROR"
         }
       ]
     },
     "deployments": {
-      "total": 4,
-      "last24h": 4,
-      "last7d": 4,
-      "lastDeployment": "2025-12-25T22:21:10.808678Z",
+      "total": 5,
+      "last24h": 5,
+      "last7d": 5,
+      "lastDeployment": "2025-12-25T23:26:42.956872Z",
       "recentDeployments": [
+        {
+          "revision": "colorplastic-app-00005-k76",
+          "timestamp": "2025-12-25T23:26:42.956872Z",
+          "status": "True"
+        },
         {
           "revision": "colorplastic-app-00004-8zk",
           "timestamp": "2025-12-25T22:21:10.808678Z",
@@ -331,21 +336,21 @@
       ]
     },
     "metrics": {
-      "errors5xx": 14,
+      "errors5xx": 15,
       "errors4xx": 0,
-      "avgLatencyMs": 1441
+      "avgLatencyMs": 1349
     },
     "interactions": {
-      "requests7d": 44,
-      "requests30d": 44
+      "requests7d": 58,
+      "requests30d": 58
     },
     "costEstimate": {
       "estimatedMonthly": 0.02,
       "cpuCost": 0.02,
       "memoryCost": 0.0,
       "requestCost": 0.0,
-      "estimatedRequests": 189,
-      "avgLatencyMs": 1741,
+      "estimatedRequests": 249,
+      "avgLatencyMs": 1649,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
       "note": "Estimacion incluye cold starts y overhead tipico",
@@ -876,7 +881,7 @@
     "repoName": "GestionProveedoresISA",
     "errors": {
       "total": 123,
-      "last24h": 105,
+      "last24h": 66,
       "last7d": 123,
       "recentErrors": [
         {
@@ -985,19 +990,14 @@
       ]
     },
     "deployments": {
-      "total": 2,
+      "total": 1,
       "last24h": 0,
-      "last7d": 2,
+      "last7d": 1,
       "lastDeployment": "2025-12-21T22:48:36.487131Z",
       "recentDeployments": [
         {
           "revision": "hemisferio-erp-00021-xj4",
           "timestamp": "2025-12-21T22:48:36.487131Z",
-          "status": "True"
-        },
-        {
-          "revision": "hemisferio-erp-00020-v2q",
-          "timestamp": "2025-12-21T20:50:17.321324Z",
           "status": "True"
         }
       ]
@@ -1058,9 +1058,9 @@
       ]
     },
     "deployments": {
-      "total": 5,
+      "total": 3,
       "last24h": 0,
-      "last7d": 5,
+      "last7d": 3,
       "lastDeployment": "2025-12-21T21:32:05.808482Z",
       "recentDeployments": [
         {
@@ -1076,16 +1076,6 @@
         {
           "revision": "huella-carbono-00008-wp4",
           "timestamp": "2025-12-21T21:04:49.803837Z",
-          "status": "True"
-        },
-        {
-          "revision": "huella-carbono-00007-x2k",
-          "timestamp": "2025-12-21T20:59:14.672059Z",
-          "status": "True"
-        },
-        {
-          "revision": "huella-carbono-00006-5cm",
-          "timestamp": "2025-12-21T20:51:02.776345Z",
           "status": "True"
         }
       ]
@@ -1146,9 +1136,9 @@
       ]
     },
     "deployments": {
-      "total": 5,
+      "total": 3,
       "last24h": 0,
-      "last7d": 5,
+      "last7d": 3,
       "lastDeployment": "2025-12-21T21:32:05.808482Z",
       "recentDeployments": [
         {
@@ -1164,16 +1154,6 @@
         {
           "revision": "huella-carbono-00008-wp4",
           "timestamp": "2025-12-21T21:04:49.803837Z",
-          "status": "True"
-        },
-        {
-          "revision": "huella-carbono-00007-x2k",
-          "timestamp": "2025-12-21T20:59:14.672059Z",
-          "status": "True"
-        },
-        {
-          "revision": "huella-carbono-00006-5cm",
-          "timestamp": "2025-12-21T20:51:02.776345Z",
           "status": "True"
         }
       ]
@@ -1264,9 +1244,9 @@
     "repo": "https://github.com/mbrt26/Logiempresas",
     "repoName": "Logiempresas",
     "errors": {
-      "total": 60,
-      "last24h": 12,
-      "last7d": 60,
+      "total": 58,
+      "last24h": 8,
+      "last7d": 58,
       "recentErrors": [
         {
           "timestamp": "2025-12-25T17:11:30.530581Z",
@@ -1349,19 +1329,14 @@
       ]
     },
     "deployments": {
-      "total": 2,
+      "total": 1,
       "last24h": 0,
-      "last7d": 2,
+      "last7d": 1,
       "lastDeployment": "2025-12-21T22:50:01.008478Z",
       "recentDeployments": [
         {
           "revision": "mentes-estrategicas-00010-85w",
           "timestamp": "2025-12-21T22:50:01.008478Z",
-          "status": "True"
-        },
-        {
-          "revision": "mentes-estrategicas-00009-td9",
-          "timestamp": "2025-12-21T20:52:21.116050Z",
           "status": "True"
         }
       ]
@@ -1422,9 +1397,9 @@
       ]
     },
     "deployments": {
-      "total": 16,
+      "total": 15,
       "last24h": 3,
-      "last7d": 16,
+      "last7d": 15,
       "lastDeployment": "2025-12-25T17:14:05.073698Z",
       "recentDeployments": [
         {
@@ -1636,15 +1611,15 @@
       "avgLatencyMs": 592
     },
     "interactions": {
-      "requests7d": 1891,
-      "requests30d": 1891
+      "requests7d": 1900,
+      "requests30d": 1900
     },
     "costEstimate": {
       "estimatedMonthly": 0.37,
       "cpuCost": 0.35,
       "memoryCost": 0.02,
       "requestCost": 0.0,
-      "estimatedRequests": 8131,
+      "estimatedRequests": 8170,
       "avgLatencyMs": 892,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -1752,9 +1727,9 @@
     "repo": "https://github.com/mbrt26/RGDAire",
     "repoName": "RGDAire",
     "errors": {
-      "total": 114,
+      "total": 112,
       "last24h": 0,
-      "last7d": 114,
+      "last7d": 112,
       "recentErrors": [
         {
           "timestamp": "2025-12-23T13:19:54.233819Z",
@@ -1812,15 +1787,15 @@
       "avgLatencyMs": 735
     },
     "interactions": {
-      "requests7d": 4535,
-      "requests30d": 4535
+      "requests7d": 4508,
+      "requests30d": 4508
     },
     "costEstimate": {
       "estimatedMonthly": 1.03,
-      "cpuCost": 0.97,
+      "cpuCost": 0.96,
       "memoryCost": 0.05,
       "requestCost": 0.01,
-      "estimatedRequests": 19500,
+      "estimatedRequests": 19384,
       "avgLatencyMs": 1035,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -2000,7 +1975,7 @@
   {
     "name": "syncmeetings",
     "url": "https://syncmeetings-381877373634.us-central1.run.app",
-    "status": "Unknown",
+    "status": "True",
     "region": "us-central1",
     "repo": null,
     "repoName": null,
@@ -2011,15 +1986,25 @@
       "recentErrors": []
     },
     "deployments": {
-      "total": 13,
-      "last24h": 13,
-      "last7d": 13,
-      "lastDeployment": "2025-12-25T23:03:13.974802Z",
+      "total": 15,
+      "last24h": 15,
+      "last7d": 15,
+      "lastDeployment": "2025-12-25T23:30:13.123234Z",
       "recentDeployments": [
+        {
+          "revision": "syncmeetings-00015-qey",
+          "timestamp": "2025-12-25T23:30:13.123234Z",
+          "status": "True"
+        },
+        {
+          "revision": "syncmeetings-00014-ded",
+          "timestamp": "2025-12-25T23:23:53.514706Z",
+          "status": "True"
+        },
         {
           "revision": "syncmeetings-00013-nod",
           "timestamp": "2025-12-25T23:03:13.974802Z",
-          "status": "Unknown"
+          "status": "True"
         },
         {
           "revision": "syncmeetings-00012-kop",
@@ -2030,16 +2015,6 @@
           "revision": "syncmeetings-00011-ruz",
           "timestamp": "2025-12-25T22:07:29.955834Z",
           "status": "True"
-        },
-        {
-          "revision": "syncmeetings-00010-wof",
-          "timestamp": "2025-12-25T22:01:22.300512Z",
-          "status": "True"
-        },
-        {
-          "revision": "syncmeetings-00009-pej",
-          "timestamp": "2025-12-25T21:58:58.484579Z",
-          "status": "True"
         }
       ]
     },
@@ -2049,15 +2024,15 @@
       "avgLatencyMs": 0
     },
     "interactions": {
-      "requests7d": 16,
-      "requests30d": 16
+      "requests7d": 19,
+      "requests30d": 19
     },
     "costEstimate": {
       "estimatedMonthly": 0.0,
       "cpuCost": 0.0,
       "memoryCost": 0.0,
       "requestCost": 0.0,
-      "estimatedRequests": 68,
+      "estimatedRequests": 81,
       "avgLatencyMs": 650,
       "cpuCores": 0.3333,
       "memoryGiB": 0.5,
@@ -2083,11 +2058,21 @@
       "recentErrors": []
     },
     "deployments": {
-      "total": 1,
-      "last24h": 1,
-      "last7d": 1,
-      "lastDeployment": "2025-12-25T21:21:23.583792Z",
+      "total": 3,
+      "last24h": 3,
+      "last7d": 3,
+      "lastDeployment": "2025-12-25T23:31:19.073504Z",
       "recentDeployments": [
+        {
+          "revision": "teams-dashboard-00003-5hr",
+          "timestamp": "2025-12-25T23:31:19.073504Z",
+          "status": "True"
+        },
+        {
+          "revision": "teams-dashboard-00002-gwp",
+          "timestamp": "2025-12-25T23:26:37.908774Z",
+          "status": "True"
+        },
         {
           "revision": "teams-dashboard-00001-pck",
           "timestamp": "2025-12-25T21:21:23.583792Z",
@@ -2101,15 +2086,15 @@
       "avgLatencyMs": 0
     },
     "interactions": {
-      "requests7d": 3,
-      "requests30d": 3
+      "requests7d": 4,
+      "requests30d": 4
     },
     "costEstimate": {
       "estimatedMonthly": 0.0,
       "cpuCost": 0.0,
       "memoryCost": 0.0,
       "requestCost": 0.0,
-      "estimatedRequests": 12,
+      "estimatedRequests": 17,
       "avgLatencyMs": 650,
       "cpuCores": 1.0,
       "memoryGiB": 0.25,

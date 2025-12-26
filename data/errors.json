@@ -1,5 +1,56 @@
 [
   {
+    "id": "694dcde50006d0de6676d06d",
+    "service": "colorplastic-app",
+    "revision": "colorplastic-app-00005-k76",
+    "timestamp": "2025-12-25T23:51:01.446686Z",
+    "severity": "ERROR",
+    "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/core/handlers/exception.py\", line 55, in inner\n    response = get_response(request)\n               ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/core/handlers/base.py\", line 197, in _get_response\n    response = wrapped_callback(request, *callback_args, **callback_kwargs)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/contrib/auth/decorators.py\", line 22, in _wrapper_view\n    if test_func(request.user):\n       ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/contrib/auth/decorators.py\", line 51, in <lambda>\n    lambda u: u.is_authenticated,\n              ^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/utils/functional.py\", line 266, in inner\n    self._setup()\n  File \"/usr/local/lib/python3.11/site-packages/django/utils/functional.py\", line 419, in _setup\n    self._wrapped = self._setupfunc()\n                    ^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/contrib/auth/middleware.py\", line 25, in <lambda>\n    request.user = SimpleLazyObject(lambda: get_user(request))\n                                            ^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/contrib/auth/middleware.py\", line 11, in get_user\n    request._cached_user = auth.get_user(request)\n                           ^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/contrib/auth/__init__.py\", line 191, in get_user\n    user_id = _get_user_session_key(request)\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/contrib/auth/__init__.py\", line 60, in _get_user_session_key\n    return get_user_model()._meta.pk.to_python(request.session[SESSION_KEY])\n                                               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/contrib/sessions/backends/base.py\", line 53, in __getitem__\n    return self._session[key]\n           ^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/contrib/sessions/backends/base.py\", line 192, in _get_session\n    self._session_cache = self.load()\n                          ^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/contrib/sessions/backends/db.py\", line 42, in load\n    s = self._get_session_from_db()\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/contrib/sessions/backends/db.py\", line 32, in _get_session_from_db\n    return self.model.objects.get(\n           ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/models/manager.py\", line 87, in manager_method\n    return getattr(self.get_queryset(), name)(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/models/query.py\", line 633, in get\n    num = len(clone)\n          ^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/models/query.py\", line 380, in __len__\n    self._fetch_all()\n  File \"/usr/local/lib/python3.11/site-packages/django/db/models/query.py\", line 1881, in _fetch_all\n    self._result_cache = list(self._iterable_class(self))\n                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/models/query.py\", line 91, in __iter__\n    results = compiler.execute_sql(\n              ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/models/sql/compiler.py\", line 1562, in execute_sql\n    cursor.execute(sql, params)\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/utils.py\", line 67, in execute\n    return self._execute_with_wrappers(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/utils.py\", line 80, in _execute_with_wrappers\n    return executor(sql, params, many, context)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/utils.py\", line 84, in _execute\n    with self.db.wrap_database_errors:\n  File \"/usr/local/lib/python3.11/site-packages/django/db/utils.py\", line 91, in __exit__\n    raise dj_exc_value.with_traceback(traceback) from exc_value\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/utils.py\", line 89, in _execute\n    return self.cursor.execute(sql, params)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\ndjango.db.utils.ProgrammingError: relation \"django_session\" does not exist",
+    "httpRequest": null,
+    "trace": "",
+    "spanId": ""
+  },
+  {
+    "id": "694dcde50006d08c7beee574",
+    "service": "colorplastic-app",
+    "revision": "colorplastic-app-00005-k76",
+    "timestamp": "2025-12-25T23:51:01.446604Z",
+    "severity": "ERROR",
+    "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/utils.py\", line 89, in _execute\n    return self.cursor.execute(sql, params)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\npsycopg2.errors.UndefinedTable: relation \"django_session\" does not exist",
+    "httpRequest": null,
+    "trace": "",
+    "spanId": ""
+  },
+  {
+    "id": "694dcde50006d077a3f5491a",
+    "service": "colorplastic-app",
+    "revision": "colorplastic-app-00005-k76",
+    "timestamp": "2025-12-25T23:51:01.446583Z",
+    "severity": "ERROR",
+    "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/contrib/sessions/backends/base.py\", line 187, in _get_session\n    return self._session_cache\n           ^^^^^^^^^^^^^^^^^^^\nAttributeError: 'SessionStore' object has no attribute '_session_cache'",
+    "httpRequest": null,
+    "trace": "",
+    "spanId": ""
+  },
+  {
+    "id": "694dcde50006d431214a51d4",
+    "service": "colorplastic-app",
+    "revision": "colorplastic-app-00005-k76",
+    "timestamp": "2025-12-25T23:51:01.377867Z",
+    "severity": "ERROR",
+    "message": "",
+    "httpRequest": {
+      "method": "GET",
+      "url": "https://colorplastic-app-381877373634.us-central1.run.app/gestion/",
+      "status": 500,
+      "latency": "0.067362927s",
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+      "remoteIp": "2803:9810:50e2:4008:7826:d9e7:1062:7c1"
+    },
+    "trace": "projects/appsindunnova/traces/030072c24f24ea5e84ad06f83238bf26",
+    "spanId": "b34f5915782add3e"
+  },
+  {
     "id": "694dc2a70007bfb1f1817a78",
     "service": "colorplastic-app",
     "revision": "colorplastic-app-00004-8zk",
@@ -18730,45 +18781,5 @@
     "httpRequest": null,
     "trace": "",
     "spanId": ""
-  },
-  {
-    "id": "69448aa1000d3c017f4c605e",
-    "service": "arcopack-erp",
-    "revision": "arcopack-erp-00335-9cp",
-    "timestamp": "2025-12-18T23:13:37.867329Z",
-    "severity": "ERROR",
-    "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/core/handlers/exception.py\", line 55, in inner\n    response = get_response(request)\n               ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/core/handlers/base.py\", line 197, in _get_response\n    response = wrapped_callback(request, *callback_args, **callback_kwargs)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/views/generic/base.py\", line 104, in view\n    return self.dispatch(request, *args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/contrib/auth/mixins.py\", line 73, in dispatch\n    return super().dispatch(request, *args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/views/generic/base.py\", line 143, in dispatch\n    return handler(request, *args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/views/generic/base.py\", line 226, in get\n    context = self.get_context_data(**kwargs)\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/app/inventario/views.py\", line 2045, in get_context_data\n    context['total_tintas'] = inventarios.count()\n                              ^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/models/query.py\", line 608, in count\n    return self.query.get_count(using=self.db)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/models/sql/query.py\", line 568, in get_count\n    return obj.get_aggregation(using, {\"__count\": Count(\"*\")})[\"__count\"]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/models/sql/query.py\", line 554, in get_aggregation\n    result = compiler.execute_sql(SINGLE)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/models/sql/compiler.py\", line 1562, in execute_sql\n    cursor.execute(sql, params)\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/utils.py\", line 67, in execute\n    return self._execute_with_wrappers(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/utils.py\", line 80, in _execute_with_wrappers\n    return executor(sql, params, many, context)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/utils.py\", line 84, in _execute\n    with self.db.wrap_database_errors:\n  File \"/usr/local/lib/python3.11/site-packages/django/db/utils.py\", line 91, in __exit__\n    raise dj_exc_value.with_traceback(traceback) from exc_value\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/utils.py\", line 89, in _execute\n    return self.cursor.execute(sql, params)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\ndjango.db.utils.ProgrammingError: relation \"inventario_inventariotintaarea\" does not exist",
-    "httpRequest": null,
-    "trace": "",
-    "spanId": ""
-  },
-  {
-    "id": "69448aa1000d3bdb98033620",
-    "service": "arcopack-erp",
-    "revision": "arcopack-erp-00335-9cp",
-    "timestamp": "2025-12-18T23:13:37.867291Z",
-    "severity": "ERROR",
-    "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/utils.py\", line 89, in _execute\n    return self.cursor.execute(sql, params)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\npsycopg2.errors.UndefinedTable: relation \"inventario_inventariotintaarea\" does not exist",
-    "httpRequest": null,
-    "trace": "",
-    "spanId": ""
-  },
-  {
-    "id": "69448aa1000d40a45e2b0d9b",
-    "service": "arcopack-erp",
-    "revision": "arcopack-erp-00335-9cp",
-    "timestamp": "2025-12-18T23:13:37.576666Z",
-    "severity": "ERROR",
-    "message": "",
-    "httpRequest": {
-      "method": "GET",
-      "url": "https://arcopack-erp-381877373634.us-central1.run.app/inventario/tinta-area/",
-      "status": 500,
-      "latency": "0.283127307s",
-      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
-      "remoteIp": "181.205.251.118"
-    },
-    "trace": "projects/appsindunnova/traces/18e9327090b535a58102a270a674e21c",
-    "spanId": "00c5195f33e3385f"
   }
 ]
