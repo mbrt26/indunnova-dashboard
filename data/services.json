@@ -96,7 +96,7 @@
     "repoName": "carnesdelsebastian",
     "errors": {
       "total": 220,
-      "last24h": 12,
+      "last24h": 3,
       "last7d": 220,
       "recentErrors": [
         {
@@ -118,7 +118,7 @@
     },
     "deployments": {
       "total": 20,
-      "last24h": 2,
+      "last24h": 1,
       "last7d": 20,
       "lastDeployment": "2025-12-26T21:36:41.559790Z",
       "recentDeployments": [
@@ -155,15 +155,15 @@
       "avgLatencyMs": 7898
     },
     "interactions": {
-      "requests7d": 173,
-      "requests30d": 173
+      "requests7d": 160,
+      "requests30d": 160
     },
     "costEstimate": {
-      "estimatedMonthly": 0.46,
-      "cpuCost": 0.42,
+      "estimatedMonthly": 0.43,
+      "cpuCost": 0.38,
       "memoryCost": 0.04,
       "requestCost": 0.0,
-      "estimatedRequests": 743,
+      "estimatedRequests": 688,
       "avgLatencyMs": 5828,
       "cpuCores": 2.0,
       "memoryGiB": 2.0,
@@ -172,7 +172,7 @@
       "usesConsolidatedDb": true,
       "hasDedicatedDb": false,
       "dedicatedDbName": null,
-      "totalWithSql": 1.77
+      "totalWithSql": 1.74
     }
   },
   {
@@ -425,9 +425,9 @@
     "repo": "https://github.com/mbrt26/ObrajeCRM",
     "repoName": "ObrajeCRM",
     "errors": {
-      "total": 25,
+      "total": 24,
       "last24h": 0,
-      "last7d": 25,
+      "last7d": 24,
       "recentErrors": [
         {
           "timestamp": "2025-12-21T20:30:52.985802Z",
@@ -1572,15 +1572,15 @@
       "avgLatencyMs": 565
     },
     "interactions": {
-      "requests7d": 2137,
-      "requests30d": 2137
+      "requests7d": 2146,
+      "requests30d": 2146
     },
     "costEstimate": {
       "estimatedMonthly": 0.41,
       "cpuCost": 0.38,
       "memoryCost": 0.02,
       "requestCost": 0.0,
-      "estimatedRequests": 9189,
+      "estimatedRequests": 9227,
       "avgLatencyMs": 865,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -1688,10 +1688,15 @@
     "repo": "https://github.com/mbrt26/RGDAire",
     "repoName": "RGDAire",
     "errors": {
-      "total": 27,
-      "last24h": 2,
-      "last7d": 27,
+      "total": 28,
+      "last24h": 3,
+      "last7d": 28,
       "recentErrors": [
+        {
+          "timestamp": "2025-12-27T18:38:25.107857Z",
+          "message": "Traceback (most recent call last):\n  File \"/app/manage.py\", line 26, in <module>\n    main()\n  File \"/app/manage.py\", line 22, in main\n    execute_from_command_line(sys.argv)\n  File \"/usr/local/lib/python3.12/site-packages/django/core/management/__init__.py\", line 442, in execute_from_command_line\n  ...",
+          "severity": "ERROR"
+        },
         {
           "timestamp": "2025-12-27T17:50:26.649095Z",
           "message": "Traceback (most recent call last):\n  File \"/app/manage.py\", line 26, in <module>\n    main()\n  File \"/app/manage.py\", line 22, in main\n    execute_from_command_line(sys.argv)\n  File \"/usr/local/lib/python3.12/site-packages/django/core/management/__init__.py\", line 442, in execute_from_command_line\n  ...",
@@ -1700,11 +1705,6 @@
         {
           "timestamp": "2025-12-27T17:36:48.383873Z",
           "message": "Traceback (most recent call last):\n  File \"/app/manage.py\", line 26, in <module>\n    main()\n  File \"/app/manage.py\", line 22, in main\n    execute_from_command_line(sys.argv)\n  File \"/usr/local/lib/python3.12/site-packages/django/core/management/__init__.py\", line 442, in execute_from_command_line\n  ...",
-          "severity": "ERROR"
-        },
-        {
-          "timestamp": "2025-12-23T13:19:54.233819Z",
-          "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.12/site-packages/django/core/handlers/exception.py\", line 55, in inner\n    response = get_response(request)\n               ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/site-packages/django/core/handlers/base.py\", line 220, ...",
           "severity": "ERROR"
         }
       ]
@@ -1748,15 +1748,15 @@
       "avgLatencyMs": 735
     },
     "interactions": {
-      "requests7d": 4608,
-      "requests30d": 4608
+      "requests7d": 4611,
+      "requests30d": 4611
     },
     "costEstimate": {
       "estimatedMonthly": 1.05,
-      "cpuCost": 0.98,
+      "cpuCost": 0.99,
       "memoryCost": 0.05,
       "requestCost": 0.01,
-      "estimatedRequests": 19814,
+      "estimatedRequests": 19827,
       "avgLatencyMs": 1035,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -1990,15 +1990,15 @@
       "avgLatencyMs": 0
     },
     "interactions": {
-      "requests7d": 61,
-      "requests30d": 61
+      "requests7d": 62,
+      "requests30d": 62
     },
     "costEstimate": {
       "estimatedMonthly": 0.0,
       "cpuCost": 0.0,
       "memoryCost": 0.0,
       "requestCost": 0.0,
-      "estimatedRequests": 262,
+      "estimatedRequests": 266,
       "avgLatencyMs": 650,
       "cpuCores": 0.3333,
       "memoryGiB": 0.5,
