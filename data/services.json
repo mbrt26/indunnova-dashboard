@@ -30,7 +30,7 @@
     },
     "deployments": {
       "total": 9,
-      "last24h": 8,
+      "last24h": 2,
       "last7d": 9,
       "lastDeployment": "2025-12-27T15:39:31.016052Z",
       "recentDeployments": [
@@ -1572,15 +1572,15 @@
       "avgLatencyMs": 565
     },
     "interactions": {
-      "requests7d": 2222,
-      "requests30d": 2222
+      "requests7d": 2235,
+      "requests30d": 2235
     },
     "costEstimate": {
-      "estimatedMonthly": 0.42,
+      "estimatedMonthly": 0.43,
       "cpuCost": 0.4,
       "memoryCost": 0.02,
       "requestCost": 0.0,
-      "estimatedRequests": 9554,
+      "estimatedRequests": 9610,
       "avgLatencyMs": 865,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -1589,7 +1589,7 @@
       "usesConsolidatedDb": true,
       "hasDedicatedDb": false,
       "dedicatedDbName": null,
-      "totalWithSql": 1.73
+      "totalWithSql": 1.74
     }
   },
   {
@@ -1689,9 +1689,14 @@
     "repoName": "RGDAire",
     "errors": {
       "total": 31,
-      "last24h": 7,
+      "last24h": 8,
       "last7d": 31,
       "recentErrors": [
+        {
+          "timestamp": "2025-12-27T23:59:39.790334Z",
+          "message": "Traceback (most recent call last):\n  File \"/app/manage.py\", line 26, in <module>\n    main()\n  File \"/app/manage.py\", line 22, in main\n    execute_from_command_line(sys.argv)\n  File \"/usr/local/lib/python3.12/site-packages/django/core/management/__init__.py\", line 442, in execute_from_command_line\n  ...",
+          "severity": "ERROR"
+        },
         {
           "timestamp": "2025-12-27T22:47:23.271089Z",
           "message": "Traceback (most recent call last):\n  File \"/app/manage.py\", line 26, in <module>\n    main()\n  File \"/app/manage.py\", line 22, in main\n    execute_from_command_line(sys.argv)\n  File \"/usr/local/lib/python3.12/site-packages/django/core/management/__init__.py\", line 442, in execute_from_command_line\n  ...",
@@ -1699,11 +1704,6 @@
         },
         {
           "timestamp": "2025-12-27T21:25:11.333399Z",
-          "message": "Traceback (most recent call last):\n  File \"/app/manage.py\", line 26, in <module>\n    main()\n  File \"/app/manage.py\", line 22, in main\n    execute_from_command_line(sys.argv)\n  File \"/usr/local/lib/python3.12/site-packages/django/core/management/__init__.py\", line 442, in execute_from_command_line\n  ...",
-          "severity": "ERROR"
-        },
-        {
-          "timestamp": "2025-12-27T20:21:28.222395Z",
           "message": "Traceback (most recent call last):\n  File \"/app/manage.py\", line 26, in <module>\n    main()\n  File \"/app/manage.py\", line 22, in main\n    execute_from_command_line(sys.argv)\n  File \"/usr/local/lib/python3.12/site-packages/django/core/management/__init__.py\", line 442, in execute_from_command_line\n  ...",
           "severity": "ERROR"
         }
@@ -1748,15 +1748,15 @@
       "avgLatencyMs": 735
     },
     "interactions": {
-      "requests7d": 4531,
-      "requests30d": 4531
+      "requests7d": 4517,
+      "requests30d": 4517
     },
     "costEstimate": {
       "estimatedMonthly": 1.03,
-      "cpuCost": 0.97,
+      "cpuCost": 0.96,
       "memoryCost": 0.05,
       "requestCost": 0.01,
-      "estimatedRequests": 19483,
+      "estimatedRequests": 19423,
       "avgLatencyMs": 1035,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -1990,15 +1990,15 @@
       "avgLatencyMs": 0
     },
     "interactions": {
-      "requests7d": 66,
-      "requests30d": 66
+      "requests7d": 67,
+      "requests30d": 67
     },
     "costEstimate": {
       "estimatedMonthly": 0.0,
       "cpuCost": 0.0,
       "memoryCost": 0.0,
       "requestCost": 0.0,
-      "estimatedRequests": 283,
+      "estimatedRequests": 288,
       "avgLatencyMs": 650,
       "cpuCores": 0.3333,
       "memoryGiB": 0.5,
