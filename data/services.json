@@ -90,76 +90,76 @@
     "repo": "https://github.com/mbrt26/carnesdelsebastian",
     "repoName": "carnesdelsebastian",
     "errors": {
-      "total": 193,
-      "last24h": 0,
-      "last7d": 193,
+      "total": 257,
+      "last24h": 64,
+      "last7d": 257,
       "recentErrors": [
         {
-          "timestamp": "2025-12-27T14:03:28.236932Z",
-          "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/core/handlers/exception.py\", line 55, in inner\n    response = get_response(request)\n               ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/core/handlers/base.py\", line 220, ...",
+          "timestamp": "2025-12-29T13:12:46.402799Z",
+          "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/core/handlers/exception.py\", line 55, in inner\n    response = get_response(request)\n               ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/core/handlers/base.py\", line 197, ...",
           "severity": "ERROR"
         },
         {
-          "timestamp": "2025-12-27T14:03:28.236830Z",
-          "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/utils.py\", line 89, in _execute\n    return self.cursor.execute(sql, params)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\npsycopg2.errors.UndefinedColumn: column calidad_registro_temperatura.turno doe...",
+          "timestamp": "2025-12-29T13:12:46.402735Z",
+          "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/utils.py\", line 89, in _execute\n    return self.cursor.execute(sql, params)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\npsycopg2.errors.UndefinedColumn: column calidad_categoriaformulariocalidad.col...",
           "severity": "ERROR"
         },
         {
-          "timestamp": "2025-12-27T14:02:56.431061Z",
+          "timestamp": "2025-12-29T13:12:46.204989Z",
           "message": "{}",
           "severity": "ERROR"
         }
       ]
     },
     "deployments": {
-      "total": 20,
-      "last24h": 0,
-      "last7d": 20,
-      "lastDeployment": "2025-12-26T21:36:41.559790Z",
+      "total": 25,
+      "last24h": 5,
+      "last7d": 25,
+      "lastDeployment": "2025-12-29T13:09:22.145797Z",
       "recentDeployments": [
         {
-          "revision": "carnesdelsebastian-00267-kqk",
-          "timestamp": "2025-12-26T21:36:41.559790Z",
+          "revision": "carnesdelsebastian-00272-29j",
+          "timestamp": "2025-12-29T13:09:22.145797Z",
           "status": "True"
         },
         {
-          "revision": "carnesdelsebastian-00266-57c",
-          "timestamp": "2025-12-26T18:29:34.869040Z",
+          "revision": "carnesdelsebastian-00271-58r",
+          "timestamp": "2025-12-29T13:03:10.298179Z",
           "status": "True"
         },
         {
-          "revision": "carnesdelsebastian-00265-p4l",
-          "timestamp": "2025-12-26T18:03:32.955557Z",
+          "revision": "carnesdelsebastian-00270-xfm",
+          "timestamp": "2025-12-29T12:57:49.615239Z",
+          "status": "False"
+        },
+        {
+          "revision": "carnesdelsebastian-00269-c97",
+          "timestamp": "2025-12-29T12:50:38.261931Z",
           "status": "True"
         },
         {
-          "revision": "carnesdelsebastian-00264-cgk",
-          "timestamp": "2025-12-26T17:06:31.282985Z",
-          "status": "True"
-        },
-        {
-          "revision": "carnesdelsebastian-00263-cnn",
-          "timestamp": "2025-12-26T16:12:26.298388Z",
+          "revision": "carnesdelsebastian-00268-nhq",
+          "timestamp": "2025-12-29T12:36:24.089181Z",
           "status": "True"
         }
       ]
     },
     "metrics": {
-      "errors5xx": 22,
+      "errors5xx": 39,
       "errors4xx": 0,
-      "avgLatencyMs": 7898
+      "avgLatencyMs": 4670
     },
     "interactions": {
-      "requests7d": 160,
-      "requests30d": 160
+      "requests7d": 227,
+      "requests30d": 227
     },
     "costEstimate": {
-      "estimatedMonthly": 0.43,
-      "cpuCost": 0.38,
-      "memoryCost": 0.04,
+      "estimatedMonthly": 0.37,
+      "cpuCost": 0.33,
+      "memoryCost": 0.03,
       "requestCost": 0.0,
-      "estimatedRequests": 688,
-      "avgLatencyMs": 5828,
+      "estimatedRequests": 976,
+      "avgLatencyMs": 3569,
       "cpuCores": 2.0,
       "memoryGiB": 2.0,
       "note": "Estimacion incluye cold starts y overhead tipico",
@@ -167,7 +167,7 @@
       "usesConsolidatedDb": true,
       "hasDedicatedDb": false,
       "dedicatedDbName": null,
-      "totalWithSql": 1.74
+      "totalWithSql": 1.68
     }
   },
   {
@@ -330,15 +330,15 @@
       "avgLatencyMs": 1270
     },
     "interactions": {
-      "requests7d": 162,
-      "requests30d": 162
+      "requests7d": 163,
+      "requests30d": 163
     },
     "costEstimate": {
       "estimatedMonthly": 0.06,
       "cpuCost": 0.05,
       "memoryCost": 0.0,
       "requestCost": 0.0,
-      "estimatedRequests": 696,
+      "estimatedRequests": 700,
       "avgLatencyMs": 1570,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -422,15 +422,15 @@
       "avgLatencyMs": 0
     },
     "interactions": {
-      "requests7d": 48,
-      "requests30d": 48
+      "requests7d": 49,
+      "requests30d": 49
     },
     "costEstimate": {
       "estimatedMonthly": 0.01,
       "cpuCost": 0.01,
       "memoryCost": 0.0,
       "requestCost": 0.0,
-      "estimatedRequests": 206,
+      "estimatedRequests": 210,
       "avgLatencyMs": 650,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -653,9 +653,9 @@
       ]
     },
     "deployments": {
-      "total": 12,
+      "total": 10,
       "last24h": 0,
-      "last7d": 12,
+      "last7d": 10,
       "lastDeployment": "2025-12-23T16:51:09.026775Z",
       "recentDeployments": [
         {
@@ -1433,15 +1433,15 @@
       "avgLatencyMs": 426
     },
     "interactions": {
-      "requests7d": 2641,
-      "requests30d": 2641
+      "requests7d": 2616,
+      "requests30d": 2616
     },
     "costEstimate": {
-      "estimatedMonthly": 0.43,
-      "cpuCost": 0.4,
+      "estimatedMonthly": 0.42,
+      "cpuCost": 0.39,
       "memoryCost": 0.02,
       "requestCost": 0.0,
-      "estimatedRequests": 11356,
+      "estimatedRequests": 11248,
       "avgLatencyMs": 726,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -1450,7 +1450,7 @@
       "usesConsolidatedDb": true,
       "hasDedicatedDb": false,
       "dedicatedDbName": null,
-      "totalWithSql": 1.74
+      "totalWithSql": 1.73
     }
   },
   {
@@ -1549,10 +1549,15 @@
     "repo": "https://github.com/mbrt26/RGDAire",
     "repoName": "RGDAire",
     "errors": {
-      "total": 31,
-      "last24h": 16,
-      "last7d": 31,
+      "total": 32,
+      "last24h": 17,
+      "last7d": 32,
       "recentErrors": [
+        {
+          "timestamp": "2025-12-29T12:33:16.167813Z",
+          "message": "Traceback (most recent call last):\n  File \"/app/manage.py\", line 26, in <module>\n    main()\n  File \"/app/manage.py\", line 22, in main\n    execute_from_command_line(sys.argv)\n  File \"/usr/local/lib/python3.12/site-packages/django/core/management/__init__.py\", line 442, in execute_from_command_line\n  ...",
+          "severity": "ERROR"
+        },
         {
           "timestamp": "2025-12-29T11:55:59.081511Z",
           "message": "Traceback (most recent call last):\n  File \"/app/manage.py\", line 26, in <module>\n    main()\n  File \"/app/manage.py\", line 22, in main\n    execute_from_command_line(sys.argv)\n  File \"/usr/local/lib/python3.12/site-packages/django/core/management/__init__.py\", line 442, in execute_from_command_line\n  ...",
@@ -1560,11 +1565,6 @@
         },
         {
           "timestamp": "2025-12-29T11:21:45.326097Z",
-          "message": "Traceback (most recent call last):\n  File \"/app/manage.py\", line 26, in <module>\n    main()\n  File \"/app/manage.py\", line 22, in main\n    execute_from_command_line(sys.argv)\n  File \"/usr/local/lib/python3.12/site-packages/django/core/management/__init__.py\", line 442, in execute_from_command_line\n  ...",
-          "severity": "ERROR"
-        },
-        {
-          "timestamp": "2025-12-29T10:52:15.054051Z",
           "message": "Traceback (most recent call last):\n  File \"/app/manage.py\", line 26, in <module>\n    main()\n  File \"/app/manage.py\", line 22, in main\n    execute_from_command_line(sys.argv)\n  File \"/usr/local/lib/python3.12/site-packages/django/core/management/__init__.py\", line 442, in execute_from_command_line\n  ...",
           "severity": "ERROR"
         }
@@ -1609,15 +1609,15 @@
       "avgLatencyMs": 103
     },
     "interactions": {
-      "requests7d": 4075,
-      "requests30d": 4075
+      "requests7d": 4030,
+      "requests30d": 4030
     },
     "costEstimate": {
       "estimatedMonthly": 0.37,
       "cpuCost": 0.34,
       "memoryCost": 0.02,
       "requestCost": 0.01,
-      "estimatedRequests": 17522,
+      "estimatedRequests": 17329,
       "avgLatencyMs": 403,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -1851,15 +1851,15 @@
       "avgLatencyMs": 0
     },
     "interactions": {
-      "requests7d": 103,
-      "requests30d": 103
+      "requests7d": 104,
+      "requests30d": 104
     },
     "costEstimate": {
       "estimatedMonthly": 0.01,
       "cpuCost": 0.0,
       "memoryCost": 0.0,
       "requestCost": 0.0,
-      "estimatedRequests": 442,
+      "estimatedRequests": 447,
       "avgLatencyMs": 650,
       "cpuCores": 0.3333,
       "memoryGiB": 0.5,
@@ -1973,9 +1973,9 @@
       ]
     },
     "deployments": {
-      "total": 29,
+      "total": 26,
       "last24h": 0,
-      "last7d": 29,
+      "last7d": 26,
       "lastDeployment": "2025-12-23T18:55:59.535183Z",
       "recentDeployments": [
         {
