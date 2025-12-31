@@ -558,22 +558,22 @@
     "repo": "https://github.com/mbrt26/KOMSA",
     "repoName": "KOMSA",
     "errors": {
-      "total": 6,
-      "last24h": 0,
-      "last7d": 6,
+      "total": 12,
+      "last24h": 6,
+      "last7d": 12,
       "recentErrors": [
         {
-          "timestamp": "2025-12-30T17:48:16.823288Z",
+          "timestamp": "2025-12-31T23:02:24.853731Z",
           "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/core/handlers/exception.py\", line 55, in inner\n    response = get_response(request)\n               ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/core/handlers/base.py\", line 197, ...",
           "severity": "ERROR"
         },
         {
-          "timestamp": "2025-12-30T17:47:53.253068Z",
+          "timestamp": "2025-12-31T23:02:00.450470Z",
           "message": "{}",
           "severity": "ERROR"
         },
         {
-          "timestamp": "2025-12-29T06:09:08.995844Z",
+          "timestamp": "2025-12-31T22:45:44.302785Z",
           "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/core/handlers/exception.py\", line 55, in inner\n    response = get_response(request)\n               ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/core/handlers/base.py\", line 197, ...",
           "severity": "ERROR"
         }
@@ -587,21 +587,21 @@
       "recentDeployments": []
     },
     "metrics": {
-      "errors5xx": 3,
+      "errors5xx": 6,
       "errors4xx": 0,
-      "avgLatencyMs": 22730
+      "avgLatencyMs": 19246
     },
     "interactions": {
-      "requests7d": 26,
-      "requests30d": 26
+      "requests7d": 34,
+      "requests30d": 34
     },
     "costEstimate": {
-      "estimatedMonthly": 0.09,
-      "cpuCost": 0.09,
-      "memoryCost": 0.0,
+      "estimatedMonthly": 0.1,
+      "cpuCost": 0.1,
+      "memoryCost": 0.01,
       "requestCost": 0.0,
-      "estimatedRequests": 111,
-      "avgLatencyMs": 16210,
+      "estimatedRequests": 146,
+      "avgLatencyMs": 13772,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
       "note": "Estimacion incluye cold starts y overhead tipico",
@@ -609,7 +609,7 @@
       "usesConsolidatedDb": true,
       "hasDedicatedDb": false,
       "dedicatedDbName": null,
-      "totalWithSql": 1.4
+      "totalWithSql": 1.41
     }
   },
   {
@@ -756,15 +756,15 @@
       "avgLatencyMs": 0
     },
     "interactions": {
-      "requests7d": 2,
-      "requests30d": 2
+      "requests7d": 0,
+      "requests30d": 0
     },
     "costEstimate": {
       "estimatedMonthly": 0.0,
       "cpuCost": 0.0,
       "memoryCost": 0.0,
       "requestCost": 0.0,
-      "estimatedRequests": 8,
+      "estimatedRequests": 0,
       "avgLatencyMs": 650,
       "cpuCores": 0.5833,
       "memoryGiB": 1.0,
@@ -1232,38 +1232,53 @@
   {
     "name": "mouse-digital",
     "url": "https://mouse-digital-381877373634.us-central1.run.app",
-    "status": "True",
+    "status": "False",
     "region": "us-central1",
     "repo": "https://github.com/mbrt26/MouseDigital",
     "repoName": "MouseDigital",
     "errors": {
-      "total": 22,
-      "last24h": 22,
-      "last7d": 22,
+      "total": 29,
+      "last24h": 29,
+      "last7d": 29,
       "recentErrors": [
         {
-          "timestamp": "2025-12-31T20:00:14.513693Z",
+          "timestamp": "2025-12-31T23:02:32.619440Z",
           "message": "{}",
           "severity": "ERROR"
         },
         {
-          "timestamp": "2025-12-31T20:00:14.439738Z",
+          "timestamp": "2025-12-31T23:02:32.536878Z",
           "message": "{}",
           "severity": "ERROR"
         },
         {
-          "timestamp": "2025-12-31T20:00:14.430986Z",
+          "timestamp": "2025-12-31T23:02:32.522200Z",
           "message": "Default STARTUP TCP probe failed 1 time consecutively for container \"mouse-digital-1\" on port 8080. The instance was not started.\nConnection failed with status CANCELLED.",
           "severity": "ERROR"
         }
       ]
     },
     "deployments": {
-      "total": 19,
-      "last24h": 10,
-      "last7d": 15,
-      "lastDeployment": "2025-12-31T21:25:59.012046Z",
+      "total": 22,
+      "last24h": 13,
+      "last7d": 17,
+      "lastDeployment": "2025-12-31T23:02:06.401726Z",
       "recentDeployments": [
+        {
+          "revision": "mouse-digital-00103-q7p",
+          "timestamp": "2025-12-31T23:02:06.401726Z",
+          "status": "False"
+        },
+        {
+          "revision": "mouse-digital-00102-x5c",
+          "timestamp": "2025-12-31T23:01:36.306435Z",
+          "status": "True"
+        },
+        {
+          "revision": "mouse-digital-00101-vjw",
+          "timestamp": "2025-12-31T22:43:31.627820Z",
+          "status": "True"
+        },
         {
           "revision": "mouse-digital-00100-ncv",
           "timestamp": "2025-12-31T21:25:59.012046Z",
@@ -1272,21 +1287,6 @@
         {
           "revision": "mouse-digital-00099-h6t",
           "timestamp": "2025-12-31T20:59:07.948115Z",
-          "status": "True"
-        },
-        {
-          "revision": "mouse-digital-00098-kn8",
-          "timestamp": "2025-12-31T20:07:18.116603Z",
-          "status": "True"
-        },
-        {
-          "revision": "mouse-digital-00097-zjk",
-          "timestamp": "2025-12-31T20:00:48.976994Z",
-          "status": "True"
-        },
-        {
-          "revision": "mouse-digital-00096-wjw",
-          "timestamp": "2025-12-31T20:00:00.982156Z",
           "status": "True"
         }
       ]
@@ -1297,24 +1297,24 @@
       "avgLatencyMs": 122
     },
     "interactions": {
-      "requests7d": 51,
-      "requests30d": 51
+      "requests7d": 69,
+      "requests30d": 69
     },
     "costEstimate": {
-      "estimatedMonthly": 0.0,
-      "cpuCost": 0.0,
+      "estimatedMonthly": 0.01,
+      "cpuCost": 0.01,
       "memoryCost": 0.0,
       "requestCost": 0.0,
-      "estimatedRequests": 219,
+      "estimatedRequests": 296,
       "avgLatencyMs": 422,
       "cpuCores": 1.0,
-      "memoryGiB": 0.5,
+      "memoryGiB": 1.0,
       "note": "Estimacion incluye cold starts y overhead tipico",
       "sqlCostShare": 1.31,
       "usesConsolidatedDb": true,
       "hasDedicatedDb": false,
       "dedicatedDbName": null,
-      "totalWithSql": 1.31
+      "totalWithSql": 1.32
     }
   },
   {
@@ -1325,9 +1325,9 @@
     "repo": "https://github.com/mbrt26/NOVAPCR",
     "repoName": "NOVAPCR",
     "errors": {
-      "total": 11,
+      "total": 8,
       "last24h": 0,
-      "last7d": 11,
+      "last7d": 8,
       "recentErrors": [
         {
           "timestamp": "2025-12-27T11:47:23.947628Z",
@@ -1349,7 +1349,7 @@
     "deployments": {
       "total": 21,
       "last24h": 0,
-      "last7d": 12,
+      "last7d": 9,
       "lastDeployment": "2025-12-27T13:09:09.308646Z",
       "recentDeployments": [
         {
@@ -1380,21 +1380,21 @@
       ]
     },
     "metrics": {
-      "errors5xx": 3,
+      "errors5xx": 2,
       "errors4xx": 0,
-      "avgLatencyMs": 1294
+      "avgLatencyMs": 135
     },
     "interactions": {
-      "requests7d": 2033,
-      "requests30d": 2033
+      "requests7d": 2038,
+      "requests30d": 2038
     },
     "costEstimate": {
-      "estimatedMonthly": 0.71,
-      "cpuCost": 0.67,
-      "memoryCost": 0.03,
+      "estimatedMonthly": 0.2,
+      "cpuCost": 0.18,
+      "memoryCost": 0.01,
       "requestCost": 0.0,
-      "estimatedRequests": 8741,
-      "avgLatencyMs": 1594,
+      "estimatedRequests": 8763,
+      "avgLatencyMs": 435,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
       "note": "Estimacion incluye cold starts y overhead tipico",
@@ -1402,7 +1402,7 @@
       "usesConsolidatedDb": true,
       "hasDedicatedDb": false,
       "dedicatedDbName": null,
-      "totalWithSql": 2.02
+      "totalWithSql": 1.51
     }
   },
   {
@@ -1419,7 +1419,7 @@
       "recentErrors": []
     },
     "deployments": {
-      "total": 23,
+      "total": 21,
       "last24h": 0,
       "last7d": 1,
       "lastDeployment": "2025-12-25T15:18:21.810565Z",
@@ -1545,15 +1545,15 @@
       "avgLatencyMs": 184
     },
     "interactions": {
-      "requests7d": 6007,
-      "requests30d": 6007
+      "requests7d": 5979,
+      "requests30d": 5979
     },
     "costEstimate": {
       "estimatedMonthly": 0.65,
       "cpuCost": 0.6,
       "memoryCost": 0.03,
       "requestCost": 0.01,
-      "estimatedRequests": 25830,
+      "estimatedRequests": 25709,
       "avgLatencyMs": 484,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -2020,15 +2020,15 @@
       "avgLatencyMs": 0
     },
     "interactions": {
-      "requests7d": 29,
-      "requests30d": 29
+      "requests7d": 28,
+      "requests30d": 28
     },
     "costEstimate": {
       "estimatedMonthly": 0.0,
       "cpuCost": 0.0,
       "memoryCost": 0.0,
       "requestCost": 0.0,
-      "estimatedRequests": 124,
+      "estimatedRequests": 120,
       "avgLatencyMs": 650,
       "cpuCores": 1.0,
       "memoryGiB": 0.25,
@@ -2054,7 +2054,7 @@
       "recentErrors": []
     },
     "deployments": {
-      "total": 4,
+      "total": 3,
       "last24h": 0,
       "last7d": 0,
       "lastDeployment": "2025-12-23T18:55:59.535183Z",
@@ -2072,11 +2072,6 @@
         {
           "revision": "tersasoft-00027-w4p",
           "timestamp": "2025-12-23T18:40:45.324219Z",
-          "status": "True"
-        },
-        {
-          "revision": "tersasoft-00026-r25",
-          "timestamp": "2025-12-23T18:30:50.187300Z",
           "status": "True"
         }
       ]
