@@ -319,15 +319,15 @@
       "avgLatencyMs": 1270
     },
     "interactions": {
-      "requests7d": 163,
-      "requests30d": 163
+      "requests7d": 195,
+      "requests30d": 195
     },
     "costEstimate": {
-      "estimatedMonthly": 0.06,
-      "cpuCost": 0.05,
+      "estimatedMonthly": 0.07,
+      "cpuCost": 0.06,
       "memoryCost": 0.0,
       "requestCost": 0.0,
-      "estimatedRequests": 700,
+      "estimatedRequests": 838,
       "avgLatencyMs": 1570,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -336,7 +336,7 @@
       "usesConsolidatedDb": true,
       "hasDedicatedDb": false,
       "dedicatedDbName": null,
-      "totalWithSql": 1.37
+      "totalWithSql": 1.38
     }
   },
   {
@@ -626,7 +626,7 @@
       "recentErrors": []
     },
     "deployments": {
-      "total": 3,
+      "total": 2,
       "last24h": 0,
       "last7d": 0,
       "lastDeployment": "2025-12-23T16:51:09.026775Z",
@@ -639,11 +639,6 @@
         {
           "revision": "formas-futuro-00014-v66",
           "timestamp": "2025-12-23T16:41:45.844105Z",
-          "status": "True"
-        },
-        {
-          "revision": "formas-futuro-00013-b7w",
-          "timestamp": "2025-12-23T12:05:37.055516Z",
           "status": "True"
         }
       ]
@@ -1396,15 +1391,15 @@
       "avgLatencyMs": 987
     },
     "interactions": {
-      "requests7d": 2178,
-      "requests30d": 2178
+      "requests7d": 2141,
+      "requests30d": 2141
     },
     "costEstimate": {
-      "estimatedMonthly": 0.62,
-      "cpuCost": 0.58,
+      "estimatedMonthly": 0.61,
+      "cpuCost": 0.57,
       "memoryCost": 0.03,
       "requestCost": 0.0,
-      "estimatedRequests": 9365,
+      "estimatedRequests": 9206,
       "avgLatencyMs": 1287,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -1413,7 +1408,7 @@
       "usesConsolidatedDb": true,
       "hasDedicatedDb": false,
       "dedicatedDbName": null,
-      "totalWithSql": 1.93
+      "totalWithSql": 1.92
     }
   },
   {
@@ -1556,15 +1551,15 @@
       "avgLatencyMs": 184
     },
     "interactions": {
-      "requests7d": 6110,
-      "requests30d": 6110
+      "requests7d": 6108,
+      "requests30d": 6108
     },
     "costEstimate": {
       "estimatedMonthly": 0.66,
       "cpuCost": 0.61,
       "memoryCost": 0.03,
       "requestCost": 0.01,
-      "estimatedRequests": 26273,
+      "estimatedRequests": 26264,
       "avgLatencyMs": 484,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -1629,15 +1624,15 @@
       "avgLatencyMs": 2064
     },
     "interactions": {
-      "requests7d": 2,
-      "requests30d": 2
+      "requests7d": 23,
+      "requests30d": 23
     },
     "costEstimate": {
-      "estimatedMonthly": 0.0,
-      "cpuCost": 0.0,
+      "estimatedMonthly": 0.01,
+      "cpuCost": 0.01,
       "memoryCost": 0.0,
       "requestCost": 0.0,
-      "estimatedRequests": 8,
+      "estimatedRequests": 98,
       "avgLatencyMs": 1744,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -1646,7 +1641,7 @@
       "usesConsolidatedDb": false,
       "hasDedicatedDb": false,
       "dedicatedDbName": null,
-      "totalWithSql": 0.0
+      "totalWithSql": 0.01
     }
   },
   {
@@ -1804,6 +1799,110 @@
     }
   },
   {
+    "name": "start-sql-instances",
+    "url": "https://start-sql-instances-381877373634.us-central1.run.app",
+    "status": "True",
+    "region": "us-central1",
+    "repo": null,
+    "repoName": null,
+    "errors": {
+      "total": 0,
+      "last24h": 0,
+      "last7d": 0,
+      "recentErrors": []
+    },
+    "deployments": {
+      "total": 1,
+      "last24h": 1,
+      "last7d": 1,
+      "lastDeployment": "2025-12-31T13:50:25.739640Z",
+      "recentDeployments": [
+        {
+          "revision": "start-sql-instances-00001-gux",
+          "timestamp": "2025-12-31T13:50:25.739640Z",
+          "status": "True"
+        }
+      ]
+    },
+    "metrics": {
+      "errors5xx": 0,
+      "errors4xx": 0,
+      "avgLatencyMs": 0
+    },
+    "interactions": {
+      "requests7d": 0,
+      "requests30d": 0
+    },
+    "costEstimate": {
+      "estimatedMonthly": 0.0,
+      "cpuCost": 0.0,
+      "memoryCost": 0.0,
+      "requestCost": 0.0,
+      "estimatedRequests": 0,
+      "avgLatencyMs": 650,
+      "cpuCores": 0.1666,
+      "memoryGiB": 0.25,
+      "note": "Estimacion incluye cold starts y overhead tipico",
+      "sqlCostShare": 0,
+      "usesConsolidatedDb": false,
+      "hasDedicatedDb": false,
+      "dedicatedDbName": null,
+      "totalWithSql": 0.0
+    }
+  },
+  {
+    "name": "stop-sql-instances",
+    "url": "https://stop-sql-instances-381877373634.us-central1.run.app",
+    "status": "True",
+    "region": "us-central1",
+    "repo": null,
+    "repoName": null,
+    "errors": {
+      "total": 0,
+      "last24h": 0,
+      "last7d": 0,
+      "recentErrors": []
+    },
+    "deployments": {
+      "total": 1,
+      "last24h": 1,
+      "last7d": 1,
+      "lastDeployment": "2025-12-31T13:48:45.913178Z",
+      "recentDeployments": [
+        {
+          "revision": "stop-sql-instances-00001-fiz",
+          "timestamp": "2025-12-31T13:48:45.913178Z",
+          "status": "True"
+        }
+      ]
+    },
+    "metrics": {
+      "errors5xx": 0,
+      "errors4xx": 0,
+      "avgLatencyMs": 0
+    },
+    "interactions": {
+      "requests7d": 0,
+      "requests30d": 0
+    },
+    "costEstimate": {
+      "estimatedMonthly": 0.0,
+      "cpuCost": 0.0,
+      "memoryCost": 0.0,
+      "requestCost": 0.0,
+      "estimatedRequests": 0,
+      "avgLatencyMs": 650,
+      "cpuCores": 0.1666,
+      "memoryGiB": 0.25,
+      "note": "Estimacion incluye cold starts y overhead tipico",
+      "sqlCostShare": 0,
+      "usesConsolidatedDb": false,
+      "hasDedicatedDb": false,
+      "dedicatedDbName": null,
+      "totalWithSql": 0.0
+    }
+  },
+  {
     "name": "syncmeetings",
     "url": "https://syncmeetings-381877373634.us-central1.run.app",
     "status": "True",
@@ -1855,15 +1954,15 @@
       "avgLatencyMs": 0
     },
     "interactions": {
-      "requests7d": 155,
-      "requests30d": 155
+      "requests7d": 137,
+      "requests30d": 137
     },
     "costEstimate": {
       "estimatedMonthly": 0.01,
       "cpuCost": 0.01,
       "memoryCost": 0.0,
       "requestCost": 0.0,
-      "estimatedRequests": 666,
+      "estimatedRequests": 589,
       "avgLatencyMs": 650,
       "cpuCores": 0.3333,
       "memoryGiB": 0.5,
@@ -1927,15 +2026,15 @@
       "avgLatencyMs": 0
     },
     "interactions": {
-      "requests7d": 37,
-      "requests30d": 37
+      "requests7d": 33,
+      "requests30d": 33
     },
     "costEstimate": {
-      "estimatedMonthly": 0.01,
+      "estimatedMonthly": 0.0,
       "cpuCost": 0.0,
       "memoryCost": 0.0,
       "requestCost": 0.0,
-      "estimatedRequests": 159,
+      "estimatedRequests": 141,
       "avgLatencyMs": 650,
       "cpuCores": 1.0,
       "memoryGiB": 0.25,
@@ -1944,7 +2043,7 @@
       "usesConsolidatedDb": false,
       "hasDedicatedDb": false,
       "dedicatedDbName": null,
-      "totalWithSql": 0.01
+      "totalWithSql": 0.0
     }
   },
   {
@@ -1961,7 +2060,7 @@
       "recentErrors": []
     },
     "deployments": {
-      "total": 13,
+      "total": 12,
       "last24h": 0,
       "last7d": 0,
       "lastDeployment": "2025-12-23T18:55:59.535183Z",
@@ -1999,15 +2098,15 @@
       "avgLatencyMs": 0
     },
     "interactions": {
-      "requests7d": 177,
-      "requests30d": 177
+      "requests7d": 185,
+      "requests30d": 185
     },
     "costEstimate": {
       "estimatedMonthly": 0.03,
       "cpuCost": 0.02,
       "memoryCost": 0.0,
       "requestCost": 0.0,
-      "estimatedRequests": 761,
+      "estimatedRequests": 795,
       "avgLatencyMs": 650,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
