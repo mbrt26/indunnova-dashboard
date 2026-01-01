@@ -1325,22 +1325,22 @@
     "repo": "https://github.com/mbrt26/NOVAPCR",
     "repoName": "NOVAPCR",
     "errors": {
-      "total": 271,
-      "last24h": 263,
-      "last7d": 271,
+      "total": 315,
+      "last24h": 307,
+      "last7d": 315,
       "recentErrors": [
         {
-          "timestamp": "2026-01-01T09:05:01.853836Z",
+          "timestamp": "2026-01-01T10:00:02.019330Z",
           "message": "Traceback (most recent call last):\n  File \"/app/sensores_iot/views.py\", line 1571, in cron_sync_y_alertas\n    resultado_sensores = sincronizar_y_detectar_paros()\n                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/app/sensores_iot/services.py\", line 479, in sincronizar_y_detectar_paros\n...",
           "severity": "ERROR"
         },
         {
-          "timestamp": "2026-01-01T09:05:01.853769Z",
+          "timestamp": "2026-01-01T10:00:02.019251Z",
           "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 288, in ensure_connection\n    self.connect()\n  File \"/usr/local/lib/python3.11/site-packages/django/utils/asyncio.py\", line 26, in inner\n    return func(*args, **kwargs)\n        ...",
           "severity": "ERROR"
         },
         {
-          "timestamp": "2026-01-01T09:05:01.851528Z",
+          "timestamp": "2026-01-01T10:00:02.016766Z",
           "message": "Cloud SQL connection failed. Please see https://cloud.google.com/sql/docs/mysql/connect-run, https://cloud.google.com/sql/docs/postgres/connect-run, or https://cloud.google.com/sql/docs/sqlserver/connect-run for additional details: fetch ephemeral cert failed: refresh error: create ephemeral cert fa...",
           "severity": "ERROR"
         }
@@ -1380,20 +1380,20 @@
       ]
     },
     "metrics": {
-      "errors5xx": 51,
+      "errors5xx": 62,
       "errors4xx": 0,
-      "avgLatencyMs": 91
+      "avgLatencyMs": 92
     },
     "interactions": {
-      "requests7d": 2157,
-      "requests30d": 2157
+      "requests7d": 2167,
+      "requests30d": 2167
     },
     "costEstimate": {
-      "estimatedMonthly": 0.19,
+      "estimatedMonthly": 0.2,
       "cpuCost": 0.18,
       "memoryCost": 0.01,
       "requestCost": 0.0,
-      "estimatedRequests": 9275,
+      "estimatedRequests": 9318,
       "avgLatencyMs": 400,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -1402,7 +1402,7 @@
       "usesConsolidatedDb": true,
       "hasDedicatedDb": false,
       "dedicatedDbName": null,
-      "totalWithSql": 0.19
+      "totalWithSql": 0.2
     }
   },
   {
@@ -1501,22 +1501,22 @@
     "repo": "https://github.com/mbrt26/RGDAire",
     "repoName": "RGDAire",
     "errors": {
-      "total": 41,
-      "last24h": 3,
-      "last7d": 41,
+      "total": 44,
+      "last24h": 6,
+      "last7d": 44,
       "recentErrors": [
         {
-          "timestamp": "2026-01-01T08:39:04.026094Z",
+          "timestamp": "2026-01-01T10:00:16.866377Z",
           "message": "Traceback (most recent call last):\n  File \"/app/manage.py\", line 26, in <module>\n    main()\n  File \"/app/manage.py\", line 22, in main\n    execute_from_command_line(sys.argv)\n  File \"/usr/local/lib/python3.12/site-packages/django/core/management/__init__.py\", line 442, in execute_from_command_line\n  ...",
           "severity": "ERROR"
         },
         {
-          "timestamp": "2026-01-01T08:39:03.997537Z",
+          "timestamp": "2026-01-01T10:00:16.829512Z",
           "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.12/site-packages/django/db/backends/base/base.py\", line 279, in ensure_connection\n    self.connect()\n  File \"/usr/local/lib/python3.12/site-packages/django/utils/asyncio.py\", line 26, in inner\n    return func(*args, **kwargs)\n        ...",
           "severity": "ERROR"
         },
         {
-          "timestamp": "2026-01-01T08:39:03.985756Z",
+          "timestamp": "2026-01-01T10:00:16.813134Z",
           "message": "Cloud SQL connection failed. Please see https://cloud.google.com/sql/docs/mysql/connect-run, https://cloud.google.com/sql/docs/postgres/connect-run, or https://cloud.google.com/sql/docs/sqlserver/connect-run for additional details: fetch ephemeral cert failed: refresh error: create ephemeral cert fa...",
           "severity": "ERROR"
         }
@@ -1561,15 +1561,15 @@
       "avgLatencyMs": 184
     },
     "interactions": {
-      "requests7d": 5804,
-      "requests30d": 5804
+      "requests7d": 5793,
+      "requests30d": 5793
     },
     "costEstimate": {
       "estimatedMonthly": 0.63,
       "cpuCost": 0.58,
       "memoryCost": 0.03,
       "requestCost": 0.01,
-      "estimatedRequests": 24957,
+      "estimatedRequests": 24909,
       "avgLatencyMs": 484,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -1964,15 +1964,15 @@
       "avgLatencyMs": 0
     },
     "interactions": {
-      "requests7d": 143,
-      "requests30d": 143
+      "requests7d": 144,
+      "requests30d": 144
     },
     "costEstimate": {
       "estimatedMonthly": 0.01,
       "cpuCost": 0.01,
       "memoryCost": 0.0,
       "requestCost": 0.0,
-      "estimatedRequests": 614,
+      "estimatedRequests": 619,
       "avgLatencyMs": 650,
       "cpuCores": 0.3333,
       "memoryGiB": 0.5,
