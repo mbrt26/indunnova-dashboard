@@ -1,23 +1,23 @@
 {
-  "lastUpdate": "2026-01-01T04:22:07.186603+00:00",
+  "lastUpdate": "2026-01-01T05:09:19.625395+00:00",
   "project": "appsindunnova",
   "totalServices": 35,
   "totalRepos": 41,
   "healthyServices": 35,
   "unhealthyServices": 0,
-  "totalErrors24h": 200,
-  "totalErrors7d": 644,
+  "totalErrors24h": 271,
+  "totalErrors7d": 715,
   "totalDeployments24h": 38,
   "totalDeployments7d": 173,
   "servicesWithErrors": 11,
   "costs": {
-    "cloudRun": 2.41,
-    "cloudSql": 52.79,
+    "cloudRun": 2.38,
+    "cloudSql": 11.9,
     "other": 32.0,
-    "total": 87.2,
+    "total": 46.28,
     "sqlInstances": {
-      "running": 3,
-      "stopped": 0
+      "running": 0,
+      "stopped": 3
     },
     "breakdown": {
       "artifactRegistry": 10.0,
@@ -30,39 +30,39 @@
   "cloudSqlInstances": [
     {
       "name": "florezcook-instance",
-      "state": "RUNNABLE",
+      "state": "STOPPED",
       "tier": "db-f1-micro",
       "diskSizeGb": 10,
       "diskType": "PD_SSD",
       "region": "southamerica-east1",
       "databaseVersion": "MYSQL_8_0",
-      "computeCost": 7.67,
+      "computeCost": 0,
       "storageCost": 1.7,
-      "totalCost": 9.37
+      "totalCost": 1.7
     },
     {
       "name": "postgres-consolidated",
-      "state": "RUNNABLE",
+      "state": "STOPPED",
       "tier": "db-g1-small",
       "diskSizeGb": 50,
       "diskType": "PD_SSD",
       "region": "us-central1",
       "databaseVersion": "POSTGRES_15",
-      "computeCost": 25.55,
+      "computeCost": 0,
       "storageCost": 8.5,
-      "totalCost": 34.05
+      "totalCost": 8.5
     },
     {
       "name": "rgd-aire-db",
-      "state": "RUNNABLE",
+      "state": "STOPPED",
       "tier": "db-f1-micro",
       "diskSizeGb": 10,
       "diskType": "PD_SSD",
       "region": "us-central1",
       "databaseVersion": "POSTGRES_14",
-      "computeCost": 7.67,
+      "computeCost": 0,
       "storageCost": 1.7,
-      "totalCost": 9.37
+      "totalCost": 1.7
     }
   ]
 }
