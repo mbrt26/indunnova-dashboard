@@ -485,26 +485,10 @@
     "repo": "https://github.com/mbrt26/GYT",
     "repoName": "GYT",
     "errors": {
-      "total": 3,
+      "total": 0,
       "last24h": 0,
-      "last7d": 3,
-      "recentErrors": [
-        {
-          "timestamp": "2025-12-25T15:34:15.237028Z",
-          "message": "{}",
-          "severity": "ERROR"
-        },
-        {
-          "timestamp": "2025-12-25T15:34:15.151951Z",
-          "message": "{}",
-          "severity": "ERROR"
-        },
-        {
-          "timestamp": "2025-12-25T15:34:15.133178Z",
-          "message": "Default STARTUP TCP probe failed 1 time consecutively for container \"crm-gyt-1\" on port 8080. The instance was not started.\nConnection failed with status CANCELLED.",
-          "severity": "ERROR"
-        }
-      ]
+      "last7d": 0,
+      "recentErrors": []
     },
     "deployments": {
       "total": 2,
@@ -784,9 +768,9 @@
     "repo": "https://github.com/mbrt26/GestionProveedoresISA",
     "repoName": "GestionProveedoresISA",
     "errors": {
-      "total": 66,
+      "total": 54,
       "last24h": 0,
-      "last7d": 66,
+      "last7d": 54,
       "recentErrors": [
         {
           "timestamp": "2025-12-25T15:57:52.036172Z",
@@ -1259,7 +1243,7 @@
       ]
     },
     "deployments": {
-      "total": 35,
+      "total": 34,
       "last24h": 26,
       "last7d": 30,
       "lastDeployment": "2025-12-31T23:44:50.153797Z",
@@ -1385,15 +1369,15 @@
       "avgLatencyMs": 93
     },
     "interactions": {
-      "requests7d": 2205,
-      "requests30d": 2205
+      "requests7d": 2215,
+      "requests30d": 2215
     },
     "costEstimate": {
       "estimatedMonthly": 0.2,
       "cpuCost": 0.18,
       "memoryCost": 0.01,
       "requestCost": 0.0,
-      "estimatedRequests": 9481,
+      "estimatedRequests": 9524,
       "avgLatencyMs": 400,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -1435,7 +1419,7 @@
       ]
     },
     "deployments": {
-      "total": 11,
+      "total": 7,
       "last24h": 0,
       "last7d": 1,
       "lastDeployment": "2025-12-25T15:18:21.810565Z",
@@ -1523,11 +1507,21 @@
       ]
     },
     "deployments": {
-      "total": 11,
-      "last24h": 1,
-      "last7d": 11,
-      "lastDeployment": "2025-12-31T17:11:00.167001Z",
+      "total": 13,
+      "last24h": 3,
+      "last7d": 13,
+      "lastDeployment": "2026-01-01T14:00:20.175796Z",
       "recentDeployments": [
+        {
+          "revision": "rgd-aire-00303-xmn",
+          "timestamp": "2026-01-01T14:00:20.175796Z",
+          "status": "True"
+        },
+        {
+          "revision": "rgd-aire-00302-bsz",
+          "timestamp": "2026-01-01T13:54:20.005259Z",
+          "status": "True"
+        },
         {
           "revision": "rgd-aire-00301-k2t",
           "timestamp": "2025-12-31T17:11:00.167001Z",
@@ -1542,16 +1536,6 @@
           "revision": "rgd-aire-00299-m57",
           "timestamp": "2025-12-29T14:17:50.721545Z",
           "status": "True"
-        },
-        {
-          "revision": "rgd-aire-00298-44v",
-          "timestamp": "2025-12-27T17:48:13.955269Z",
-          "status": "True"
-        },
-        {
-          "revision": "rgd-aire-00297-cz4",
-          "timestamp": "2025-12-27T17:36:23.745421Z",
-          "status": "True"
         }
       ]
     },
@@ -1561,15 +1545,15 @@
       "avgLatencyMs": 184
     },
     "interactions": {
-      "requests7d": 5753,
-      "requests30d": 5753
+      "requests7d": 5741,
+      "requests30d": 5741
     },
     "costEstimate": {
       "estimatedMonthly": 0.62,
       "cpuCost": 0.57,
       "memoryCost": 0.03,
       "requestCost": 0.01,
-      "estimatedRequests": 24737,
+      "estimatedRequests": 24686,
       "avgLatencyMs": 484,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -1589,33 +1573,48 @@
     "repo": null,
     "repoName": null,
     "errors": {
-      "total": 25,
-      "last24h": 0,
-      "last7d": 25,
+      "total": 40,
+      "last24h": 15,
+      "last7d": 40,
       "recentErrors": [
         {
-          "timestamp": "2025-12-31T13:08:55.452763Z",
+          "timestamp": "2026-01-01T14:01:37.982174Z",
+          "message": "Traceback (most recent call last):\n  File \"/app/manage.py\", line 26, in <module>\n    main()\n  File \"/app/manage.py\", line 22, in main\n    execute_from_command_line(sys.argv)\n  File \"/usr/local/lib/python3.12/site-packages/django/core/management/__init__.py\", line 442, in execute_from_command_line\n  ...",
+          "severity": "ERROR"
+        },
+        {
+          "timestamp": "2026-01-01T13:57:10.115266Z",
+          "message": "Traceback (most recent call last):\n  File \"/app/manage.py\", line 26, in <module>\n    main()\n  File \"/app/manage.py\", line 22, in main\n    execute_from_command_line(sys.argv)\n  File \"/usr/local/lib/python3.12/site-packages/django/core/management/__init__.py\", line 442, in execute_from_command_line\n  ...",
+          "severity": "ERROR"
+        },
+        {
+          "timestamp": "2026-01-01T13:43:35.003234Z",
           "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.12/site-packages/gunicorn/workers/gthread.py\", line 281, in handle\n    keepalive = self.handle_request(req, conn)\n                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/site-packages/gunicorn/workers/gthread....",
-          "severity": "ERROR"
-        },
-        {
-          "timestamp": "2025-12-31T13:08:55.452701Z",
-          "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.12/site-packages/django/core/handlers/exception.py\", line 55, in inner\n    response = get_response(request)\n               ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/site-packages/django/utils/deprecation.py\", line 120, i...",
-          "severity": "ERROR"
-        },
-        {
-          "timestamp": "2025-12-31T13:08:55.452627Z",
-          "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.12/site-packages/django/core/handlers/exception.py\", line 55, in inner\n    response = get_response(request)\n               ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/site-packages/whitenoise/middleware.py\", line 124, in _...",
           "severity": "ERROR"
         }
       ]
     },
     "deployments": {
-      "total": 2,
-      "last24h": 0,
-      "last7d": 2,
-      "lastDeployment": "2025-12-31T13:12:28.849773Z",
+      "total": 5,
+      "last24h": 3,
+      "last7d": 5,
+      "lastDeployment": "2026-01-01T14:01:04.229246Z",
       "recentDeployments": [
+        {
+          "revision": "rgd-aire-staging-00005-r57",
+          "timestamp": "2026-01-01T14:01:04.229246Z",
+          "status": "True"
+        },
+        {
+          "revision": "rgd-aire-staging-00004-r4t",
+          "timestamp": "2026-01-01T13:56:36.359660Z",
+          "status": "True"
+        },
+        {
+          "revision": "rgd-aire-staging-00003-qhg",
+          "timestamp": "2026-01-01T13:41:13.406796Z",
+          "status": "True"
+        },
         {
           "revision": "rgd-aire-staging-00002-86l",
           "timestamp": "2025-12-31T13:12:28.849773Z",
@@ -1629,21 +1628,21 @@
       ]
     },
     "metrics": {
-      "errors5xx": 2,
+      "errors5xx": 3,
       "errors4xx": 0,
-      "avgLatencyMs": 2064
+      "avgLatencyMs": 2448
     },
     "interactions": {
-      "requests7d": 23,
-      "requests30d": 23
+      "requests7d": 24,
+      "requests30d": 24
     },
     "costEstimate": {
       "estimatedMonthly": 0.01,
       "cpuCost": 0.01,
       "memoryCost": 0.0,
       "requestCost": 0.0,
-      "estimatedRequests": 98,
-      "avgLatencyMs": 1744,
+      "estimatedRequests": 103,
+      "avgLatencyMs": 2013,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
       "note": "Estimacion incluye cold starts y overhead tipico",
@@ -1823,7 +1822,7 @@
     },
     "deployments": {
       "total": 1,
-      "last24h": 1,
+      "last24h": 0,
       "last7d": 1,
       "lastDeployment": "2025-12-31T13:50:25.739640Z",
       "recentDeployments": [
@@ -1875,7 +1874,7 @@
     },
     "deployments": {
       "total": 1,
-      "last24h": 1,
+      "last24h": 0,
       "last7d": 1,
       "lastDeployment": "2025-12-31T13:48:45.913178Z",
       "recentDeployments": [
@@ -1964,15 +1963,15 @@
       "avgLatencyMs": 0
     },
     "interactions": {
-      "requests7d": 147,
-      "requests30d": 147
+      "requests7d": 148,
+      "requests30d": 148
     },
     "costEstimate": {
       "estimatedMonthly": 0.01,
       "cpuCost": 0.01,
       "memoryCost": 0.0,
       "requestCost": 0.0,
-      "estimatedRequests": 632,
+      "estimatedRequests": 636,
       "avgLatencyMs": 650,
       "cpuCores": 0.3333,
       "memoryGiB": 0.5,
