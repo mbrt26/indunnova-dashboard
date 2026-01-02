@@ -79,33 +79,48 @@
     "repo": "https://github.com/mbrt26/carnesdelsebastian",
     "repoName": "carnesdelsebastian",
     "errors": {
-      "total": 68,
-      "last24h": 5,
-      "last7d": 68,
+      "total": 70,
+      "last24h": 8,
+      "last7d": 70,
       "recentErrors": [
         {
-          "timestamp": "2026-01-02T17:13:51.557939Z",
-          "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/core/handlers/exception.py\", line 55, in inner\n    response = get_response(request)\n               ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/core/handlers/base.py\", line 197, ...",
+          "timestamp": "2026-01-02T19:35:03.261052Z",
+          "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/core/handlers/exception.py\", line 55, in inner\n    response = get_response(request)\n               ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/core/handlers/base.py\", line 220, ...",
           "severity": "ERROR"
         },
         {
-          "timestamp": "2026-01-02T17:13:51.557846Z",
-          "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/utils.py\", line 89, in _execute\n    return self.cursor.execute(sql, params)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\npsycopg2.errors.UndefinedFunction: operator does not exist: uuid = numeric",
+          "timestamp": "2026-01-02T19:35:03.260991Z",
+          "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/urls/base.py\", line 71, in reverse\n    extra, resolver = resolver.namespace_dict[ns]\n                      ~~~~~~~~~~~~~~~~~~~~~~~^^^^\nKeyError: 'registro_plagas'",
           "severity": "ERROR"
         },
         {
-          "timestamp": "2026-01-02T17:13:51.472495Z",
+          "timestamp": "2026-01-02T19:35:03.183175Z",
           "message": "{}",
           "severity": "ERROR"
         }
       ]
     },
     "deployments": {
-      "total": 52,
-      "last24h": 5,
-      "last7d": 37,
-      "lastDeployment": "2026-01-02T17:31:20.311460Z",
+      "total": 55,
+      "last24h": 8,
+      "last7d": 40,
+      "lastDeployment": "2026-01-02T19:54:25.505984Z",
       "recentDeployments": [
+        {
+          "revision": "carnesdelsebastian-00306-gtg",
+          "timestamp": "2026-01-02T19:54:25.505984Z",
+          "status": "True"
+        },
+        {
+          "revision": "carnesdelsebastian-00305-6cz",
+          "timestamp": "2026-01-02T19:29:53.831556Z",
+          "status": "True"
+        },
+        {
+          "revision": "carnesdelsebastian-00304-8jl",
+          "timestamp": "2026-01-02T19:21:04.862712Z",
+          "status": "True"
+        },
         {
           "revision": "carnesdelsebastian-00303-427",
           "timestamp": "2026-01-02T17:31:20.311460Z",
@@ -115,40 +130,25 @@
           "revision": "carnesdelsebastian-00302-2kn",
           "timestamp": "2026-01-02T17:30:38.111356Z",
           "status": "True"
-        },
-        {
-          "revision": "carnesdelsebastian-00301-tzx",
-          "timestamp": "2026-01-02T17:26:13.215530Z",
-          "status": "True"
-        },
-        {
-          "revision": "carnesdelsebastian-00300-mcw",
-          "timestamp": "2026-01-02T17:17:34.610862Z",
-          "status": "True"
-        },
-        {
-          "revision": "carnesdelsebastian-00299-kxc",
-          "timestamp": "2026-01-02T17:06:08.699746Z",
-          "status": "True"
         }
       ]
     },
     "metrics": {
-      "errors5xx": 44,
+      "errors5xx": 45,
       "errors4xx": 0,
-      "avgLatencyMs": 1450
+      "avgLatencyMs": 1419
     },
     "interactions": {
-      "requests7d": 1155,
-      "requests30d": 1155
+      "requests7d": 1294,
+      "requests30d": 1294
     },
     "costEstimate": {
-      "estimatedMonthly": 0.93,
-      "cpuCost": 0.83,
-      "memoryCost": 0.09,
+      "estimatedMonthly": 1.02,
+      "cpuCost": 0.92,
+      "memoryCost": 0.1,
       "requestCost": 0.0,
-      "estimatedRequests": 4966,
-      "avgLatencyMs": 1750,
+      "estimatedRequests": 5564,
+      "avgLatencyMs": 1719,
       "cpuCores": 2.0,
       "memoryGiB": 2.0,
       "note": "Estimacion incluye cold starts y overhead tipico",
@@ -156,7 +156,7 @@
       "usesConsolidatedDb": true,
       "hasDedicatedDb": false,
       "dedicatedDbName": null,
-      "totalWithSql": 2.24
+      "totalWithSql": 2.33
     }
   },
   {
@@ -864,7 +864,7 @@
       "recentErrors": []
     },
     "deployments": {
-      "total": 9,
+      "total": 6,
       "last24h": 0,
       "last7d": 0,
       "lastDeployment": "2025-12-25T16:00:21.287962Z",
@@ -1314,7 +1314,7 @@
     "deployments": {
       "total": 31,
       "last24h": 0,
-      "last7d": 29,
+      "last7d": 28,
       "lastDeployment": "2026-01-01T14:05:27.356194Z",
       "recentDeployments": [
         {
@@ -1438,15 +1438,15 @@
       "avgLatencyMs": 160
     },
     "interactions": {
-      "requests7d": 1602,
-      "requests30d": 1602
+      "requests7d": 1599,
+      "requests30d": 1599
     },
     "costEstimate": {
       "estimatedMonthly": 0.17,
       "cpuCost": 0.15,
       "memoryCost": 0.01,
       "requestCost": 0.0,
-      "estimatedRequests": 6888,
+      "estimatedRequests": 6875,
       "avgLatencyMs": 460,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -1528,9 +1528,9 @@
     "repo": "https://github.com/mbrt26/RGDAire",
     "repoName": "RGDAire",
     "errors": {
-      "total": 15,
+      "total": 13,
       "last24h": 0,
-      "last7d": 15,
+      "last7d": 13,
       "recentErrors": [
         {
           "timestamp": "2026-01-01T10:00:16.866377Z",
@@ -1588,15 +1588,15 @@
       "avgLatencyMs": 184
     },
     "interactions": {
-      "requests7d": 6255,
-      "requests30d": 6255
+      "requests7d": 6119,
+      "requests30d": 6119
     },
     "costEstimate": {
-      "estimatedMonthly": 0.68,
-      "cpuCost": 0.62,
+      "estimatedMonthly": 0.66,
+      "cpuCost": 0.61,
       "memoryCost": 0.03,
       "requestCost": 0.01,
-      "estimatedRequests": 26896,
+      "estimatedRequests": 26311,
       "avgLatencyMs": 484,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -1605,7 +1605,7 @@
       "usesConsolidatedDb": false,
       "hasDedicatedDb": true,
       "dedicatedDbName": "rgd-aire-db",
-      "totalWithSql": 10.05
+      "totalWithSql": 10.03
     }
   },
   {
