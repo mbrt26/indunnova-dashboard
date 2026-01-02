@@ -1,5 +1,566 @@
 [
   {
+    "id": "69579721000f24d8f184d9a6",
+    "service": "novapcr-app",
+    "revision": "novapcr-app-00083-h2f",
+    "timestamp": "2026-01-02T10:00:01.992472Z",
+    "severity": "ERROR",
+    "message": "Traceback (most recent call last):\n  File \"/app/sensores_iot/views.py\", line 1571, in cron_sync_y_alertas\n    resultado_sensores = sincronizar_y_detectar_paros()\n                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/app/sensores_iot/services.py\", line 479, in sincronizar_y_detectar_paros\n    resultados_sync = service.sync_all_active_canales()\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/app/sensores_iot/services.py\", line 288, in sync_all_active_canales\n    logger.info(f\"Iniciando sincronizaci\u00f3n de {canales.count()} canales activos\")\n                                               ^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/models/query.py\", line 608, in count\n    return self.query.get_count(using=self.db)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/models/sql/query.py\", line 568, in get_count\n    return obj.get_aggregation(using, {\"__count\": Count(\"*\")})[\"__count\"]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/models/sql/query.py\", line 554, in get_aggregation\n    result = compiler.execute_sql(SINGLE)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/models/sql/compiler.py\", line 1560, in execute_sql\n    cursor = self.connection.cursor()\n             ^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/utils/asyncio.py\", line 26, in inner\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 329, in cursor\n    return self._cursor()\n           ^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 305, in _cursor\n    self.ensure_connection()\n  File \"/usr/local/lib/python3.11/site-packages/django/utils/asyncio.py\", line 26, in inner\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 287, in ensure_connection\n    with self.wrap_database_errors:\n  File \"/usr/local/lib/python3.11/site-packages/django/db/utils.py\", line 91, in __exit__\n    raise dj_exc_value.with_traceback(traceback) from exc_value\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 288, in ensure_connection\n    self.connect()\n  File \"/usr/local/lib/python3.11/site-packages/django/utils/asyncio.py\", line 26, in inner\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 269, in connect\n    self.connection = self.get_new_connection(conn_params)\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/utils/asyncio.py\", line 26, in inner\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/postgresql/base.py\", line 275, in get_new_connection\n    connection = self.Database.connect(**conn_params)\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/psycopg2/__init__.py\", line 122, in connect\n    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\ndjango.db.utils.OperationalError: connection to server on socket \"/cloudsql/appsindunnova:us-central1:postgres-consolidated/.s.PGSQL.5432\" failed: Connection refused",
+    "httpRequest": null,
+    "trace": "",
+    "spanId": ""
+  },
+  {
+    "id": "69579721000f2473a381c70e",
+    "service": "novapcr-app",
+    "revision": "novapcr-app-00083-h2f",
+    "timestamp": "2026-01-02T10:00:01.992371Z",
+    "severity": "ERROR",
+    "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 288, in ensure_connection\n    self.connect()\n  File \"/usr/local/lib/python3.11/site-packages/django/utils/asyncio.py\", line 26, in inner\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 269, in connect\n    self.connection = self.get_new_connection(conn_params)\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/utils/asyncio.py\", line 26, in inner\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/postgresql/base.py\", line 275, in get_new_connection\n    connection = self.Database.connect(**conn_params)\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/psycopg2/__init__.py\", line 122, in connect\n    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\npsycopg2.OperationalError: connection to server on socket \"/cloudsql/appsindunnova:us-central1:postgres-consolidated/.s.PGSQL.5432\" failed: Connection refused",
+    "httpRequest": null,
+    "trace": "",
+    "spanId": ""
+  },
+  {
+    "id": "69579721000f1b17d22a0327",
+    "service": "novapcr-app",
+    "revision": "novapcr-app-00083-h2f",
+    "timestamp": "2026-01-02T10:00:01.989975Z",
+    "severity": "ERROR",
+    "message": "Cloud SQL connection failed. Please see https://cloud.google.com/sql/docs/mysql/connect-run, https://cloud.google.com/sql/docs/postgres/connect-run, or https://cloud.google.com/sql/docs/sqlserver/connect-run for additional details: fetch ephemeral cert failed: refresh error: create ephemeral cert failed (connection name = \"appsindunnova:us-central1:postgres-consolidated\"): googleapi: Error 409: The instance or operation is not in an appropriate state to handle the request., invalidState",
+    "httpRequest": null,
+    "trace": "",
+    "spanId": ""
+  },
+  {
+    "id": "69579721000f2bf4d144f5b8",
+    "service": "novapcr-app",
+    "revision": "novapcr-app-00083-h2f",
+    "timestamp": "2026-01-02T10:00:01.882731Z",
+    "severity": "ERROR",
+    "message": "",
+    "httpRequest": {
+      "method": "POST",
+      "url": "https://novapcr-app-381877373634.us-central1.run.app/sensores/cron/sync-alertas/",
+      "status": 500,
+      "latency": "0.102757939s",
+      "userAgent": "Google-Cloud-Scheduler",
+      "remoteIp": "107.178.194.163"
+    },
+    "trace": "projects/appsindunnova/traces/f9321b85dc774d08c4577ca94f6abf96",
+    "spanId": "5c189d46e0632ab3"
+  },
+  {
+    "id": "695795f5000bc5e7ca491cae",
+    "service": "novapcr-app",
+    "revision": "novapcr-app-00083-h2f",
+    "timestamp": "2026-01-02T09:55:01.771559Z",
+    "severity": "ERROR",
+    "message": "Traceback (most recent call last):\n  File \"/app/sensores_iot/views.py\", line 1571, in cron_sync_y_alertas\n    resultado_sensores = sincronizar_y_detectar_paros()\n                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/app/sensores_iot/services.py\", line 479, in sincronizar_y_detectar_paros\n    resultados_sync = service.sync_all_active_canales()\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/app/sensores_iot/services.py\", line 288, in sync_all_active_canales\n    logger.info(f\"Iniciando sincronizaci\u00f3n de {canales.count()} canales activos\")\n                                               ^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/models/query.py\", line 608, in count\n    return self.query.get_count(using=self.db)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/models/sql/query.py\", line 568, in get_count\n    return obj.get_aggregation(using, {\"__count\": Count(\"*\")})[\"__count\"]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/models/sql/query.py\", line 554, in get_aggregation\n    result = compiler.execute_sql(SINGLE)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/models/sql/compiler.py\", line 1560, in execute_sql\n    cursor = self.connection.cursor()\n             ^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/utils/asyncio.py\", line 26, in inner\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 329, in cursor\n    return self._cursor()\n           ^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 305, in _cursor\n    self.ensure_connection()\n  File \"/usr/local/lib/python3.11/site-packages/django/utils/asyncio.py\", line 26, in inner\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 287, in ensure_connection\n    with self.wrap_database_errors:\n  File \"/usr/local/lib/python3.11/site-packages/django/db/utils.py\", line 91, in __exit__\n    raise dj_exc_value.with_traceback(traceback) from exc_value\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 288, in ensure_connection\n    self.connect()\n  File \"/usr/local/lib/python3.11/site-packages/django/utils/asyncio.py\", line 26, in inner\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 269, in connect\n    self.connection = self.get_new_connection(conn_params)\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/utils/asyncio.py\", line 26, in inner\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/postgresql/base.py\", line 275, in get_new_connection\n    connection = self.Database.connect(**conn_params)\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/psycopg2/__init__.py\", line 122, in connect\n    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\ndjango.db.utils.OperationalError: connection to server on socket \"/cloudsql/appsindunnova:us-central1:postgres-consolidated/.s.PGSQL.5432\" failed: Connection refused",
+    "httpRequest": null,
+    "trace": "",
+    "spanId": ""
+  },
+  {
+    "id": "695795f5000bc59115cf13de",
+    "service": "novapcr-app",
+    "revision": "novapcr-app-00083-h2f",
+    "timestamp": "2026-01-02T09:55:01.771473Z",
+    "severity": "ERROR",
+    "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 288, in ensure_connection\n    self.connect()\n  File \"/usr/local/lib/python3.11/site-packages/django/utils/asyncio.py\", line 26, in inner\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 269, in connect\n    self.connection = self.get_new_connection(conn_params)\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/utils/asyncio.py\", line 26, in inner\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/postgresql/base.py\", line 275, in get_new_connection\n    connection = self.Database.connect(**conn_params)\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/psycopg2/__init__.py\", line 122, in connect\n    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\npsycopg2.OperationalError: connection to server on socket \"/cloudsql/appsindunnova:us-central1:postgres-consolidated/.s.PGSQL.5432\" failed: Connection refused",
+    "httpRequest": null,
+    "trace": "",
+    "spanId": ""
+  },
+  {
+    "id": "695795f5000bbda42d96c436",
+    "service": "novapcr-app",
+    "revision": "novapcr-app-00083-h2f",
+    "timestamp": "2026-01-02T09:55:01.769444Z",
+    "severity": "ERROR",
+    "message": "Cloud SQL connection failed. Please see https://cloud.google.com/sql/docs/mysql/connect-run, https://cloud.google.com/sql/docs/postgres/connect-run, or https://cloud.google.com/sql/docs/sqlserver/connect-run for additional details: fetch ephemeral cert failed: refresh error: create ephemeral cert failed (connection name = \"appsindunnova:us-central1:postgres-consolidated\"): googleapi: Error 409: The instance or operation is not in an appropriate state to handle the request., invalidState",
+    "httpRequest": null,
+    "trace": "",
+    "spanId": ""
+  },
+  {
+    "id": "695795f5000bcafae090a3f1",
+    "service": "novapcr-app",
+    "revision": "novapcr-app-00083-h2f",
+    "timestamp": "2026-01-02T09:55:01.675829Z",
+    "severity": "ERROR",
+    "message": "",
+    "httpRequest": {
+      "method": "POST",
+      "url": "https://novapcr-app-381877373634.us-central1.run.app/sensores/cron/sync-alertas/",
+      "status": 500,
+      "latency": "0.089868382s",
+      "userAgent": "Google-Cloud-Scheduler",
+      "remoteIp": "34.116.39.163"
+    },
+    "trace": "projects/appsindunnova/traces/a335e571d75fe5fab521d6d66245a24d",
+    "spanId": "62d9db1150e7b470"
+  },
+  {
+    "id": "695794c90008f8fc4c82b4f4",
+    "service": "novapcr-app",
+    "revision": "novapcr-app-00083-h2f",
+    "timestamp": "2026-01-02T09:50:01.588028Z",
+    "severity": "ERROR",
+    "message": "Traceback (most recent call last):\n  File \"/app/sensores_iot/views.py\", line 1571, in cron_sync_y_alertas\n    resultado_sensores = sincronizar_y_detectar_paros()\n                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/app/sensores_iot/services.py\", line 479, in sincronizar_y_detectar_paros\n    resultados_sync = service.sync_all_active_canales()\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/app/sensores_iot/services.py\", line 288, in sync_all_active_canales\n    logger.info(f\"Iniciando sincronizaci\u00f3n de {canales.count()} canales activos\")\n                                               ^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/models/query.py\", line 608, in count\n    return self.query.get_count(using=self.db)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/models/sql/query.py\", line 568, in get_count\n    return obj.get_aggregation(using, {\"__count\": Count(\"*\")})[\"__count\"]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/models/sql/query.py\", line 554, in get_aggregation\n    result = compiler.execute_sql(SINGLE)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/models/sql/compiler.py\", line 1560, in execute_sql\n    cursor = self.connection.cursor()\n             ^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/utils/asyncio.py\", line 26, in inner\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 329, in cursor\n    return self._cursor()\n           ^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 305, in _cursor\n    self.ensure_connection()\n  File \"/usr/local/lib/python3.11/site-packages/django/utils/asyncio.py\", line 26, in inner\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 287, in ensure_connection\n    with self.wrap_database_errors:\n  File \"/usr/local/lib/python3.11/site-packages/django/db/utils.py\", line 91, in __exit__\n    raise dj_exc_value.with_traceback(traceback) from exc_value\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 288, in ensure_connection\n    self.connect()\n  File \"/usr/local/lib/python3.11/site-packages/django/utils/asyncio.py\", line 26, in inner\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 269, in connect\n    self.connection = self.get_new_connection(conn_params)\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/utils/asyncio.py\", line 26, in inner\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/postgresql/base.py\", line 275, in get_new_connection\n    connection = self.Database.connect(**conn_params)\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/psycopg2/__init__.py\", line 122, in connect\n    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\ndjango.db.utils.OperationalError: connection to server on socket \"/cloudsql/appsindunnova:us-central1:postgres-consolidated/.s.PGSQL.5432\" failed: Connection refused",
+    "httpRequest": null,
+    "trace": "",
+    "spanId": ""
+  },
+  {
+    "id": "695794c90008f88b84bdbae2",
+    "service": "novapcr-app",
+    "revision": "novapcr-app-00083-h2f",
+    "timestamp": "2026-01-02T09:50:01.587915Z",
+    "severity": "ERROR",
+    "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 288, in ensure_connection\n    self.connect()\n  File \"/usr/local/lib/python3.11/site-packages/django/utils/asyncio.py\", line 26, in inner\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 269, in connect\n    self.connection = self.get_new_connection(conn_params)\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/utils/asyncio.py\", line 26, in inner\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/postgresql/base.py\", line 275, in get_new_connection\n    connection = self.Database.connect(**conn_params)\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/psycopg2/__init__.py\", line 122, in connect\n    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\npsycopg2.OperationalError: connection to server on socket \"/cloudsql/appsindunnova:us-central1:postgres-consolidated/.s.PGSQL.5432\" failed: Connection refused",
+    "httpRequest": null,
+    "trace": "",
+    "spanId": ""
+  },
+  {
+    "id": "695794c90008ef88ab62ae65",
+    "service": "novapcr-app",
+    "revision": "novapcr-app-00083-h2f",
+    "timestamp": "2026-01-02T09:50:01.585608Z",
+    "severity": "ERROR",
+    "message": "Cloud SQL connection failed. Please see https://cloud.google.com/sql/docs/mysql/connect-run, https://cloud.google.com/sql/docs/postgres/connect-run, or https://cloud.google.com/sql/docs/sqlserver/connect-run for additional details: fetch ephemeral cert failed: refresh error: create ephemeral cert failed (connection name = \"appsindunnova:us-central1:postgres-consolidated\"): googleapi: Error 409: The instance or operation is not in an appropriate state to handle the request., invalidState",
+    "httpRequest": null,
+    "trace": "",
+    "spanId": ""
+  },
+  {
+    "id": "695794c90008fe44e5b43792",
+    "service": "novapcr-app",
+    "revision": "novapcr-app-00083-h2f",
+    "timestamp": "2026-01-02T09:50:01.477947Z",
+    "severity": "ERROR",
+    "message": "",
+    "httpRequest": {
+      "method": "POST",
+      "url": "https://novapcr-app-381877373634.us-central1.run.app/sensores/cron/sync-alertas/",
+      "status": 500,
+      "latency": "0.104546410s",
+      "userAgent": "Google-Cloud-Scheduler",
+      "remoteIp": "34.116.39.128"
+    },
+    "trace": "projects/appsindunnova/traces/877eca5223547337235390b189f17500",
+    "spanId": "16d78a8f54150171"
+  },
+  {
+    "id": "6957939d000e761ac8707c12",
+    "service": "novapcr-app",
+    "revision": "novapcr-app-00083-h2f",
+    "timestamp": "2026-01-02T09:45:01.947738Z",
+    "severity": "ERROR",
+    "message": "Traceback (most recent call last):\n  File \"/app/sensores_iot/views.py\", line 1571, in cron_sync_y_alertas\n    resultado_sensores = sincronizar_y_detectar_paros()\n                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/app/sensores_iot/services.py\", line 479, in sincronizar_y_detectar_paros\n    resultados_sync = service.sync_all_active_canales()\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/app/sensores_iot/services.py\", line 288, in sync_all_active_canales\n    logger.info(f\"Iniciando sincronizaci\u00f3n de {canales.count()} canales activos\")\n                                               ^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/models/query.py\", line 608, in count\n    return self.query.get_count(using=self.db)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/models/sql/query.py\", line 568, in get_count\n    return obj.get_aggregation(using, {\"__count\": Count(\"*\")})[\"__count\"]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/models/sql/query.py\", line 554, in get_aggregation\n    result = compiler.execute_sql(SINGLE)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/models/sql/compiler.py\", line 1560, in execute_sql\n    cursor = self.connection.cursor()\n             ^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/utils/asyncio.py\", line 26, in inner\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 329, in cursor\n    return self._cursor()\n           ^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 305, in _cursor\n    self.ensure_connection()\n  File \"/usr/local/lib/python3.11/site-packages/django/utils/asyncio.py\", line 26, in inner\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 287, in ensure_connection\n    with self.wrap_database_errors:\n  File \"/usr/local/lib/python3.11/site-packages/django/db/utils.py\", line 91, in __exit__\n    raise dj_exc_value.with_traceback(traceback) from exc_value\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 288, in ensure_connection\n    self.connect()\n  File \"/usr/local/lib/python3.11/site-packages/django/utils/asyncio.py\", line 26, in inner\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 269, in connect\n    self.connection = self.get_new_connection(conn_params)\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/utils/asyncio.py\", line 26, in inner\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/postgresql/base.py\", line 275, in get_new_connection\n    connection = self.Database.connect(**conn_params)\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/psycopg2/__init__.py\", line 122, in connect\n    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\ndjango.db.utils.OperationalError: connection to server on socket \"/cloudsql/appsindunnova:us-central1:postgres-consolidated/.s.PGSQL.5432\" failed: Connection refused",
+    "httpRequest": null,
+    "trace": "",
+    "spanId": ""
+  },
+  {
+    "id": "6957939d000e75d89013c861",
+    "service": "novapcr-app",
+    "revision": "novapcr-app-00083-h2f",
+    "timestamp": "2026-01-02T09:45:01.947672Z",
+    "severity": "ERROR",
+    "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 288, in ensure_connection\n    self.connect()\n  File \"/usr/local/lib/python3.11/site-packages/django/utils/asyncio.py\", line 26, in inner\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 269, in connect\n    self.connection = self.get_new_connection(conn_params)\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/utils/asyncio.py\", line 26, in inner\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/postgresql/base.py\", line 275, in get_new_connection\n    connection = self.Database.connect(**conn_params)\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/psycopg2/__init__.py\", line 122, in connect\n    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\npsycopg2.OperationalError: connection to server on socket \"/cloudsql/appsindunnova:us-central1:postgres-consolidated/.s.PGSQL.5432\" failed: Connection refused",
+    "httpRequest": null,
+    "trace": "",
+    "spanId": ""
+  },
+  {
+    "id": "6957939d000e6df93ffa1d3a",
+    "service": "novapcr-app",
+    "revision": "novapcr-app-00083-h2f",
+    "timestamp": "2026-01-02T09:45:01.945657Z",
+    "severity": "ERROR",
+    "message": "Cloud SQL connection failed. Please see https://cloud.google.com/sql/docs/mysql/connect-run, https://cloud.google.com/sql/docs/postgres/connect-run, or https://cloud.google.com/sql/docs/sqlserver/connect-run for additional details: fetch ephemeral cert failed: refresh error: create ephemeral cert failed (connection name = \"appsindunnova:us-central1:postgres-consolidated\"): googleapi: Error 409: The instance or operation is not in an appropriate state to handle the request., invalidState",
+    "httpRequest": null,
+    "trace": "",
+    "spanId": ""
+  },
+  {
+    "id": "6957939d000e7dc65b179cc3",
+    "service": "novapcr-app",
+    "revision": "novapcr-app-00083-h2f",
+    "timestamp": "2026-01-02T09:45:01.852905Z",
+    "severity": "ERROR",
+    "message": "",
+    "httpRequest": {
+      "method": "POST",
+      "url": "https://novapcr-app-381877373634.us-central1.run.app/sensores/cron/sync-alertas/",
+      "status": 500,
+      "latency": "0.089701367s",
+      "userAgent": "Google-Cloud-Scheduler",
+      "remoteIp": "35.243.23.192"
+    },
+    "trace": "projects/appsindunnova/traces/1bb8566a57140cff58b016033711bb25",
+    "spanId": "883dc44cc394fe26"
+  },
+  {
+    "id": "69579271000d3469334a8eb7",
+    "service": "novapcr-app",
+    "revision": "novapcr-app-00083-h2f",
+    "timestamp": "2026-01-02T09:40:01.865385Z",
+    "severity": "ERROR",
+    "message": "Traceback (most recent call last):\n  File \"/app/sensores_iot/views.py\", line 1571, in cron_sync_y_alertas\n    resultado_sensores = sincronizar_y_detectar_paros()\n                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/app/sensores_iot/services.py\", line 479, in sincronizar_y_detectar_paros\n    resultados_sync = service.sync_all_active_canales()\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/app/sensores_iot/services.py\", line 288, in sync_all_active_canales\n    logger.info(f\"Iniciando sincronizaci\u00f3n de {canales.count()} canales activos\")\n                                               ^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/models/query.py\", line 608, in count\n    return self.query.get_count(using=self.db)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/models/sql/query.py\", line 568, in get_count\n    return obj.get_aggregation(using, {\"__count\": Count(\"*\")})[\"__count\"]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/models/sql/query.py\", line 554, in get_aggregation\n    result = compiler.execute_sql(SINGLE)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/models/sql/compiler.py\", line 1560, in execute_sql\n    cursor = self.connection.cursor()\n             ^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/utils/asyncio.py\", line 26, in inner\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 329, in cursor\n    return self._cursor()\n           ^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 305, in _cursor\n    self.ensure_connection()\n  File \"/usr/local/lib/python3.11/site-packages/django/utils/asyncio.py\", line 26, in inner\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 287, in ensure_connection\n    with self.wrap_database_errors:\n  File \"/usr/local/lib/python3.11/site-packages/django/db/utils.py\", line 91, in __exit__\n    raise dj_exc_value.with_traceback(traceback) from exc_value\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 288, in ensure_connection\n    self.connect()\n  File \"/usr/local/lib/python3.11/site-packages/django/utils/asyncio.py\", line 26, in inner\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 269, in connect\n    self.connection = self.get_new_connection(conn_params)\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/utils/asyncio.py\", line 26, in inner\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/postgresql/base.py\", line 275, in get_new_connection\n    connection = self.Database.connect(**conn_params)\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/psycopg2/__init__.py\", line 122, in connect\n    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\ndjango.db.utils.OperationalError: connection to server on socket \"/cloudsql/appsindunnova:us-central1:postgres-consolidated/.s.PGSQL.5432\" failed: Connection refused",
+    "httpRequest": null,
+    "trace": "",
+    "spanId": ""
+  },
+  {
+    "id": "69579271000d34152c649cc4",
+    "service": "novapcr-app",
+    "revision": "novapcr-app-00083-h2f",
+    "timestamp": "2026-01-02T09:40:01.865301Z",
+    "severity": "ERROR",
+    "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 288, in ensure_connection\n    self.connect()\n  File \"/usr/local/lib/python3.11/site-packages/django/utils/asyncio.py\", line 26, in inner\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 269, in connect\n    self.connection = self.get_new_connection(conn_params)\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/utils/asyncio.py\", line 26, in inner\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/postgresql/base.py\", line 275, in get_new_connection\n    connection = self.Database.connect(**conn_params)\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/psycopg2/__init__.py\", line 122, in connect\n    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\npsycopg2.OperationalError: connection to server on socket \"/cloudsql/appsindunnova:us-central1:postgres-consolidated/.s.PGSQL.5432\" failed: Connection refused",
+    "httpRequest": null,
+    "trace": "",
+    "spanId": ""
+  },
+  {
+    "id": "69579271000d2bf9b69928f1",
+    "service": "novapcr-app",
+    "revision": "novapcr-app-00083-h2f",
+    "timestamp": "2026-01-02T09:40:01.863225Z",
+    "severity": "ERROR",
+    "message": "Cloud SQL connection failed. Please see https://cloud.google.com/sql/docs/mysql/connect-run, https://cloud.google.com/sql/docs/postgres/connect-run, or https://cloud.google.com/sql/docs/sqlserver/connect-run for additional details: fetch ephemeral cert failed: refresh error: create ephemeral cert failed (connection name = \"appsindunnova:us-central1:postgres-consolidated\"): googleapi: Error 409: The instance or operation is not in an appropriate state to handle the request., invalidState",
+    "httpRequest": null,
+    "trace": "",
+    "spanId": ""
+  },
+  {
+    "id": "69579271000d3875750a2d79",
+    "service": "novapcr-app",
+    "revision": "novapcr-app-00083-h2f",
+    "timestamp": "2026-01-02T09:40:01.769178Z",
+    "severity": "ERROR",
+    "message": "",
+    "httpRequest": {
+      "method": "POST",
+      "url": "https://novapcr-app-381877373634.us-central1.run.app/sensores/cron/sync-alertas/",
+      "status": 500,
+      "latency": "0.091384683s",
+      "userAgent": "Google-Cloud-Scheduler",
+      "remoteIp": "35.243.23.162"
+    },
+    "trace": "projects/appsindunnova/traces/aba236dda4a9bc3416b220d175ab4267",
+    "spanId": "b4c00d14768305c3"
+  },
+  {
+    "id": "69579145000eece4318a5e72",
+    "service": "novapcr-app",
+    "revision": "novapcr-app-00083-h2f",
+    "timestamp": "2026-01-02T09:35:01.978148Z",
+    "severity": "ERROR",
+    "message": "Traceback (most recent call last):\n  File \"/app/sensores_iot/views.py\", line 1571, in cron_sync_y_alertas\n    resultado_sensores = sincronizar_y_detectar_paros()\n                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/app/sensores_iot/services.py\", line 479, in sincronizar_y_detectar_paros\n    resultados_sync = service.sync_all_active_canales()\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/app/sensores_iot/services.py\", line 288, in sync_all_active_canales\n    logger.info(f\"Iniciando sincronizaci\u00f3n de {canales.count()} canales activos\")\n                                               ^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/models/query.py\", line 608, in count\n    return self.query.get_count(using=self.db)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/models/sql/query.py\", line 568, in get_count\n    return obj.get_aggregation(using, {\"__count\": Count(\"*\")})[\"__count\"]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/models/sql/query.py\", line 554, in get_aggregation\n    result = compiler.execute_sql(SINGLE)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/models/sql/compiler.py\", line 1560, in execute_sql\n    cursor = self.connection.cursor()\n             ^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/utils/asyncio.py\", line 26, in inner\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 329, in cursor\n    return self._cursor()\n           ^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 305, in _cursor\n    self.ensure_connection()\n  File \"/usr/local/lib/python3.11/site-packages/django/utils/asyncio.py\", line 26, in inner\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 287, in ensure_connection\n    with self.wrap_database_errors:\n  File \"/usr/local/lib/python3.11/site-packages/django/db/utils.py\", line 91, in __exit__\n    raise dj_exc_value.with_traceback(traceback) from exc_value\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 288, in ensure_connection\n    self.connect()\n  File \"/usr/local/lib/python3.11/site-packages/django/utils/asyncio.py\", line 26, in inner\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 269, in connect\n    self.connection = self.get_new_connection(conn_params)\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/utils/asyncio.py\", line 26, in inner\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/postgresql/base.py\", line 275, in get_new_connection\n    connection = self.Database.connect(**conn_params)\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/psycopg2/__init__.py\", line 122, in connect\n    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\ndjango.db.utils.OperationalError: connection to server on socket \"/cloudsql/appsindunnova:us-central1:postgres-consolidated/.s.PGSQL.5432\" failed: Connection refused",
+    "httpRequest": null,
+    "trace": "",
+    "spanId": ""
+  },
+  {
+    "id": "69579145000eec96aa473ce9",
+    "service": "novapcr-app",
+    "revision": "novapcr-app-00083-h2f",
+    "timestamp": "2026-01-02T09:35:01.978070Z",
+    "severity": "ERROR",
+    "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 288, in ensure_connection\n    self.connect()\n  File \"/usr/local/lib/python3.11/site-packages/django/utils/asyncio.py\", line 26, in inner\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 269, in connect\n    self.connection = self.get_new_connection(conn_params)\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/utils/asyncio.py\", line 26, in inner\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/postgresql/base.py\", line 275, in get_new_connection\n    connection = self.Database.connect(**conn_params)\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/psycopg2/__init__.py\", line 122, in connect\n    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\npsycopg2.OperationalError: connection to server on socket \"/cloudsql/appsindunnova:us-central1:postgres-consolidated/.s.PGSQL.5432\" failed: Connection refused",
+    "httpRequest": null,
+    "trace": "",
+    "spanId": ""
+  },
+  {
+    "id": "69579145000ee2b8ebe9d4c2",
+    "service": "novapcr-app",
+    "revision": "novapcr-app-00083-h2f",
+    "timestamp": "2026-01-02T09:35:01.975544Z",
+    "severity": "ERROR",
+    "message": "Cloud SQL connection failed. Please see https://cloud.google.com/sql/docs/mysql/connect-run, https://cloud.google.com/sql/docs/postgres/connect-run, or https://cloud.google.com/sql/docs/sqlserver/connect-run for additional details: fetch ephemeral cert failed: refresh error: create ephemeral cert failed (connection name = \"appsindunnova:us-central1:postgres-consolidated\"): googleapi: Error 409: The instance or operation is not in an appropriate state to handle the request., invalidState",
+    "httpRequest": null,
+    "trace": "",
+    "spanId": ""
+  },
+  {
+    "id": "69579145000ef0c3ea8499c9",
+    "service": "novapcr-app",
+    "revision": "novapcr-app-00083-h2f",
+    "timestamp": "2026-01-02T09:35:01.870187Z",
+    "severity": "ERROR",
+    "message": "",
+    "httpRequest": {
+      "method": "POST",
+      "url": "https://novapcr-app-381877373634.us-central1.run.app/sensores/cron/sync-alertas/",
+      "status": 500,
+      "latency": "0.102025010s",
+      "userAgent": "Google-Cloud-Scheduler",
+      "remoteIp": "107.178.194.11"
+    },
+    "trace": "projects/appsindunnova/traces/b81c47bb0d118dd8cbb2c3f856a761de",
+    "spanId": "7de8e62d9807ac19"
+  },
+  {
+    "id": "69579019000cc2abcd957a35",
+    "service": "novapcr-app",
+    "revision": "novapcr-app-00083-h2f",
+    "timestamp": "2026-01-02T09:30:01.836267Z",
+    "severity": "ERROR",
+    "message": "Traceback (most recent call last):\n  File \"/app/sensores_iot/views.py\", line 1571, in cron_sync_y_alertas\n    resultado_sensores = sincronizar_y_detectar_paros()\n                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/app/sensores_iot/services.py\", line 479, in sincronizar_y_detectar_paros\n    resultados_sync = service.sync_all_active_canales()\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/app/sensores_iot/services.py\", line 288, in sync_all_active_canales\n    logger.info(f\"Iniciando sincronizaci\u00f3n de {canales.count()} canales activos\")\n                                               ^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/models/query.py\", line 608, in count\n    return self.query.get_count(using=self.db)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/models/sql/query.py\", line 568, in get_count\n    return obj.get_aggregation(using, {\"__count\": Count(\"*\")})[\"__count\"]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/models/sql/query.py\", line 554, in get_aggregation\n    result = compiler.execute_sql(SINGLE)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/models/sql/compiler.py\", line 1560, in execute_sql\n    cursor = self.connection.cursor()\n             ^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/utils/asyncio.py\", line 26, in inner\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 329, in cursor\n    return self._cursor()\n           ^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 305, in _cursor\n    self.ensure_connection()\n  File \"/usr/local/lib/python3.11/site-packages/django/utils/asyncio.py\", line 26, in inner\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 287, in ensure_connection\n    with self.wrap_database_errors:\n  File \"/usr/local/lib/python3.11/site-packages/django/db/utils.py\", line 91, in __exit__\n    raise dj_exc_value.with_traceback(traceback) from exc_value\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 288, in ensure_connection\n    self.connect()\n  File \"/usr/local/lib/python3.11/site-packages/django/utils/asyncio.py\", line 26, in inner\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 269, in connect\n    self.connection = self.get_new_connection(conn_params)\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/utils/asyncio.py\", line 26, in inner\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/postgresql/base.py\", line 275, in get_new_connection\n    connection = self.Database.connect(**conn_params)\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/psycopg2/__init__.py\", line 122, in connect\n    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\ndjango.db.utils.OperationalError: connection to server on socket \"/cloudsql/appsindunnova:us-central1:postgres-consolidated/.s.PGSQL.5432\" failed: Connection refused",
+    "httpRequest": null,
+    "trace": "",
+    "spanId": ""
+  },
+  {
+    "id": "69579019000cc26a4b3b4740",
+    "service": "novapcr-app",
+    "revision": "novapcr-app-00083-h2f",
+    "timestamp": "2026-01-02T09:30:01.836202Z",
+    "severity": "ERROR",
+    "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 288, in ensure_connection\n    self.connect()\n  File \"/usr/local/lib/python3.11/site-packages/django/utils/asyncio.py\", line 26, in inner\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 269, in connect\n    self.connection = self.get_new_connection(conn_params)\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/utils/asyncio.py\", line 26, in inner\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/postgresql/base.py\", line 275, in get_new_connection\n    connection = self.Database.connect(**conn_params)\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/psycopg2/__init__.py\", line 122, in connect\n    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\npsycopg2.OperationalError: connection to server on socket \"/cloudsql/appsindunnova:us-central1:postgres-consolidated/.s.PGSQL.5432\" failed: Connection refused",
+    "httpRequest": null,
+    "trace": "",
+    "spanId": ""
+  },
+  {
+    "id": "69579019000cb6a5d5301638",
+    "service": "novapcr-app",
+    "revision": "novapcr-app-00083-h2f",
+    "timestamp": "2026-01-02T09:30:01.833189Z",
+    "severity": "ERROR",
+    "message": "Cloud SQL connection failed. Please see https://cloud.google.com/sql/docs/mysql/connect-run, https://cloud.google.com/sql/docs/postgres/connect-run, or https://cloud.google.com/sql/docs/sqlserver/connect-run for additional details: fetch ephemeral cert failed: refresh error: create ephemeral cert failed (connection name = \"appsindunnova:us-central1:postgres-consolidated\"): googleapi: Error 409: The instance or operation is not in an appropriate state to handle the request., invalidState",
+    "httpRequest": null,
+    "trace": "",
+    "spanId": ""
+  },
+  {
+    "id": "69579019000cc75ace5326a0",
+    "service": "novapcr-app",
+    "revision": "novapcr-app-00083-h2f",
+    "timestamp": "2026-01-02T09:30:01.746948Z",
+    "severity": "ERROR",
+    "message": "",
+    "httpRequest": {
+      "method": "POST",
+      "url": "https://novapcr-app-381877373634.us-central1.run.app/sensores/cron/sync-alertas/",
+      "status": 500,
+      "latency": "0.083677680s",
+      "userAgent": "Google-Cloud-Scheduler",
+      "remoteIp": "107.178.194.71"
+    },
+    "trace": "projects/appsindunnova/traces/3b9aa5254e76a79cdc366459034a2e9e",
+    "spanId": "0892d92ada644bd8"
+  },
+  {
+    "id": "69578eed000d08a16d3a2b1c",
+    "service": "novapcr-app",
+    "revision": "novapcr-app-00083-h2f",
+    "timestamp": "2026-01-02T09:25:01.854177Z",
+    "severity": "ERROR",
+    "message": "Traceback (most recent call last):\n  File \"/app/sensores_iot/views.py\", line 1571, in cron_sync_y_alertas\n    resultado_sensores = sincronizar_y_detectar_paros()\n                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/app/sensores_iot/services.py\", line 479, in sincronizar_y_detectar_paros\n    resultados_sync = service.sync_all_active_canales()\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/app/sensores_iot/services.py\", line 288, in sync_all_active_canales\n    logger.info(f\"Iniciando sincronizaci\u00f3n de {canales.count()} canales activos\")\n                                               ^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/models/query.py\", line 608, in count\n    return self.query.get_count(using=self.db)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/models/sql/query.py\", line 568, in get_count\n    return obj.get_aggregation(using, {\"__count\": Count(\"*\")})[\"__count\"]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/models/sql/query.py\", line 554, in get_aggregation\n    result = compiler.execute_sql(SINGLE)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/models/sql/compiler.py\", line 1560, in execute_sql\n    cursor = self.connection.cursor()\n             ^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/utils/asyncio.py\", line 26, in inner\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 329, in cursor\n    return self._cursor()\n           ^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 305, in _cursor\n    self.ensure_connection()\n  File \"/usr/local/lib/python3.11/site-packages/django/utils/asyncio.py\", line 26, in inner\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 287, in ensure_connection\n    with self.wrap_database_errors:\n  File \"/usr/local/lib/python3.11/site-packages/django/db/utils.py\", line 91, in __exit__\n    raise dj_exc_value.with_traceback(traceback) from exc_value\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 288, in ensure_connection\n    self.connect()\n  File \"/usr/local/lib/python3.11/site-packages/django/utils/asyncio.py\", line 26, in inner\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 269, in connect\n    self.connection = self.get_new_connection(conn_params)\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/utils/asyncio.py\", line 26, in inner\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/postgresql/base.py\", line 275, in get_new_connection\n    connection = self.Database.connect(**conn_params)\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/psycopg2/__init__.py\", line 122, in connect\n    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\ndjango.db.utils.OperationalError: connection to server on socket \"/cloudsql/appsindunnova:us-central1:postgres-consolidated/.s.PGSQL.5432\" failed: Connection refused",
+    "httpRequest": null,
+    "trace": "",
+    "spanId": ""
+  },
+  {
+    "id": "69578eed000d085d1e37d276",
+    "service": "novapcr-app",
+    "revision": "novapcr-app-00083-h2f",
+    "timestamp": "2026-01-02T09:25:01.854109Z",
+    "severity": "ERROR",
+    "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 288, in ensure_connection\n    self.connect()\n  File \"/usr/local/lib/python3.11/site-packages/django/utils/asyncio.py\", line 26, in inner\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 269, in connect\n    self.connection = self.get_new_connection(conn_params)\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/utils/asyncio.py\", line 26, in inner\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/postgresql/base.py\", line 275, in get_new_connection\n    connection = self.Database.connect(**conn_params)\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/psycopg2/__init__.py\", line 122, in connect\n    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\npsycopg2.OperationalError: connection to server on socket \"/cloudsql/appsindunnova:us-central1:postgres-consolidated/.s.PGSQL.5432\" failed: Connection refused",
+    "httpRequest": null,
+    "trace": "",
+    "spanId": ""
+  },
+  {
+    "id": "69578eed000d0059fa90b4f1",
+    "service": "novapcr-app",
+    "revision": "novapcr-app-00083-h2f",
+    "timestamp": "2026-01-02T09:25:01.852057Z",
+    "severity": "ERROR",
+    "message": "Cloud SQL connection failed. Please see https://cloud.google.com/sql/docs/mysql/connect-run, https://cloud.google.com/sql/docs/postgres/connect-run, or https://cloud.google.com/sql/docs/sqlserver/connect-run for additional details: fetch ephemeral cert failed: refresh error: create ephemeral cert failed (connection name = \"appsindunnova:us-central1:postgres-consolidated\"): googleapi: Error 409: The instance or operation is not in an appropriate state to handle the request., invalidState",
+    "httpRequest": null,
+    "trace": "",
+    "spanId": ""
+  },
+  {
+    "id": "69578eed000d0ed5cc03fbbe",
+    "service": "novapcr-app",
+    "revision": "novapcr-app-00083-h2f",
+    "timestamp": "2026-01-02T09:25:01.758476Z",
+    "severity": "ERROR",
+    "message": "",
+    "httpRequest": {
+      "method": "POST",
+      "url": "https://novapcr-app-381877373634.us-central1.run.app/sensores/cron/sync-alertas/",
+      "status": 500,
+      "latency": "0.088933725s",
+      "userAgent": "Google-Cloud-Scheduler",
+      "remoteIp": "34.127.136.137"
+    },
+    "trace": "projects/appsindunnova/traces/b8aa0c5860b4ae8095645ef9f8b44969",
+    "spanId": "3b5ac01eb2ac61e2"
+  },
+  {
+    "id": "69578dc1000dae664f9c2078",
+    "service": "novapcr-app",
+    "revision": "novapcr-app-00083-h2f",
+    "timestamp": "2026-01-02T09:20:01.896614Z",
+    "severity": "ERROR",
+    "message": "Traceback (most recent call last):\n  File \"/app/sensores_iot/views.py\", line 1571, in cron_sync_y_alertas\n    resultado_sensores = sincronizar_y_detectar_paros()\n                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/app/sensores_iot/services.py\", line 479, in sincronizar_y_detectar_paros\n    resultados_sync = service.sync_all_active_canales()\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/app/sensores_iot/services.py\", line 288, in sync_all_active_canales\n    logger.info(f\"Iniciando sincronizaci\u00f3n de {canales.count()} canales activos\")\n                                               ^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/models/query.py\", line 608, in count\n    return self.query.get_count(using=self.db)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/models/sql/query.py\", line 568, in get_count\n    return obj.get_aggregation(using, {\"__count\": Count(\"*\")})[\"__count\"]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/models/sql/query.py\", line 554, in get_aggregation\n    result = compiler.execute_sql(SINGLE)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/models/sql/compiler.py\", line 1560, in execute_sql\n    cursor = self.connection.cursor()\n             ^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/utils/asyncio.py\", line 26, in inner\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 329, in cursor\n    return self._cursor()\n           ^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 305, in _cursor\n    self.ensure_connection()\n  File \"/usr/local/lib/python3.11/site-packages/django/utils/asyncio.py\", line 26, in inner\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 287, in ensure_connection\n    with self.wrap_database_errors:\n  File \"/usr/local/lib/python3.11/site-packages/django/db/utils.py\", line 91, in __exit__\n    raise dj_exc_value.with_traceback(traceback) from exc_value\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 288, in ensure_connection\n    self.connect()\n  File \"/usr/local/lib/python3.11/site-packages/django/utils/asyncio.py\", line 26, in inner\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 269, in connect\n    self.connection = self.get_new_connection(conn_params)\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/utils/asyncio.py\", line 26, in inner\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/postgresql/base.py\", line 275, in get_new_connection\n    connection = self.Database.connect(**conn_params)\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/psycopg2/__init__.py\", line 122, in connect\n    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\ndjango.db.utils.OperationalError: connection to server on socket \"/cloudsql/appsindunnova:us-central1:postgres-consolidated/.s.PGSQL.5432\" failed: Connection refused",
+    "httpRequest": null,
+    "trace": "",
+    "spanId": ""
+  },
+  {
+    "id": "69578dc1000dae0e58dbdb3f",
+    "service": "novapcr-app",
+    "revision": "novapcr-app-00083-h2f",
+    "timestamp": "2026-01-02T09:20:01.896526Z",
+    "severity": "ERROR",
+    "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 288, in ensure_connection\n    self.connect()\n  File \"/usr/local/lib/python3.11/site-packages/django/utils/asyncio.py\", line 26, in inner\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 269, in connect\n    self.connection = self.get_new_connection(conn_params)\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/utils/asyncio.py\", line 26, in inner\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/postgresql/base.py\", line 275, in get_new_connection\n    connection = self.Database.connect(**conn_params)\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/psycopg2/__init__.py\", line 122, in connect\n    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\npsycopg2.OperationalError: connection to server on socket \"/cloudsql/appsindunnova:us-central1:postgres-consolidated/.s.PGSQL.5432\" failed: Connection refused",
+    "httpRequest": null,
+    "trace": "",
+    "spanId": ""
+  },
+  {
+    "id": "69578dc1000da5fce5b8f987",
+    "service": "novapcr-app",
+    "revision": "novapcr-app-00083-h2f",
+    "timestamp": "2026-01-02T09:20:01.894460Z",
+    "severity": "ERROR",
+    "message": "Cloud SQL connection failed. Please see https://cloud.google.com/sql/docs/mysql/connect-run, https://cloud.google.com/sql/docs/postgres/connect-run, or https://cloud.google.com/sql/docs/sqlserver/connect-run for additional details: fetch ephemeral cert failed: refresh error: create ephemeral cert failed (connection name = \"appsindunnova:us-central1:postgres-consolidated\"): googleapi: Error 409: The instance or operation is not in an appropriate state to handle the request., invalidState",
+    "httpRequest": null,
+    "trace": "",
+    "spanId": ""
+  },
+  {
+    "id": "69578dc1000db2b7b6750e65",
+    "service": "novapcr-app",
+    "revision": "novapcr-app-00083-h2f",
+    "timestamp": "2026-01-02T09:20:01.779313Z",
+    "severity": "ERROR",
+    "message": "",
+    "httpRequest": {
+      "method": "POST",
+      "url": "https://novapcr-app-381877373634.us-central1.run.app/sensores/cron/sync-alertas/",
+      "status": 500,
+      "latency": "0.111245851s",
+      "userAgent": "Google-Cloud-Scheduler",
+      "remoteIp": "34.127.136.164"
+    },
+    "trace": "projects/appsindunnova/traces/71636ffcd896e067cccacddfe899e407",
+    "spanId": "6da752f74e092ae2"
+  },
+  {
+    "id": "69578c9600006c39152b6791",
+    "service": "novapcr-app",
+    "revision": "novapcr-app-00083-h2f",
+    "timestamp": "2026-01-02T09:15:02.027705Z",
+    "severity": "ERROR",
+    "message": "Traceback (most recent call last):\n  File \"/app/sensores_iot/views.py\", line 1571, in cron_sync_y_alertas\n    resultado_sensores = sincronizar_y_detectar_paros()\n                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/app/sensores_iot/services.py\", line 479, in sincronizar_y_detectar_paros\n    resultados_sync = service.sync_all_active_canales()\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/app/sensores_iot/services.py\", line 288, in sync_all_active_canales\n    logger.info(f\"Iniciando sincronizaci\u00f3n de {canales.count()} canales activos\")\n                                               ^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/models/query.py\", line 608, in count\n    return self.query.get_count(using=self.db)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/models/sql/query.py\", line 568, in get_count\n    return obj.get_aggregation(using, {\"__count\": Count(\"*\")})[\"__count\"]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/models/sql/query.py\", line 554, in get_aggregation\n    result = compiler.execute_sql(SINGLE)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/models/sql/compiler.py\", line 1560, in execute_sql\n    cursor = self.connection.cursor()\n             ^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/utils/asyncio.py\", line 26, in inner\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 329, in cursor\n    return self._cursor()\n           ^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 305, in _cursor\n    self.ensure_connection()\n  File \"/usr/local/lib/python3.11/site-packages/django/utils/asyncio.py\", line 26, in inner\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 287, in ensure_connection\n    with self.wrap_database_errors:\n  File \"/usr/local/lib/python3.11/site-packages/django/db/utils.py\", line 91, in __exit__\n    raise dj_exc_value.with_traceback(traceback) from exc_value\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 288, in ensure_connection\n    self.connect()\n  File \"/usr/local/lib/python3.11/site-packages/django/utils/asyncio.py\", line 26, in inner\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 269, in connect\n    self.connection = self.get_new_connection(conn_params)\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/utils/asyncio.py\", line 26, in inner\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/postgresql/base.py\", line 275, in get_new_connection\n    connection = self.Database.connect(**conn_params)\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/psycopg2/__init__.py\", line 122, in connect\n    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\ndjango.db.utils.OperationalError: connection to server on socket \"/cloudsql/appsindunnova:us-central1:postgres-consolidated/.s.PGSQL.5432\" failed: Connection refused",
+    "httpRequest": null,
+    "trace": "",
+    "spanId": ""
+  },
+  {
+    "id": "69578c9600006bd965ea3c93",
+    "service": "novapcr-app",
+    "revision": "novapcr-app-00083-h2f",
+    "timestamp": "2026-01-02T09:15:02.027609Z",
+    "severity": "ERROR",
+    "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 288, in ensure_connection\n    self.connect()\n  File \"/usr/local/lib/python3.11/site-packages/django/utils/asyncio.py\", line 26, in inner\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 269, in connect\n    self.connection = self.get_new_connection(conn_params)\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/utils/asyncio.py\", line 26, in inner\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/postgresql/base.py\", line 275, in get_new_connection\n    connection = self.Database.connect(**conn_params)\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/psycopg2/__init__.py\", line 122, in connect\n    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\npsycopg2.OperationalError: connection to server on socket \"/cloudsql/appsindunnova:us-central1:postgres-consolidated/.s.PGSQL.5432\" failed: Connection refused",
+    "httpRequest": null,
+    "trace": "",
+    "spanId": ""
+  },
+  {
+    "id": "69578c96000060b224b556b7",
+    "service": "novapcr-app",
+    "revision": "novapcr-app-00083-h2f",
+    "timestamp": "2026-01-02T09:15:02.024754Z",
+    "severity": "ERROR",
+    "message": "Cloud SQL connection failed. Please see https://cloud.google.com/sql/docs/mysql/connect-run, https://cloud.google.com/sql/docs/postgres/connect-run, or https://cloud.google.com/sql/docs/sqlserver/connect-run for additional details: fetch ephemeral cert failed: refresh error: create ephemeral cert failed (connection name = \"appsindunnova:us-central1:postgres-consolidated\"): googleapi: Error 409: The instance or operation is not in an appropriate state to handle the request., invalidState",
+    "httpRequest": null,
+    "trace": "",
+    "spanId": ""
+  },
+  {
+    "id": "69578c960000710452822134",
+    "service": "novapcr-app",
+    "revision": "novapcr-app-00083-h2f",
+    "timestamp": "2026-01-02T09:15:01.935097Z",
+    "severity": "ERROR",
+    "message": "",
+    "httpRequest": {
+      "method": "POST",
+      "url": "https://novapcr-app-381877373634.us-central1.run.app/sensores/cron/sync-alertas/",
+      "status": 500,
+      "latency": "0.085881656s",
+      "userAgent": "Google-Cloud-Scheduler",
+      "remoteIp": "34.98.143.199"
+    },
+    "trace": "projects/appsindunnova/traces/a4d8d7593c6caa39d537cff8b1e67854",
+    "spanId": "3d076d48cfa2d27a"
+  },
+  {
+    "id": "69578b69000f16a6ea67b6ba",
+    "service": "novapcr-app",
+    "revision": "novapcr-app-00083-h2f",
+    "timestamp": "2026-01-02T09:10:01.988838Z",
+    "severity": "ERROR",
+    "message": "Traceback (most recent call last):\n  File \"/app/sensores_iot/views.py\", line 1571, in cron_sync_y_alertas\n    resultado_sensores = sincronizar_y_detectar_paros()\n                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/app/sensores_iot/services.py\", line 479, in sincronizar_y_detectar_paros\n    resultados_sync = service.sync_all_active_canales()\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/app/sensores_iot/services.py\", line 288, in sync_all_active_canales\n    logger.info(f\"Iniciando sincronizaci\u00f3n de {canales.count()} canales activos\")\n                                               ^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/models/query.py\", line 608, in count\n    return self.query.get_count(using=self.db)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/models/sql/query.py\", line 568, in get_count\n    return obj.get_aggregation(using, {\"__count\": Count(\"*\")})[\"__count\"]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/models/sql/query.py\", line 554, in get_aggregation\n    result = compiler.execute_sql(SINGLE)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/models/sql/compiler.py\", line 1560, in execute_sql\n    cursor = self.connection.cursor()\n             ^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/utils/asyncio.py\", line 26, in inner\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 329, in cursor\n    return self._cursor()\n           ^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 305, in _cursor\n    self.ensure_connection()\n  File \"/usr/local/lib/python3.11/site-packages/django/utils/asyncio.py\", line 26, in inner\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 287, in ensure_connection\n    with self.wrap_database_errors:\n  File \"/usr/local/lib/python3.11/site-packages/django/db/utils.py\", line 91, in __exit__\n    raise dj_exc_value.with_traceback(traceback) from exc_value\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 288, in ensure_connection\n    self.connect()\n  File \"/usr/local/lib/python3.11/site-packages/django/utils/asyncio.py\", line 26, in inner\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 269, in connect\n    self.connection = self.get_new_connection(conn_params)\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/utils/asyncio.py\", line 26, in inner\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/postgresql/base.py\", line 275, in get_new_connection\n    connection = self.Database.connect(**conn_params)\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/psycopg2/__init__.py\", line 122, in connect\n    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\ndjango.db.utils.OperationalError: connection to server on socket \"/cloudsql/appsindunnova:us-central1:postgres-consolidated/.s.PGSQL.5432\" failed: Connection refused",
+    "httpRequest": null,
+    "trace": "",
+    "spanId": ""
+  },
+  {
+    "id": "69578b69000f16655f899b37",
+    "service": "novapcr-app",
+    "revision": "novapcr-app-00083-h2f",
+    "timestamp": "2026-01-02T09:10:01.988773Z",
+    "severity": "ERROR",
+    "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 288, in ensure_connection\n    self.connect()\n  File \"/usr/local/lib/python3.11/site-packages/django/utils/asyncio.py\", line 26, in inner\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 269, in connect\n    self.connection = self.get_new_connection(conn_params)\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/utils/asyncio.py\", line 26, in inner\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/postgresql/base.py\", line 275, in get_new_connection\n    connection = self.Database.connect(**conn_params)\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/psycopg2/__init__.py\", line 122, in connect\n    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\npsycopg2.OperationalError: connection to server on socket \"/cloudsql/appsindunnova:us-central1:postgres-consolidated/.s.PGSQL.5432\" failed: Connection refused",
+    "httpRequest": null,
+    "trace": "",
+    "spanId": ""
+  },
+  {
+    "id": "69578b69000f0da28f1bdd0a",
+    "service": "novapcr-app",
+    "revision": "novapcr-app-00083-h2f",
+    "timestamp": "2026-01-02T09:10:01.986530Z",
+    "severity": "ERROR",
+    "message": "Cloud SQL connection failed. Please see https://cloud.google.com/sql/docs/mysql/connect-run, https://cloud.google.com/sql/docs/postgres/connect-run, or https://cloud.google.com/sql/docs/sqlserver/connect-run for additional details: fetch ephemeral cert failed: refresh error: create ephemeral cert failed (connection name = \"appsindunnova:us-central1:postgres-consolidated\"): googleapi: Error 409: The instance or operation is not in an appropriate state to handle the request., invalidState",
+    "httpRequest": null,
+    "trace": "",
+    "spanId": ""
+  },
+  {
+    "id": "69578b69000f1bacd131a6ab",
+    "service": "novapcr-app",
+    "revision": "novapcr-app-00083-h2f",
+    "timestamp": "2026-01-02T09:10:01.887847Z",
+    "severity": "ERROR",
+    "message": "",
+    "httpRequest": {
+      "method": "POST",
+      "url": "https://novapcr-app-381877373634.us-central1.run.app/sensores/cron/sync-alertas/",
+      "status": 500,
+      "latency": "0.095425906s",
+      "userAgent": "Google-Cloud-Scheduler",
+      "remoteIp": "107.178.194.134"
+    },
+    "trace": "projects/appsindunnova/traces/3928fa5bd635eb13b3702ff967635f71",
+    "spanId": "cb194b562faeba55"
+  },
+  {
     "id": "69578a3d000e1d02ea9de2c7",
     "service": "novapcr-app",
     "revision": "novapcr-app-00083-h2f",
