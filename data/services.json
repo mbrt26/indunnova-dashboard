@@ -15,7 +15,7 @@
     "deployments": {
       "total": 10,
       "last24h": 0,
-      "last7d": 3,
+      "last7d": 2,
       "lastDeployment": "2026-01-01T14:36:51.772633Z",
       "recentDeployments": [
         {
@@ -101,7 +101,7 @@
       ]
     },
     "deployments": {
-      "total": 66,
+      "total": 65,
       "last24h": 20,
       "last7d": 51,
       "lastDeployment": "2026-01-02T22:42:25.046185Z",
@@ -139,15 +139,15 @@
       "avgLatencyMs": 739
     },
     "interactions": {
-      "requests7d": 1386,
-      "requests30d": 1386
+      "requests7d": 1351,
+      "requests30d": 1351
     },
     "costEstimate": {
-      "estimatedMonthly": 0.66,
-      "cpuCost": 0.59,
+      "estimatedMonthly": 0.64,
+      "cpuCost": 0.58,
       "memoryCost": 0.06,
       "requestCost": 0.0,
-      "estimatedRequests": 5959,
+      "estimatedRequests": 5809,
       "avgLatencyMs": 1039,
       "cpuCores": 2.0,
       "memoryGiB": 2.0,
@@ -156,7 +156,7 @@
       "usesConsolidatedDb": true,
       "hasDedicatedDb": false,
       "dedicatedDbName": null,
-      "totalWithSql": 1.97
+      "totalWithSql": 1.95
     }
   },
   {
@@ -1181,7 +1181,7 @@
       "recentErrors": []
     },
     "deployments": {
-      "total": 3,
+      "total": 1,
       "last24h": 0,
       "last7d": 1,
       "lastDeployment": "2025-12-31T19:25:29.264652Z",
@@ -1189,16 +1189,6 @@
         {
           "revision": "moldes-mecanizados-app-00024-fr5",
           "timestamp": "2025-12-31T19:25:29.264652Z",
-          "status": "True"
-        },
-        {
-          "revision": "moldes-mecanizados-app-00023-9qs",
-          "timestamp": "2025-12-25T17:14:05.073698Z",
-          "status": "True"
-        },
-        {
-          "revision": "moldes-mecanizados-app-00022-6ws",
-          "timestamp": "2025-12-25T17:05:40.017067Z",
           "status": "True"
         }
       ]
@@ -1325,9 +1315,9 @@
     "repo": "https://github.com/mbrt26/NOVAPCR",
     "repoName": "NOVAPCR",
     "errors": {
-      "total": 897,
+      "total": 895,
       "last24h": 310,
-      "last7d": 897,
+      "last7d": 895,
       "recentErrors": [
         {
           "timestamp": "2026-01-03T11:00:02.103427Z",
@@ -1385,15 +1375,15 @@
       "avgLatencyMs": 138
     },
     "interactions": {
-      "requests7d": 1608,
-      "requests30d": 1608
+      "requests7d": 1620,
+      "requests30d": 1620
     },
     "costEstimate": {
       "estimatedMonthly": 0.16,
       "cpuCost": 0.15,
       "memoryCost": 0.01,
       "requestCost": 0.0,
-      "estimatedRequests": 6914,
+      "estimatedRequests": 6966,
       "avgLatencyMs": 438,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -1475,76 +1465,76 @@
     "repo": "https://github.com/mbrt26/RGDAire",
     "repoName": "RGDAire",
     "errors": {
-      "total": 12,
-      "last24h": 6,
-      "last7d": 12,
+      "total": 14,
+      "last24h": 8,
+      "last7d": 14,
       "recentErrors": [
+        {
+          "timestamp": "2026-01-03T15:50:48.815536Z",
+          "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.12/site-packages/django/core/handlers/exception.py\", line 55, in inner\n    response = get_response(request)\n               ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/site-packages/django/core/handlers/base.py\", line 197, ...",
+          "severity": "ERROR"
+        },
+        {
+          "timestamp": "2026-01-03T15:50:43.440091Z",
+          "message": "{}",
+          "severity": "ERROR"
+        },
         {
           "timestamp": "2026-01-03T10:10:37.534410Z",
           "message": "Traceback (most recent call last):\n  File \"/app/manage.py\", line 26, in <module>\n    main()\n  File \"/app/manage.py\", line 22, in main\n    execute_from_command_line(sys.argv)\n  File \"/usr/local/lib/python3.12/site-packages/django/core/management/__init__.py\", line 442, in execute_from_command_line\n  ...",
-          "severity": "ERROR"
-        },
-        {
-          "timestamp": "2026-01-03T10:10:37.493079Z",
-          "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.12/site-packages/django/db/backends/base/base.py\", line 279, in ensure_connection\n    self.connect()\n  File \"/usr/local/lib/python3.12/site-packages/django/utils/asyncio.py\", line 26, in inner\n    return func(*args, **kwargs)\n        ...",
-          "severity": "ERROR"
-        },
-        {
-          "timestamp": "2026-01-03T10:10:37.478022Z",
-          "message": "Cloud SQL connection failed. Please see https://cloud.google.com/sql/docs/mysql/connect-run, https://cloud.google.com/sql/docs/postgres/connect-run, or https://cloud.google.com/sql/docs/sqlserver/connect-run for additional details: fetch ephemeral cert failed: refresh error: create ephemeral cert fa...",
           "severity": "ERROR"
         }
       ]
     },
     "deployments": {
-      "total": 11,
-      "last24h": 0,
-      "last7d": 9,
-      "lastDeployment": "2026-01-01T14:18:45.255093Z",
+      "total": 14,
+      "last24h": 5,
+      "last7d": 14,
+      "lastDeployment": "2026-01-03T15:57:14.877393Z",
       "recentDeployments": [
         {
-          "revision": "rgd-aire-00304-l6t",
-          "timestamp": "2026-01-01T14:18:45.255093Z",
+          "revision": "rgd-aire-00309-gz8",
+          "timestamp": "2026-01-03T15:57:14.877393Z",
           "status": "True"
         },
         {
-          "revision": "rgd-aire-00303-xmn",
-          "timestamp": "2026-01-01T14:00:20.175796Z",
+          "revision": "rgd-aire-00308-cs2",
+          "timestamp": "2026-01-03T15:55:48.791633Z",
           "status": "True"
         },
         {
-          "revision": "rgd-aire-00302-bsz",
-          "timestamp": "2026-01-01T13:54:20.005259Z",
+          "revision": "rgd-aire-00307-vxz",
+          "timestamp": "2026-01-03T15:53:53.731754Z",
           "status": "True"
         },
         {
-          "revision": "rgd-aire-00301-k2t",
-          "timestamp": "2025-12-31T17:11:00.167001Z",
+          "revision": "rgd-aire-00306-j6x",
+          "timestamp": "2026-01-03T15:49:06.761069Z",
           "status": "True"
         },
         {
-          "revision": "rgd-aire-00300-5x7",
-          "timestamp": "2025-12-30T16:40:10.744219Z",
+          "revision": "rgd-aire-00305-fmd",
+          "timestamp": "2026-01-03T15:35:34.371749Z",
           "status": "True"
         }
       ]
     },
     "metrics": {
-      "errors5xx": 2,
+      "errors5xx": 3,
       "errors4xx": 0,
-      "avgLatencyMs": 184
+      "avgLatencyMs": 1912
     },
     "interactions": {
-      "requests7d": 5949,
-      "requests30d": 5949
+      "requests7d": 5971,
+      "requests30d": 5971
     },
     "costEstimate": {
-      "estimatedMonthly": 0.65,
-      "cpuCost": 0.59,
-      "memoryCost": 0.03,
+      "estimatedMonthly": 2.89,
+      "cpuCost": 2.73,
+      "memoryCost": 0.14,
       "requestCost": 0.01,
-      "estimatedRequests": 25580,
-      "avgLatencyMs": 484,
+      "estimatedRequests": 25675,
+      "avgLatencyMs": 2212,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
       "note": "Estimacion incluye cold starts y overhead tipico",
@@ -1552,7 +1542,7 @@
       "usesConsolidatedDb": false,
       "hasDedicatedDb": true,
       "dedicatedDbName": "rgd-aire-db",
-      "totalWithSql": 10.02
+      "totalWithSql": 12.26
     }
   },
   {
@@ -1948,15 +1938,15 @@
       "avgLatencyMs": 0
     },
     "interactions": {
-      "requests7d": 125,
-      "requests30d": 125
+      "requests7d": 126,
+      "requests30d": 126
     },
     "costEstimate": {
       "estimatedMonthly": 0.01,
       "cpuCost": 0.01,
       "memoryCost": 0.0,
       "requestCost": 0.0,
-      "estimatedRequests": 537,
+      "estimatedRequests": 541,
       "avgLatencyMs": 650,
       "cpuCores": 0.3333,
       "memoryGiB": 0.5,
