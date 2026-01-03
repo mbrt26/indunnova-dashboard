@@ -1,26 +1,26 @@
 {
-  "lastUpdate": "2026-01-03T04:11:41.892021+00:00",
+  "lastUpdate": "2026-01-03T05:04:31.940409+00:00",
   "project": "appsindunnova",
   "totalServices": 36,
   "totalRepos": 42,
   "healthyServices": 35,
   "unhealthyServices": 1,
-  "totalErrors24h": 320,
+  "totalErrors24h": 342,
   "totalErrors7d": 992,
   "totalDeployments24h": 21,
   "totalDeployments7d": 123,
   "servicesWithErrors": 9,
   "costs": {
-    "cloudRun": 0.11,
-    "cloudSql": 43.03,
-    "other": 20.04,
-    "total": 63.18,
+    "cloudRun": 0.12,
+    "cloudSql": 43.04,
+    "other": 21.89,
+    "total": 65.05,
     "sqlInstances": {
-      "running": 3,
-      "stopped": 0
+      "running": 0,
+      "stopped": 3
     },
     "breakdown": {
-      "artifactRegistry": 18.96,
+      "artifactRegistry": 20.81,
       "appEngine": 0.0,
       "cloudBuild": 0.01,
       "secretManager": 0.0,
@@ -31,39 +31,39 @@
   "cloudSqlInstances": [
     {
       "name": "florezcook-instance",
-      "state": "RUNNABLE",
+      "state": "STOPPED",
       "tier": "db-f1-micro",
       "diskSizeGb": 10,
       "diskType": "PD_SSD",
       "region": "southamerica-east1",
       "databaseVersion": "MYSQL_8_0",
-      "computeCost": 7.67,
+      "computeCost": 0,
       "storageCost": 1.7,
-      "totalCost": 9.37
+      "totalCost": 1.7
     },
     {
       "name": "postgres-consolidated",
-      "state": "RUNNABLE",
+      "state": "STOPPED",
       "tier": "db-g1-small",
       "diskSizeGb": 50,
       "diskType": "PD_SSD",
       "region": "us-central1",
       "databaseVersion": "POSTGRES_15",
-      "computeCost": 25.55,
+      "computeCost": 0,
       "storageCost": 8.5,
-      "totalCost": 34.05
+      "totalCost": 8.5
     },
     {
       "name": "rgd-aire-db",
-      "state": "RUNNABLE",
+      "state": "STOPPED",
       "tier": "db-f1-micro",
       "diskSizeGb": 10,
       "diskType": "PD_SSD",
       "region": "us-central1",
       "databaseVersion": "POSTGRES_14",
-      "computeCost": 7.67,
+      "computeCost": 0,
       "storageCost": 1.7,
-      "totalCost": 9.37
+      "totalCost": 1.7
     }
   ]
 }
