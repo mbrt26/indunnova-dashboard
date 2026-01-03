@@ -79,9 +79,9 @@
     "repo": "https://github.com/mbrt26/carnesdelsebastian",
     "repoName": "carnesdelsebastian",
     "errors": {
-      "total": 53,
+      "total": 42,
       "last24h": 24,
-      "last7d": 53,
+      "last7d": 42,
       "recentErrors": [
         {
           "timestamp": "2026-01-02T21:57:42.858289Z",
@@ -537,9 +537,9 @@
     "repo": "https://github.com/mbrt26/KOMSA",
     "repoName": "KOMSA",
     "errors": {
-      "total": 12,
+      "total": 10,
       "last24h": 0,
-      "last7d": 12,
+      "last7d": 10,
       "recentErrors": [
         {
           "timestamp": "2026-01-01T18:38:54.057857Z",
@@ -1088,9 +1088,9 @@
     "repo": "https://github.com/mbrt26/Logiempresas",
     "repoName": "Logiempresas",
     "errors": {
-      "total": 25,
+      "total": 9,
       "last24h": 0,
-      "last7d": 25,
+      "last7d": 9,
       "recentErrors": [
         {
           "timestamp": "2025-12-31T20:10:33.883420Z",
@@ -1346,22 +1346,22 @@
     "repo": "https://github.com/mbrt26/NOVAPCR",
     "repoName": "NOVAPCR",
     "errors": {
-      "total": 673,
+      "total": 721,
       "last24h": 318,
-      "last7d": 673,
+      "last7d": 721,
       "recentErrors": [
         {
-          "timestamp": "2026-01-03T05:00:19.504804Z",
-          "message": "Cloud SQL connection failed. Please see https://cloud.google.com/sql/docs/mysql/connect-run, https://cloud.google.com/sql/docs/postgres/connect-run, or https://cloud.google.com/sql/docs/sqlserver/connect-run for additional details: fetch ephemeral cert failed: refresh error: create ephemeral cert fa...",
+          "timestamp": "2026-01-03T06:00:01.979617Z",
+          "message": "Traceback (most recent call last):\n  File \"/app/sensores_iot/views.py\", line 1571, in cron_sync_y_alertas\n    resultado_sensores = sincronizar_y_detectar_paros()\n                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/app/sensores_iot/services.py\", line 479, in sincronizar_y_detectar_paros\n...",
           "severity": "ERROR"
         },
         {
-          "timestamp": "2026-01-03T05:00:19.446467Z",
-          "message": "Cloud SQL connection failed. Please see https://cloud.google.com/sql/docs/mysql/connect-run, https://cloud.google.com/sql/docs/postgres/connect-run, or https://cloud.google.com/sql/docs/sqlserver/connect-run for additional details: fetch ephemeral cert failed: refresh error: create ephemeral cert fa...",
+          "timestamp": "2026-01-03T06:00:01.979519Z",
+          "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 288, in ensure_connection\n    self.connect()\n  File \"/usr/local/lib/python3.11/site-packages/django/utils/asyncio.py\", line 26, in inner\n    return func(*args, **kwargs)\n        ...",
           "severity": "ERROR"
         },
         {
-          "timestamp": "2026-01-03T05:00:19.363492Z",
+          "timestamp": "2026-01-03T06:00:01.975829Z",
           "message": "Cloud SQL connection failed. Please see https://cloud.google.com/sql/docs/mysql/connect-run, https://cloud.google.com/sql/docs/postgres/connect-run, or https://cloud.google.com/sql/docs/sqlserver/connect-run for additional details: fetch ephemeral cert failed: refresh error: create ephemeral cert fa...",
           "severity": "ERROR"
         }
@@ -1401,21 +1401,21 @@
       ]
     },
     "metrics": {
-      "errors5xx": 147,
+      "errors5xx": 159,
       "errors4xx": 0,
-      "avgLatencyMs": 160
+      "avgLatencyMs": 155
     },
     "interactions": {
-      "requests7d": 1497,
-      "requests30d": 1497
+      "requests7d": 1508,
+      "requests30d": 1508
     },
     "costEstimate": {
       "estimatedMonthly": 0.15,
       "cpuCost": 0.14,
       "memoryCost": 0.01,
       "requestCost": 0.0,
-      "estimatedRequests": 6437,
-      "avgLatencyMs": 460,
+      "estimatedRequests": 6484,
+      "avgLatencyMs": 455,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
       "note": "Estimacion incluye cold starts y overhead tipico",
@@ -1496,9 +1496,9 @@
     "repo": "https://github.com/mbrt26/RGDAire",
     "repoName": "RGDAire",
     "errors": {
-      "total": 8,
+      "total": 6,
       "last24h": 0,
-      "last7d": 8,
+      "last7d": 6,
       "recentErrors": [
         {
           "timestamp": "2026-01-01T10:00:16.866377Z",
@@ -1556,15 +1556,15 @@
       "avgLatencyMs": 184
     },
     "interactions": {
-      "requests7d": 6011,
-      "requests30d": 6011
+      "requests7d": 5999,
+      "requests30d": 5999
     },
     "costEstimate": {
       "estimatedMonthly": 0.65,
       "cpuCost": 0.6,
       "memoryCost": 0.03,
       "requestCost": 0.01,
-      "estimatedRequests": 25847,
+      "estimatedRequests": 25795,
       "avgLatencyMs": 484,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -1584,9 +1584,9 @@
     "repo": null,
     "repoName": null,
     "errors": {
-      "total": 65,
+      "total": 48,
       "last24h": 0,
-      "last7d": 65,
+      "last7d": 48,
       "recentErrors": [
         {
           "timestamp": "2026-01-01T15:36:56.641955Z",
@@ -1969,15 +1969,15 @@
       "avgLatencyMs": 0
     },
     "interactions": {
-      "requests7d": 117,
-      "requests30d": 117
+      "requests7d": 118,
+      "requests30d": 118
     },
     "costEstimate": {
       "estimatedMonthly": 0.01,
       "cpuCost": 0.01,
       "memoryCost": 0.0,
       "requestCost": 0.0,
-      "estimatedRequests": 503,
+      "estimatedRequests": 507,
       "avgLatencyMs": 650,
       "cpuCores": 0.3333,
       "memoryGiB": 0.5,
