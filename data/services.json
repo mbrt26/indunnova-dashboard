@@ -1325,18 +1325,18 @@
       "last7d": 888,
       "recentErrors": [
         {
-          "timestamp": "2026-01-04T05:05:11.905290Z",
+          "timestamp": "2026-01-04T06:00:01.360839Z",
           "message": "Traceback (most recent call last):\n  File \"/app/sensores_iot/views.py\", line 1571, in cron_sync_y_alertas\n    resultado_sensores = sincronizar_y_detectar_paros()\n                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/app/sensores_iot/services.py\", line 479, in sincronizar_y_detectar_paros\n...",
           "severity": "ERROR"
         },
         {
-          "timestamp": "2026-01-04T05:05:11.905225Z",
+          "timestamp": "2026-01-04T06:00:01.360755Z",
           "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 288, in ensure_connection\n    self.connect()\n  File \"/usr/local/lib/python3.11/site-packages/django/utils/asyncio.py\", line 26, in inner\n    return func(*args, **kwargs)\n        ...",
           "severity": "ERROR"
         },
         {
-          "timestamp": "2026-01-04T05:05:11.862184Z",
-          "message": "Cloud SQL connection failed. Please see https://cloud.google.com/sql/docs/mysql/connect-run, https://cloud.google.com/sql/docs/postgres/connect-run, or https://cloud.google.com/sql/docs/sqlserver/connect-run for additional details: dial error: failed to dial (connection name = \"appsindunnova:us-cent...",
+          "timestamp": "2026-01-04T06:00:01.358615Z",
+          "message": "Cloud SQL connection failed. Please see https://cloud.google.com/sql/docs/mysql/connect-run, https://cloud.google.com/sql/docs/postgres/connect-run, or https://cloud.google.com/sql/docs/sqlserver/connect-run for additional details: fetch ephemeral cert failed: refresh error: create ephemeral cert fa...",
           "severity": "ERROR"
         }
       ]
@@ -1375,21 +1375,21 @@
       ]
     },
     "metrics": {
-      "errors5xx": 219,
+      "errors5xx": 230,
       "errors4xx": 0,
-      "avgLatencyMs": 183
+      "avgLatencyMs": 178
     },
     "interactions": {
-      "requests7d": 1758,
-      "requests30d": 1758
+      "requests7d": 1768,
+      "requests30d": 1768
     },
     "costEstimate": {
       "estimatedMonthly": 0.19,
-      "cpuCost": 0.18,
+      "cpuCost": 0.17,
       "memoryCost": 0.01,
       "requestCost": 0.0,
-      "estimatedRequests": 7559,
-      "avgLatencyMs": 483,
+      "estimatedRequests": 7602,
+      "avgLatencyMs": 478,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
       "note": "Estimacion incluye cold starts y overhead tipico",
@@ -1530,15 +1530,15 @@
       "avgLatencyMs": 1912
     },
     "interactions": {
-      "requests7d": 6307,
-      "requests30d": 6307
+      "requests7d": 6296,
+      "requests30d": 6296
     },
     "costEstimate": {
       "estimatedMonthly": 3.05,
-      "cpuCost": 2.88,
+      "cpuCost": 2.87,
       "memoryCost": 0.15,
       "requestCost": 0.01,
-      "estimatedRequests": 27120,
+      "estimatedRequests": 27072,
       "avgLatencyMs": 2212,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -1943,15 +1943,15 @@
       "avgLatencyMs": 0
     },
     "interactions": {
-      "requests7d": 136,
-      "requests30d": 136
+      "requests7d": 137,
+      "requests30d": 137
     },
     "costEstimate": {
       "estimatedMonthly": 0.01,
       "cpuCost": 0.01,
       "memoryCost": 0.0,
       "requestCost": 0.0,
-      "estimatedRequests": 584,
+      "estimatedRequests": 589,
       "avgLatencyMs": 650,
       "cpuCores": 0.3333,
       "memoryGiB": 0.5,
