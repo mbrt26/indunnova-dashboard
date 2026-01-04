@@ -1320,22 +1320,22 @@
     "repo": "https://github.com/mbrt26/NOVAPCR",
     "repoName": "NOVAPCR",
     "errors": {
-      "total": 882,
+      "total": 890,
       "last24h": 288,
-      "last7d": 882,
+      "last7d": 890,
       "recentErrors": [
         {
-          "timestamp": "2026-01-04T08:00:01.994917Z",
+          "timestamp": "2026-01-04T09:00:01.933423Z",
           "message": "Traceback (most recent call last):\n  File \"/app/sensores_iot/views.py\", line 1571, in cron_sync_y_alertas\n    resultado_sensores = sincronizar_y_detectar_paros()\n                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/app/sensores_iot/services.py\", line 479, in sincronizar_y_detectar_paros\n...",
           "severity": "ERROR"
         },
         {
-          "timestamp": "2026-01-04T08:00:01.994786Z",
+          "timestamp": "2026-01-04T09:00:01.933333Z",
           "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 288, in ensure_connection\n    self.connect()\n  File \"/usr/local/lib/python3.11/site-packages/django/utils/asyncio.py\", line 26, in inner\n    return func(*args, **kwargs)\n        ...",
           "severity": "ERROR"
         },
         {
-          "timestamp": "2026-01-04T08:00:01.990935Z",
+          "timestamp": "2026-01-04T09:00:01.930521Z",
           "message": "Cloud SQL connection failed. Please see https://cloud.google.com/sql/docs/mysql/connect-run, https://cloud.google.com/sql/docs/postgres/connect-run, or https://cloud.google.com/sql/docs/sqlserver/connect-run for additional details: fetch ephemeral cert failed: refresh error: create ephemeral cert fa...",
           "severity": "ERROR"
         }
@@ -1375,21 +1375,21 @@
       ]
     },
     "metrics": {
-      "errors5xx": 254,
+      "errors5xx": 266,
       "errors4xx": 0,
-      "avgLatencyMs": 170
+      "avgLatencyMs": 167
     },
     "interactions": {
-      "requests7d": 1792,
-      "requests30d": 1792
+      "requests7d": 1804,
+      "requests30d": 1804
     },
     "costEstimate": {
       "estimatedMonthly": 0.19,
       "cpuCost": 0.17,
       "memoryCost": 0.01,
       "requestCost": 0.0,
-      "estimatedRequests": 7705,
-      "avgLatencyMs": 470,
+      "estimatedRequests": 7757,
+      "avgLatencyMs": 467,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
       "note": "Estimacion incluye cold starts y overhead tipico",
@@ -1408,26 +1408,10 @@
     "repo": "https://github.com/mbrt26/PlasticosAmbientales",
     "repoName": "PlasticosAmbientales",
     "errors": {
-      "total": 5,
+      "total": 0,
       "last24h": 0,
-      "last7d": 5,
-      "recentErrors": [
-        {
-          "timestamp": "2026-01-01T08:41:50.122965Z",
-          "message": "Default STARTUP TCP probe failed 1 time consecutively for container \"plasticos-ambientales-1\" on port 8000. The instance was not started.\nConnection failed with status CANCELLED.",
-          "severity": "ERROR"
-        },
-        {
-          "timestamp": "2026-01-01T08:41:48.793204Z",
-          "message": "Traceback (most recent call last):\n  File \"/app/manage.py\", line 22, in <module>\n    main()\n  File \"/app/manage.py\", line 18, in main\n    execute_from_command_line(sys.argv)\n  File \"/usr/local/lib/python3.11/site-packages/django/core/management/__init__.py\", line 442, in execute_from_command_line\n  ...",
-          "severity": "ERROR"
-        },
-        {
-          "timestamp": "2026-01-01T08:41:48.762898Z",
-          "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 288, in ensure_connection\n    self.connect()\n  File \"/usr/local/lib/python3.11/site-packages/django/utils/asyncio.py\", line 26, in inner\n    return func(*args, **kwargs)\n        ...",
-          "severity": "ERROR"
-        }
-      ]
+      "last7d": 0,
+      "recentErrors": []
     },
     "deployments": {
       "total": 0,
@@ -1470,9 +1454,9 @@
     "repo": "https://github.com/mbrt26/RGDAire",
     "repoName": "RGDAire",
     "errors": {
-      "total": 20,
+      "total": 17,
       "last24h": 11,
-      "last7d": 20,
+      "last7d": 17,
       "recentErrors": [
         {
           "timestamp": "2026-01-04T07:54:25.487164Z",
@@ -1530,15 +1514,15 @@
       "avgLatencyMs": 1912
     },
     "interactions": {
-      "requests7d": 6270,
-      "requests30d": 6270
+      "requests7d": 6257,
+      "requests30d": 6257
     },
     "costEstimate": {
       "estimatedMonthly": 3.03,
       "cpuCost": 2.86,
       "memoryCost": 0.15,
       "requestCost": 0.01,
-      "estimatedRequests": 26961,
+      "estimatedRequests": 26905,
       "avgLatencyMs": 2212,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -1943,15 +1927,15 @@
       "avgLatencyMs": 0
     },
     "interactions": {
-      "requests7d": 139,
-      "requests30d": 139
+      "requests7d": 140,
+      "requests30d": 140
     },
     "costEstimate": {
       "estimatedMonthly": 0.01,
       "cpuCost": 0.01,
       "memoryCost": 0.0,
       "requestCost": 0.0,
-      "estimatedRequests": 597,
+      "estimatedRequests": 602,
       "avgLatencyMs": 650,
       "cpuCores": 0.3333,
       "memoryGiB": 0.5,
