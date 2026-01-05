@@ -51,15 +51,15 @@
       "avgLatencyMs": 0
     },
     "interactions": {
-      "requests7d": 14,
-      "requests30d": 14
+      "requests7d": 17,
+      "requests30d": 17
     },
     "costEstimate": {
       "estimatedMonthly": 0.0,
       "cpuCost": 0.0,
       "memoryCost": 0.0,
       "requestCost": 0.0,
-      "estimatedRequests": 60,
+      "estimatedRequests": 73,
       "avgLatencyMs": 650,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -87,7 +87,7 @@
     "deployments": {
       "total": 65,
       "last24h": 0,
-      "last7d": 35,
+      "last7d": 30,
       "lastDeployment": "2026-01-02T22:42:25.046185Z",
       "recentDeployments": [
         {
@@ -118,21 +118,21 @@
       ]
     },
     "metrics": {
-      "errors5xx": 21,
+      "errors5xx": 13,
       "errors4xx": 0,
-      "avgLatencyMs": 646
+      "avgLatencyMs": 535
     },
     "interactions": {
       "requests7d": 777,
       "requests30d": 777
     },
     "costEstimate": {
-      "estimatedMonthly": 0.34,
-      "cpuCost": 0.3,
+      "estimatedMonthly": 0.3,
+      "cpuCost": 0.27,
       "memoryCost": 0.03,
       "requestCost": 0.0,
       "estimatedRequests": 3341,
-      "avgLatencyMs": 946,
+      "avgLatencyMs": 835,
       "cpuCores": 2.0,
       "memoryGiB": 2.0,
       "note": "Estimacion incluye cold starts y overhead tipico",
@@ -140,7 +140,7 @@
       "usesConsolidatedDb": true,
       "hasDedicatedDb": false,
       "dedicatedDbName": null,
-      "totalWithSql": 1.65
+      "totalWithSql": 1.61
     }
   },
   {
@@ -249,34 +249,34 @@
       "recentErrors": []
     },
     "deployments": {
-      "total": 7,
-      "last24h": 0,
-      "last7d": 0,
-      "lastDeployment": "2025-12-26T12:20:48.805750Z",
+      "total": 10,
+      "last24h": 4,
+      "last7d": 4,
+      "lastDeployment": "2026-01-05T16:00:43.630890Z",
       "recentDeployments": [
+        {
+          "revision": "colorplastic-app-00011-87d",
+          "timestamp": "2026-01-05T16:00:43.630890Z",
+          "status": "True"
+        },
+        {
+          "revision": "colorplastic-app-00010-gnd",
+          "timestamp": "2026-01-05T15:33:57.407255Z",
+          "status": "True"
+        },
+        {
+          "revision": "colorplastic-app-00009-q5f",
+          "timestamp": "2026-01-05T15:19:36.337549Z",
+          "status": "True"
+        },
+        {
+          "revision": "colorplastic-app-00008-9l5",
+          "timestamp": "2026-01-05T15:07:44.754894Z",
+          "status": "True"
+        },
         {
           "revision": "colorplastic-app-00007-zw2",
           "timestamp": "2025-12-26T12:20:48.805750Z",
-          "status": "True"
-        },
-        {
-          "revision": "colorplastic-app-00006-t4w",
-          "timestamp": "2025-12-26T12:14:10.218786Z",
-          "status": "True"
-        },
-        {
-          "revision": "colorplastic-app-00005-k76",
-          "timestamp": "2025-12-25T23:26:42.956872Z",
-          "status": "True"
-        },
-        {
-          "revision": "colorplastic-app-00004-8zk",
-          "timestamp": "2025-12-25T22:21:10.808678Z",
-          "status": "True"
-        },
-        {
-          "revision": "colorplastic-app-00003-tf2",
-          "timestamp": "2025-12-25T22:17:00.522194Z",
           "status": "True"
         }
       ]
@@ -287,15 +287,15 @@
       "avgLatencyMs": 0
     },
     "interactions": {
-      "requests7d": 362,
-      "requests30d": 362
+      "requests7d": 586,
+      "requests30d": 586
     },
     "costEstimate": {
-      "estimatedMonthly": 0.05,
-      "cpuCost": 0.05,
+      "estimatedMonthly": 0.08,
+      "cpuCost": 0.08,
       "memoryCost": 0.0,
       "requestCost": 0.0,
-      "estimatedRequests": 1556,
+      "estimatedRequests": 2519,
       "avgLatencyMs": 650,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -304,7 +304,7 @@
       "usesConsolidatedDb": true,
       "hasDedicatedDb": false,
       "dedicatedDbName": null,
-      "totalWithSql": 1.36
+      "totalWithSql": 1.39
     }
   },
   {
@@ -390,15 +390,15 @@
       "avgLatencyMs": 0
     },
     "interactions": {
-      "requests7d": 17,
-      "requests30d": 17
+      "requests7d": 27,
+      "requests30d": 27
     },
     "costEstimate": {
       "estimatedMonthly": 0.0,
       "cpuCost": 0.0,
       "memoryCost": 0.0,
       "requestCost": 0.0,
-      "estimatedRequests": 73,
+      "estimatedRequests": 116,
       "avgLatencyMs": 650,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -1195,33 +1195,43 @@
     "repo": "https://github.com/mbrt26/MouseDigital",
     "repoName": "MouseDigital",
     "errors": {
-      "total": 122,
-      "last24h": 110,
-      "last7d": 122,
+      "total": 132,
+      "last24h": 120,
+      "last7d": 132,
       "recentErrors": [
         {
-          "timestamp": "2026-01-05T14:11:28.320707Z",
+          "timestamp": "2026-01-05T16:02:20.911250Z",
           "message": "{}",
           "severity": "ERROR"
         },
         {
-          "timestamp": "2026-01-05T14:11:28.251550Z",
+          "timestamp": "2026-01-05T16:02:20.840344Z",
           "message": "{}",
           "severity": "ERROR"
         },
         {
-          "timestamp": "2026-01-05T14:11:28.237802Z",
+          "timestamp": "2026-01-05T16:02:20.825950Z",
           "message": "Default STARTUP TCP probe failed 1 time consecutively for container \"mouse-digital-1\" on port 8080. The instance was not started.\nConnection failed with status CANCELLED.",
           "severity": "ERROR"
         }
       ]
     },
     "deployments": {
-      "total": 33,
-      "last24h": 1,
-      "last7d": 29,
-      "lastDeployment": "2026-01-05T14:10:54.034882Z",
+      "total": 35,
+      "last24h": 3,
+      "last7d": 31,
+      "lastDeployment": "2026-01-05T16:01:47.920067Z",
       "recentDeployments": [
+        {
+          "revision": "mouse-digital-00121-6ld",
+          "timestamp": "2026-01-05T16:01:47.920067Z",
+          "status": "False"
+        },
+        {
+          "revision": "mouse-digital-00120-wnj",
+          "timestamp": "2026-01-05T15:56:11.533984Z",
+          "status": "False"
+        },
         {
           "revision": "mouse-digital-00119-5ns",
           "timestamp": "2026-01-05T14:10:54.034882Z",
@@ -1235,16 +1245,6 @@
         {
           "revision": "mouse-digital-00117-bnq",
           "timestamp": "2026-01-01T14:05:27.356194Z",
-          "status": "True"
-        },
-        {
-          "revision": "mouse-digital-00116-mwt",
-          "timestamp": "2025-12-31T23:44:50.153797Z",
-          "status": "True"
-        },
-        {
-          "revision": "mouse-digital-00115-lxq",
-          "timestamp": "2025-12-31T23:31:55.541154Z",
           "status": "True"
         }
       ]
@@ -1283,9 +1283,9 @@
     "repo": "https://github.com/mbrt26/NOVAPCR",
     "repoName": "NOVAPCR",
     "errors": {
-      "total": 860,
+      "total": 850,
       "last24h": 300,
-      "last7d": 860,
+      "last7d": 850,
       "recentErrors": [
         {
           "timestamp": "2026-01-05T11:00:01.785395Z",
@@ -1343,15 +1343,15 @@
       "avgLatencyMs": 175
     },
     "interactions": {
-      "requests7d": 1881,
-      "requests30d": 1881
+      "requests7d": 1876,
+      "requests30d": 1876
     },
     "costEstimate": {
       "estimatedMonthly": 0.2,
       "cpuCost": 0.18,
       "memoryCost": 0.01,
       "requestCost": 0.0,
-      "estimatedRequests": 8088,
+      "estimatedRequests": 8066,
       "avgLatencyMs": 475,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -1477,15 +1477,15 @@
       "avgLatencyMs": 5368
     },
     "interactions": {
-      "requests7d": 5894,
-      "requests30d": 5894
+      "requests7d": 5663,
+      "requests30d": 5663
     },
     "costEstimate": {
-      "estimatedMonthly": 5.21,
-      "cpuCost": 4.94,
-      "memoryCost": 0.26,
+      "estimatedMonthly": 5.01,
+      "cpuCost": 4.74,
+      "memoryCost": 0.25,
       "requestCost": 0.01,
-      "estimatedRequests": 25344,
+      "estimatedRequests": 24350,
       "avgLatencyMs": 4057,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -1494,7 +1494,7 @@
       "usesConsolidatedDb": false,
       "hasDedicatedDb": true,
       "dedicatedDbName": "rgd-aire-db",
-      "totalWithSql": 14.58
+      "totalWithSql": 14.38
     }
   },
   {
@@ -1836,7 +1836,7 @@
       "recentErrors": []
     },
     "deployments": {
-      "total": 19,
+      "total": 14,
       "last24h": 0,
       "last7d": 0,
       "lastDeployment": "2025-12-26T14:49:06.260016Z",
@@ -1874,15 +1874,15 @@
       "avgLatencyMs": 0
     },
     "interactions": {
-      "requests7d": 150,
-      "requests30d": 150
+      "requests7d": 149,
+      "requests30d": 149
     },
     "costEstimate": {
       "estimatedMonthly": 0.01,
       "cpuCost": 0.01,
       "memoryCost": 0.0,
       "requestCost": 0.0,
-      "estimatedRequests": 645,
+      "estimatedRequests": 640,
       "avgLatencyMs": 650,
       "cpuCores": 0.3333,
       "memoryGiB": 0.5,
