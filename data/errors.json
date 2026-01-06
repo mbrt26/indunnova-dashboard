@@ -1,5 +1,142 @@
 [
   {
+    "id": "695c743400061e4d970942f2",
+    "service": "contabilidad-indunnova",
+    "revision": "contabilidad-indunnova-00005-5bs",
+    "timestamp": "2026-01-06T02:32:20.100962Z",
+    "severity": "ERROR",
+    "message": "",
+    "httpRequest": {
+      "method": "POST",
+      "url": "https://contabilidad-indunnova-381877373634.us-central1.run.app/api/alegra/sincronizar",
+      "status": 500,
+      "latency": "0.298786422s",
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.2 Safari/605.1.15",
+      "remoteIp": "129.222.203.99"
+    },
+    "trace": "projects/appsindunnova/traces/9745aef23c29d101c9e9603274d10a4f",
+    "spanId": "5e11064f20314956"
+  },
+  {
+    "id": "695c70d10005e04f5c038fad",
+    "service": "contabilidad-indunnova",
+    "revision": "contabilidad-indunnova-00004-d6w",
+    "timestamp": "2026-01-06T02:17:52.995848Z",
+    "severity": "ERROR",
+    "message": "",
+    "httpRequest": {
+      "method": "POST",
+      "url": "https://contabilidad-indunnova-381877373634.us-central1.run.app/api/alegra/sincronizar",
+      "status": 500,
+      "latency": "0.386738846s",
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.2 Safari/605.1.15",
+      "remoteIp": "2803:9810:68ac:4e08:1d1c:d30:6339:3a32"
+    },
+    "trace": "projects/appsindunnova/traces/247dfeccf822749be6198fbe25b8b5bf",
+    "spanId": "cf761eb0241de198"
+  },
+  {
+    "id": "695c70cd000b9c0b5013dbdb",
+    "service": "contabilidad-indunnova",
+    "revision": "contabilidad-indunnova-00004-d6w",
+    "timestamp": "2026-01-06T02:17:49.433846Z",
+    "severity": "ERROR",
+    "message": "",
+    "httpRequest": {
+      "method": "POST",
+      "url": "https://contabilidad-indunnova-381877373634.us-central1.run.app/api/alegra/sincronizar",
+      "status": 500,
+      "latency": "0.324545921s",
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.2 Safari/605.1.15",
+      "remoteIp": "2803:9810:68ac:4e08:1d1c:d30:6339:3a32"
+    },
+    "trace": "projects/appsindunnova/traces/d204e0cc16fdf208e6198fbe25b8bd72",
+    "spanId": "f34e20807541d8e2"
+  },
+  {
+    "id": "695c6c610004efbfe1bc866e",
+    "service": "contabilidad-indunnova",
+    "revision": "contabilidad-indunnova-00002-jgl",
+    "timestamp": "2026-01-06T01:58:55.815752Z",
+    "severity": "ERROR",
+    "message": "",
+    "httpRequest": {
+      "method": "POST",
+      "url": "https://contabilidad-indunnova-381877373634.us-central1.run.app/api/alegra/sincronizar",
+      "status": 500,
+      "latency": "1.506549547s",
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.2 Safari/605.1.15",
+      "remoteIp": "2803:9810:68ac:4e08:1d1c:d30:6339:3a32"
+    },
+    "trace": "projects/appsindunnova/traces/291009b3a017bd78536939ea18d53fcb",
+    "spanId": "e44707ae0b9836ef"
+  },
+  {
+    "id": "695c6c5a000c460a84feee75",
+    "service": "contabilidad-indunnova",
+    "revision": "contabilidad-indunnova-00002-jgl",
+    "timestamp": "2026-01-06T01:58:49.751359Z",
+    "severity": "ERROR",
+    "message": "",
+    "httpRequest": {
+      "method": "GET",
+      "url": "https://contabilidad-indunnova-381877373634.us-central1.run.app/api/compras/estadisticas",
+      "status": 500,
+      "latency": "1.051875339s",
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.2 Safari/605.1.15",
+      "remoteIp": "2803:9810:68ac:4e08:1d1c:d30:6339:3a32"
+    },
+    "trace": "projects/appsindunnova/traces/121d9b491fcd06281edb9fe9ee0f33e7",
+    "spanId": "422ac4671a835802"
+  },
+  {
+    "id": "695c68f20002a41ba3feaea6",
+    "service": "crm-komsa",
+    "revision": "crm-komsa-00055-rbc",
+    "timestamp": "2026-01-06T01:44:18.173083Z",
+    "severity": "ERROR",
+    "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/core/handlers/exception.py\", line 55, in inner\n    response = get_response(request)\n               ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/core/handlers/base.py\", line 197, in _get_response\n    response = wrapped_callback(request, *callback_args, **callback_kwargs)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/app/apps/clientes/views.py\", line 249, in importar_clientes_excel\n    return redirect('login')\n           ^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/shortcuts.py\", line 48, in redirect\n    return redirect_class(resolve_url(to, *args, **kwargs))\n                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/shortcuts.py\", line 145, in resolve_url\n    return reverse(to, args=args, kwargs=kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/urls/base.py\", line 88, in reverse\n    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/urls/resolvers.py\", line 828, in _reverse_with_prefix\n    raise NoReverseMatch(msg)\ndjango.urls.exceptions.NoReverseMatch: Reverse for 'login' not found. 'login' is not a valid view function or pattern name.",
+    "httpRequest": null,
+    "trace": "",
+    "spanId": ""
+  },
+  {
+    "id": "695c68f20002a92d116abdc5",
+    "service": "crm-komsa",
+    "revision": "crm-komsa-00055-rbc",
+    "timestamp": "2026-01-06T01:43:55.676749Z",
+    "severity": "ERROR",
+    "message": "",
+    "httpRequest": {
+      "method": "GET",
+      "url": "https://crm-komsa-381877373634.us-central1.run.app/clientes/importar-excel/",
+      "status": 500,
+      "latency": "0.059185958s",
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_1) AppleWebKit/601.2.4 (KHTML, like Gecko) Version/9.0.1 Safari/601.2.4 facebookexternalhit/1.1 Facebot Twitterbot/1.0",
+      "remoteIp": "2a04:4e41:2805:38f4::9227:78f4"
+    },
+    "trace": "projects/appsindunnova/traces/a512763d3c4c24d0342ffbb230be6955",
+    "spanId": "61a60feb23385acb"
+  },
+  {
+    "id": "695c685c000808eddf57a1c9",
+    "service": "contabilidad-indunnova",
+    "revision": "contabilidad-indunnova-00001-pp9",
+    "timestamp": "2026-01-06T01:41:47.520723Z",
+    "severity": "ERROR",
+    "message": "",
+    "httpRequest": {
+      "method": "GET",
+      "url": "https://contabilidad-indunnova-381877373634.us-central1.run.app/api/compras/estadisticas",
+      "status": 500,
+      "latency": "1.004305595s",
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.2 Safari/605.1.15",
+      "remoteIp": "2803:9810:68ac:4e08:1d1c:d30:6339:3a32"
+    },
+    "trace": "projects/appsindunnova/traces/20ec8420c4d9fde5a1a6020061727f66",
+    "spanId": "73bfeabd00c85047"
+  },
+  {
     "id": "-8l2lo7e2ttae",
     "service": "mouse-digital",
     "revision": "",
@@ -24703,121 +24840,5 @@
     "httpRequest": null,
     "trace": "",
     "spanId": ""
-  },
-  {
-    "id": "6955a39f000444ea3e304ea4",
-    "service": "crm-komsa",
-    "revision": "crm-komsa-00053-9jl",
-    "timestamp": "2025-12-31T22:28:23.811203Z",
-    "severity": "ERROR",
-    "message": "",
-    "httpRequest": {
-      "method": "GET",
-      "url": "https://crm-komsa-381877373634.us-central1.run.app/clientes/importar-excel/",
-      "status": 500,
-      "latency": "0.169421961s",
-      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_1) AppleWebKit/601.2.4 (KHTML, like Gecko) Version/9.0.1 Safari/601.2.4 facebookexternalhit/1.1 Facebot Twitterbot/1.0",
-      "remoteIp": "2a09:bac2:347e:26aa::3da:32"
-    },
-    "trace": "projects/appsindunnova/traces/5900cc8df36d0094fc4da13e1d91ac36",
-    "spanId": "8a827eb875cd850c"
-  },
-  {
-    "id": "69558339000d7adc4e195b61",
-    "service": "logiempresas",
-    "revision": "logiempresas-00111-sls",
-    "timestamp": "2025-12-31T20:10:33.883420Z",
-    "severity": "ERROR",
-    "message": "Traceback (most recent call last):\n  File \"/app/manage.py\", line 22, in <module>\n    main()\n  File \"/app/manage.py\", line 18, in main\n    execute_from_command_line(sys.argv)\n  File \"/usr/local/lib/python3.11/site-packages/django/core/management/__init__.py\", line 442, in execute_from_command_line\n    utility.execute()\n  File \"/usr/local/lib/python3.11/site-packages/django/core/management/__init__.py\", line 436, in execute\n    self.fetch_command(subcommand).run_from_argv(self.argv)\n  File \"/usr/local/lib/python3.11/site-packages/django/core/management/base.py\", line 412, in run_from_argv\n    self.execute(*args, **cmd_options)\n  File \"/usr/local/lib/python3.11/site-packages/django/core/management/base.py\", line 458, in execute\n    output = self.handle(*args, **options)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/core/management/base.py\", line 106, in wrapper\n    res = handle_func(*args, **kwargs)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/core/management/commands/migrate.py\", line 356, in handle\n    post_migrate_state = executor.migrate(\n                         ^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/migrations/executor.py\", line 135, in migrate\n    state = self._migrate_all_forwards(\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/migrations/executor.py\", line 167, in _migrate_all_forwards\n    state = self.apply_migration(\n            ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/migrations/executor.py\", line 252, in apply_migration\n    state = migration.apply(state, schema_editor)\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/migrations/migration.py\", line 132, in apply\n    operation.database_forwards(\n  File \"/usr/local/lib/python3.11/site-packages/django/db/migrations/operations/models.py\", line 96, in database_forwards\n    schema_editor.create_model(model)\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/schema.py\", line 451, in create_model\n    self.execute(sql, params or None)\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/postgresql/schema.py\", line 45, in execute\n    return super().execute(sql, params)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/schema.py\", line 201, in execute\n    cursor.execute(sql, params)\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/utils.py\", line 67, in execute\n    return self._execute_with_wrappers(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/utils.py\", line 80, in _execute_with_wrappers\n    return executor(sql, params, many, context)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/utils.py\", line 84, in _execute\n    with self.db.wrap_database_errors:\n  File \"/usr/local/lib/python3.11/site-packages/django/db/utils.py\", line 91, in __exit__\n    raise dj_exc_value.with_traceback(traceback) from exc_value\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/utils.py\", line 87, in _execute\n    return self.cursor.execute(sql)\n           ^^^^^^^^^^^^^^^^^^^^^^^^\ndjango.db.utils.ProgrammingError: relation \"notificaciones_configuracionnotificacion\" already exists",
-    "httpRequest": null,
-    "trace": "",
-    "spanId": ""
-  },
-  {
-    "id": "69558339000d192ec75258e8",
-    "service": "logiempresas",
-    "revision": "logiempresas-00111-sls",
-    "timestamp": "2025-12-31T20:10:33.858414Z",
-    "severity": "ERROR",
-    "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/utils.py\", line 87, in _execute\n    return self.cursor.execute(sql)\n           ^^^^^^^^^^^^^^^^^^^^^^^^\npsycopg2.errors.DuplicateTable: relation \"notificaciones_configuracionnotificacion\" already exists",
-    "httpRequest": null,
-    "trace": "",
-    "spanId": ""
-  },
-  {
-    "id": "695583390001f8993b4d3d3d",
-    "service": "logiempresas",
-    "revision": "logiempresas-00111-sls",
-    "timestamp": "2025-12-31T20:10:33.129177Z",
-    "severity": "ERROR",
-    "message": "Traceback (most recent call last):\n  File \"/app/manage.py\", line 22, in <module>\n    main()\n  File \"/app/manage.py\", line 18, in main\n    execute_from_command_line(sys.argv)\n  File \"/usr/local/lib/python3.11/site-packages/django/core/management/__init__.py\", line 442, in execute_from_command_line\n    utility.execute()\n  File \"/usr/local/lib/python3.11/site-packages/django/core/management/__init__.py\", line 436, in execute\n    self.fetch_command(subcommand).run_from_argv(self.argv)\n  File \"/usr/local/lib/python3.11/site-packages/django/core/management/base.py\", line 412, in run_from_argv\n    self.execute(*args, **cmd_options)\n  File \"/usr/local/lib/python3.11/site-packages/django/core/management/base.py\", line 458, in execute\n    output = self.handle(*args, **options)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/core/management/base.py\", line 106, in wrapper\n    res = handle_func(*args, **kwargs)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/core/management/commands/migrate.py\", line 356, in handle\n    post_migrate_state = executor.migrate(\n                         ^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/migrations/executor.py\", line 135, in migrate\n    state = self._migrate_all_forwards(\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/migrations/executor.py\", line 167, in _migrate_all_forwards\n    state = self.apply_migration(\n            ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/migrations/executor.py\", line 252, in apply_migration\n    state = migration.apply(state, schema_editor)\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/migrations/migration.py\", line 132, in apply\n    operation.database_forwards(\n  File \"/usr/local/lib/python3.11/site-packages/django/db/migrations/operations/models.py\", line 96, in database_forwards\n    schema_editor.create_model(model)\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/schema.py\", line 451, in create_model\n    self.execute(sql, params or None)\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/postgresql/schema.py\", line 45, in execute\n    return super().execute(sql, params)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/schema.py\", line 201, in execute\n    cursor.execute(sql, params)\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/utils.py\", line 67, in execute\n    return self._execute_with_wrappers(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/utils.py\", line 80, in _execute_with_wrappers\n    return executor(sql, params, many, context)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/utils.py\", line 84, in _execute\n    with self.db.wrap_database_errors:\n  File \"/usr/local/lib/python3.11/site-packages/django/db/utils.py\", line 91, in __exit__\n    raise dj_exc_value.with_traceback(traceback) from exc_value\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/utils.py\", line 87, in _execute\n    return self.cursor.execute(sql)\n           ^^^^^^^^^^^^^^^^^^^^^^^^\ndjango.db.utils.ProgrammingError: relation \"notificaciones_configuracionnotificacion\" already exists",
-    "httpRequest": null,
-    "trace": "",
-    "spanId": ""
-  },
-  {
-    "id": "69558339000182ef6550a0d6",
-    "service": "logiempresas",
-    "revision": "logiempresas-00111-sls",
-    "timestamp": "2025-12-31T20:10:33.099055Z",
-    "severity": "ERROR",
-    "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/utils.py\", line 87, in _execute\n    return self.cursor.execute(sql)\n           ^^^^^^^^^^^^^^^^^^^^^^^^\npsycopg2.errors.DuplicateTable: relation \"notificaciones_configuracionnotificacion\" already exists",
-    "httpRequest": null,
-    "trace": "",
-    "spanId": ""
-  },
-  {
-    "id": "69558315000037b5657880c7",
-    "service": "logiempresas",
-    "revision": "logiempresas-00111-sls",
-    "timestamp": "2025-12-31T20:09:09.181076Z",
-    "severity": "ERROR",
-    "message": "The request was aborted because there was no available instance. Additional troubleshooting documentation can be found at: https://cloud.google.com/run/docs/troubleshooting#abort-request",
-    "httpRequest": {
-      "method": "GET",
-      "url": "https://logiempresas-381877373634.us-central1.run.app/servicios/seguimiento/e7e0dcbb-9b32-4f5f-9248-386363a4e38a/",
-      "status": 500,
-      "latency": "0s",
-      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
-      "remoteIp": "190.249.209.53"
-    },
-    "trace": "projects/appsindunnova/traces/7d850fbd236db8dc608642afa36f938e",
-    "spanId": "aea99126a61a5021"
-  },
-  {
-    "id": "69558315000037a9ed14179b",
-    "service": "logiempresas",
-    "revision": "logiempresas-00111-sls",
-    "timestamp": "2025-12-31T20:09:09.180077Z",
-    "severity": "ERROR",
-    "message": "The request was aborted because there was no available instance. Additional troubleshooting documentation can be found at: https://cloud.google.com/run/docs/troubleshooting#abort-request",
-    "httpRequest": {
-      "method": "GET",
-      "url": "https://logiempresas-381877373634.us-central1.run.app/servicios/seguimiento/a1499c95-7d4c-4353-916a-45b07baa56a0/",
-      "status": 500,
-      "latency": "0s",
-      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
-      "remoteIp": "190.249.209.53"
-    },
-    "trace": "projects/appsindunnova/traces/4f22a1be769c6aa9608642afa36f996c",
-    "spanId": "85cff4e8a4278dc3"
-  },
-  {
-    "id": "69558314000be2c4fdeda462",
-    "service": "logiempresas",
-    "revision": "logiempresas-00111-sls",
-    "timestamp": "2025-12-31T20:09:09.179199Z",
-    "severity": "ERROR",
-    "message": "The request was aborted because there was no available instance. Additional troubleshooting documentation can be found at: https://cloud.google.com/run/docs/troubleshooting#abort-request",
-    "httpRequest": {
-      "method": "GET",
-      "url": "https://logiempresas-381877373634.us-central1.run.app/asesores/",
-      "status": 500,
-      "latency": "0s",
-      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
-      "remoteIp": "190.249.209.53"
-    },
-    "trace": "projects/appsindunnova/traces/059b2b5463349a04608642afa36f9db0",
-    "spanId": "4bc5c66aa6ef7c68"
   }
 ]
