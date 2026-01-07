@@ -101,7 +101,7 @@
       ]
     },
     "deployments": {
-      "total": 43,
+      "total": 42,
       "last24h": 0,
       "last7d": 24,
       "lastDeployment": "2026-01-02T22:42:25.046185Z",
@@ -494,15 +494,15 @@
       "avgLatencyMs": 0
     },
     "interactions": {
-      "requests7d": 109,
-      "requests30d": 109
+      "requests7d": 112,
+      "requests30d": 112
     },
     "costEstimate": {
       "estimatedMonthly": 0.02,
-      "cpuCost": 0.01,
+      "cpuCost": 0.02,
       "memoryCost": 0.0,
       "requestCost": 0.0,
-      "estimatedRequests": 468,
+      "estimatedRequests": 481,
       "avgLatencyMs": 650,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -665,15 +665,15 @@
       "avgLatencyMs": 7447
     },
     "interactions": {
-      "requests7d": 8,
-      "requests30d": 8
+      "requests7d": 4,
+      "requests30d": 4
     },
     "costEstimate": {
-      "estimatedMonthly": 0.01,
-      "cpuCost": 0.01,
+      "estimatedMonthly": 0.0,
+      "cpuCost": 0.0,
       "memoryCost": 0.0,
       "requestCost": 0.0,
-      "estimatedRequests": 34,
+      "estimatedRequests": 17,
       "avgLatencyMs": 5512,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -682,7 +682,7 @@
       "usesConsolidatedDb": true,
       "hasDedicatedDb": false,
       "dedicatedDbName": null,
-      "totalWithSql": 1.32
+      "totalWithSql": 1.31
     }
   },
   {
@@ -825,15 +825,15 @@
       "avgLatencyMs": 0
     },
     "interactions": {
-      "requests7d": 393,
-      "requests30d": 393
+      "requests7d": 404,
+      "requests30d": 404
     },
     "costEstimate": {
       "estimatedMonthly": 0.06,
       "cpuCost": 0.05,
       "memoryCost": 0.0,
       "requestCost": 0.0,
-      "estimatedRequests": 1689,
+      "estimatedRequests": 1737,
       "avgLatencyMs": 650,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -1317,9 +1317,9 @@
     "repo": "https://github.com/mbrt26/MouseDigital",
     "repoName": "MouseDigital",
     "errors": {
-      "total": 165,
+      "total": 157,
       "last24h": 0,
-      "last7d": 165,
+      "last7d": 157,
       "recentErrors": [
         {
           "timestamp": "2026-01-06T10:12:55.817414Z",
@@ -1434,20 +1434,20 @@
       "recentDeployments": []
     },
     "metrics": {
-      "errors5xx": 439,
+      "errors5xx": 438,
       "errors4xx": 0,
       "avgLatencyMs": 185
     },
     "interactions": {
-      "requests7d": 1302,
-      "requests30d": 1302
+      "requests7d": 1227,
+      "requests30d": 1227
     },
     "costEstimate": {
-      "estimatedMonthly": 0.14,
-      "cpuCost": 0.13,
+      "estimatedMonthly": 0.13,
+      "cpuCost": 0.12,
       "memoryCost": 0.01,
       "requestCost": 0.0,
-      "estimatedRequests": 5598,
+      "estimatedRequests": 5276,
       "avgLatencyMs": 485,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -1456,7 +1456,7 @@
       "usesConsolidatedDb": true,
       "hasDedicatedDb": false,
       "dedicatedDbName": null,
-      "totalWithSql": 1.45
+      "totalWithSql": 1.44
     }
   },
   {
@@ -1467,34 +1467,56 @@
     "repo": "https://github.com/mbrt26/PlasticosAmbientales",
     "repoName": "PlasticosAmbientales",
     "errors": {
-      "total": 0,
-      "last24h": 0,
-      "last7d": 0,
-      "recentErrors": []
+      "total": 8,
+      "last24h": 8,
+      "last7d": 8,
+      "recentErrors": [
+        {
+          "timestamp": "2026-01-07T18:40:41.860436Z",
+          "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/core/handlers/exception.py\", line 55, in inner\n    response = get_response(request)\n               ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/core/handlers/base.py\", line 220, ...",
+          "severity": "ERROR"
+        },
+        {
+          "timestamp": "2026-01-07T18:40:38.887706Z",
+          "message": "{}",
+          "severity": "ERROR"
+        },
+        {
+          "timestamp": "2026-01-07T18:33:12.452074Z",
+          "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/core/handlers/exception.py\", line 55, in inner\n    response = get_response(request)\n               ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/core/handlers/base.py\", line 220, ...",
+          "severity": "ERROR"
+        }
+      ]
     },
     "deployments": {
-      "total": 0,
-      "last24h": 0,
-      "last7d": 0,
-      "lastDeployment": null,
-      "recentDeployments": []
+      "total": 1,
+      "last24h": 1,
+      "last7d": 1,
+      "lastDeployment": "2026-01-07T18:38:24.952806Z",
+      "recentDeployments": [
+        {
+          "revision": "plasticos-ambientales-00058-8xh",
+          "timestamp": "2026-01-07T18:38:24.952806Z",
+          "status": "True"
+        }
+      ]
     },
     "metrics": {
-      "errors5xx": 0,
+      "errors5xx": 3,
       "errors4xx": 0,
-      "avgLatencyMs": 0
+      "avgLatencyMs": 1105
     },
     "interactions": {
-      "requests7d": 2,
-      "requests30d": 2
+      "requests7d": 134,
+      "requests30d": 134
     },
     "costEstimate": {
-      "estimatedMonthly": 0.0,
-      "cpuCost": 0.0,
+      "estimatedMonthly": 0.04,
+      "cpuCost": 0.04,
       "memoryCost": 0.0,
       "requestCost": 0.0,
-      "estimatedRequests": 8,
-      "avgLatencyMs": 650,
+      "estimatedRequests": 576,
+      "avgLatencyMs": 1405,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
       "note": "Estimacion incluye cold starts y overhead tipico",
@@ -1502,7 +1524,7 @@
       "usesConsolidatedDb": true,
       "hasDedicatedDb": false,
       "dedicatedDbName": null,
-      "totalWithSql": 1.31
+      "totalWithSql": 1.35
     }
   },
   {
@@ -1573,15 +1595,15 @@
       "avgLatencyMs": 5368
     },
     "interactions": {
-      "requests7d": 4277,
-      "requests30d": 4277
+      "requests7d": 4218,
+      "requests30d": 4218
     },
     "costEstimate": {
-      "estimatedMonthly": 3.78,
-      "cpuCost": 3.58,
-      "memoryCost": 0.19,
+      "estimatedMonthly": 3.73,
+      "cpuCost": 3.53,
+      "memoryCost": 0.18,
       "requestCost": 0.01,
-      "estimatedRequests": 18391,
+      "estimatedRequests": 18137,
       "avgLatencyMs": 4057,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -1590,7 +1612,7 @@
       "usesConsolidatedDb": false,
       "hasDedicatedDb": true,
       "dedicatedDbName": "rgd-aire-db",
-      "totalWithSql": 13.15
+      "totalWithSql": 13.1
     }
   },
   {
@@ -1640,9 +1662,9 @@
       ]
     },
     "metrics": {
-      "errors5xx": 4,
+      "errors5xx": 2,
       "errors4xx": 0,
-      "avgLatencyMs": 2600
+      "avgLatencyMs": 3540
     },
     "interactions": {
       "requests7d": 0,
@@ -1654,7 +1676,7 @@
       "memoryCost": 0.0,
       "requestCost": 0.0,
       "estimatedRequests": 0,
-      "avgLatencyMs": 2119,
+      "avgLatencyMs": 2778,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
       "note": "Estimacion incluye cold starts y overhead tipico",
@@ -1954,15 +1976,15 @@
       "avgLatencyMs": 0
     },
     "interactions": {
-      "requests7d": 95,
-      "requests30d": 95
+      "requests7d": 88,
+      "requests30d": 88
     },
     "costEstimate": {
-      "estimatedMonthly": 0.01,
+      "estimatedMonthly": 0.0,
       "cpuCost": 0.0,
       "memoryCost": 0.0,
       "requestCost": 0.0,
-      "estimatedRequests": 408,
+      "estimatedRequests": 378,
       "avgLatencyMs": 650,
       "cpuCores": 0.3333,
       "memoryGiB": 0.5,
@@ -1971,7 +1993,7 @@
       "usesConsolidatedDb": false,
       "hasDedicatedDb": false,
       "dedicatedDbName": null,
-      "totalWithSql": 0.01
+      "totalWithSql": 0.0
     }
   },
   {
@@ -2000,15 +2022,15 @@
       "avgLatencyMs": 0
     },
     "interactions": {
-      "requests7d": 7,
-      "requests30d": 7
+      "requests7d": 6,
+      "requests30d": 6
     },
     "costEstimate": {
       "estimatedMonthly": 0.0,
       "cpuCost": 0.0,
       "memoryCost": 0.0,
       "requestCost": 0.0,
-      "estimatedRequests": 30,
+      "estimatedRequests": 25,
       "avgLatencyMs": 650,
       "cpuCores": 1.0,
       "memoryGiB": 0.25,
