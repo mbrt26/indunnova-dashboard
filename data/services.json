@@ -101,7 +101,7 @@
       ]
     },
     "deployments": {
-      "total": 37,
+      "total": 30,
       "last24h": 0,
       "last7d": 24,
       "lastDeployment": "2026-01-02T22:42:25.046185Z",
@@ -437,15 +437,15 @@
       "avgLatencyMs": 36727
     },
     "interactions": {
-      "requests7d": 386,
-      "requests30d": 386
+      "requests7d": 402,
+      "requests30d": 402
     },
     "costEstimate": {
-      "estimatedMonthly": 2.18,
-      "cpuCost": 2.07,
+      "estimatedMonthly": 2.27,
+      "cpuCost": 2.16,
       "memoryCost": 0.11,
       "requestCost": 0.0,
-      "estimatedRequests": 1659,
+      "estimatedRequests": 1728,
       "avgLatencyMs": 26008,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -454,7 +454,7 @@
       "usesConsolidatedDb": false,
       "hasDedicatedDb": false,
       "dedicatedDbName": null,
-      "totalWithSql": 2.18
+      "totalWithSql": 2.27
     }
   },
   {
@@ -825,15 +825,15 @@
       "avgLatencyMs": 0
     },
     "interactions": {
-      "requests7d": 404,
-      "requests30d": 404
+      "requests7d": 395,
+      "requests30d": 395
     },
     "costEstimate": {
       "estimatedMonthly": 0.06,
       "cpuCost": 0.05,
       "memoryCost": 0.0,
       "requestCost": 0.0,
-      "estimatedRequests": 1737,
+      "estimatedRequests": 1698,
       "avgLatencyMs": 650,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -1317,23 +1317,23 @@
     "repo": "https://github.com/mbrt26/MouseDigital",
     "repoName": "MouseDigital",
     "errors": {
-      "total": 147,
-      "last24h": 2,
-      "last7d": 147,
+      "total": 141,
+      "last24h": 10,
+      "last7d": 141,
       "recentErrors": [
         {
-          "timestamp": "2026-01-07T20:43:01.957981Z",
-          "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/core/handlers/exception.py\", line 55, in inner\n    response = get_response(request)\n               ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/core/handlers/base.py\", line 197, ...",
+          "timestamp": "2026-01-07T21:29:46.667538Z",
+          "message": "Traceback (most recent call last):\n  File \"/app/production/signals.py\", line 1712, in create_wip_troquelado_on_receipt\n    Movement.objects.create(\n  File \"/usr/local/lib/python3.11/site-packages/django/db/models/manager.py\", line 87, in manager_method\n    return getattr(self.get_queryset(), name)(*...",
           "severity": "ERROR"
         },
         {
-          "timestamp": "2026-01-07T20:43:01.594751Z",
-          "message": "{}",
+          "timestamp": "2026-01-07T21:29:46.666780Z",
+          "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/utils.py\", line 105, in _execute\n    return self.cursor.execute(sql, params)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\npsycopg2.errors.NotNullViolation: null value in column \"unit_measure\" of rela...",
           "severity": "ERROR"
         },
         {
-          "timestamp": "2026-01-06T10:12:55.817414Z",
-          "message": "Default STARTUP TCP probe failed 1 time consecutively for container \"mouse-digital-1\" on port 8080. The instance was not started.\nConnection failed with status CANCELLED.",
+          "timestamp": "2026-01-07T21:29:46.578637Z",
+          "message": "Traceback (most recent call last):\n  File \"/app/production/signals.py\", line 1712, in create_wip_troquelado_on_receipt\n    Movement.objects.create(\n  File \"/usr/local/lib/python3.11/site-packages/django/db/models/manager.py\", line 87, in manager_method\n    return getattr(self.get_queryset(), name)(*...",
           "severity": "ERROR"
         }
       ]
@@ -1341,7 +1341,7 @@
     "deployments": {
       "total": 41,
       "last24h": 0,
-      "last7d": 32,
+      "last7d": 31,
       "lastDeployment": "2026-01-05T22:24:49.575440Z",
       "recentDeployments": [
         {
@@ -1377,15 +1377,15 @@
       "avgLatencyMs": 3133
     },
     "interactions": {
-      "requests7d": 149,
-      "requests30d": 149
+      "requests7d": 241,
+      "requests30d": 241
     },
     "costEstimate": {
-      "estimatedMonthly": 0.08,
-      "cpuCost": 0.08,
-      "memoryCost": 0.0,
+      "estimatedMonthly": 0.13,
+      "cpuCost": 0.12,
+      "memoryCost": 0.01,
       "requestCost": 0.0,
-      "estimatedRequests": 640,
+      "estimatedRequests": 1036,
       "avgLatencyMs": 2493,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -1394,7 +1394,7 @@
       "usesConsolidatedDb": true,
       "hasDedicatedDb": false,
       "dedicatedDbName": null,
-      "totalWithSql": 1.39
+      "totalWithSql": 1.44
     }
   },
   {
@@ -1405,9 +1405,9 @@
     "repo": "https://github.com/mbrt26/NOVAPCR",
     "repoName": "NOVAPCR",
     "errors": {
-      "total": 770,
+      "total": 768,
       "last24h": 292,
-      "last7d": 770,
+      "last7d": 768,
       "recentErrors": [
         {
           "timestamp": "2026-01-07T11:00:01.979196Z",
@@ -1434,21 +1434,21 @@
       "recentDeployments": []
     },
     "metrics": {
-      "errors5xx": 438,
+      "errors5xx": 436,
       "errors4xx": 0,
-      "avgLatencyMs": 185
+      "avgLatencyMs": 163
     },
     "interactions": {
-      "requests7d": 1085,
-      "requests30d": 1085
+      "requests7d": 888,
+      "requests30d": 888
     },
     "costEstimate": {
-      "estimatedMonthly": 0.12,
-      "cpuCost": 0.11,
-      "memoryCost": 0.01,
+      "estimatedMonthly": 0.09,
+      "cpuCost": 0.08,
+      "memoryCost": 0.0,
       "requestCost": 0.0,
-      "estimatedRequests": 4665,
-      "avgLatencyMs": 485,
+      "estimatedRequests": 3818,
+      "avgLatencyMs": 463,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
       "note": "Estimacion incluye cold starts y overhead tipico",
@@ -1456,87 +1456,87 @@
       "usesConsolidatedDb": true,
       "hasDedicatedDb": false,
       "dedicatedDbName": null,
-      "totalWithSql": 1.43
+      "totalWithSql": 1.4
     }
   },
   {
     "name": "plasticos-ambientales",
     "url": "https://plasticos-ambientales-381877373634.us-central1.run.app",
-    "status": "Unknown",
+    "status": "True",
     "region": "us-central1",
     "repo": "https://github.com/mbrt26/PlasticosAmbientales",
     "repoName": "PlasticosAmbientales",
     "errors": {
-      "total": 18,
-      "last24h": 18,
-      "last7d": 18,
+      "total": 26,
+      "last24h": 26,
+      "last7d": 26,
       "recentErrors": [
         {
-          "timestamp": "2026-01-07T20:36:35.793554Z",
+          "timestamp": "2026-01-07T21:55:34.937263Z",
           "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/core/handlers/exception.py\", line 55, in inner\n    response = get_response(request)\n               ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/core/handlers/base.py\", line 197, ...",
           "severity": "ERROR"
         },
         {
-          "timestamp": "2026-01-07T20:36:35.734738Z",
+          "timestamp": "2026-01-07T21:55:34.937204Z",
+          "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/utils.py\", line 89, in _execute\n    return self.cursor.execute(sql, params)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\npsycopg2.errors.NotNullViolation: null value in column \"cantidad_ingresada\" of...",
+          "severity": "ERROR"
+        },
+        {
+          "timestamp": "2026-01-07T21:55:34.818179Z",
           "message": "{}",
-          "severity": "ERROR"
-        },
-        {
-          "timestamp": "2026-01-07T20:34:37.472646Z",
-          "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/core/handlers/exception.py\", line 55, in inner\n    response = get_response(request)\n               ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/core/handlers/base.py\", line 197, ...",
           "severity": "ERROR"
         }
       ]
     },
     "deployments": {
-      "total": 7,
-      "last24h": 7,
-      "last7d": 7,
-      "lastDeployment": "2026-01-07T21:03:02.031459Z",
+      "total": 13,
+      "last24h": 13,
+      "last7d": 13,
+      "lastDeployment": "2026-01-07T21:51:50.320130Z",
       "recentDeployments": [
         {
-          "revision": "plasticos-ambientales-00064-nth",
-          "timestamp": "2026-01-07T21:03:02.031459Z",
-          "status": "Unknown"
-        },
-        {
-          "revision": "plasticos-ambientales-00063-f42",
-          "timestamp": "2026-01-07T19:29:38.956009Z",
+          "revision": "plasticos-ambientales-00070-bmk",
+          "timestamp": "2026-01-07T21:51:50.320130Z",
           "status": "True"
         },
         {
-          "revision": "plasticos-ambientales-00062-dfr",
-          "timestamp": "2026-01-07T19:23:44.265096Z",
+          "revision": "plasticos-ambientales-00069-7xr",
+          "timestamp": "2026-01-07T21:41:09.311466Z",
           "status": "True"
         },
         {
-          "revision": "plasticos-ambientales-00061-rxf",
-          "timestamp": "2026-01-07T19:21:11.781222Z",
+          "revision": "plasticos-ambientales-00068-xxh",
+          "timestamp": "2026-01-07T21:30:34.940786Z",
           "status": "True"
         },
         {
-          "revision": "plasticos-ambientales-00060-th6",
-          "timestamp": "2026-01-07T19:15:14.496560Z",
+          "revision": "plasticos-ambientales-00067-twc",
+          "timestamp": "2026-01-07T21:17:39.521279Z",
+          "status": "True"
+        },
+        {
+          "revision": "plasticos-ambientales-00066-q4b",
+          "timestamp": "2026-01-07T21:15:04.505169Z",
           "status": "True"
         }
       ]
     },
     "metrics": {
-      "errors5xx": 6,
+      "errors5xx": 8,
       "errors4xx": 0,
-      "avgLatencyMs": 596
+      "avgLatencyMs": 814
     },
     "interactions": {
-      "requests7d": 428,
-      "requests30d": 428
+      "requests7d": 537,
+      "requests30d": 537
     },
     "costEstimate": {
-      "estimatedMonthly": 0.08,
-      "cpuCost": 0.08,
-      "memoryCost": 0.0,
+      "estimatedMonthly": 0.13,
+      "cpuCost": 0.12,
+      "memoryCost": 0.01,
       "requestCost": 0.0,
-      "estimatedRequests": 1840,
-      "avgLatencyMs": 896,
+      "estimatedRequests": 2309,
+      "avgLatencyMs": 1114,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
       "note": "Estimacion incluye cold starts y overhead tipico",
@@ -1544,7 +1544,7 @@
       "usesConsolidatedDb": true,
       "hasDedicatedDb": false,
       "dedicatedDbName": null,
-      "totalWithSql": 1.39
+      "totalWithSql": 1.44
     }
   },
   {
@@ -1615,15 +1615,15 @@
       "avgLatencyMs": 5368
     },
     "interactions": {
-      "requests7d": 4027,
-      "requests30d": 4027
+      "requests7d": 4034,
+      "requests30d": 4034
     },
     "costEstimate": {
-      "estimatedMonthly": 3.56,
-      "cpuCost": 3.37,
+      "estimatedMonthly": 3.57,
+      "cpuCost": 3.38,
       "memoryCost": 0.18,
       "requestCost": 0.01,
-      "estimatedRequests": 17316,
+      "estimatedRequests": 17346,
       "avgLatencyMs": 4057,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -1632,7 +1632,7 @@
       "usesConsolidatedDb": false,
       "hasDedicatedDb": true,
       "dedicatedDbName": "rgd-aire-db",
-      "totalWithSql": 12.93
+      "totalWithSql": 12.94
     }
   },
   {
@@ -1767,11 +1767,16 @@
       "recentErrors": []
     },
     "deployments": {
-      "total": 2,
-      "last24h": 0,
-      "last7d": 2,
-      "lastDeployment": "2026-01-01T14:38:14.817472Z",
+      "total": 3,
+      "last24h": 1,
+      "last7d": 3,
+      "lastDeployment": "2026-01-07T21:29:49.164043Z",
       "recentDeployments": [
+        {
+          "revision": "seyca-produccion-00025-9tn",
+          "timestamp": "2026-01-07T21:29:49.164043Z",
+          "status": "True"
+        },
         {
           "revision": "seyca-produccion-00024-k6v",
           "timestamp": "2026-01-01T14:38:14.817472Z",
@@ -1893,15 +1898,15 @@
       "avgLatencyMs": 0
     },
     "interactions": {
-      "requests7d": 3,
-      "requests30d": 3
+      "requests7d": 2,
+      "requests30d": 2
     },
     "costEstimate": {
       "estimatedMonthly": 0.0,
       "cpuCost": 0.0,
       "memoryCost": 0.0,
       "requestCost": 0.0,
-      "estimatedRequests": 12,
+      "estimatedRequests": 8,
       "avgLatencyMs": 650,
       "cpuCores": 0.1666,
       "memoryGiB": 0.25,
@@ -1950,15 +1955,15 @@
       "avgLatencyMs": 0
     },
     "interactions": {
-      "requests7d": 3,
-      "requests30d": 3
+      "requests7d": 2,
+      "requests30d": 2
     },
     "costEstimate": {
       "estimatedMonthly": 0.0,
       "cpuCost": 0.0,
       "memoryCost": 0.0,
       "requestCost": 0.0,
-      "estimatedRequests": 12,
+      "estimatedRequests": 8,
       "avgLatencyMs": 650,
       "cpuCores": 0.1666,
       "memoryGiB": 0.25,
@@ -1996,15 +2001,15 @@
       "avgLatencyMs": 0
     },
     "interactions": {
-      "requests7d": 75,
-      "requests30d": 75
+      "requests7d": 59,
+      "requests30d": 59
     },
     "costEstimate": {
       "estimatedMonthly": 0.0,
       "cpuCost": 0.0,
       "memoryCost": 0.0,
       "requestCost": 0.0,
-      "estimatedRequests": 322,
+      "estimatedRequests": 253,
       "avgLatencyMs": 650,
       "cpuCores": 0.3333,
       "memoryGiB": 0.5,
