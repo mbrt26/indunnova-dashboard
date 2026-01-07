@@ -660,9 +660,9 @@
       ]
     },
     "metrics": {
-      "errors5xx": 7,
+      "errors5xx": 3,
       "errors4xx": 0,
-      "avgLatencyMs": 9962
+      "avgLatencyMs": 7447
     },
     "interactions": {
       "requests7d": 8,
@@ -674,7 +674,7 @@
       "memoryCost": 0.0,
       "requestCost": 0.0,
       "estimatedRequests": 34,
-      "avgLatencyMs": 7273,
+      "avgLatencyMs": 5512,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
       "note": "Estimacion incluye cold starts y overhead tipico",
@@ -1404,18 +1404,18 @@
       "last7d": 757,
       "recentErrors": [
         {
-          "timestamp": "2026-01-07T05:05:11.840230Z",
+          "timestamp": "2026-01-07T06:00:01.897877Z",
           "message": "Traceback (most recent call last):\n  File \"/app/sensores_iot/views.py\", line 1571, in cron_sync_y_alertas\n    resultado_sensores = sincronizar_y_detectar_paros()\n                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/app/sensores_iot/services.py\", line 479, in sincronizar_y_detectar_paros\n...",
           "severity": "ERROR"
         },
         {
-          "timestamp": "2026-01-07T05:05:11.840130Z",
+          "timestamp": "2026-01-07T06:00:01.897798Z",
           "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 288, in ensure_connection\n    self.connect()\n  File \"/usr/local/lib/python3.11/site-packages/django/utils/asyncio.py\", line 26, in inner\n    return func(*args, **kwargs)\n        ...",
           "severity": "ERROR"
         },
         {
-          "timestamp": "2026-01-07T05:05:11.837886Z",
-          "message": "Cloud SQL connection failed. Please see https://cloud.google.com/sql/docs/mysql/connect-run, https://cloud.google.com/sql/docs/postgres/connect-run, or https://cloud.google.com/sql/docs/sqlserver/connect-run for additional details: dial error: failed to dial (connection name = \"appsindunnova:us-cent...",
+          "timestamp": "2026-01-07T06:00:01.895151Z",
+          "message": "Cloud SQL connection failed. Please see https://cloud.google.com/sql/docs/mysql/connect-run, https://cloud.google.com/sql/docs/postgres/connect-run, or https://cloud.google.com/sql/docs/sqlserver/connect-run for additional details: fetch ephemeral cert failed: refresh error: create ephemeral cert fa...",
           "severity": "ERROR"
         }
       ]
@@ -1428,21 +1428,21 @@
       "recentDeployments": []
     },
     "metrics": {
-      "errors5xx": 438,
+      "errors5xx": 442,
       "errors4xx": 0,
-      "avgLatencyMs": 185
+      "avgLatencyMs": 184
     },
     "interactions": {
-      "requests7d": 1394,
-      "requests30d": 1394
+      "requests7d": 1405,
+      "requests30d": 1405
     },
     "costEstimate": {
       "estimatedMonthly": 0.15,
       "cpuCost": 0.14,
       "memoryCost": 0.01,
       "requestCost": 0.0,
-      "estimatedRequests": 5994,
-      "avgLatencyMs": 485,
+      "estimatedRequests": 6041,
+      "avgLatencyMs": 484,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
       "note": "Estimacion incluye cold starts y overhead tipico",
@@ -1943,15 +1943,15 @@
       "avgLatencyMs": 0
     },
     "interactions": {
-      "requests7d": 100,
-      "requests30d": 100
+      "requests7d": 101,
+      "requests30d": 101
     },
     "costEstimate": {
       "estimatedMonthly": 0.01,
       "cpuCost": 0.0,
       "memoryCost": 0.0,
       "requestCost": 0.0,
-      "estimatedRequests": 430,
+      "estimatedRequests": 434,
       "avgLatencyMs": 650,
       "cpuCores": 0.3333,
       "memoryGiB": 0.5,
@@ -2072,15 +2072,15 @@
       "avgLatencyMs": 83
     },
     "interactions": {
-      "requests7d": 992,
-      "requests30d": 992
+      "requests7d": 980,
+      "requests30d": 980
     },
     "costEstimate": {
       "estimatedMonthly": 0.09,
       "cpuCost": 0.08,
       "memoryCost": 0.0,
       "requestCost": 0.0,
-      "estimatedRequests": 4265,
+      "estimatedRequests": 4214,
       "avgLatencyMs": 400,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
