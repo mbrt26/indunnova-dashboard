@@ -1,5 +1,150 @@
 [
   {
+    "id": "695fbf3c000dbf82a103cde8",
+    "service": "gestion-proveedores-isa",
+    "revision": "gestion-proveedores-isa-00022-ngt",
+    "timestamp": "2026-01-08T14:29:16.900994Z",
+    "severity": "ERROR",
+    "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/core/handlers/exception.py\", line 55, in inner\n    response = get_response(request)\n               ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/core/handlers/base.py\", line 220, in _get_response\n    response = response.render()\n               ^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/response.py\", line 114, in render\n    self.content = self.rendered_content\n                   ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/response.py\", line 92, in rendered_content\n    return template.render(context, self._request)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/backends/django.py\", line 61, in render\n    return self.template.render(context)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/base.py\", line 175, in render\n    return self._render(context)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/base.py\", line 167, in _render\n    return self.nodelist.render(context)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/base.py\", line 1005, in render\n    return SafeString(\"\".join([node.render_annotated(context) for node in self]))\n                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/base.py\", line 1005, in <listcomp>\n    return SafeString(\"\".join([node.render_annotated(context) for node in self]))\n                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/base.py\", line 966, in render_annotated\n    return self.render(context)\n           ^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/loader_tags.py\", line 157, in render\n    return compiled_parent._render(context)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/base.py\", line 167, in _render\n    return self.nodelist.render(context)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/base.py\", line 1005, in render\n    return SafeString(\"\".join([node.render_annotated(context) for node in self]))\n                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/base.py\", line 1005, in <listcomp>\n    return SafeString(\"\".join([node.render_annotated(context) for node in self]))\n                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/base.py\", line 966, in render_annotated\n    return self.render(context)\n           ^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/defaulttags.py\", line 321, in render\n    return nodelist.render(context)\n           ^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/base.py\", line 1005, in render\n    return SafeString(\"\".join([node.render_annotated(context) for node in self]))\n                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/base.py\", line 1005, in <listcomp>\n    return SafeString(\"\".join([node.render_annotated(context) for node in self]))\n                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/base.py\", line 966, in render_annotated\n    return self.render(context)\n           ^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/loader_tags.py\", line 63, in render\n    result = block.nodelist.render(context)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/base.py\", line 1005, in render\n    return SafeString(\"\".join([node.render_annotated(context) for node in self]))\n                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/base.py\", line 1005, in <listcomp>\n    return SafeString(\"\".join([node.render_annotated(context) for node in self]))\n                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/base.py\", line 966, in render_annotated\n    return self.render(context)\n           ^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/defaulttags.py\", line 471, in render\n    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/urls/base.py\", line 88, in reverse\n    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/urls/resolvers.py\", line 828, in _reverse_with_prefix\n    raise NoReverseMatch(msg)\ndjango.urls.exceptions.NoReverseMatch: Reverse for 'etapa2_detalle' with arguments '('',)' not found. 1 pattern(s) tried: ['etapas/proveedor/(?P<pk>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})/etapa2/\\\\Z']",
+    "httpRequest": null,
+    "trace": "",
+    "spanId": ""
+  },
+  {
+    "id": "695fbf3c000dc3886b052e3e",
+    "service": "gestion-proveedores-isa",
+    "revision": "gestion-proveedores-isa-00022-ngt",
+    "timestamp": "2026-01-08T14:29:16.749358Z",
+    "severity": "ERROR",
+    "message": "",
+    "httpRequest": {
+      "method": "GET",
+      "url": "https://gestion-proveedores-isa-381877373634.us-central1.run.app/etapas/proveedor/1fa56dd0-a5d0-41eb-8c5d-c1bc862fdd61/etapa2/cronograma/",
+      "status": 500,
+      "latency": "0.150610699s",
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+      "remoteIp": "2803:9810:68ac:4e08:e9f1:39aa:e4e:b9e3"
+    },
+    "trace": "projects/appsindunnova/traces/478350009cf5d48023340c6eab370970",
+    "spanId": "00741e23adb25302"
+  },
+  {
+    "id": "695fbf3600083daaf3e7e0aa",
+    "service": "gestion-proveedores-isa",
+    "revision": "gestion-proveedores-isa-00022-ngt",
+    "timestamp": "2026-01-08T14:29:10.540074Z",
+    "severity": "ERROR",
+    "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/core/handlers/exception.py\", line 55, in inner\n    response = get_response(request)\n               ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/core/handlers/base.py\", line 220, in _get_response\n    response = response.render()\n               ^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/response.py\", line 114, in render\n    self.content = self.rendered_content\n                   ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/response.py\", line 92, in rendered_content\n    return template.render(context, self._request)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/backends/django.py\", line 61, in render\n    return self.template.render(context)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/base.py\", line 175, in render\n    return self._render(context)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/base.py\", line 167, in _render\n    return self.nodelist.render(context)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/base.py\", line 1005, in render\n    return SafeString(\"\".join([node.render_annotated(context) for node in self]))\n                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/base.py\", line 1005, in <listcomp>\n    return SafeString(\"\".join([node.render_annotated(context) for node in self]))\n                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/base.py\", line 966, in render_annotated\n    return self.render(context)\n           ^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/loader_tags.py\", line 157, in render\n    return compiled_parent._render(context)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/base.py\", line 167, in _render\n    return self.nodelist.render(context)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/base.py\", line 1005, in render\n    return SafeString(\"\".join([node.render_annotated(context) for node in self]))\n                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/base.py\", line 1005, in <listcomp>\n    return SafeString(\"\".join([node.render_annotated(context) for node in self]))\n                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/base.py\", line 966, in render_annotated\n    return self.render(context)\n           ^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/defaulttags.py\", line 321, in render\n    return nodelist.render(context)\n           ^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/base.py\", line 1005, in render\n    return SafeString(\"\".join([node.render_annotated(context) for node in self]))\n                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/base.py\", line 1005, in <listcomp>\n    return SafeString(\"\".join([node.render_annotated(context) for node in self]))\n                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/base.py\", line 966, in render_annotated\n    return self.render(context)\n           ^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/loader_tags.py\", line 63, in render\n    result = block.nodelist.render(context)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/base.py\", line 1005, in render\n    return SafeString(\"\".join([node.render_annotated(context) for node in self]))\n                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/base.py\", line 1005, in <listcomp>\n    return SafeString(\"\".join([node.render_annotated(context) for node in self]))\n                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/base.py\", line 966, in render_annotated\n    return self.render(context)\n           ^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/defaulttags.py\", line 471, in render\n    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/urls/base.py\", line 88, in reverse\n    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/urls/resolvers.py\", line 828, in _reverse_with_prefix\n    raise NoReverseMatch(msg)\ndjango.urls.exceptions.NoReverseMatch: Reverse for 'etapa2_detalle' with arguments '('',)' not found. 1 pattern(s) tried: ['etapas/proveedor/(?P<pk>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})/etapa2/\\\\Z']",
+    "httpRequest": null,
+    "trace": "",
+    "spanId": ""
+  },
+  {
+    "id": "695fbf36000842c94aa2b1c0",
+    "service": "gestion-proveedores-isa",
+    "revision": "gestion-proveedores-isa-00022-ngt",
+    "timestamp": "2026-01-08T14:29:10.455610Z",
+    "severity": "ERROR",
+    "message": "",
+    "httpRequest": {
+      "method": "GET",
+      "url": "https://gestion-proveedores-isa-381877373634.us-central1.run.app/etapas/proveedor/1fa56dd0-a5d0-41eb-8c5d-c1bc862fdd61/etapa2/hallazgo/",
+      "status": 500,
+      "latency": "0.084165850s",
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+      "remoteIp": "2803:9810:68ac:4e08:e9f1:39aa:e4e:b9e3"
+    },
+    "trace": "projects/appsindunnova/traces/998f2d61707dc90e3f1e0331833a9c3d",
+    "spanId": "c81fe2f625dd08b8"
+  },
+  {
+    "id": "695fbb57000dd416d41f500a",
+    "service": "gestion-proveedores-isa",
+    "revision": "gestion-proveedores-isa-00021-jf5",
+    "timestamp": "2026-01-08T14:12:39.906262Z",
+    "severity": "ERROR",
+    "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/core/handlers/exception.py\", line 55, in inner\n    response = get_response(request)\n               ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/core/handlers/base.py\", line 220, in _get_response\n    response = response.render()\n               ^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/response.py\", line 114, in render\n    self.content = self.rendered_content\n                   ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/response.py\", line 92, in rendered_content\n    return template.render(context, self._request)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/backends/django.py\", line 61, in render\n    return self.template.render(context)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/base.py\", line 175, in render\n    return self._render(context)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/base.py\", line 167, in _render\n    return self.nodelist.render(context)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/base.py\", line 1005, in render\n    return SafeString(\"\".join([node.render_annotated(context) for node in self]))\n                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/base.py\", line 1005, in <listcomp>\n    return SafeString(\"\".join([node.render_annotated(context) for node in self]))\n                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/base.py\", line 966, in render_annotated\n    return self.render(context)\n           ^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/loader_tags.py\", line 157, in render\n    return compiled_parent._render(context)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/base.py\", line 167, in _render\n    return self.nodelist.render(context)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/base.py\", line 1005, in render\n    return SafeString(\"\".join([node.render_annotated(context) for node in self]))\n                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/base.py\", line 1005, in <listcomp>\n    return SafeString(\"\".join([node.render_annotated(context) for node in self]))\n                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/base.py\", line 966, in render_annotated\n    return self.render(context)\n           ^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/defaulttags.py\", line 321, in render\n    return nodelist.render(context)\n           ^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/base.py\", line 1005, in render\n    return SafeString(\"\".join([node.render_annotated(context) for node in self]))\n                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/base.py\", line 1005, in <listcomp>\n    return SafeString(\"\".join([node.render_annotated(context) for node in self]))\n                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/base.py\", line 966, in render_annotated\n    return self.render(context)\n           ^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/loader_tags.py\", line 63, in render\n    result = block.nodelist.render(context)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/base.py\", line 1005, in render\n    return SafeString(\"\".join([node.render_annotated(context) for node in self]))\n                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/base.py\", line 1005, in <listcomp>\n    return SafeString(\"\".join([node.render_annotated(context) for node in self]))\n                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/base.py\", line 966, in render_annotated\n    return self.render(context)\n           ^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/defaulttags.py\", line 471, in render\n    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/urls/base.py\", line 88, in reverse\n    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/urls/resolvers.py\", line 828, in _reverse_with_prefix\n    raise NoReverseMatch(msg)\ndjango.urls.exceptions.NoReverseMatch: Reverse for 'etapa1_detalle' with arguments '('',)' not found. 1 pattern(s) tried: ['etapas/proveedor/(?P<pk>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})/etapa1/\\\\Z']",
+    "httpRequest": null,
+    "trace": "",
+    "spanId": ""
+  },
+  {
+    "id": "695fbb57000dd8ee0bbcf162",
+    "service": "gestion-proveedores-isa",
+    "revision": "gestion-proveedores-isa-00021-jf5",
+    "timestamp": "2026-01-08T14:12:39.846171Z",
+    "severity": "ERROR",
+    "message": "",
+    "httpRequest": {
+      "method": "GET",
+      "url": "https://gestion-proveedores-isa-381877373634.us-central1.run.app/etapas/proveedor/667f79fd-9aad-42a1-9e0c-cb2c2d4dd5c5/etapa1/objetivo/",
+      "status": 500,
+      "latency": "0.059236151s",
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+      "remoteIp": "2803:9810:68ac:4e08:e9f1:39aa:e4e:b9e3"
+    },
+    "trace": "projects/appsindunnova/traces/40f2029b3976b609d4304624d699c6ec",
+    "spanId": "464c0e51fd0dbab2"
+  },
+  {
+    "id": "695fbb43000ce8e736d55832",
+    "service": "gestion-proveedores-isa",
+    "revision": "gestion-proveedores-isa-00021-jf5",
+    "timestamp": "2026-01-08T14:12:19.846055Z",
+    "severity": "ERROR",
+    "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/core/handlers/exception.py\", line 55, in inner\n    response = get_response(request)\n               ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/core/handlers/base.py\", line 220, in _get_response\n    response = response.render()\n               ^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/response.py\", line 114, in render\n    self.content = self.rendered_content\n                   ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/response.py\", line 92, in rendered_content\n    return template.render(context, self._request)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/backends/django.py\", line 61, in render\n    return self.template.render(context)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/base.py\", line 175, in render\n    return self._render(context)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/base.py\", line 167, in _render\n    return self.nodelist.render(context)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/base.py\", line 1005, in render\n    return SafeString(\"\".join([node.render_annotated(context) for node in self]))\n                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/base.py\", line 1005, in <listcomp>\n    return SafeString(\"\".join([node.render_annotated(context) for node in self]))\n                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/base.py\", line 966, in render_annotated\n    return self.render(context)\n           ^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/loader_tags.py\", line 157, in render\n    return compiled_parent._render(context)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/base.py\", line 167, in _render\n    return self.nodelist.render(context)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/base.py\", line 1005, in render\n    return SafeString(\"\".join([node.render_annotated(context) for node in self]))\n                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/base.py\", line 1005, in <listcomp>\n    return SafeString(\"\".join([node.render_annotated(context) for node in self]))\n                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/base.py\", line 966, in render_annotated\n    return self.render(context)\n           ^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/defaulttags.py\", line 321, in render\n    return nodelist.render(context)\n           ^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/base.py\", line 1005, in render\n    return SafeString(\"\".join([node.render_annotated(context) for node in self]))\n                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/base.py\", line 1005, in <listcomp>\n    return SafeString(\"\".join([node.render_annotated(context) for node in self]))\n                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/base.py\", line 966, in render_annotated\n    return self.render(context)\n           ^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/loader_tags.py\", line 63, in render\n    result = block.nodelist.render(context)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/base.py\", line 1005, in render\n    return SafeString(\"\".join([node.render_annotated(context) for node in self]))\n                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/base.py\", line 1005, in <listcomp>\n    return SafeString(\"\".join([node.render_annotated(context) for node in self]))\n                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/base.py\", line 966, in render_annotated\n    return self.render(context)\n           ^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/defaulttags.py\", line 471, in render\n    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/urls/base.py\", line 88, in reverse\n    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/urls/resolvers.py\", line 828, in _reverse_with_prefix\n    raise NoReverseMatch(msg)\ndjango.urls.exceptions.NoReverseMatch: Reverse for 'etapa1_detalle' with arguments '('',)' not found. 1 pattern(s) tried: ['etapas/proveedor/(?P<pk>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})/etapa1/\\\\Z']",
+    "httpRequest": null,
+    "trace": "",
+    "spanId": ""
+  },
+  {
+    "id": "695fbb43000cede0a365ae0a",
+    "service": "gestion-proveedores-isa",
+    "revision": "gestion-proveedores-isa-00021-jf5",
+    "timestamp": "2026-01-08T14:12:19.786120Z",
+    "severity": "ERROR",
+    "message": "",
+    "httpRequest": {
+      "method": "GET",
+      "url": "https://gestion-proveedores-isa-381877373634.us-central1.run.app/etapas/proveedor/667f79fd-9aad-42a1-9e0c-cb2c2d4dd5c5/etapa1/diagnostico/",
+      "status": 500,
+      "latency": "0.059143947s",
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+      "remoteIp": "2803:9810:68ac:4e08:e9f1:39aa:e4e:b9e3"
+    },
+    "trace": "projects/appsindunnova/traces/c9eba44acb81a991fd486c3206f872fe",
+    "spanId": "f63fdc55e3403480"
+  },
+  {
+    "id": "695fbb2e000f1a30c8967ee7",
+    "service": "gestion-proveedores-isa",
+    "revision": "gestion-proveedores-isa-00021-jf5",
+    "timestamp": "2026-01-08T14:11:58.989744Z",
+    "severity": "ERROR",
+    "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/core/handlers/exception.py\", line 55, in inner\n    response = get_response(request)\n               ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/core/handlers/base.py\", line 220, in _get_response\n    response = response.render()\n               ^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/response.py\", line 114, in render\n    self.content = self.rendered_content\n                   ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/response.py\", line 92, in rendered_content\n    return template.render(context, self._request)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/backends/django.py\", line 61, in render\n    return self.template.render(context)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/base.py\", line 175, in render\n    return self._render(context)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/base.py\", line 167, in _render\n    return self.nodelist.render(context)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/base.py\", line 1005, in render\n    return SafeString(\"\".join([node.render_annotated(context) for node in self]))\n                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/base.py\", line 1005, in <listcomp>\n    return SafeString(\"\".join([node.render_annotated(context) for node in self]))\n                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/base.py\", line 966, in render_annotated\n    return self.render(context)\n           ^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/loader_tags.py\", line 157, in render\n    return compiled_parent._render(context)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/base.py\", line 167, in _render\n    return self.nodelist.render(context)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/base.py\", line 1005, in render\n    return SafeString(\"\".join([node.render_annotated(context) for node in self]))\n                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/base.py\", line 1005, in <listcomp>\n    return SafeString(\"\".join([node.render_annotated(context) for node in self]))\n                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/base.py\", line 966, in render_annotated\n    return self.render(context)\n           ^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/defaulttags.py\", line 321, in render\n    return nodelist.render(context)\n           ^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/base.py\", line 1005, in render\n    return SafeString(\"\".join([node.render_annotated(context) for node in self]))\n                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/base.py\", line 1005, in <listcomp>\n    return SafeString(\"\".join([node.render_annotated(context) for node in self]))\n                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/base.py\", line 966, in render_annotated\n    return self.render(context)\n           ^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/loader_tags.py\", line 63, in render\n    result = block.nodelist.render(context)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/base.py\", line 1005, in render\n    return SafeString(\"\".join([node.render_annotated(context) for node in self]))\n                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/base.py\", line 1005, in <listcomp>\n    return SafeString(\"\".join([node.render_annotated(context) for node in self]))\n                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/base.py\", line 966, in render_annotated\n    return self.render(context)\n           ^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/defaulttags.py\", line 471, in render\n    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/urls/base.py\", line 88, in reverse\n    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/urls/resolvers.py\", line 828, in _reverse_with_prefix\n    raise NoReverseMatch(msg)\ndjango.urls.exceptions.NoReverseMatch: Reverse for 'etapa1_detalle' with arguments '('',)' not found. 1 pattern(s) tried: ['etapas/proveedor/(?P<pk>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})/etapa1/\\\\Z']",
+    "httpRequest": null,
+    "trace": "",
+    "spanId": ""
+  },
+  {
+    "id": "695fbb2e000f1fefb2aa9690",
+    "service": "gestion-proveedores-isa",
+    "revision": "gestion-proveedores-isa-00021-jf5",
+    "timestamp": "2026-01-08T14:11:58.877397Z",
+    "severity": "ERROR",
+    "message": "",
+    "httpRequest": {
+      "method": "GET",
+      "url": "https://gestion-proveedores-isa-381877373634.us-central1.run.app/etapas/proveedor/667f79fd-9aad-42a1-9e0c-cb2c2d4dd5c5/etapa1/voz-cliente/",
+      "status": 500,
+      "latency": "0.111905907s",
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+      "remoteIp": "2803:9810:68ac:4e08:e9f1:39aa:e4e:b9e3"
+    },
+    "trace": "projects/appsindunnova/traces/99dc8b59aa5a463af5f8e43fb2031538",
+    "spanId": "4ad950a962b9436f"
+  },
+  {
     "id": "695fb9650009ece038fdc7d2",
     "service": "gestion-proveedores-isa",
     "revision": "gestion-proveedores-isa-00020-sn5",
@@ -25217,130 +25362,6 @@
     "timestamp": "2026-01-03T07:45:01.920746Z",
     "severity": "ERROR",
     "message": "Traceback (most recent call last):\n  File \"/app/sensores_iot/views.py\", line 1571, in cron_sync_y_alertas\n    resultado_sensores = sincronizar_y_detectar_paros()\n                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/app/sensores_iot/services.py\", line 479, in sincronizar_y_detectar_paros\n    resultados_sync = service.sync_all_active_canales()\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/app/sensores_iot/services.py\", line 288, in sync_all_active_canales\n    logger.info(f\"Iniciando sincronizaci\u00f3n de {canales.count()} canales activos\")\n                                               ^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/models/query.py\", line 608, in count\n    return self.query.get_count(using=self.db)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/models/sql/query.py\", line 568, in get_count\n    return obj.get_aggregation(using, {\"__count\": Count(\"*\")})[\"__count\"]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/models/sql/query.py\", line 554, in get_aggregation\n    result = compiler.execute_sql(SINGLE)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/models/sql/compiler.py\", line 1560, in execute_sql\n    cursor = self.connection.cursor()\n             ^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/utils/asyncio.py\", line 26, in inner\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 329, in cursor\n    return self._cursor()\n           ^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 305, in _cursor\n    self.ensure_connection()\n  File \"/usr/local/lib/python3.11/site-packages/django/utils/asyncio.py\", line 26, in inner\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 287, in ensure_connection\n    with self.wrap_database_errors:\n  File \"/usr/local/lib/python3.11/site-packages/django/db/utils.py\", line 91, in __exit__\n    raise dj_exc_value.with_traceback(traceback) from exc_value\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 288, in ensure_connection\n    self.connect()\n  File \"/usr/local/lib/python3.11/site-packages/django/utils/asyncio.py\", line 26, in inner\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 269, in connect\n    self.connection = self.get_new_connection(conn_params)\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/utils/asyncio.py\", line 26, in inner\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/postgresql/base.py\", line 275, in get_new_connection\n    connection = self.Database.connect(**conn_params)\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/psycopg2/__init__.py\", line 122, in connect\n    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\ndjango.db.utils.OperationalError: connection to server on socket \"/cloudsql/appsindunnova:us-central1:postgres-consolidated/.s.PGSQL.5432\" failed: Connection refused",
-    "httpRequest": null,
-    "trace": "",
-    "spanId": ""
-  },
-  {
-    "id": "6958c8fd000e0c45957a1b6d",
-    "service": "novapcr-app",
-    "revision": "novapcr-app-00083-h2f",
-    "timestamp": "2026-01-03T07:45:01.920645Z",
-    "severity": "ERROR",
-    "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 288, in ensure_connection\n    self.connect()\n  File \"/usr/local/lib/python3.11/site-packages/django/utils/asyncio.py\", line 26, in inner\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 269, in connect\n    self.connection = self.get_new_connection(conn_params)\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/utils/asyncio.py\", line 26, in inner\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/postgresql/base.py\", line 275, in get_new_connection\n    connection = self.Database.connect(**conn_params)\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/psycopg2/__init__.py\", line 122, in connect\n    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\npsycopg2.OperationalError: connection to server on socket \"/cloudsql/appsindunnova:us-central1:postgres-consolidated/.s.PGSQL.5432\" failed: Connection refused",
-    "httpRequest": null,
-    "trace": "",
-    "spanId": ""
-  },
-  {
-    "id": "6958c8fd000e02a46cde3666",
-    "service": "novapcr-app",
-    "revision": "novapcr-app-00083-h2f",
-    "timestamp": "2026-01-03T07:45:01.918180Z",
-    "severity": "ERROR",
-    "message": "Cloud SQL connection failed. Please see https://cloud.google.com/sql/docs/mysql/connect-run, https://cloud.google.com/sql/docs/postgres/connect-run, or https://cloud.google.com/sql/docs/sqlserver/connect-run for additional details: fetch ephemeral cert failed: refresh error: create ephemeral cert failed (connection name = \"appsindunnova:us-central1:postgres-consolidated\"): googleapi: Error 409: The instance or operation is not in an appropriate state to handle the request., invalidState",
-    "httpRequest": null,
-    "trace": "",
-    "spanId": ""
-  },
-  {
-    "id": "6958c8fd000e119113211101",
-    "service": "novapcr-app",
-    "revision": "novapcr-app-00083-h2f",
-    "timestamp": "2026-01-03T07:45:01.830928Z",
-    "severity": "ERROR",
-    "message": "",
-    "httpRequest": {
-      "method": "POST",
-      "url": "https://novapcr-app-381877373634.us-central1.run.app/sensores/cron/sync-alertas/",
-      "status": 500,
-      "latency": "0.084499189s",
-      "userAgent": "Google-Cloud-Scheduler",
-      "remoteIp": "34.98.143.40"
-    },
-    "trace": "projects/appsindunnova/traces/5edbafacf9520576773122e36c989589",
-    "spanId": "09852aeec2876575"
-  },
-  {
-    "id": "6958c7d1000e5faa7b6b6a72",
-    "service": "novapcr-app",
-    "revision": "novapcr-app-00083-h2f",
-    "timestamp": "2026-01-03T07:40:01.941994Z",
-    "severity": "ERROR",
-    "message": "Traceback (most recent call last):\n  File \"/app/sensores_iot/views.py\", line 1571, in cron_sync_y_alertas\n    resultado_sensores = sincronizar_y_detectar_paros()\n                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/app/sensores_iot/services.py\", line 479, in sincronizar_y_detectar_paros\n    resultados_sync = service.sync_all_active_canales()\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/app/sensores_iot/services.py\", line 288, in sync_all_active_canales\n    logger.info(f\"Iniciando sincronizaci\u00f3n de {canales.count()} canales activos\")\n                                               ^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/models/query.py\", line 608, in count\n    return self.query.get_count(using=self.db)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/models/sql/query.py\", line 568, in get_count\n    return obj.get_aggregation(using, {\"__count\": Count(\"*\")})[\"__count\"]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/models/sql/query.py\", line 554, in get_aggregation\n    result = compiler.execute_sql(SINGLE)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/models/sql/compiler.py\", line 1560, in execute_sql\n    cursor = self.connection.cursor()\n             ^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/utils/asyncio.py\", line 26, in inner\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 329, in cursor\n    return self._cursor()\n           ^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 305, in _cursor\n    self.ensure_connection()\n  File \"/usr/local/lib/python3.11/site-packages/django/utils/asyncio.py\", line 26, in inner\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 287, in ensure_connection\n    with self.wrap_database_errors:\n  File \"/usr/local/lib/python3.11/site-packages/django/db/utils.py\", line 91, in __exit__\n    raise dj_exc_value.with_traceback(traceback) from exc_value\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 288, in ensure_connection\n    self.connect()\n  File \"/usr/local/lib/python3.11/site-packages/django/utils/asyncio.py\", line 26, in inner\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 269, in connect\n    self.connection = self.get_new_connection(conn_params)\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/utils/asyncio.py\", line 26, in inner\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/postgresql/base.py\", line 275, in get_new_connection\n    connection = self.Database.connect(**conn_params)\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/psycopg2/__init__.py\", line 122, in connect\n    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\ndjango.db.utils.OperationalError: connection to server on socket \"/cloudsql/appsindunnova:us-central1:postgres-consolidated/.s.PGSQL.5432\" failed: Connection refused",
-    "httpRequest": null,
-    "trace": "",
-    "spanId": ""
-  },
-  {
-    "id": "6958c7d1000e5f4fb8f32222",
-    "service": "novapcr-app",
-    "revision": "novapcr-app-00083-h2f",
-    "timestamp": "2026-01-03T07:40:01.941903Z",
-    "severity": "ERROR",
-    "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 288, in ensure_connection\n    self.connect()\n  File \"/usr/local/lib/python3.11/site-packages/django/utils/asyncio.py\", line 26, in inner\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 269, in connect\n    self.connection = self.get_new_connection(conn_params)\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/utils/asyncio.py\", line 26, in inner\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/postgresql/base.py\", line 275, in get_new_connection\n    connection = self.Database.connect(**conn_params)\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/psycopg2/__init__.py\", line 122, in connect\n    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\npsycopg2.OperationalError: connection to server on socket \"/cloudsql/appsindunnova:us-central1:postgres-consolidated/.s.PGSQL.5432\" failed: Connection refused",
-    "httpRequest": null,
-    "trace": "",
-    "spanId": ""
-  },
-  {
-    "id": "6958c7d1000e56a4bdec0c3b",
-    "service": "novapcr-app",
-    "revision": "novapcr-app-00083-h2f",
-    "timestamp": "2026-01-03T07:40:01.939684Z",
-    "severity": "ERROR",
-    "message": "Cloud SQL connection failed. Please see https://cloud.google.com/sql/docs/mysql/connect-run, https://cloud.google.com/sql/docs/postgres/connect-run, or https://cloud.google.com/sql/docs/sqlserver/connect-run for additional details: fetch ephemeral cert failed: refresh error: create ephemeral cert failed (connection name = \"appsindunnova:us-central1:postgres-consolidated\"): googleapi: Error 409: The instance or operation is not in an appropriate state to handle the request., invalidState",
-    "httpRequest": null,
-    "trace": "",
-    "spanId": ""
-  },
-  {
-    "id": "6958c7d1000e6445756eccf1",
-    "service": "novapcr-app",
-    "revision": "novapcr-app-00083-h2f",
-    "timestamp": "2026-01-03T07:40:01.845344Z",
-    "severity": "ERROR",
-    "message": "",
-    "httpRequest": {
-      "method": "POST",
-      "url": "https://novapcr-app-381877373634.us-central1.run.app/sensores/cron/sync-alertas/",
-      "status": 500,
-      "latency": "0.090397565s",
-      "userAgent": "Google-Cloud-Scheduler",
-      "remoteIp": "34.98.143.69"
-    },
-    "trace": "projects/appsindunnova/traces/6d2e7c49baab9ede8645ebd52bad5705",
-    "spanId": "c97dfe2267b25c23"
-  },
-  {
-    "id": "6958c6a5000d6f5d7059e622",
-    "service": "novapcr-app",
-    "revision": "novapcr-app-00083-h2f",
-    "timestamp": "2026-01-03T07:35:01.880477Z",
-    "severity": "ERROR",
-    "message": "Traceback (most recent call last):\n  File \"/app/sensores_iot/views.py\", line 1571, in cron_sync_y_alertas\n    resultado_sensores = sincronizar_y_detectar_paros()\n                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/app/sensores_iot/services.py\", line 479, in sincronizar_y_detectar_paros\n    resultados_sync = service.sync_all_active_canales()\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/app/sensores_iot/services.py\", line 288, in sync_all_active_canales\n    logger.info(f\"Iniciando sincronizaci\u00f3n de {canales.count()} canales activos\")\n                                               ^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/models/query.py\", line 608, in count\n    return self.query.get_count(using=self.db)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/models/sql/query.py\", line 568, in get_count\n    return obj.get_aggregation(using, {\"__count\": Count(\"*\")})[\"__count\"]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/models/sql/query.py\", line 554, in get_aggregation\n    result = compiler.execute_sql(SINGLE)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/models/sql/compiler.py\", line 1560, in execute_sql\n    cursor = self.connection.cursor()\n             ^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/utils/asyncio.py\", line 26, in inner\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 329, in cursor\n    return self._cursor()\n           ^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 305, in _cursor\n    self.ensure_connection()\n  File \"/usr/local/lib/python3.11/site-packages/django/utils/asyncio.py\", line 26, in inner\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 287, in ensure_connection\n    with self.wrap_database_errors:\n  File \"/usr/local/lib/python3.11/site-packages/django/db/utils.py\", line 91, in __exit__\n    raise dj_exc_value.with_traceback(traceback) from exc_value\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 288, in ensure_connection\n    self.connect()\n  File \"/usr/local/lib/python3.11/site-packages/django/utils/asyncio.py\", line 26, in inner\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 269, in connect\n    self.connection = self.get_new_connection(conn_params)\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/utils/asyncio.py\", line 26, in inner\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/postgresql/base.py\", line 275, in get_new_connection\n    connection = self.Database.connect(**conn_params)\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/psycopg2/__init__.py\", line 122, in connect\n    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\ndjango.db.utils.OperationalError: connection to server on socket \"/cloudsql/appsindunnova:us-central1:postgres-consolidated/.s.PGSQL.5432\" failed: Connection refused",
-    "httpRequest": null,
-    "trace": "",
-    "spanId": ""
-  },
-  {
-    "id": "6958c6a5000d6f14afa8a7ff",
-    "service": "novapcr-app",
-    "revision": "novapcr-app-00083-h2f",
-    "timestamp": "2026-01-03T07:35:01.880404Z",
-    "severity": "ERROR",
-    "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 288, in ensure_connection\n    self.connect()\n  File \"/usr/local/lib/python3.11/site-packages/django/utils/asyncio.py\", line 26, in inner\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 269, in connect\n    self.connection = self.get_new_connection(conn_params)\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/utils/asyncio.py\", line 26, in inner\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/postgresql/base.py\", line 275, in get_new_connection\n    connection = self.Database.connect(**conn_params)\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/psycopg2/__init__.py\", line 122, in connect\n    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\npsycopg2.OperationalError: connection to server on socket \"/cloudsql/appsindunnova:us-central1:postgres-consolidated/.s.PGSQL.5432\" failed: Connection refused",
-    "httpRequest": null,
-    "trace": "",
-    "spanId": ""
-  },
-  {
-    "id": "6958c6a5000d66f4f948125a",
-    "service": "novapcr-app",
-    "revision": "novapcr-app-00083-h2f",
-    "timestamp": "2026-01-03T07:35:01.878324Z",
-    "severity": "ERROR",
-    "message": "Cloud SQL connection failed. Please see https://cloud.google.com/sql/docs/mysql/connect-run, https://cloud.google.com/sql/docs/postgres/connect-run, or https://cloud.google.com/sql/docs/sqlserver/connect-run for additional details: fetch ephemeral cert failed: refresh error: create ephemeral cert failed (connection name = \"appsindunnova:us-central1:postgres-consolidated\"): googleapi: Error 409: The instance or operation is not in an appropriate state to handle the request., invalidState",
     "httpRequest": null,
     "trace": "",
     "spanId": ""
