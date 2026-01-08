@@ -51,15 +51,15 @@
       "avgLatencyMs": 0
     },
     "interactions": {
-      "requests7d": 378,
-      "requests30d": 378
+      "requests7d": 370,
+      "requests30d": 370
     },
     "costEstimate": {
       "estimatedMonthly": 0.05,
       "cpuCost": 0.05,
       "memoryCost": 0.0,
       "requestCost": 0.0,
-      "estimatedRequests": 1625,
+      "estimatedRequests": 1591,
       "avgLatencyMs": 650,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -303,15 +303,15 @@
       "avgLatencyMs": 0
     },
     "interactions": {
-      "requests7d": 927,
-      "requests30d": 927
+      "requests7d": 923,
+      "requests30d": 923
     },
     "costEstimate": {
       "estimatedMonthly": 0.13,
       "cpuCost": 0.12,
       "memoryCost": 0.01,
       "requestCost": 0.0,
-      "estimatedRequests": 3986,
+      "estimatedRequests": 3968,
       "avgLatencyMs": 650,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -1435,18 +1435,18 @@
       "last7d": 800,
       "recentErrors": [
         {
-          "timestamp": "2026-01-08T07:05:01.962817Z",
+          "timestamp": "2026-01-08T08:00:01.907737Z",
+          "message": "Cloud SQL connection failed. Please see https://cloud.google.com/sql/docs/mysql/connect-run, https://cloud.google.com/sql/docs/postgres/connect-run, or https://cloud.google.com/sql/docs/sqlserver/connect-run for additional details: fetch ephemeral cert failed: refresh error: create ephemeral cert fa...",
+          "severity": "ERROR"
+        },
+        {
+          "timestamp": "2026-01-08T08:00:01.907376Z",
           "message": "Traceback (most recent call last):\n  File \"/app/sensores_iot/views.py\", line 1571, in cron_sync_y_alertas\n    resultado_sensores = sincronizar_y_detectar_paros()\n                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/app/sensores_iot/services.py\", line 479, in sincronizar_y_detectar_paros\n...",
           "severity": "ERROR"
         },
         {
-          "timestamp": "2026-01-08T07:05:01.962748Z",
+          "timestamp": "2026-01-08T08:00:01.907269Z",
           "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 288, in ensure_connection\n    self.connect()\n  File \"/usr/local/lib/python3.11/site-packages/django/utils/asyncio.py\", line 26, in inner\n    return func(*args, **kwargs)\n        ...",
-          "severity": "ERROR"
-        },
-        {
-          "timestamp": "2026-01-08T07:05:01.960558Z",
-          "message": "Cloud SQL connection failed. Please see https://cloud.google.com/sql/docs/mysql/connect-run, https://cloud.google.com/sql/docs/postgres/connect-run, or https://cloud.google.com/sql/docs/sqlserver/connect-run for additional details: fetch ephemeral cert failed: refresh error: create ephemeral cert fa...",
           "severity": "ERROR"
         }
       ]
@@ -1464,15 +1464,15 @@
       "avgLatencyMs": 164
     },
     "interactions": {
-      "requests7d": 947,
-      "requests30d": 947
+      "requests7d": 958,
+      "requests30d": 958
     },
     "costEstimate": {
       "estimatedMonthly": 0.1,
       "cpuCost": 0.09,
       "memoryCost": 0.0,
       "requestCost": 0.0,
-      "estimatedRequests": 4072,
+      "estimatedRequests": 4119,
       "avgLatencyMs": 464,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -1581,7 +1581,7 @@
     "repoName": "RGDAire",
     "errors": {
       "total": 6,
-      "last24h": 6,
+      "last24h": 3,
       "last7d": 6,
       "recentErrors": [
         {
@@ -2016,15 +2016,15 @@
       "avgLatencyMs": 0
     },
     "interactions": {
-      "requests7d": 63,
-      "requests30d": 63
+      "requests7d": 64,
+      "requests30d": 64
     },
     "costEstimate": {
       "estimatedMonthly": 0.0,
       "cpuCost": 0.0,
       "memoryCost": 0.0,
       "requestCost": 0.0,
-      "estimatedRequests": 270,
+      "estimatedRequests": 275,
       "avgLatencyMs": 650,
       "cpuCores": 0.3333,
       "memoryGiB": 0.5,
