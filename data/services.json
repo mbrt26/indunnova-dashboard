@@ -315,9 +315,9 @@
     "repo": null,
     "repoName": null,
     "errors": {
-      "total": 8,
+      "total": 7,
       "last24h": 7,
-      "last7d": 8,
+      "last7d": 7,
       "recentErrors": [
         {
           "timestamp": "2026-01-08T23:43:31.854173Z",
@@ -813,22 +813,22 @@
     "repo": "https://github.com/mbrt26/GestionProveedoresISA",
     "repoName": "GestionProveedoresISA",
     "errors": {
-      "total": 325,
-      "last24h": 325,
-      "last7d": 325,
+      "total": 380,
+      "last24h": 380,
+      "last7d": 380,
       "recentErrors": [
         {
-          "timestamp": "2026-01-09T09:04:26.447902Z",
+          "timestamp": "2026-01-09T09:59:26.324374Z",
           "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/core/handlers/exception.py\", line 55, in inner\n    response = get_response(request)\n               ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/core/handlers/base.py\", line 197, ...",
           "severity": "ERROR"
         },
         {
-          "timestamp": "2026-01-09T09:04:26.447849Z",
+          "timestamp": "2026-01-09T09:59:26.324289Z",
           "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 288, in ensure_connection\n    self.connect()\n  File \"/usr/local/lib/python3.11/site-packages/django/utils/asyncio.py\", line 26, in inner\n    return func(*args, **kwargs)\n        ...",
           "severity": "ERROR"
         },
         {
-          "timestamp": "2026-01-09T09:04:26.447830Z",
+          "timestamp": "2026-01-09T09:59:26.324269Z",
           "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/contrib/sessions/backends/base.py\", line 187, in _get_session\n    return self._session_cache\n           ^^^^^^^^^^^^^^^^^^^\nAttributeError: 'SessionStore' object has no attribute '_session_cache'",
           "severity": "ERROR"
         }
@@ -868,21 +868,21 @@
       ]
     },
     "metrics": {
-      "errors5xx": 81,
+      "errors5xx": 92,
       "errors4xx": 0,
-      "avgLatencyMs": 192
+      "avgLatencyMs": 180
     },
     "interactions": {
-      "requests7d": 1093,
-      "requests30d": 1093
+      "requests7d": 1104,
+      "requests30d": 1104
     },
     "costEstimate": {
       "estimatedMonthly": 0.12,
       "cpuCost": 0.11,
       "memoryCost": 0.01,
       "requestCost": 0.0,
-      "estimatedRequests": 4699,
-      "avgLatencyMs": 492,
+      "estimatedRequests": 4747,
+      "avgLatencyMs": 480,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
       "note": "Estimacion incluye cold starts y overhead tipico",
@@ -1205,9 +1205,9 @@
     "repo": "https://github.com/mbrt26/MoldesyMecanizados",
     "repoName": "MoldesyMecanizados",
     "errors": {
-      "total": 7,
+      "total": 2,
       "last24h": 2,
-      "last7d": 7,
+      "last7d": 2,
       "recentErrors": [
         {
           "timestamp": "2026-01-08T17:02:49.866877Z",
@@ -1216,11 +1216,6 @@
         },
         {
           "timestamp": "2026-01-08T17:02:00.526690Z",
-          "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/core/handlers/exception.py\", line 55, in inner\n    response = get_response(request)\n               ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/core/handlers/base.py\", line 197, ...",
-          "severity": "ERROR"
-        },
-        {
-          "timestamp": "2026-01-07T23:36:51.209058Z",
           "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/core/handlers/exception.py\", line 55, in inner\n    response = get_response(request)\n               ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/core/handlers/base.py\", line 197, ...",
           "severity": "ERROR"
         }
@@ -1293,26 +1288,10 @@
     "repo": "https://github.com/mbrt26/MouseDigital",
     "repoName": "MouseDigital",
     "errors": {
-      "total": 10,
+      "total": 0,
       "last24h": 0,
-      "last7d": 10,
-      "recentErrors": [
-        {
-          "timestamp": "2026-01-07T21:29:46.667538Z",
-          "message": "Traceback (most recent call last):\n  File \"/app/production/signals.py\", line 1712, in create_wip_troquelado_on_receipt\n    Movement.objects.create(\n  File \"/usr/local/lib/python3.11/site-packages/django/db/models/manager.py\", line 87, in manager_method\n    return getattr(self.get_queryset(), name)(*...",
-          "severity": "ERROR"
-        },
-        {
-          "timestamp": "2026-01-07T21:29:46.666780Z",
-          "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/utils.py\", line 105, in _execute\n    return self.cursor.execute(sql, params)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\npsycopg2.errors.NotNullViolation: null value in column \"unit_measure\" of rela...",
-          "severity": "ERROR"
-        },
-        {
-          "timestamp": "2026-01-07T21:29:46.578637Z",
-          "message": "Traceback (most recent call last):\n  File \"/app/production/signals.py\", line 1712, in create_wip_troquelado_on_receipt\n    Movement.objects.create(\n  File \"/usr/local/lib/python3.11/site-packages/django/db/models/manager.py\", line 87, in manager_method\n    return getattr(self.get_queryset(), name)(*...",
-          "severity": "ERROR"
-        }
-      ]
+      "last7d": 0,
+      "recentErrors": []
     },
     "deployments": {
       "total": 0,
@@ -1360,17 +1339,17 @@
       "last7d": 569,
       "recentErrors": [
         {
-          "timestamp": "2026-01-09T09:05:02.301333Z",
+          "timestamp": "2026-01-09T10:00:01.966226Z",
           "message": "Traceback (most recent call last):\n  File \"/app/sensores_iot/views.py\", line 1571, in cron_sync_y_alertas\n    resultado_sensores = sincronizar_y_detectar_paros()\n                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/app/sensores_iot/services.py\", line 479, in sincronizar_y_detectar_paros\n...",
           "severity": "ERROR"
         },
         {
-          "timestamp": "2026-01-09T09:05:02.301254Z",
+          "timestamp": "2026-01-09T10:00:01.966156Z",
           "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 288, in ensure_connection\n    self.connect()\n  File \"/usr/local/lib/python3.11/site-packages/django/utils/asyncio.py\", line 26, in inner\n    return func(*args, **kwargs)\n        ...",
           "severity": "ERROR"
         },
         {
-          "timestamp": "2026-01-09T09:05:02.299245Z",
+          "timestamp": "2026-01-09T10:00:01.964050Z",
           "message": "Cloud SQL connection failed. Please see https://cloud.google.com/sql/docs/mysql/connect-run, https://cloud.google.com/sql/docs/postgres/connect-run, or https://cloud.google.com/sql/docs/sqlserver/connect-run for additional details: fetch ephemeral cert failed: refresh error: create ephemeral cert fa...",
           "severity": "ERROR"
         }
@@ -1384,21 +1363,21 @@
       "recentDeployments": []
     },
     "metrics": {
-      "errors5xx": 334,
+      "errors5xx": 323,
       "errors4xx": 0,
-      "avgLatencyMs": 127
+      "avgLatencyMs": 128
     },
     "interactions": {
-      "requests7d": 531,
-      "requests30d": 531
+      "requests7d": 537,
+      "requests30d": 537
     },
     "costEstimate": {
       "estimatedMonthly": 0.05,
       "cpuCost": 0.05,
       "memoryCost": 0.0,
       "requestCost": 0.0,
-      "estimatedRequests": 2283,
-      "avgLatencyMs": 427,
+      "estimatedRequests": 2309,
+      "avgLatencyMs": 428,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
       "note": "Estimacion incluye cold starts y overhead tipico",
@@ -1417,26 +1396,10 @@
     "repo": "https://github.com/mbrt26/PlasticosAmbientales",
     "repoName": "PlasticosAmbientales",
     "errors": {
-      "total": 36,
+      "total": 0,
       "last24h": 0,
-      "last7d": 36,
-      "recentErrors": [
-        {
-          "timestamp": "2026-01-07T22:40:13.634127Z",
-          "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/core/handlers/exception.py\", line 55, in inner\n    response = get_response(request)\n               ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/core/handlers/base.py\", line 220, ...",
-          "severity": "ERROR"
-        },
-        {
-          "timestamp": "2026-01-07T22:40:13.634060Z",
-          "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/template/base.py\", line 896, in _resolve_lookup\n    current = current[int(bit)]\n                      ^^^^^^^^\nValueError: invalid literal for int() with base 10: 'username'",
-          "severity": "ERROR"
-        },
-        {
-          "timestamp": "2026-01-07T22:40:13.634049Z",
-          "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/template/base.py\", line 890, in _resolve_lookup\n    current = getattr(current, bit)\n              ^^^^^^^^^^^^^^^^^^^^^\nAttributeError: 'NoneType' object has no attribute 'username'",
-          "severity": "ERROR"
-        }
-      ]
+      "last7d": 0,
+      "recentErrors": []
     },
     "deployments": {
       "total": 18,
@@ -1505,22 +1468,22 @@
     "repo": "https://github.com/mbrt26/RGDAire",
     "repoName": "RGDAire",
     "errors": {
-      "total": 3,
-      "last24h": 3,
-      "last7d": 3,
+      "total": 6,
+      "last24h": 6,
+      "last7d": 6,
       "recentErrors": [
         {
-          "timestamp": "2026-01-09T07:42:20.878043Z",
+          "timestamp": "2026-01-09T10:02:08.168764Z",
           "message": "Traceback (most recent call last):\n  File \"/app/manage.py\", line 26, in <module>\n    main()\n  File \"/app/manage.py\", line 22, in main\n    execute_from_command_line(sys.argv)\n  File \"/usr/local/lib/python3.12/site-packages/django/core/management/__init__.py\", line 442, in execute_from_command_line\n  ...",
           "severity": "ERROR"
         },
         {
-          "timestamp": "2026-01-09T07:42:20.841031Z",
+          "timestamp": "2026-01-09T10:02:08.142241Z",
           "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.12/site-packages/django/db/backends/base/base.py\", line 279, in ensure_connection\n    self.connect()\n  File \"/usr/local/lib/python3.12/site-packages/django/utils/asyncio.py\", line 26, in inner\n    return func(*args, **kwargs)\n        ...",
           "severity": "ERROR"
         },
         {
-          "timestamp": "2026-01-09T07:42:20.822865Z",
+          "timestamp": "2026-01-09T10:02:08.131685Z",
           "message": "Cloud SQL connection failed. Please see https://cloud.google.com/sql/docs/mysql/connect-run, https://cloud.google.com/sql/docs/postgres/connect-run, or https://cloud.google.com/sql/docs/sqlserver/connect-run for additional details: fetch ephemeral cert failed: refresh error: create ephemeral cert fa...",
           "severity": "ERROR"
         }
@@ -1560,15 +1523,15 @@
       "avgLatencyMs": 0
     },
     "interactions": {
-      "requests7d": 3627,
-      "requests30d": 3627
+      "requests7d": 3609,
+      "requests30d": 3609
     },
     "costEstimate": {
       "estimatedMonthly": 0.52,
-      "cpuCost": 0.49,
+      "cpuCost": 0.48,
       "memoryCost": 0.03,
       "requestCost": 0.01,
-      "estimatedRequests": 15596,
+      "estimatedRequests": 15518,
       "avgLatencyMs": 650,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -1935,15 +1898,15 @@
       "avgLatencyMs": 0
     },
     "interactions": {
-      "requests7d": 48,
-      "requests30d": 48
+      "requests7d": 49,
+      "requests30d": 49
     },
     "costEstimate": {
       "estimatedMonthly": 0.0,
       "cpuCost": 0.0,
       "memoryCost": 0.0,
       "requestCost": 0.0,
-      "estimatedRequests": 206,
+      "estimatedRequests": 210,
       "avgLatencyMs": 650,
       "cpuCores": 0.3333,
       "memoryGiB": 0.5,
@@ -2009,26 +1972,10 @@
     "repo": "https://github.com/mbrt26/tersaSoft",
     "repoName": "tersaSoft",
     "errors": {
-      "total": 6,
+      "total": 0,
       "last24h": 0,
-      "last7d": 6,
-      "recentErrors": [
-        {
-          "timestamp": "2026-01-07T15:24:46.079152Z",
-          "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/core/handlers/exception.py\", line 55, in inner\n    response = get_response(request)\n               ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/core/handlers/base.py\", line 197, ...",
-          "severity": "ERROR"
-        },
-        {
-          "timestamp": "2026-01-07T15:24:45.956472Z",
-          "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/core/handlers/exception.py\", line 55, in inner\n    response = get_response(request)\n               ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/core/handlers/base.py\", line 197, ...",
-          "severity": "ERROR"
-        },
-        {
-          "timestamp": "2026-01-07T15:24:45.942402Z",
-          "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/core/handlers/exception.py\", line 55, in inner\n    response = get_response(request)\n               ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/core/handlers/base.py\", line 197, ...",
-          "severity": "ERROR"
-        }
-      ]
+      "last7d": 0,
+      "recentErrors": []
     },
     "deployments": {
       "total": 3,
