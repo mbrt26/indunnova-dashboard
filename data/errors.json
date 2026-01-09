@@ -1,5 +1,23 @@
 [
   {
+    "id": "69616c8d000d3f1c6fc0fdf3",
+    "service": "novapcr-app",
+    "revision": "novapcr-app-00083-h2f",
+    "timestamp": "2026-01-09T21:00:01.861179Z",
+    "severity": "ERROR",
+    "message": "",
+    "httpRequest": {
+      "method": "POST",
+      "url": "https://novapcr-app-381877373634.us-central1.run.app/sensores/cron/sync-alertas/",
+      "status": 504,
+      "latency": "59.994032929s",
+      "userAgent": "Google-Cloud-Scheduler",
+      "remoteIp": "34.127.136.137"
+    },
+    "trace": "projects/appsindunnova/traces/4624e9f5939b75c6884bbfcec6a8c78a",
+    "spanId": "f376d0fb9a09d3f4"
+  },
+  {
     "id": "69615e7d000ef6e3589f9b09",
     "service": "novapcr-app",
     "revision": "novapcr-app-00083-h2f",
@@ -25260,17 +25278,6 @@
     "timestamp": "2026-01-05T16:12:16.417580Z",
     "severity": "ERROR",
     "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/utils.py\", line 103, in _execute\n    return self.cursor.execute(sql)\n           ^^^^^^^^^^^^^^^^^^^^^^^^\npsycopg2.errors.InsufficientPrivilege: must be owner of table production_assemblyreceiptwaste",
-    "httpRequest": null,
-    "trace": "",
-    "spanId": ""
-  },
-  {
-    "id": "-90dz2e3glmm",
-    "service": "mouse-digital",
-    "revision": "",
-    "timestamp": "2026-01-05T16:11:07.639439Z",
-    "severity": "ERROR",
-    "message": "",
     "httpRequest": null,
     "trace": "",
     "spanId": ""
