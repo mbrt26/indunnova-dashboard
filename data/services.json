@@ -51,15 +51,15 @@
       "avgLatencyMs": 0
     },
     "interactions": {
-      "requests7d": 645,
-      "requests30d": 645
+      "requests7d": 591,
+      "requests30d": 591
     },
     "costEstimate": {
       "estimatedMonthly": 0.09,
-      "cpuCost": 0.09,
+      "cpuCost": 0.08,
       "memoryCost": 0.0,
       "requestCost": 0.0,
-      "estimatedRequests": 2773,
+      "estimatedRequests": 2541,
       "avgLatencyMs": 650,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -373,34 +373,34 @@
       ]
     },
     "deployments": {
-      "total": 42,
-      "last24h": 2,
-      "last7d": 42,
-      "lastDeployment": "2026-01-11T02:35:48.588233Z",
+      "total": 41,
+      "last24h": 7,
+      "last7d": 41,
+      "lastDeployment": "2026-01-11T03:26:16.044796Z",
       "recentDeployments": [
         {
-          "revision": "contabilidad-indunnova-00089-9xx",
-          "timestamp": "2026-01-11T02:35:48.588233Z",
+          "revision": "contabilidad-indunnova-00094-zjf",
+          "timestamp": "2026-01-11T03:26:16.044796Z",
           "status": "True"
         },
         {
-          "revision": "contabilidad-indunnova-00088-4s6",
-          "timestamp": "2026-01-11T02:28:15.265562Z",
+          "revision": "contabilidad-indunnova-00093-pvj",
+          "timestamp": "2026-01-11T03:15:32.384950Z",
           "status": "True"
         },
         {
-          "revision": "contabilidad-indunnova-00087-vgt",
-          "timestamp": "2026-01-09T01:52:05.476550Z",
+          "revision": "contabilidad-indunnova-00092-j8l",
+          "timestamp": "2026-01-11T03:08:35.564232Z",
           "status": "True"
         },
         {
-          "revision": "contabilidad-indunnova-00086-mj2",
-          "timestamp": "2026-01-09T01:27:41.613609Z",
+          "revision": "contabilidad-indunnova-00091-7sj",
+          "timestamp": "2026-01-11T03:01:23.688715Z",
           "status": "True"
         },
         {
-          "revision": "contabilidad-indunnova-00085-7mk",
-          "timestamp": "2026-01-09T00:53:00.426203Z",
+          "revision": "contabilidad-indunnova-00090-8h4",
+          "timestamp": "2026-01-11T02:50:56.590137Z",
           "status": "True"
         }
       ]
@@ -411,15 +411,15 @@
       "avgLatencyMs": 2514
     },
     "interactions": {
-      "requests7d": 324,
-      "requests30d": 324
+      "requests7d": 517,
+      "requests30d": 517
     },
     "costEstimate": {
-      "estimatedMonthly": 0.15,
-      "cpuCost": 0.14,
+      "estimatedMonthly": 0.23,
+      "cpuCost": 0.22,
       "memoryCost": 0.01,
       "requestCost": 0.0,
-      "estimatedRequests": 1393,
+      "estimatedRequests": 2223,
       "avgLatencyMs": 2059,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -428,7 +428,7 @@
       "usesConsolidatedDb": false,
       "hasDedicatedDb": false,
       "dedicatedDbName": null,
-      "totalWithSql": 0.15
+      "totalWithSql": 0.23
     }
   },
   {
@@ -759,15 +759,15 @@
       "avgLatencyMs": 0
     },
     "interactions": {
-      "requests7d": 427,
-      "requests30d": 427
+      "requests7d": 317,
+      "requests30d": 317
     },
     "costEstimate": {
-      "estimatedMonthly": 0.06,
-      "cpuCost": 0.06,
+      "estimatedMonthly": 0.05,
+      "cpuCost": 0.04,
       "memoryCost": 0.0,
       "requestCost": 0.0,
-      "estimatedRequests": 1836,
+      "estimatedRequests": 1363,
       "avgLatencyMs": 650,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -776,7 +776,7 @@
       "usesConsolidatedDb": true,
       "hasDedicatedDb": false,
       "dedicatedDbName": null,
-      "totalWithSql": 1.37
+      "totalWithSql": 1.36
     }
   },
   {
@@ -833,75 +833,75 @@
     "repo": "https://github.com/mbrt26/GestionProveedoresISA",
     "repoName": "GestionProveedoresISA",
     "errors": {
-      "total": 960,
-      "last24h": 960,
-      "last7d": 960,
+      "total": 954,
+      "last24h": 954,
+      "last7d": 954,
       "recentErrors": [
+        {
+          "timestamp": "2026-01-11T02:59:57.973918Z",
+          "message": "{}",
+          "severity": "ERROR"
+        },
+        {
+          "timestamp": "2026-01-11T02:59:57.877546Z",
+          "message": "{}",
+          "severity": "ERROR"
+        },
         {
           "timestamp": "2026-01-10T11:04:10.934631Z",
           "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/channels/routing.py\", line 62, in __call__\n    return await application(scope, receive, send)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/channels/security/websoc...",
-          "severity": "ERROR"
-        },
-        {
-          "timestamp": "2026-01-10T11:04:10.934533Z",
-          "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 288, in ensure_connection\n    self.connect()\n  File \"/usr/local/lib/python3.11/site-packages/django/utils/asyncio.py\", line 26, in inner\n    return func(*args, **kwargs)\n        ...",
-          "severity": "ERROR"
-        },
-        {
-          "timestamp": "2026-01-10T11:04:10.934507Z",
-          "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/contrib/sessions/backends/base.py\", line 187, in _get_session\n    return self._session_cache\n           ^^^^^^^^^^^^^^^^^^^\nAttributeError: 'SessionStore' object has no attribute '_session_cache'",
           "severity": "ERROR"
         }
       ]
     },
     "deployments": {
-      "total": 57,
-      "last24h": 4,
-      "last7d": 57,
-      "lastDeployment": "2026-01-11T02:38:19.117539Z",
+      "total": 53,
+      "last24h": 5,
+      "last7d": 53,
+      "lastDeployment": "2026-01-11T03:25:47.377434Z",
       "recentDeployments": [
+        {
+          "revision": "gestion-proveedores-isa-00080-2ch",
+          "timestamp": "2026-01-11T03:25:47.377434Z",
+          "status": "True"
+        },
+        {
+          "revision": "gestion-proveedores-isa-00079-zht",
+          "timestamp": "2026-01-11T03:13:53.413521Z",
+          "status": "True"
+        },
+        {
+          "revision": "gestion-proveedores-isa-00078-vcl",
+          "timestamp": "2026-01-11T03:11:07.038480Z",
+          "status": "True"
+        },
+        {
+          "revision": "gestion-proveedores-isa-00077-tf4",
+          "timestamp": "2026-01-11T02:55:18.991113Z",
+          "status": "False"
+        },
         {
           "revision": "gestion-proveedores-isa-00076-85b",
           "timestamp": "2026-01-11T02:38:19.117539Z",
-          "status": "True"
-        },
-        {
-          "revision": "gestion-proveedores-isa-00075-bp7",
-          "timestamp": "2026-01-10T03:12:19.073878Z",
-          "status": "True"
-        },
-        {
-          "revision": "gestion-proveedores-isa-00074-rb4",
-          "timestamp": "2026-01-10T03:07:06.951768Z",
-          "status": "True"
-        },
-        {
-          "revision": "gestion-proveedores-isa-00073-jsj",
-          "timestamp": "2026-01-10T02:48:50.731246Z",
-          "status": "True"
-        },
-        {
-          "revision": "gestion-proveedores-isa-00072-927",
-          "timestamp": "2026-01-10T02:42:35.072336Z",
           "status": "True"
         }
       ]
     },
     "metrics": {
-      "errors5xx": 472,
+      "errors5xx": 470,
       "errors4xx": 0,
       "avgLatencyMs": 759
     },
     "interactions": {
-      "requests7d": 6133,
-      "requests30d": 6133
+      "requests7d": 6202,
+      "requests30d": 6202
     },
     "costEstimate": {
-      "estimatedMonthly": 1.43,
-      "cpuCost": 1.34,
+      "estimatedMonthly": 1.45,
+      "cpuCost": 1.36,
       "memoryCost": 0.07,
       "requestCost": 0.01,
-      "estimatedRequests": 26371,
+      "estimatedRequests": 26668,
       "avgLatencyMs": 1059,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -910,7 +910,7 @@
       "usesConsolidatedDb": true,
       "hasDedicatedDb": false,
       "dedicatedDbName": null,
-      "totalWithSql": 2.74
+      "totalWithSql": 2.76
     }
   },
   {
@@ -945,15 +945,15 @@
       "avgLatencyMs": 0
     },
     "interactions": {
-      "requests7d": 43,
-      "requests30d": 43
+      "requests7d": 2,
+      "requests30d": 2
     },
     "costEstimate": {
-      "estimatedMonthly": 0.01,
-      "cpuCost": 0.01,
+      "estimatedMonthly": 0.0,
+      "cpuCost": 0.0,
       "memoryCost": 0.0,
       "requestCost": 0.0,
-      "estimatedRequests": 184,
+      "estimatedRequests": 8,
       "avgLatencyMs": 650,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -962,7 +962,7 @@
       "usesConsolidatedDb": true,
       "hasDedicatedDb": false,
       "dedicatedDbName": null,
-      "totalWithSql": 1.32
+      "totalWithSql": 1.31
     }
   },
   {
@@ -1209,9 +1209,9 @@
       "recentErrors": []
     },
     "deployments": {
-      "total": 7,
+      "total": 3,
       "last24h": 0,
-      "last7d": 7,
+      "last7d": 3,
       "lastDeployment": "2026-01-08T17:30:28.137381Z",
       "recentDeployments": [
         {
@@ -1227,16 +1227,6 @@
         {
           "revision": "moldes-mecanizados-app-00033-wp5",
           "timestamp": "2026-01-08T16:41:40.807043Z",
-          "status": "True"
-        },
-        {
-          "revision": "moldes-mecanizados-app-00032-8rk",
-          "timestamp": "2026-01-08T14:51:28.290272Z",
-          "status": "True"
-        },
-        {
-          "revision": "moldes-mecanizados-app-00031-fq8",
-          "timestamp": "2026-01-08T14:28:36.220263Z",
           "status": "True"
         }
       ]
@@ -1321,76 +1311,76 @@
     "repo": "https://github.com/mbrt26/NOVAPCR",
     "repoName": "NOVAPCR",
     "errors": {
-      "total": 20,
-      "last24h": 20,
-      "last7d": 20,
+      "total": 26,
+      "last24h": 26,
+      "last7d": 26,
       "recentErrors": [
         {
-          "timestamp": "2026-01-10T11:00:10.169199Z",
-          "message": "Default STARTUP TCP probe failed 1 time consecutively for container \"novapcr-app-1\" on port 8080. The instance was not started.\nConnection failed with status CANCELLED.",
+          "timestamp": "2026-01-11T03:13:49.034384Z",
+          "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/core/handlers/exception.py\", line 55, in inner\n    response = get_response(request)\n               ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/core/handlers/base.py\", line 197, ...",
           "severity": "ERROR"
         },
         {
-          "timestamp": "2026-01-10T11:00:09.108384Z",
-          "message": "Traceback (most recent call last):\n  File \"/app/manage.py\", line 22, in <module>\n    main()\n  File \"/app/manage.py\", line 18, in main\n    execute_from_command_line(sys.argv)\n  File \"/usr/local/lib/python3.11/site-packages/django/core/management/__init__.py\", line 442, in execute_from_command_line\n  ...",
+          "timestamp": "2026-01-11T03:13:48.921970Z",
+          "message": "{}",
           "severity": "ERROR"
         },
         {
-          "timestamp": "2026-01-10T11:00:09.084487Z",
-          "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 288, in ensure_connection\n    self.connect()\n  File \"/usr/local/lib/python3.11/site-packages/django/utils/asyncio.py\", line 26, in inner\n    return func(*args, **kwargs)\n        ...",
+          "timestamp": "2026-01-11T03:12:37.602189Z",
+          "message": "{}",
           "severity": "ERROR"
         }
       ]
     },
     "deployments": {
-      "total": 21,
-      "last24h": 18,
-      "last7d": 21,
-      "lastDeployment": "2026-01-11T02:02:32.756060Z",
+      "total": 30,
+      "last24h": 26,
+      "last7d": 30,
+      "lastDeployment": "2026-01-11T03:26:35.765987Z",
       "recentDeployments": [
         {
-          "revision": "novapcr-app-00104-d2h",
-          "timestamp": "2026-01-11T02:02:32.756060Z",
+          "revision": "novapcr-app-00113-47r",
+          "timestamp": "2026-01-11T03:26:35.765987Z",
           "status": "True"
         },
         {
-          "revision": "novapcr-app-00103-pfn",
-          "timestamp": "2026-01-11T01:50:41.584626Z",
+          "revision": "novapcr-app-00112-8vc",
+          "timestamp": "2026-01-11T03:23:14.879329Z",
           "status": "True"
         },
         {
-          "revision": "novapcr-app-00102-pw6",
-          "timestamp": "2026-01-11T01:25:46.865756Z",
+          "revision": "novapcr-app-00111-zwp",
+          "timestamp": "2026-01-11T03:19:47.790970Z",
           "status": "True"
         },
         {
-          "revision": "novapcr-app-00101-d5q",
-          "timestamp": "2026-01-11T00:50:02.360570Z",
+          "revision": "novapcr-app-00110-qt6",
+          "timestamp": "2026-01-11T03:16:07.179080Z",
           "status": "True"
         },
         {
-          "revision": "novapcr-app-00100-92l",
-          "timestamp": "2026-01-10T14:12:17.978700Z",
+          "revision": "novapcr-app-00109-wqq",
+          "timestamp": "2026-01-11T03:10:36.818218Z",
           "status": "True"
         }
       ]
     },
     "metrics": {
-      "errors5xx": 10,
+      "errors5xx": 12,
       "errors4xx": 0,
-      "avgLatencyMs": 8308
+      "avgLatencyMs": 8227
     },
     "interactions": {
-      "requests7d": 535,
-      "requests30d": 535
+      "requests7d": 583,
+      "requests30d": 583
     },
     "costEstimate": {
-      "estimatedMonthly": 0.71,
-      "cpuCost": 0.68,
+      "estimatedMonthly": 0.77,
+      "cpuCost": 0.73,
       "memoryCost": 0.04,
       "requestCost": 0.0,
-      "estimatedRequests": 2300,
-      "avgLatencyMs": 6115,
+      "estimatedRequests": 2506,
+      "avgLatencyMs": 6058,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
       "note": "Estimacion incluye cold starts y overhead tipico",
@@ -1398,7 +1388,7 @@
       "usesConsolidatedDb": true,
       "hasDedicatedDb": false,
       "dedicatedDbName": null,
-      "totalWithSql": 2.02
+      "totalWithSql": 2.08
     }
   },
   {
@@ -1489,15 +1479,15 @@
       "avgLatencyMs": 0
     },
     "interactions": {
-      "requests7d": 1041,
-      "requests30d": 1041
+      "requests7d": 941,
+      "requests30d": 941
     },
     "costEstimate": {
-      "estimatedMonthly": 0.15,
-      "cpuCost": 0.14,
+      "estimatedMonthly": 0.14,
+      "cpuCost": 0.13,
       "memoryCost": 0.01,
       "requestCost": 0.0,
-      "estimatedRequests": 4476,
+      "estimatedRequests": 4046,
       "avgLatencyMs": 650,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -1506,7 +1496,7 @@
       "usesConsolidatedDb": false,
       "hasDedicatedDb": true,
       "dedicatedDbName": "rgd-aire-db",
-      "totalWithSql": 9.52
+      "totalWithSql": 9.51
     }
   },
   {
@@ -1638,15 +1628,15 @@
       "avgLatencyMs": 0
     },
     "interactions": {
-      "requests7d": 22,
-      "requests30d": 22
+      "requests7d": 17,
+      "requests30d": 17
     },
     "costEstimate": {
       "estimatedMonthly": 0.0,
       "cpuCost": 0.0,
       "memoryCost": 0.0,
       "requestCost": 0.0,
-      "estimatedRequests": 94,
+      "estimatedRequests": 73,
       "avgLatencyMs": 650,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
