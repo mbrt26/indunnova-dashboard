@@ -801,23 +801,23 @@
     "repo": "https://github.com/mbrt26/GestionProveedoresISA",
     "repoName": "GestionProveedoresISA",
     "errors": {
-      "total": 349,
-      "last24h": 349,
-      "last7d": 349,
+      "total": 974,
+      "last24h": 974,
+      "last7d": 974,
       "recentErrors": [
         {
-          "timestamp": "2026-01-12T05:09:41.020367Z",
-          "message": "Cloud SQL connection failed. Please see https://cloud.google.com/sql/docs/mysql/connect-run, https://cloud.google.com/sql/docs/postgres/connect-run, or https://cloud.google.com/sql/docs/sqlserver/connect-run for additional details: fetch ephemeral cert failed: refresh error: create ephemeral cert fa...",
-          "severity": "ERROR"
-        },
-        {
-          "timestamp": "2026-01-12T05:09:36.899227Z",
+          "timestamp": "2026-01-12T06:05:09.504614Z",
           "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/channels/routing.py\", line 62, in __call__\n    return await application(scope, receive, send)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/channels/security/websoc...",
           "severity": "ERROR"
         },
         {
-          "timestamp": "2026-01-12T05:09:36.899154Z",
+          "timestamp": "2026-01-12T06:05:09.504549Z",
           "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 288, in ensure_connection\n    self.connect()\n  File \"/usr/local/lib/python3.11/site-packages/django/utils/asyncio.py\", line 26, in inner\n    return func(*args, **kwargs)\n        ...",
+          "severity": "ERROR"
+        },
+        {
+          "timestamp": "2026-01-12T06:05:09.504528Z",
+          "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/contrib/sessions/backends/base.py\", line 187, in _get_session\n    return self._session_cache\n           ^^^^^^^^^^^^^^^^^^^\nAttributeError: 'SessionStore' object has no attribute '_session_cache'",
           "severity": "ERROR"
         }
       ]
@@ -856,21 +856,21 @@
       ]
     },
     "metrics": {
-      "errors5xx": 479,
+      "errors5xx": 489,
       "errors4xx": 0,
-      "avgLatencyMs": 612
+      "avgLatencyMs": 540
     },
     "interactions": {
-      "requests7d": 6096,
-      "requests30d": 6096
+      "requests7d": 6094,
+      "requests30d": 6094
     },
     "costEstimate": {
-      "estimatedMonthly": 1.23,
-      "cpuCost": 1.15,
+      "estimatedMonthly": 1.13,
+      "cpuCost": 1.06,
       "memoryCost": 0.06,
       "requestCost": 0.01,
-      "estimatedRequests": 26212,
-      "avgLatencyMs": 912,
+      "estimatedRequests": 26204,
+      "avgLatencyMs": 840,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
       "note": "Estimacion incluye cold starts y overhead tipico",
@@ -878,7 +878,7 @@
       "usesConsolidatedDb": true,
       "hasDedicatedDb": false,
       "dedicatedDbName": null,
-      "totalWithSql": 1.23
+      "totalWithSql": 1.13
     }
   },
   {
@@ -1257,22 +1257,22 @@
     "repo": "https://github.com/mbrt26/NOVAPCR",
     "repoName": "NOVAPCR",
     "errors": {
-      "total": 651,
-      "last24h": 651,
-      "last7d": 651,
+      "total": 26,
+      "last24h": 26,
+      "last7d": 26,
       "recentErrors": [
         {
-          "timestamp": "2026-01-12T05:05:01.903315Z",
+          "timestamp": "2026-01-12T06:05:01.901030Z",
           "message": "Traceback (most recent call last):\n  File \"/app/sensores_iot/views.py\", line 1571, in cron_sync_y_alertas\n    resultado_sensores = sincronizar_y_detectar_paros()\n                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/app/sensores_iot/services.py\", line 479, in sincronizar_y_detectar_paros\n...",
           "severity": "ERROR"
         },
         {
-          "timestamp": "2026-01-12T05:05:01.903217Z",
+          "timestamp": "2026-01-12T06:05:01.900936Z",
           "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 288, in ensure_connection\n    self.connect()\n  File \"/usr/local/lib/python3.11/site-packages/django/utils/asyncio.py\", line 26, in inner\n    return func(*args, **kwargs)\n        ...",
           "severity": "ERROR"
         },
         {
-          "timestamp": "2026-01-12T05:05:01.894956Z",
+          "timestamp": "2026-01-12T06:05:01.898852Z",
           "message": "Cloud SQL connection failed. Please see https://cloud.google.com/sql/docs/mysql/connect-run, https://cloud.google.com/sql/docs/postgres/connect-run, or https://cloud.google.com/sql/docs/sqlserver/connect-run for additional details: fetch ephemeral cert failed: refresh error: create ephemeral cert fa...",
           "severity": "ERROR"
         }
@@ -1312,21 +1312,21 @@
       ]
     },
     "metrics": {
-      "errors5xx": 12,
+      "errors5xx": 11,
       "errors4xx": 0,
-      "avgLatencyMs": 353
+      "avgLatencyMs": 158
     },
     "interactions": {
-      "requests7d": 1065,
-      "requests30d": 1065
+      "requests7d": 1068,
+      "requests30d": 1068
     },
     "costEstimate": {
-      "estimatedMonthly": 0.15,
-      "cpuCost": 0.14,
+      "estimatedMonthly": 0.11,
+      "cpuCost": 0.1,
       "memoryCost": 0.01,
       "requestCost": 0.0,
-      "estimatedRequests": 4579,
-      "avgLatencyMs": 653,
+      "estimatedRequests": 4592,
+      "avgLatencyMs": 458,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
       "note": "Estimacion incluye cold starts y overhead tipico",
@@ -1334,7 +1334,7 @@
       "usesConsolidatedDb": true,
       "hasDedicatedDb": false,
       "dedicatedDbName": null,
-      "totalWithSql": 0.15
+      "totalWithSql": 0.11
     }
   },
   {
@@ -1420,21 +1420,21 @@
       ]
     },
     "metrics": {
-      "errors5xx": 9,
+      "errors5xx": 0,
       "errors4xx": 0,
-      "avgLatencyMs": 24884
+      "avgLatencyMs": 0
     },
     "interactions": {
       "requests7d": 1363,
       "requests30d": 1363
     },
     "costEstimate": {
-      "estimatedMonthly": 5.25,
-      "cpuCost": 4.98,
-      "memoryCost": 0.26,
+      "estimatedMonthly": 0.2,
+      "cpuCost": 0.18,
+      "memoryCost": 0.01,
       "requestCost": 0.0,
       "estimatedRequests": 5860,
-      "avgLatencyMs": 17718,
+      "avgLatencyMs": 650,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
       "note": "Estimacion incluye cold starts y overhead tipico",
@@ -1442,7 +1442,7 @@
       "usesConsolidatedDb": false,
       "hasDedicatedDb": true,
       "dedicatedDbName": "rgd-aire-db",
-      "totalWithSql": 5.25
+      "totalWithSql": 0.2
     }
   },
   {
@@ -1666,15 +1666,15 @@
       "avgLatencyMs": 0
     },
     "interactions": {
-      "requests7d": 2,
-      "requests30d": 2
+      "requests7d": 1,
+      "requests30d": 1
     },
     "costEstimate": {
       "estimatedMonthly": 0.0,
       "cpuCost": 0.0,
       "memoryCost": 0.0,
       "requestCost": 0.0,
-      "estimatedRequests": 8,
+      "estimatedRequests": 4,
       "avgLatencyMs": 650,
       "cpuCores": 0.1666,
       "memoryGiB": 0.25,
