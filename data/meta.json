@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-01-12T04:23:23.926742+00:00",
+  "lastUpdate": "2026-01-12T05:10:46.942728+00:00",
   "project": "appsindunnova",
   "totalServices": 37,
   "totalRepos": 45,
@@ -9,15 +9,15 @@
   "totalErrors7d": 1000,
   "totalDeployments24h": 41,
   "totalDeployments7d": 200,
-  "servicesWithErrors": 3,
+  "servicesWithErrors": 2,
   "costs": {
     "cloudRun": 0.19,
     "cloudSql": 59.35,
     "other": 55.04,
     "total": 114.58,
     "sqlInstances": {
-      "running": 3,
-      "stopped": 0
+      "running": 1,
+      "stopped": 2
     },
     "breakdown": {
       "artifactRegistry": 30.55,
@@ -43,27 +43,27 @@
     },
     {
       "name": "postgres-consolidated",
-      "state": "RUNNABLE",
+      "state": "STOPPED",
       "tier": "db-g1-small",
       "diskSizeGb": 50,
       "diskType": "PD_SSD",
       "region": "us-central1",
       "databaseVersion": "POSTGRES_15",
-      "computeCost": 25.55,
+      "computeCost": 0,
       "storageCost": 8.5,
-      "totalCost": 34.05
+      "totalCost": 8.5
     },
     {
       "name": "rgd-aire-db",
-      "state": "RUNNABLE",
+      "state": "STOPPED",
       "tier": "db-f1-micro",
       "diskSizeGb": 10,
       "diskType": "PD_SSD",
       "region": "us-central1",
       "databaseVersion": "POSTGRES_14",
-      "computeCost": 7.67,
+      "computeCost": 0,
       "storageCost": 1.7,
-      "totalCost": 9.37
+      "totalCost": 1.7
     }
   ]
 }
