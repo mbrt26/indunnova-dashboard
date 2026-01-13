@@ -13,9 +13,9 @@
       "recentErrors": []
     },
     "deployments": {
-      "total": 18,
+      "total": 16,
       "last24h": 2,
-      "last7d": 18,
+      "last7d": 16,
       "lastDeployment": "2026-01-12T23:14:03.403199Z",
       "recentDeployments": [
         {
@@ -51,15 +51,15 @@
       "avgLatencyMs": 0
     },
     "interactions": {
-      "requests7d": 20,
-      "requests30d": 20
+      "requests7d": 21,
+      "requests30d": 21
     },
     "costEstimate": {
       "estimatedMonthly": 0.0,
       "cpuCost": 0.0,
       "memoryCost": 0.0,
       "requestCost": 0.0,
-      "estimatedRequests": 86,
+      "estimatedRequests": 90,
       "avgLatencyMs": 650,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -79,17 +79,43 @@
     "repo": "https://github.com/mbrt26/carnesdelsebastian",
     "repoName": "carnesdelsebastian",
     "errors": {
-      "total": 0,
-      "last24h": 0,
-      "last7d": 0,
-      "recentErrors": []
+      "total": 3,
+      "last24h": 3,
+      "last7d": 3,
+      "recentErrors": [
+        {
+          "timestamp": "2026-01-13T13:01:17.672383Z",
+          "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/core/handlers/exception.py\", line 55, in inner\n    response = get_response(request)\n               ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/core/handlers/base.py\", line 197, ...",
+          "severity": "ERROR"
+        },
+        {
+          "timestamp": "2026-01-13T13:01:17.672332Z",
+          "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/utils.py\", line 89, in _execute\n    return self.cursor.execute(sql, params)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\npsycopg2.errors.StringDataRightTruncation: value too long for type character v...",
+          "severity": "ERROR"
+        },
+        {
+          "timestamp": "2026-01-13T13:01:17.547865Z",
+          "message": "{}",
+          "severity": "ERROR"
+        }
+      ]
     },
     "deployments": {
-      "total": 14,
-      "last24h": 5,
-      "last7d": 14,
-      "lastDeployment": "2026-01-13T02:07:52.131624Z",
+      "total": 16,
+      "last24h": 7,
+      "last7d": 16,
+      "lastDeployment": "2026-01-13T13:02:51.126921Z",
       "recentDeployments": [
+        {
+          "revision": "carnesdelsebastian-00335-q9l",
+          "timestamp": "2026-01-13T13:02:51.126921Z",
+          "status": "True"
+        },
+        {
+          "revision": "carnesdelsebastian-00334-jgg",
+          "timestamp": "2026-01-13T12:46:37.409257Z",
+          "status": "True"
+        },
         {
           "revision": "carnesdelsebastian-00333-hn2",
           "timestamp": "2026-01-13T02:07:52.131624Z",
@@ -104,35 +130,25 @@
           "revision": "carnesdelsebastian-00331-jk7",
           "timestamp": "2026-01-12T19:24:07.896176Z",
           "status": "True"
-        },
-        {
-          "revision": "carnesdelsebastian-00330-9d6",
-          "timestamp": "2026-01-12T19:18:28.435265Z",
-          "status": "True"
-        },
-        {
-          "revision": "carnesdelsebastian-00329-spq",
-          "timestamp": "2026-01-12T18:12:11.054891Z",
-          "status": "True"
         }
       ]
     },
     "metrics": {
-      "errors5xx": 0,
+      "errors5xx": 1,
       "errors4xx": 0,
-      "avgLatencyMs": 0
+      "avgLatencyMs": 120
     },
     "interactions": {
-      "requests7d": 355,
-      "requests30d": 355
+      "requests7d": 676,
+      "requests30d": 676
     },
     "costEstimate": {
-      "estimatedMonthly": 0.11,
-      "cpuCost": 0.1,
+      "estimatedMonthly": 0.13,
+      "cpuCost": 0.12,
       "memoryCost": 0.01,
       "requestCost": 0.0,
-      "estimatedRequests": 1526,
-      "avgLatencyMs": 650,
+      "estimatedRequests": 2906,
+      "avgLatencyMs": 420,
       "cpuCores": 2.0,
       "memoryGiB": 2.0,
       "note": "Estimacion incluye cold starts y overhead tipico",
@@ -140,7 +156,7 @@
       "usesConsolidatedDb": true,
       "hasDedicatedDb": false,
       "dedicatedDbName": null,
-      "totalWithSql": 1.42
+      "totalWithSql": 1.44
     }
   },
   {
@@ -278,15 +294,15 @@
       "avgLatencyMs": 0
     },
     "interactions": {
-      "requests7d": 162,
-      "requests30d": 162
+      "requests7d": 186,
+      "requests30d": 186
     },
     "costEstimate": {
-      "estimatedMonthly": 0.02,
+      "estimatedMonthly": 0.03,
       "cpuCost": 0.02,
       "memoryCost": 0.0,
       "requestCost": 0.0,
-      "estimatedRequests": 696,
+      "estimatedRequests": 799,
       "avgLatencyMs": 650,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -295,7 +311,7 @@
       "usesConsolidatedDb": true,
       "hasDedicatedDb": false,
       "dedicatedDbName": null,
-      "totalWithSql": 1.33
+      "totalWithSql": 1.34
     }
   },
   {
@@ -402,15 +418,15 @@
       "avgLatencyMs": 0
     },
     "interactions": {
-      "requests7d": 1723,
-      "requests30d": 1723
+      "requests7d": 1813,
+      "requests30d": 1813
     },
     "costEstimate": {
-      "estimatedMonthly": 0.25,
-      "cpuCost": 0.23,
+      "estimatedMonthly": 0.26,
+      "cpuCost": 0.24,
       "memoryCost": 0.01,
       "requestCost": 0.0,
-      "estimatedRequests": 7408,
+      "estimatedRequests": 7795,
       "avgLatencyMs": 650,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -419,7 +435,7 @@
       "usesConsolidatedDb": false,
       "hasDedicatedDb": false,
       "dedicatedDbName": null,
-      "totalWithSql": 0.25
+      "totalWithSql": 0.26
     }
   },
   {
@@ -506,15 +522,15 @@
       "avgLatencyMs": 0
     },
     "interactions": {
-      "requests7d": 22,
-      "requests30d": 22
+      "requests7d": 35,
+      "requests30d": 35
     },
     "costEstimate": {
-      "estimatedMonthly": 0.0,
+      "estimatedMonthly": 0.01,
       "cpuCost": 0.0,
       "memoryCost": 0.0,
       "requestCost": 0.0,
-      "estimatedRequests": 94,
+      "estimatedRequests": 150,
       "avgLatencyMs": 650,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -523,7 +539,7 @@
       "usesConsolidatedDb": true,
       "hasDedicatedDb": false,
       "dedicatedDbName": null,
-      "totalWithSql": 1.31
+      "totalWithSql": 1.32
     }
   },
   {
@@ -823,15 +839,15 @@
       "avgLatencyMs": 0
     },
     "interactions": {
-      "requests7d": 18,
-      "requests30d": 18
+      "requests7d": 46,
+      "requests30d": 46
     },
     "costEstimate": {
-      "estimatedMonthly": 0.0,
-      "cpuCost": 0.0,
+      "estimatedMonthly": 0.01,
+      "cpuCost": 0.01,
       "memoryCost": 0.0,
       "requestCost": 0.0,
-      "estimatedRequests": 77,
+      "estimatedRequests": 197,
       "avgLatencyMs": 650,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -840,7 +856,7 @@
       "usesConsolidatedDb": true,
       "hasDedicatedDb": false,
       "dedicatedDbName": null,
-      "totalWithSql": 1.31
+      "totalWithSql": 1.32
     }
   },
   {
@@ -897,9 +913,9 @@
     "repo": "https://github.com/mbrt26/GestionProveedoresISA",
     "repoName": "GestionProveedoresISA",
     "errors": {
-      "total": 969,
-      "last24h": 969,
-      "last7d": 969,
+      "total": 966,
+      "last24h": 966,
+      "last7d": 966,
       "recentErrors": [
         {
           "timestamp": "2026-01-13T11:03:24.737171Z",
@@ -952,21 +968,21 @@
       ]
     },
     "metrics": {
-      "errors5xx": 487,
+      "errors5xx": 486,
       "errors4xx": 0,
-      "avgLatencyMs": 585
+      "avgLatencyMs": 584
     },
     "interactions": {
-      "requests7d": 6501,
-      "requests30d": 6501
+      "requests7d": 5891,
+      "requests30d": 5891
     },
     "costEstimate": {
-      "estimatedMonthly": 1.27,
-      "cpuCost": 1.19,
+      "estimatedMonthly": 1.15,
+      "cpuCost": 1.07,
       "memoryCost": 0.06,
       "requestCost": 0.01,
-      "estimatedRequests": 27954,
-      "avgLatencyMs": 885,
+      "estimatedRequests": 25331,
+      "avgLatencyMs": 884,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
       "note": "Estimacion incluye cold starts y overhead tipico",
@@ -974,7 +990,7 @@
       "usesConsolidatedDb": true,
       "hasDedicatedDb": false,
       "dedicatedDbName": null,
-      "totalWithSql": 2.58
+      "totalWithSql": 2.46
     }
   },
   {
@@ -1009,15 +1025,15 @@
       "avgLatencyMs": 0
     },
     "interactions": {
-      "requests7d": 6,
-      "requests30d": 6
+      "requests7d": 10,
+      "requests30d": 10
     },
     "costEstimate": {
       "estimatedMonthly": 0.0,
       "cpuCost": 0.0,
       "memoryCost": 0.0,
       "requestCost": 0.0,
-      "estimatedRequests": 25,
+      "estimatedRequests": 43,
       "avgLatencyMs": 650,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -1461,15 +1477,15 @@
       "avgLatencyMs": 4693
     },
     "interactions": {
-      "requests7d": 410,
-      "requests30d": 410
+      "requests7d": 441,
+      "requests30d": 441
     },
     "costEstimate": {
-      "estimatedMonthly": 0.32,
-      "cpuCost": 0.3,
+      "estimatedMonthly": 0.34,
+      "cpuCost": 0.33,
       "memoryCost": 0.02,
       "requestCost": 0.0,
-      "estimatedRequests": 1763,
+      "estimatedRequests": 1896,
       "avgLatencyMs": 3585,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -1478,7 +1494,7 @@
       "usesConsolidatedDb": true,
       "hasDedicatedDb": false,
       "dedicatedDbName": null,
-      "totalWithSql": 1.63
+      "totalWithSql": 1.65
     }
   },
   {
@@ -1579,15 +1595,15 @@
       "avgLatencyMs": 0
     },
     "interactions": {
-      "requests7d": 494,
-      "requests30d": 494
+      "requests7d": 592,
+      "requests30d": 592
     },
     "costEstimate": {
-      "estimatedMonthly": 0.07,
-      "cpuCost": 0.07,
+      "estimatedMonthly": 0.09,
+      "cpuCost": 0.08,
       "memoryCost": 0.0,
       "requestCost": 0.0,
-      "estimatedRequests": 2124,
+      "estimatedRequests": 2545,
       "avgLatencyMs": 650,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -1596,7 +1612,7 @@
       "usesConsolidatedDb": false,
       "hasDedicatedDb": true,
       "dedicatedDbName": "rgd-aire-db",
-      "totalWithSql": 9.44
+      "totalWithSql": 9.46
     }
   },
   {
