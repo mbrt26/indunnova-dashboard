@@ -14,10 +14,15 @@
     },
     "deployments": {
       "total": 16,
-      "last24h": 2,
+      "last24h": 3,
       "last7d": 16,
-      "lastDeployment": "2026-01-12T23:14:03.403199Z",
+      "lastDeployment": "2026-01-13T15:00:48.684121Z",
       "recentDeployments": [
+        {
+          "revision": "arcopack-erp-00398-zzt",
+          "timestamp": "2026-01-13T15:00:48.684121Z",
+          "status": "True"
+        },
         {
           "revision": "arcopack-erp-00397-qbp",
           "timestamp": "2026-01-12T23:14:03.403199Z",
@@ -36,11 +41,6 @@
         {
           "revision": "arcopack-erp-00394-rbd",
           "timestamp": "2026-01-09T21:16:59.929661Z",
-          "status": "True"
-        },
-        {
-          "revision": "arcopack-erp-00393-8j5",
-          "timestamp": "2026-01-09T21:04:01.581757Z",
           "status": "True"
         }
       ]
@@ -381,7 +381,7 @@
     },
     "deployments": {
       "total": 46,
-      "last24h": 30,
+      "last24h": 24,
       "last7d": 46,
       "lastDeployment": "2026-01-13T03:39:20.907987Z",
       "recentDeployments": [
@@ -839,15 +839,15 @@
       "avgLatencyMs": 0
     },
     "interactions": {
-      "requests7d": 72,
-      "requests30d": 72
+      "requests7d": 125,
+      "requests30d": 125
     },
     "costEstimate": {
-      "estimatedMonthly": 0.01,
-      "cpuCost": 0.01,
+      "estimatedMonthly": 0.02,
+      "cpuCost": 0.02,
       "memoryCost": 0.0,
       "requestCost": 0.0,
-      "estimatedRequests": 309,
+      "estimatedRequests": 537,
       "avgLatencyMs": 650,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -856,7 +856,7 @@
       "usesConsolidatedDb": true,
       "hasDedicatedDb": false,
       "dedicatedDbName": null,
-      "totalWithSql": 1.32
+      "totalWithSql": 1.33
     }
   },
   {
@@ -913,23 +913,23 @@
     "repo": "https://github.com/mbrt26/GestionProveedoresISA",
     "repoName": "GestionProveedoresISA",
     "errors": {
-      "total": 966,
-      "last24h": 966,
-      "last7d": 966,
+      "total": 955,
+      "last24h": 955,
+      "last7d": 955,
       "recentErrors": [
         {
-          "timestamp": "2026-01-13T11:03:24.737171Z",
-          "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/channels/routing.py\", line 62, in __call__\n    return await application(scope, receive, send)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/channels/security/websoc...",
+          "timestamp": "2026-01-13T15:06:35.812744Z",
+          "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/asgiref/sync.py\", line 555, in thread_handler\n    raise exc_info[1]\n  File \"/usr/local/lib/python3.11/site-packages/django/core/handlers/exception.py\", line 42, in inner\n    response = await get_response(request)\n    ...",
           "severity": "ERROR"
         },
         {
-          "timestamp": "2026-01-13T11:03:24.737016Z",
-          "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 288, in ensure_connection\n    self.connect()\n  File \"/usr/local/lib/python3.11/site-packages/django/utils/asyncio.py\", line 26, in inner\n    return func(*args, **kwargs)\n        ...",
+          "timestamp": "2026-01-13T15:06:32.037158Z",
+          "message": "{}",
           "severity": "ERROR"
         },
         {
-          "timestamp": "2026-01-13T11:03:24.736976Z",
-          "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/contrib/sessions/backends/base.py\", line 187, in _get_session\n    return self._session_cache\n           ^^^^^^^^^^^^^^^^^^^\nAttributeError: 'SessionStore' object has no attribute '_session_cache'",
+          "timestamp": "2026-01-13T15:06:13.249273Z",
+          "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/asgiref/sync.py\", line 555, in thread_handler\n    raise exc_info[1]\n  File \"/usr/local/lib/python3.11/site-packages/django/core/handlers/exception.py\", line 42, in inner\n    response = await get_response(request)\n    ...",
           "severity": "ERROR"
         }
       ]
@@ -968,21 +968,21 @@
       ]
     },
     "metrics": {
-      "errors5xx": 486,
+      "errors5xx": 483,
       "errors4xx": 0,
-      "avgLatencyMs": 584
+      "avgLatencyMs": 588
     },
     "interactions": {
-      "requests7d": 5802,
-      "requests30d": 5802
+      "requests7d": 5522,
+      "requests30d": 5522
     },
     "costEstimate": {
-      "estimatedMonthly": 1.13,
-      "cpuCost": 1.06,
-      "memoryCost": 0.06,
+      "estimatedMonthly": 1.08,
+      "cpuCost": 1.01,
+      "memoryCost": 0.05,
       "requestCost": 0.01,
-      "estimatedRequests": 24948,
-      "avgLatencyMs": 884,
+      "estimatedRequests": 23744,
+      "avgLatencyMs": 888,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
       "note": "Estimacion incluye cold starts y overhead tipico",
@@ -990,7 +990,7 @@
       "usesConsolidatedDb": true,
       "hasDedicatedDb": false,
       "dedicatedDbName": null,
-      "totalWithSql": 2.44
+      "totalWithSql": 2.39
     }
   },
   {
@@ -1025,15 +1025,15 @@
       "avgLatencyMs": 0
     },
     "interactions": {
-      "requests7d": 11,
-      "requests30d": 11
+      "requests7d": 45,
+      "requests30d": 45
     },
     "costEstimate": {
-      "estimatedMonthly": 0.0,
-      "cpuCost": 0.0,
+      "estimatedMonthly": 0.01,
+      "cpuCost": 0.01,
       "memoryCost": 0.0,
       "requestCost": 0.0,
-      "estimatedRequests": 47,
+      "estimatedRequests": 193,
       "avgLatencyMs": 650,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -1042,7 +1042,7 @@
       "usesConsolidatedDb": true,
       "hasDedicatedDb": false,
       "dedicatedDbName": null,
-      "totalWithSql": 1.31
+      "totalWithSql": 1.32
     }
   },
   {
@@ -1209,10 +1209,21 @@
     "repo": "https://github.com/mbrt26/Logiempresas",
     "repoName": "Logiempresas",
     "errors": {
-      "total": 0,
-      "last24h": 0,
-      "last7d": 0,
-      "recentErrors": []
+      "total": 2,
+      "last24h": 2,
+      "last7d": 2,
+      "recentErrors": [
+        {
+          "timestamp": "2026-01-13T15:11:00.813458Z",
+          "message": "Traceback (most recent call last):\n  File \"/app/manage.py\", line 22, in <module>\n    main()\n  File \"/app/manage.py\", line 18, in main\n    execute_from_command_line(sys.argv)\n  File \"/usr/local/lib/python3.11/site-packages/django/core/management/__init__.py\", line 442, in execute_from_command_line\n  ...",
+          "severity": "ERROR"
+        },
+        {
+          "timestamp": "2026-01-13T15:11:00.782987Z",
+          "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/utils.py\", line 87, in _execute\n    return self.cursor.execute(sql)\n           ^^^^^^^^^^^^^^^^^^^^^^^^\npsycopg2.errors.DuplicateTable: relation \"notificaciones_configuracionnotificacion\" already ex...",
+          "severity": "ERROR"
+        }
+      ]
     },
     "deployments": {
       "total": 1,
@@ -1233,15 +1244,15 @@
       "avgLatencyMs": 0
     },
     "interactions": {
-      "requests7d": 13,
-      "requests30d": 13
+      "requests7d": 18,
+      "requests30d": 18
     },
     "costEstimate": {
       "estimatedMonthly": 0.0,
       "cpuCost": 0.0,
       "memoryCost": 0.0,
       "requestCost": 0.0,
-      "estimatedRequests": 55,
+      "estimatedRequests": 77,
       "avgLatencyMs": 650,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -1313,10 +1324,26 @@
     "repo": "https://github.com/mbrt26/MoldesyMecanizados",
     "repoName": "MoldesyMecanizados",
     "errors": {
-      "total": 0,
-      "last24h": 0,
-      "last7d": 0,
-      "recentErrors": []
+      "total": 13,
+      "last24h": 13,
+      "last7d": 13,
+      "recentErrors": [
+        {
+          "timestamp": "2026-01-13T15:11:15.302698Z",
+          "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/core/handlers/exception.py\", line 55, in inner\n    response = get_response(request)\n               ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/core/handlers/base.py\", line 197, ...",
+          "severity": "ERROR"
+        },
+        {
+          "timestamp": "2026-01-13T14:40:47.866732Z",
+          "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/core/handlers/exception.py\", line 55, in inner\n    response = get_response(request)\n               ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/core/handlers/base.py\", line 197, ...",
+          "severity": "ERROR"
+        },
+        {
+          "timestamp": "2026-01-13T14:40:47.866687Z",
+          "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/utils.py\", line 89, in _execute\n    return self.cursor.execute(sql, params)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\npsycopg2.errors.UniqueViolation: duplicate key value violates unique constrain...",
+          "severity": "ERROR"
+        }
+      ]
     },
     "deployments": {
       "total": 1,
@@ -1332,21 +1359,21 @@
       ]
     },
     "metrics": {
-      "errors5xx": 0,
+      "errors5xx": 3,
       "errors4xx": 0,
-      "avgLatencyMs": 0
+      "avgLatencyMs": 62
     },
     "interactions": {
-      "requests7d": 6,
-      "requests30d": 6
+      "requests7d": 121,
+      "requests30d": 121
     },
     "costEstimate": {
-      "estimatedMonthly": 0.0,
-      "cpuCost": 0.0,
+      "estimatedMonthly": 0.01,
+      "cpuCost": 0.01,
       "memoryCost": 0.0,
       "requestCost": 0.0,
-      "estimatedRequests": 25,
-      "avgLatencyMs": 650,
+      "estimatedRequests": 520,
+      "avgLatencyMs": 400,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
       "note": "Estimacion incluye cold starts y overhead tipico",
@@ -1354,7 +1381,7 @@
       "usesConsolidatedDb": true,
       "hasDedicatedDb": false,
       "dedicatedDbName": null,
-      "totalWithSql": 1.31
+      "totalWithSql": 1.32
     }
   },
   {
@@ -1417,9 +1444,9 @@
     "repo": "https://github.com/mbrt26/NOVAPCR",
     "repoName": "NOVAPCR",
     "errors": {
-      "total": 31,
-      "last24h": 31,
-      "last7d": 31,
+      "total": 27,
+      "last24h": 27,
+      "last7d": 27,
       "recentErrors": [
         {
           "timestamp": "2026-01-13T12:00:01.798553Z",
@@ -1477,15 +1504,15 @@
       "avgLatencyMs": 4693
     },
     "interactions": {
-      "requests7d": 459,
-      "requests30d": 459
+      "requests7d": 463,
+      "requests30d": 463
     },
     "costEstimate": {
       "estimatedMonthly": 0.36,
       "cpuCost": 0.34,
       "memoryCost": 0.02,
       "requestCost": 0.0,
-      "estimatedRequests": 1973,
+      "estimatedRequests": 1990,
       "avgLatencyMs": 3585,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -1595,15 +1622,15 @@
       "avgLatencyMs": 0
     },
     "interactions": {
-      "requests7d": 620,
-      "requests30d": 620
+      "requests7d": 688,
+      "requests30d": 688
     },
     "costEstimate": {
-      "estimatedMonthly": 0.09,
-      "cpuCost": 0.08,
+      "estimatedMonthly": 0.1,
+      "cpuCost": 0.09,
       "memoryCost": 0.0,
       "requestCost": 0.0,
-      "estimatedRequests": 2666,
+      "estimatedRequests": 2958,
       "avgLatencyMs": 650,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -1612,7 +1639,7 @@
       "usesConsolidatedDb": false,
       "hasDedicatedDb": true,
       "dedicatedDbName": "rgd-aire-db",
-      "totalWithSql": 9.46
+      "totalWithSql": 9.47
     }
   },
   {
@@ -1923,15 +1950,15 @@
       "avgLatencyMs": 0
     },
     "interactions": {
-      "requests7d": 34,
-      "requests30d": 34
+      "requests7d": 35,
+      "requests30d": 35
     },
     "costEstimate": {
       "estimatedMonthly": 0.0,
       "cpuCost": 0.0,
       "memoryCost": 0.0,
       "requestCost": 0.0,
-      "estimatedRequests": 146,
+      "estimatedRequests": 150,
       "avgLatencyMs": 650,
       "cpuCores": 0.3333,
       "memoryGiB": 0.5,
