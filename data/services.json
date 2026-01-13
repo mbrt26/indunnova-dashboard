@@ -51,15 +51,15 @@
       "avgLatencyMs": 0
     },
     "interactions": {
-      "requests7d": 19,
-      "requests30d": 19
+      "requests7d": 20,
+      "requests30d": 20
     },
     "costEstimate": {
       "estimatedMonthly": 0.0,
       "cpuCost": 0.0,
       "memoryCost": 0.0,
       "requestCost": 0.0,
-      "estimatedRequests": 81,
+      "estimatedRequests": 86,
       "avgLatencyMs": 650,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -85,11 +85,16 @@
       "recentErrors": []
     },
     "deployments": {
-      "total": 13,
-      "last24h": 4,
-      "last7d": 13,
-      "lastDeployment": "2026-01-12T21:03:12.730112Z",
+      "total": 14,
+      "last24h": 5,
+      "last7d": 14,
+      "lastDeployment": "2026-01-13T02:07:52.131624Z",
       "recentDeployments": [
+        {
+          "revision": "carnesdelsebastian-00333-hn2",
+          "timestamp": "2026-01-13T02:07:52.131624Z",
+          "status": "True"
+        },
         {
           "revision": "carnesdelsebastian-00332-c8g",
           "timestamp": "2026-01-12T21:03:12.730112Z",
@@ -108,11 +113,6 @@
         {
           "revision": "carnesdelsebastian-00329-spq",
           "timestamp": "2026-01-12T18:12:11.054891Z",
-          "status": "True"
-        },
-        {
-          "revision": "carnesdelsebastian-00328-485",
-          "timestamp": "2026-01-10T14:41:14.352715Z",
           "status": "True"
         }
       ]
@@ -203,11 +203,17 @@
       "recentErrors": []
     },
     "deployments": {
-      "total": 0,
-      "last24h": 0,
-      "last7d": 0,
-      "lastDeployment": null,
-      "recentDeployments": []
+      "total": 1,
+      "last24h": 1,
+      "last7d": 1,
+      "lastDeployment": "2026-01-13T01:14:48.039035Z",
+      "recentDeployments": [
+        {
+          "revision": "codeta-crm-00002-wtb",
+          "timestamp": "2026-01-13T01:14:48.039035Z",
+          "status": "True"
+        }
+      ]
     },
     "metrics": {
       "errors5xx": 0,
@@ -322,11 +328,17 @@
       "recentErrors": []
     },
     "deployments": {
-      "total": 0,
-      "last24h": 0,
-      "last7d": 0,
-      "lastDeployment": null,
-      "recentDeployments": []
+      "total": 1,
+      "last24h": 1,
+      "last7d": 1,
+      "lastDeployment": "2026-01-13T01:18:57.023836Z",
+      "recentDeployments": [
+        {
+          "revision": "colsegur-00015-f88",
+          "timestamp": "2026-01-13T01:18:57.023836Z",
+          "status": "True"
+        }
+      ]
     },
     "metrics": {
       "errors5xx": 0,
@@ -362,40 +374,108 @@
     "repo": null,
     "repoName": null,
     "errors": {
+      "total": 6,
+      "last24h": 6,
+      "last7d": 6,
+      "recentErrors": [
+        {
+          "timestamp": "2026-01-13T01:18:55.192766Z",
+          "message": "{}",
+          "severity": "ERROR"
+        },
+        {
+          "timestamp": "2026-01-13T01:18:55.191587Z",
+          "message": "{}",
+          "severity": "ERROR"
+        },
+        {
+          "timestamp": "2026-01-13T01:18:55.187183Z",
+          "message": "{}",
+          "severity": "ERROR"
+        }
+      ]
+    },
+    "deployments": {
+      "total": 43,
+      "last24h": 28,
+      "last7d": 43,
+      "lastDeployment": "2026-01-13T02:52:24.738952Z",
+      "recentDeployments": [
+        {
+          "revision": "contabilidad-indunnova-00130-zvh",
+          "timestamp": "2026-01-13T02:52:24.738952Z",
+          "status": "True"
+        },
+        {
+          "revision": "contabilidad-indunnova-00129-vj6",
+          "timestamp": "2026-01-13T02:03:02.635608Z",
+          "status": "True"
+        },
+        {
+          "revision": "contabilidad-indunnova-00128-fzm",
+          "timestamp": "2026-01-13T01:52:54.994179Z",
+          "status": "True"
+        },
+        {
+          "revision": "contabilidad-indunnova-00127-fhk",
+          "timestamp": "2026-01-13T01:48:26.836616Z",
+          "status": "True"
+        },
+        {
+          "revision": "contabilidad-indunnova-00126-cd6",
+          "timestamp": "2026-01-13T01:41:41.073195Z",
+          "status": "True"
+        }
+      ]
+    },
+    "metrics": {
+      "errors5xx": 6,
+      "errors4xx": 0,
+      "avgLatencyMs": 2177
+    },
+    "interactions": {
+      "requests7d": 1888,
+      "requests30d": 1888
+    },
+    "costEstimate": {
+      "estimatedMonthly": 0.75,
+      "cpuCost": 0.71,
+      "memoryCost": 0.04,
+      "requestCost": 0.0,
+      "estimatedRequests": 8118,
+      "avgLatencyMs": 1823,
+      "cpuCores": 1.0,
+      "memoryGiB": 0.5,
+      "note": "Estimacion incluye cold starts y overhead tipico",
+      "sqlCostShare": 0,
+      "usesConsolidatedDb": false,
+      "hasDedicatedDb": false,
+      "dedicatedDbName": null,
+      "totalWithSql": 0.75
+    }
+  },
+  {
+    "name": "creaciones-apice",
+    "url": "https://creaciones-apice-381877373634.us-central1.run.app",
+    "status": "True",
+    "region": "us-central1",
+    "repo": null,
+    "repoName": null,
+    "errors": {
       "total": 0,
       "last24h": 0,
       "last7d": 0,
       "recentErrors": []
     },
     "deployments": {
-      "total": 39,
-      "last24h": 30,
-      "last7d": 39,
-      "lastDeployment": "2026-01-13T00:22:50.356379Z",
+      "total": 1,
+      "last24h": 1,
+      "last7d": 1,
+      "lastDeployment": "2026-01-13T01:20:23.272731Z",
       "recentDeployments": [
         {
-          "revision": "contabilidad-indunnova-00125-b6c",
-          "timestamp": "2026-01-13T00:22:50.356379Z",
-          "status": "True"
-        },
-        {
-          "revision": "contabilidad-indunnova-00124-4jm",
-          "timestamp": "2026-01-13T00:17:30.699098Z",
-          "status": "True"
-        },
-        {
-          "revision": "contabilidad-indunnova-00123-4z6",
-          "timestamp": "2026-01-13T00:07:11.761791Z",
-          "status": "True"
-        },
-        {
-          "revision": "contabilidad-indunnova-00122-xvc",
-          "timestamp": "2026-01-13T00:04:11.845513Z",
-          "status": "True"
-        },
-        {
-          "revision": "contabilidad-indunnova-00121-mg8",
-          "timestamp": "2026-01-12T23:10:47.025681Z",
+          "revision": "creaciones-apice-00001-b9v",
+          "timestamp": "2026-01-13T01:20:23.272731Z",
           "status": "True"
         }
       ]
@@ -406,15 +486,15 @@
       "avgLatencyMs": 0
     },
     "interactions": {
-      "requests7d": 1283,
-      "requests30d": 1283
+      "requests7d": 0,
+      "requests30d": 0
     },
     "costEstimate": {
-      "estimatedMonthly": 0.19,
-      "cpuCost": 0.17,
-      "memoryCost": 0.01,
+      "estimatedMonthly": 0.0,
+      "cpuCost": 0.0,
+      "memoryCost": 0.0,
       "requestCost": 0.0,
-      "estimatedRequests": 5516,
+      "estimatedRequests": 0,
       "avgLatencyMs": 650,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -423,7 +503,7 @@
       "usesConsolidatedDb": false,
       "hasDedicatedDb": false,
       "dedicatedDbName": null,
-      "totalWithSql": 0.19
+      "totalWithSql": 0.0
     }
   },
   {
@@ -440,11 +520,17 @@
       "recentErrors": []
     },
     "deployments": {
-      "total": 0,
-      "last24h": 0,
-      "last7d": 0,
-      "lastDeployment": null,
-      "recentDeployments": []
+      "total": 1,
+      "last24h": 1,
+      "last7d": 1,
+      "lastDeployment": "2026-01-13T01:50:51.139475Z",
+      "recentDeployments": [
+        {
+          "revision": "crm-contenedores-00054-jw9",
+          "timestamp": "2026-01-13T01:50:51.139475Z",
+          "status": "True"
+        }
+      ]
     },
     "metrics": {
       "errors5xx": 0,
@@ -452,15 +538,15 @@
       "avgLatencyMs": 0
     },
     "interactions": {
-      "requests7d": 15,
-      "requests30d": 15
+      "requests7d": 22,
+      "requests30d": 22
     },
     "costEstimate": {
       "estimatedMonthly": 0.0,
       "cpuCost": 0.0,
       "memoryCost": 0.0,
       "requestCost": 0.0,
-      "estimatedRequests": 64,
+      "estimatedRequests": 94,
       "avgLatencyMs": 650,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -486,11 +572,17 @@
       "recentErrors": []
     },
     "deployments": {
-      "total": 0,
-      "last24h": 0,
-      "last7d": 0,
-      "lastDeployment": null,
-      "recentDeployments": []
+      "total": 1,
+      "last24h": 1,
+      "last7d": 1,
+      "lastDeployment": "2026-01-13T01:22:24.257338Z",
+      "recentDeployments": [
+        {
+          "revision": "crm-ecourmet-00024-4nn",
+          "timestamp": "2026-01-13T01:22:24.257338Z",
+          "status": "True"
+        }
+      ]
     },
     "metrics": {
       "errors5xx": 0,
@@ -532,11 +624,17 @@
       "recentErrors": []
     },
     "deployments": {
-      "total": 0,
-      "last24h": 0,
-      "last7d": 0,
-      "lastDeployment": null,
-      "recentDeployments": []
+      "total": 1,
+      "last24h": 1,
+      "last7d": 1,
+      "lastDeployment": "2026-01-13T01:32:53.965500Z",
+      "recentDeployments": [
+        {
+          "revision": "crm-gyt-00004-6n7",
+          "timestamp": "2026-01-13T01:32:53.965500Z",
+          "status": "True"
+        }
+      ]
     },
     "metrics": {
       "errors5xx": 0,
@@ -578,11 +676,17 @@
       "recentErrors": []
     },
     "deployments": {
-      "total": 0,
-      "last24h": 0,
-      "last7d": 0,
-      "lastDeployment": null,
-      "recentDeployments": []
+      "total": 1,
+      "last24h": 1,
+      "last7d": 1,
+      "lastDeployment": "2026-01-13T01:42:13.061822Z",
+      "recentDeployments": [
+        {
+          "revision": "crm-komsa-00056-sm8",
+          "timestamp": "2026-01-13T01:42:13.061822Z",
+          "status": "True"
+        }
+      ]
     },
     "metrics": {
       "errors5xx": 0,
@@ -618,17 +722,39 @@
     "repo": null,
     "repoName": null,
     "errors": {
-      "total": 0,
-      "last24h": 0,
-      "last7d": 0,
-      "recentErrors": []
+      "total": 5,
+      "last24h": 5,
+      "last7d": 5,
+      "recentErrors": [
+        {
+          "timestamp": "2026-01-13T01:24:37.359530Z",
+          "message": "{}",
+          "severity": "ERROR"
+        },
+        {
+          "timestamp": "2026-01-13T01:24:37.261344Z",
+          "message": "{}",
+          "severity": "ERROR"
+        },
+        {
+          "timestamp": "2026-01-13T01:24:37.250915Z",
+          "message": "Default STARTUP TCP probe failed 1 time consecutively for container \"evaluacion-desempeno-inter-1\" on port 8080. The instance was not started.\nConnection failed with status CANCELLED.",
+          "severity": "ERROR"
+        }
+      ]
     },
     "deployments": {
-      "total": 0,
-      "last24h": 0,
-      "last7d": 0,
-      "lastDeployment": null,
-      "recentDeployments": []
+      "total": 1,
+      "last24h": 1,
+      "last7d": 1,
+      "lastDeployment": "2026-01-13T01:24:20.540751Z",
+      "recentDeployments": [
+        {
+          "revision": "evaluacion-desempeno-inter-00003-kfb",
+          "timestamp": "2026-01-13T01:24:20.540751Z",
+          "status": "False"
+        }
+      ]
     },
     "metrics": {
       "errors5xx": 0,
@@ -670,11 +796,16 @@
       "recentErrors": []
     },
     "deployments": {
-      "total": 25,
-      "last24h": 0,
-      "last7d": 25,
-      "lastDeployment": "2026-01-10T02:32:53.732581Z",
+      "total": 5,
+      "last24h": 1,
+      "last7d": 5,
+      "lastDeployment": "2026-01-13T01:28:54.456287Z",
       "recentDeployments": [
+        {
+          "revision": "formas-futuro-00046-s7v",
+          "timestamp": "2026-01-13T01:28:54.456287Z",
+          "status": "True"
+        },
         {
           "revision": "formas-futuro-00045-f8b",
           "timestamp": "2026-01-10T02:32:53.732581Z",
@@ -693,11 +824,6 @@
         {
           "revision": "formas-futuro-00042-8q6",
           "timestamp": "2026-01-09T12:03:12.688625Z",
-          "status": "True"
-        },
-        {
-          "revision": "formas-futuro-00041-xt8",
-          "timestamp": "2026-01-09T12:03:01.457160Z",
           "status": "True"
         }
       ]
@@ -834,9 +960,9 @@
     "repo": "https://github.com/mbrt26/GestionProveedoresISA",
     "repoName": "GestionProveedoresISA",
     "errors": {
-      "total": 773,
-      "last24h": 773,
-      "last7d": 773,
+      "total": 748,
+      "last24h": 748,
+      "last7d": 748,
       "recentErrors": [
         {
           "timestamp": "2026-01-12T19:14:42.908603Z",
@@ -856,11 +982,16 @@
       ]
     },
     "deployments": {
-      "total": 21,
-      "last24h": 0,
-      "last7d": 21,
-      "lastDeployment": "2026-01-11T03:25:47.377434Z",
+      "total": 18,
+      "last24h": 1,
+      "last7d": 18,
+      "lastDeployment": "2026-01-13T01:34:54.179511Z",
       "recentDeployments": [
+        {
+          "revision": "gestion-proveedores-isa-00081-tnd",
+          "timestamp": "2026-01-13T01:34:54.179511Z",
+          "status": "True"
+        },
         {
           "revision": "gestion-proveedores-isa-00080-2ch",
           "timestamp": "2026-01-11T03:25:47.377434Z",
@@ -880,30 +1011,25 @@
           "revision": "gestion-proveedores-isa-00077-tf4",
           "timestamp": "2026-01-11T02:55:18.991113Z",
           "status": "True"
-        },
-        {
-          "revision": "gestion-proveedores-isa-00076-85b",
-          "timestamp": "2026-01-11T02:38:19.117539Z",
-          "status": "True"
         }
       ]
     },
     "metrics": {
-      "errors5xx": 453,
+      "errors5xx": 439,
       "errors4xx": 0,
-      "avgLatencyMs": 600
+      "avgLatencyMs": 604
     },
     "interactions": {
-      "requests7d": 5861,
-      "requests30d": 5861
+      "requests7d": 5203,
+      "requests30d": 5203
     },
     "costEstimate": {
-      "estimatedMonthly": 1.17,
-      "cpuCost": 1.09,
-      "memoryCost": 0.06,
+      "estimatedMonthly": 1.04,
+      "cpuCost": 0.97,
+      "memoryCost": 0.05,
       "requestCost": 0.01,
-      "estimatedRequests": 25202,
-      "avgLatencyMs": 900,
+      "estimatedRequests": 22372,
+      "avgLatencyMs": 904,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
       "note": "Estimacion incluye cold starts y overhead tipico",
@@ -911,7 +1037,7 @@
       "usesConsolidatedDb": true,
       "hasDedicatedDb": false,
       "dedicatedDbName": null,
-      "totalWithSql": 2.48
+      "totalWithSql": 2.35
     }
   },
   {
@@ -928,11 +1054,17 @@
       "recentErrors": []
     },
     "deployments": {
-      "total": 0,
-      "last24h": 0,
-      "last7d": 0,
-      "lastDeployment": null,
-      "recentDeployments": []
+      "total": 1,
+      "last24h": 1,
+      "last7d": 1,
+      "lastDeployment": "2026-01-13T01:36:27.600001Z",
+      "recentDeployments": [
+        {
+          "revision": "hemisferio-erp-00023-qpq",
+          "timestamp": "2026-01-13T01:36:27.600001Z",
+          "status": "True"
+        }
+      ]
     },
     "metrics": {
       "errors5xx": 0,
@@ -974,11 +1106,17 @@
       "recentErrors": []
     },
     "deployments": {
-      "total": 0,
-      "last24h": 0,
-      "last7d": 0,
-      "lastDeployment": null,
-      "recentDeployments": []
+      "total": 1,
+      "last24h": 1,
+      "last7d": 1,
+      "lastDeployment": "2026-01-13T01:37:46.991015Z",
+      "recentDeployments": [
+        {
+          "revision": "huella-carbono-00011-hxg",
+          "timestamp": "2026-01-13T01:37:46.991015Z",
+          "status": "True"
+        }
+      ]
     },
     "metrics": {
       "errors5xx": 0,
@@ -1020,11 +1158,17 @@
       "recentErrors": []
     },
     "deployments": {
-      "total": 0,
-      "last24h": 0,
-      "last7d": 0,
-      "lastDeployment": null,
-      "recentDeployments": []
+      "total": 1,
+      "last24h": 1,
+      "last7d": 1,
+      "lastDeployment": "2026-01-13T01:37:46.991015Z",
+      "recentDeployments": [
+        {
+          "revision": "huella-carbono-00011-hxg",
+          "timestamp": "2026-01-13T01:37:46.991015Z",
+          "status": "True"
+        }
+      ]
     },
     "metrics": {
       "errors5xx": 0,
@@ -1066,11 +1210,17 @@
       "recentErrors": []
     },
     "deployments": {
-      "total": 0,
-      "last24h": 0,
-      "last7d": 0,
-      "lastDeployment": null,
-      "recentDeployments": []
+      "total": 1,
+      "last24h": 1,
+      "last7d": 1,
+      "lastDeployment": "2026-01-13T01:49:19.386624Z",
+      "recentDeployments": [
+        {
+          "revision": "jardin-botanico-00015-qsd",
+          "timestamp": "2026-01-13T01:49:19.386624Z",
+          "status": "True"
+        }
+      ]
     },
     "metrics": {
       "errors5xx": 0,
@@ -1106,17 +1256,34 @@
     "repo": "https://github.com/mbrt26/Logiempresas",
     "repoName": "Logiempresas",
     "errors": {
-      "total": 0,
-      "last24h": 0,
-      "last7d": 0,
-      "recentErrors": []
+      "total": 2,
+      "last24h": 2,
+      "last7d": 2,
+      "recentErrors": [
+        {
+          "timestamp": "2026-01-13T01:46:01.367794Z",
+          "message": "Traceback (most recent call last):\n  File \"/app/manage.py\", line 22, in <module>\n    main()\n  File \"/app/manage.py\", line 18, in main\n    execute_from_command_line(sys.argv)\n  File \"/usr/local/lib/python3.11/site-packages/django/core/management/__init__.py\", line 442, in execute_from_command_line\n  ...",
+          "severity": "ERROR"
+        },
+        {
+          "timestamp": "2026-01-13T01:46:01.335550Z",
+          "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/utils.py\", line 87, in _execute\n    return self.cursor.execute(sql)\n           ^^^^^^^^^^^^^^^^^^^^^^^^\npsycopg2.errors.DuplicateTable: relation \"notificaciones_configuracionnotificacion\" already ex...",
+          "severity": "ERROR"
+        }
+      ]
     },
     "deployments": {
-      "total": 0,
-      "last24h": 0,
-      "last7d": 0,
-      "lastDeployment": null,
-      "recentDeployments": []
+      "total": 1,
+      "last24h": 1,
+      "last7d": 1,
+      "lastDeployment": "2026-01-13T01:44:11.173677Z",
+      "recentDeployments": [
+        {
+          "revision": "logiempresas-00113-rzc",
+          "timestamp": "2026-01-13T01:44:11.173677Z",
+          "status": "True"
+        }
+      ]
     },
     "metrics": {
       "errors5xx": 0,
@@ -1158,11 +1325,17 @@
       "recentErrors": []
     },
     "deployments": {
-      "total": 0,
-      "last24h": 0,
-      "last7d": 0,
-      "lastDeployment": null,
-      "recentDeployments": []
+      "total": 1,
+      "last24h": 1,
+      "last7d": 1,
+      "lastDeployment": "2026-01-13T02:09:46.230487Z",
+      "recentDeployments": [
+        {
+          "revision": "mentes-estrategicas-00011-n7d",
+          "timestamp": "2026-01-13T02:09:46.230487Z",
+          "status": "True"
+        }
+      ]
     },
     "metrics": {
       "errors5xx": 0,
@@ -1204,11 +1377,17 @@
       "recentErrors": []
     },
     "deployments": {
-      "total": 0,
-      "last24h": 0,
-      "last7d": 0,
-      "lastDeployment": null,
-      "recentDeployments": []
+      "total": 1,
+      "last24h": 1,
+      "last7d": 1,
+      "lastDeployment": "2026-01-13T01:45:53.823402Z",
+      "recentDeployments": [
+        {
+          "revision": "moldes-mecanizados-app-00036-52k",
+          "timestamp": "2026-01-13T01:45:53.823402Z",
+          "status": "True"
+        }
+      ]
     },
     "metrics": {
       "errors5xx": 0,
@@ -1250,11 +1429,17 @@
       "recentErrors": []
     },
     "deployments": {
-      "total": 0,
-      "last24h": 0,
-      "last7d": 0,
-      "lastDeployment": null,
-      "recentDeployments": []
+      "total": 1,
+      "last24h": 1,
+      "last7d": 1,
+      "lastDeployment": "2026-01-13T01:49:22.210783Z",
+      "recentDeployments": [
+        {
+          "revision": "mouse-digital-00132-sgs",
+          "timestamp": "2026-01-13T01:49:22.210783Z",
+          "status": "True"
+        }
+      ]
     },
     "metrics": {
       "errors5xx": 0,
@@ -1290,10 +1475,15 @@
     "repo": "https://github.com/mbrt26/NOVAPCR",
     "repoName": "NOVAPCR",
     "errors": {
-      "total": 19,
-      "last24h": 19,
-      "last7d": 19,
+      "total": 20,
+      "last24h": 20,
+      "last7d": 20,
       "recentErrors": [
+        {
+          "timestamp": "2026-01-13T02:00:01.255093Z",
+          "message": "{}",
+          "severity": "ERROR"
+        },
         {
           "timestamp": "2026-01-12T22:00:02.704295Z",
           "message": "{}",
@@ -1303,20 +1493,20 @@
           "timestamp": "2026-01-12T19:10:01.889610Z",
           "message": "Traceback (most recent call last):\n  File \"/app/sensores_iot/views.py\", line 1571, in cron_sync_y_alertas\n    resultado_sensores = sincronizar_y_detectar_paros()\n                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/app/sensores_iot/services.py\", line 479, in sincronizar_y_detectar_paros\n...",
           "severity": "ERROR"
-        },
-        {
-          "timestamp": "2026-01-12T19:10:01.889528Z",
-          "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 288, in ensure_connection\n    self.connect()\n  File \"/usr/local/lib/python3.11/site-packages/django/utils/asyncio.py\", line 26, in inner\n    return func(*args, **kwargs)\n        ...",
-          "severity": "ERROR"
         }
       ]
     },
     "deployments": {
-      "total": 66,
-      "last24h": 0,
-      "last7d": 66,
-      "lastDeployment": "2026-01-11T23:56:21.827292Z",
+      "total": 67,
+      "last24h": 1,
+      "last7d": 67,
+      "lastDeployment": "2026-01-13T01:50:33.452124Z",
       "recentDeployments": [
+        {
+          "revision": "novapcr-app-00150-bv6",
+          "timestamp": "2026-01-13T01:50:33.452124Z",
+          "status": "True"
+        },
         {
           "revision": "novapcr-app-00149-qk8",
           "timestamp": "2026-01-11T23:56:21.827292Z",
@@ -1336,30 +1526,25 @@
           "revision": "novapcr-app-00146-vrl",
           "timestamp": "2026-01-11T23:23:40.727334Z",
           "status": "True"
-        },
-        {
-          "revision": "novapcr-app-00145-687",
-          "timestamp": "2026-01-11T23:04:09.593193Z",
-          "status": "True"
         }
       ]
     },
     "metrics": {
       "errors5xx": 11,
       "errors4xx": 0,
-      "avgLatencyMs": 5528
+      "avgLatencyMs": 10975
     },
     "interactions": {
-      "requests7d": 927,
-      "requests30d": 927
+      "requests7d": 937,
+      "requests30d": 937
     },
     "costEstimate": {
-      "estimatedMonthly": 0.84,
-      "cpuCost": 0.8,
-      "memoryCost": 0.04,
+      "estimatedMonthly": 1.63,
+      "cpuCost": 1.54,
+      "memoryCost": 0.08,
       "requestCost": 0.0,
-      "estimatedRequests": 3986,
-      "avgLatencyMs": 4169,
+      "estimatedRequests": 4029,
+      "avgLatencyMs": 7982,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
       "note": "Estimacion incluye cold starts y overhead tipico",
@@ -1367,7 +1552,7 @@
       "usesConsolidatedDb": true,
       "hasDedicatedDb": false,
       "dedicatedDbName": null,
-      "totalWithSql": 2.15
+      "totalWithSql": 2.94
     }
   },
   {
@@ -1424,9 +1609,9 @@
     "repo": "https://github.com/mbrt26/RGDAire",
     "repoName": "RGDAire",
     "errors": {
-      "total": 204,
-      "last24h": 204,
-      "last7d": 204,
+      "total": 189,
+      "last24h": 189,
+      "last7d": 189,
       "recentErrors": [
         {
           "timestamp": "2026-01-12T20:06:47.132294Z",
@@ -1484,15 +1669,15 @@
       "avgLatencyMs": 2292
     },
     "interactions": {
-      "requests7d": 1158,
-      "requests30d": 1158
+      "requests7d": 1180,
+      "requests30d": 1180
     },
     "costEstimate": {
-      "estimatedMonthly": 0.48,
+      "estimatedMonthly": 0.49,
       "cpuCost": 0.46,
       "memoryCost": 0.02,
       "requestCost": 0.0,
-      "estimatedRequests": 4979,
+      "estimatedRequests": 5074,
       "avgLatencyMs": 1904,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -1501,7 +1686,7 @@
       "usesConsolidatedDb": false,
       "hasDedicatedDb": true,
       "dedicatedDbName": "rgd-aire-db",
-      "totalWithSql": 9.85
+      "totalWithSql": 9.86
     }
   },
   {
@@ -1512,10 +1697,26 @@
     "repo": null,
     "repoName": null,
     "errors": {
-      "total": 0,
-      "last24h": 0,
-      "last7d": 0,
-      "recentErrors": []
+      "total": 26,
+      "last24h": 26,
+      "last7d": 26,
+      "recentErrors": [
+        {
+          "timestamp": "2026-01-13T01:51:10.663214Z",
+          "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.12/site-packages/gunicorn/arbiter.py\", line 608, in spawn_worker\n    worker.init_process()\n  File \"/usr/local/lib/python3.12/site-packages/gunicorn/workers/gthread.py\", line 94, in init_process\n    super().init_process()\n  File \"/usr/...",
+          "severity": "ERROR"
+        },
+        {
+          "timestamp": "2026-01-13T01:45:21.750703Z",
+          "message": "Traceback (most recent call last):\n  File \"/app/manage.py\", line 26, in <module>\n    main()\n  File \"/app/manage.py\", line 22, in main\n    execute_from_command_line(sys.argv)\n  File \"/usr/local/lib/python3.12/site-packages/django/core/management/__init__.py\", line 442, in execute_from_command_line\n  ...",
+          "severity": "ERROR"
+        },
+        {
+          "timestamp": "2026-01-13T01:45:18.407166Z",
+          "message": "Traceback (most recent call last):\n  File \"/app/manage.py\", line 26, in <module>\n    main()\n  File \"/app/manage.py\", line 22, in main\n    execute_from_command_line(sys.argv)\n  File \"/usr/local/lib/python3.12/site-packages/django/core/management/__init__.py\", line 442, in execute_from_command_line\n  ...",
+          "severity": "ERROR"
+        }
+      ]
     },
     "deployments": {
       "total": 0,
@@ -1525,21 +1726,21 @@
       "recentDeployments": []
     },
     "metrics": {
-      "errors5xx": 0,
+      "errors5xx": 8,
       "errors4xx": 0,
-      "avgLatencyMs": 0
+      "avgLatencyMs": 6268
     },
     "interactions": {
-      "requests7d": 14,
-      "requests30d": 14
+      "requests7d": 26,
+      "requests30d": 26
     },
     "costEstimate": {
-      "estimatedMonthly": 0.0,
-      "cpuCost": 0.0,
+      "estimatedMonthly": 0.03,
+      "cpuCost": 0.02,
       "memoryCost": 0.0,
       "requestCost": 0.0,
-      "estimatedRequests": 60,
-      "avgLatencyMs": 650,
+      "estimatedRequests": 111,
+      "avgLatencyMs": 4687,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
       "note": "Estimacion incluye cold starts y overhead tipico",
@@ -1547,7 +1748,7 @@
       "usesConsolidatedDb": false,
       "hasDedicatedDb": false,
       "dedicatedDbName": null,
-      "totalWithSql": 0.0
+      "totalWithSql": 0.03
     }
   },
   {
@@ -1610,11 +1811,17 @@
       "recentErrors": []
     },
     "deployments": {
-      "total": 0,
-      "last24h": 0,
-      "last7d": 0,
-      "lastDeployment": null,
-      "recentDeployments": []
+      "total": 1,
+      "last24h": 1,
+      "last7d": 1,
+      "lastDeployment": "2026-01-13T02:15:18.166578Z",
+      "recentDeployments": [
+        {
+          "revision": "seyca-produccion-00028-7wn",
+          "timestamp": "2026-01-13T02:15:18.166578Z",
+          "status": "True"
+        }
+      ]
     },
     "metrics": {
       "errors5xx": 0,
@@ -1806,15 +2013,15 @@
       "avgLatencyMs": 0
     },
     "interactions": {
-      "requests7d": 44,
-      "requests30d": 44
+      "requests7d": 45,
+      "requests30d": 45
     },
     "costEstimate": {
       "estimatedMonthly": 0.0,
       "cpuCost": 0.0,
       "memoryCost": 0.0,
       "requestCost": 0.0,
-      "estimatedRequests": 189,
+      "estimatedRequests": 193,
       "avgLatencyMs": 650,
       "cpuCores": 0.3333,
       "memoryGiB": 0.5,
@@ -1886,11 +2093,17 @@
       "recentErrors": []
     },
     "deployments": {
-      "total": 0,
-      "last24h": 0,
-      "last7d": 0,
-      "lastDeployment": null,
-      "recentDeployments": []
+      "total": 1,
+      "last24h": 1,
+      "last7d": 1,
+      "lastDeployment": "2026-01-13T02:27:12.473497Z",
+      "recentDeployments": [
+        {
+          "revision": "tersasoft-00034-7fs",
+          "timestamp": "2026-01-13T02:27:12.473497Z",
+          "status": "True"
+        }
+      ]
     },
     "metrics": {
       "errors5xx": 0,
