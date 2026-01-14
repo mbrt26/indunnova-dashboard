@@ -29,11 +29,16 @@
       ]
     },
     "deployments": {
-      "total": 13,
-      "last24h": 10,
-      "last7d": 13,
-      "lastDeployment": "2026-01-14T15:09:48.778261Z",
+      "total": 14,
+      "last24h": 11,
+      "last7d": 14,
+      "lastDeployment": "2026-01-14T15:20:57.034209Z",
       "recentDeployments": [
+        {
+          "revision": "arcopack-erp-00409-nmh",
+          "timestamp": "2026-01-14T15:20:57.034209Z",
+          "status": "True"
+        },
         {
           "revision": "arcopack-erp-00408-qs8",
           "timestamp": "2026-01-14T15:09:48.778261Z",
@@ -53,11 +58,6 @@
           "revision": "arcopack-erp-00405-fxr",
           "timestamp": "2026-01-14T14:38:28.766991Z",
           "status": "True"
-        },
-        {
-          "revision": "arcopack-erp-00404-x6f",
-          "timestamp": "2026-01-14T14:27:14.355194Z",
-          "status": "True"
         }
       ]
     },
@@ -67,15 +67,15 @@
       "avgLatencyMs": 643
     },
     "interactions": {
-      "requests7d": 219,
-      "requests30d": 219
+      "requests7d": 283,
+      "requests30d": 283
     },
     "costEstimate": {
-      "estimatedMonthly": 0.05,
-      "cpuCost": 0.04,
+      "estimatedMonthly": 0.06,
+      "cpuCost": 0.06,
       "memoryCost": 0.0,
       "requestCost": 0.0,
-      "estimatedRequests": 941,
+      "estimatedRequests": 1216,
       "avgLatencyMs": 943,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -84,7 +84,7 @@
       "usesConsolidatedDb": true,
       "hasDedicatedDb": false,
       "dedicatedDbName": null,
-      "totalWithSql": 1.36
+      "totalWithSql": 1.37
     }
   },
   {
@@ -139,15 +139,15 @@
       "avgLatencyMs": 0
     },
     "interactions": {
-      "requests7d": 645,
-      "requests30d": 645
+      "requests7d": 646,
+      "requests30d": 646
     },
     "costEstimate": {
       "estimatedMonthly": 0.19,
       "cpuCost": 0.17,
       "memoryCost": 0.02,
       "requestCost": 0.0,
-      "estimatedRequests": 2773,
+      "estimatedRequests": 2777,
       "avgLatencyMs": 650,
       "cpuCores": 2.0,
       "memoryGiB": 2.0,
@@ -271,11 +271,16 @@
       "recentErrors": []
     },
     "deployments": {
-      "total": 2,
-      "last24h": 0,
-      "last7d": 2,
-      "lastDeployment": "2026-01-12T21:45:05.334252Z",
+      "total": 3,
+      "last24h": 1,
+      "last7d": 3,
+      "lastDeployment": "2026-01-14T15:57:28.965691Z",
       "recentDeployments": [
+        {
+          "revision": "colorplastic-app-00029-27v",
+          "timestamp": "2026-01-14T15:57:28.965691Z",
+          "status": "True"
+        },
         {
           "revision": "colorplastic-app-00028-xjx",
           "timestamp": "2026-01-12T21:45:05.334252Z",
@@ -294,15 +299,15 @@
       "avgLatencyMs": 0
     },
     "interactions": {
-      "requests7d": 282,
-      "requests30d": 282
+      "requests7d": 294,
+      "requests30d": 294
     },
     "costEstimate": {
       "estimatedMonthly": 0.04,
       "cpuCost": 0.04,
       "memoryCost": 0.0,
       "requestCost": 0.0,
-      "estimatedRequests": 1212,
+      "estimatedRequests": 1264,
       "avgLatencyMs": 650,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -913,56 +918,56 @@
     "repo": "https://github.com/mbrt26/GestionProveedoresISA",
     "repoName": "GestionProveedoresISA",
     "errors": {
-      "total": 838,
-      "last24h": 838,
-      "last7d": 838,
+      "total": 840,
+      "last24h": 840,
+      "last7d": 840,
       "recentErrors": [
         {
-          "timestamp": "2026-01-14T14:11:50.656435Z",
+          "timestamp": "2026-01-14T15:52:38.008672Z",
           "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/asgiref/sync.py\", line 555, in thread_handler\n    raise exc_info[1]\n  File \"/usr/local/lib/python3.11/site-packages/django/core/handlers/exception.py\", line 42, in inner\n    response = await get_response(request)\n    ...",
           "severity": "ERROR"
         },
         {
-          "timestamp": "2026-01-14T11:03:47.048891Z",
-          "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/channels/routing.py\", line 62, in __call__\n    return await application(scope, receive, send)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/channels/security/websoc...",
+          "timestamp": "2026-01-14T15:52:35.775001Z",
+          "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/asgiref/sync.py\", line 555, in thread_handler\n    raise exc_info[1]\n  File \"/usr/local/lib/python3.11/site-packages/django/core/handlers/exception.py\", line 42, in inner\n    response = await get_response(request)\n    ...",
           "severity": "ERROR"
         },
         {
-          "timestamp": "2026-01-14T11:03:47.048730Z",
-          "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 288, in ensure_connection\n    self.connect()\n  File \"/usr/local/lib/python3.11/site-packages/django/utils/asyncio.py\", line 26, in inner\n    return func(*args, **kwargs)\n        ...",
+          "timestamp": "2026-01-14T15:51:07.051533Z",
+          "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/asgiref/sync.py\", line 555, in thread_handler\n    raise exc_info[1]\n  File \"/usr/local/lib/python3.11/site-packages/django/core/handlers/exception.py\", line 42, in inner\n    response = await get_response(request)\n    ...",
           "severity": "ERROR"
         }
       ]
     },
     "deployments": {
       "total": 17,
-      "last24h": 1,
+      "last24h": 6,
       "last7d": 17,
-      "lastDeployment": "2026-01-14T14:31:16.450622Z",
+      "lastDeployment": "2026-01-14T16:00:58.243764Z",
       "recentDeployments": [
         {
-          "revision": "gestion-proveedores-isa-00082-4p9",
-          "timestamp": "2026-01-14T14:31:16.450622Z",
+          "revision": "gestion-proveedores-isa-00087-fzd",
+          "timestamp": "2026-01-14T16:00:58.243764Z",
           "status": "True"
         },
         {
-          "revision": "gestion-proveedores-isa-00081-tnd",
-          "timestamp": "2026-01-13T01:34:54.179511Z",
+          "revision": "gestion-proveedores-isa-00086-n6r",
+          "timestamp": "2026-01-14T15:58:03.488724Z",
           "status": "True"
         },
         {
-          "revision": "gestion-proveedores-isa-00080-2ch",
-          "timestamp": "2026-01-11T03:25:47.377434Z",
+          "revision": "gestion-proveedores-isa-00085-g72",
+          "timestamp": "2026-01-14T15:40:13.826681Z",
           "status": "True"
         },
         {
-          "revision": "gestion-proveedores-isa-00079-zht",
-          "timestamp": "2026-01-11T03:13:53.413521Z",
+          "revision": "gestion-proveedores-isa-00084-f5c",
+          "timestamp": "2026-01-14T15:30:25.590951Z",
           "status": "True"
         },
         {
-          "revision": "gestion-proveedores-isa-00078-vcl",
-          "timestamp": "2026-01-11T03:11:07.038480Z",
+          "revision": "gestion-proveedores-isa-00083-xm2",
+          "timestamp": "2026-01-14T15:23:51.993136Z",
           "status": "True"
         }
       ]
@@ -973,15 +978,15 @@
       "avgLatencyMs": 586
     },
     "interactions": {
-      "requests7d": 5769,
-      "requests30d": 5769
+      "requests7d": 5440,
+      "requests30d": 5440
     },
     "costEstimate": {
-      "estimatedMonthly": 1.13,
-      "cpuCost": 1.05,
+      "estimatedMonthly": 1.07,
+      "cpuCost": 0.99,
       "memoryCost": 0.05,
       "requestCost": 0.01,
-      "estimatedRequests": 24806,
+      "estimatedRequests": 23392,
       "avgLatencyMs": 886,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -990,7 +995,7 @@
       "usesConsolidatedDb": true,
       "hasDedicatedDb": false,
       "dedicatedDbName": null,
-      "totalWithSql": 2.44
+      "totalWithSql": 2.38
     }
   },
   {
@@ -1320,7 +1325,7 @@
     },
     "deployments": {
       "total": 3,
-      "last24h": 2,
+      "last24h": 1,
       "last7d": 3,
       "lastDeployment": "2026-01-13T22:33:52.632084Z",
       "recentDeployments": [
@@ -1347,15 +1352,15 @@
       "avgLatencyMs": 0
     },
     "interactions": {
-      "requests7d": 291,
-      "requests30d": 291
+      "requests7d": 295,
+      "requests30d": 295
     },
     "costEstimate": {
       "estimatedMonthly": 0.04,
       "cpuCost": 0.04,
       "memoryCost": 0.0,
       "requestCost": 0.0,
-      "estimatedRequests": 1251,
+      "estimatedRequests": 1268,
       "avgLatencyMs": 650,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -1427,9 +1432,9 @@
     "repo": "https://github.com/mbrt26/NOVAPCR",
     "repoName": "NOVAPCR",
     "errors": {
-      "total": 131,
-      "last24h": 131,
-      "last7d": 131,
+      "total": 129,
+      "last24h": 129,
+      "last7d": 129,
       "recentErrors": [
         {
           "timestamp": "2026-01-14T11:03:41.748151Z",
@@ -1449,9 +1454,9 @@
       ]
     },
     "deployments": {
-      "total": 67,
+      "total": 65,
       "last24h": 0,
-      "last7d": 67,
+      "last7d": 65,
       "lastDeployment": "2026-01-13T01:50:33.452124Z",
       "recentDeployments": [
         {
@@ -1487,15 +1492,15 @@
       "avgLatencyMs": 3043
     },
     "interactions": {
-      "requests7d": 532,
-      "requests30d": 532
+      "requests7d": 536,
+      "requests30d": 536
     },
     "costEstimate": {
       "estimatedMonthly": 0.28,
       "cpuCost": 0.27,
       "memoryCost": 0.01,
       "requestCost": 0.0,
-      "estimatedRequests": 2287,
+      "estimatedRequests": 2304,
       "avgLatencyMs": 2430,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -1605,15 +1610,15 @@
       "avgLatencyMs": 0
     },
     "interactions": {
-      "requests7d": 1214,
-      "requests30d": 1214
+      "requests7d": 1328,
+      "requests30d": 1328
     },
     "costEstimate": {
-      "estimatedMonthly": 0.18,
-      "cpuCost": 0.16,
+      "estimatedMonthly": 0.19,
+      "cpuCost": 0.18,
       "memoryCost": 0.01,
       "requestCost": 0.0,
-      "estimatedRequests": 5220,
+      "estimatedRequests": 5710,
       "avgLatencyMs": 650,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -1622,7 +1627,7 @@
       "usesConsolidatedDb": false,
       "hasDedicatedDb": true,
       "dedicatedDbName": "rgd-aire-db",
-      "totalWithSql": 9.55
+      "totalWithSql": 9.56
     }
   },
   {
@@ -1759,15 +1764,15 @@
       "avgLatencyMs": 0
     },
     "interactions": {
-      "requests7d": 252,
-      "requests30d": 252
+      "requests7d": 382,
+      "requests30d": 382
     },
     "costEstimate": {
-      "estimatedMonthly": 0.04,
-      "cpuCost": 0.03,
+      "estimatedMonthly": 0.06,
+      "cpuCost": 0.05,
       "memoryCost": 0.0,
       "requestCost": 0.0,
-      "estimatedRequests": 1083,
+      "estimatedRequests": 1642,
       "avgLatencyMs": 650,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -1776,7 +1781,7 @@
       "usesConsolidatedDb": true,
       "hasDedicatedDb": false,
       "dedicatedDbName": null,
-      "totalWithSql": 1.35
+      "totalWithSql": 1.37
     }
   },
   {
