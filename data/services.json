@@ -278,15 +278,15 @@
       "avgLatencyMs": 0
     },
     "interactions": {
-      "requests7d": 196,
-      "requests30d": 196
+      "requests7d": 68,
+      "requests30d": 68
     },
     "costEstimate": {
-      "estimatedMonthly": 0.03,
-      "cpuCost": 0.03,
+      "estimatedMonthly": 0.01,
+      "cpuCost": 0.01,
       "memoryCost": 0.0,
       "requestCost": 0.0,
-      "estimatedRequests": 842,
+      "estimatedRequests": 292,
       "avgLatencyMs": 650,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -295,7 +295,7 @@
       "usesConsolidatedDb": true,
       "hasDedicatedDb": false,
       "dedicatedDbName": null,
-      "totalWithSql": 0.03
+      "totalWithSql": 0.01
     }
   },
   {
@@ -402,15 +402,15 @@
       "avgLatencyMs": 0
     },
     "interactions": {
-      "requests7d": 1248,
-      "requests30d": 1248
+      "requests7d": 1241,
+      "requests30d": 1241
     },
     "costEstimate": {
       "estimatedMonthly": 0.18,
       "cpuCost": 0.17,
       "memoryCost": 0.01,
       "requestCost": 0.0,
-      "estimatedRequests": 5366,
+      "estimatedRequests": 5336,
       "avgLatencyMs": 650,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -823,15 +823,15 @@
       "avgLatencyMs": 0
     },
     "interactions": {
-      "requests7d": 360,
-      "requests30d": 360
+      "requests7d": 351,
+      "requests30d": 351
     },
     "costEstimate": {
       "estimatedMonthly": 0.05,
       "cpuCost": 0.05,
       "memoryCost": 0.0,
       "requestCost": 0.0,
-      "estimatedRequests": 1548,
+      "estimatedRequests": 1509,
       "avgLatencyMs": 650,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -902,17 +902,17 @@
       "last7d": 984,
       "recentErrors": [
         {
-          "timestamp": "2026-01-14T06:22:39.835685Z",
+          "timestamp": "2026-01-14T06:41:18.232004Z",
           "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/channels/routing.py\", line 62, in __call__\n    return await application(scope, receive, send)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/channels/security/websoc...",
           "severity": "ERROR"
         },
         {
-          "timestamp": "2026-01-14T06:22:39.835519Z",
+          "timestamp": "2026-01-14T06:41:18.231830Z",
           "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 288, in ensure_connection\n    self.connect()\n  File \"/usr/local/lib/python3.11/site-packages/django/utils/asyncio.py\", line 26, in inner\n    return func(*args, **kwargs)\n        ...",
           "severity": "ERROR"
         },
         {
-          "timestamp": "2026-01-14T06:22:39.835461Z",
+          "timestamp": "2026-01-14T06:41:18.231788Z",
           "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/contrib/sessions/backends/base.py\", line 187, in _get_session\n    return self._session_cache\n           ^^^^^^^^^^^^^^^^^^^\nAttributeError: 'SessionStore' object has no attribute '_session_cache'",
           "severity": "ERROR"
         }
@@ -954,19 +954,19 @@
     "metrics": {
       "errors5xx": 490,
       "errors4xx": 0,
-      "avgLatencyMs": 552
+      "avgLatencyMs": 545
     },
     "interactions": {
-      "requests7d": 5212,
-      "requests30d": 5212
+      "requests7d": 5368,
+      "requests30d": 5368
     },
     "costEstimate": {
-      "estimatedMonthly": 0.98,
-      "cpuCost": 0.92,
+      "estimatedMonthly": 1.0,
+      "cpuCost": 0.94,
       "memoryCost": 0.05,
       "requestCost": 0.01,
-      "estimatedRequests": 22411,
-      "avgLatencyMs": 852,
+      "estimatedRequests": 23082,
+      "avgLatencyMs": 845,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
       "note": "Estimacion incluye cold starts y overhead tipico",
@@ -974,7 +974,7 @@
       "usesConsolidatedDb": true,
       "hasDedicatedDb": false,
       "dedicatedDbName": null,
-      "totalWithSql": 0.98
+      "totalWithSql": 1.0
     }
   },
   {
@@ -1416,17 +1416,17 @@
       "last7d": 16,
       "recentErrors": [
         {
-          "timestamp": "2026-01-14T06:20:01.828521Z",
+          "timestamp": "2026-01-14T06:40:01.975465Z",
           "message": "Traceback (most recent call last):\n  File \"/app/sensores_iot/views.py\", line 1571, in cron_sync_y_alertas\n    resultado_sensores = sincronizar_y_detectar_paros()\n                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/app/sensores_iot/services.py\", line 479, in sincronizar_y_detectar_paros\n...",
           "severity": "ERROR"
         },
         {
-          "timestamp": "2026-01-14T06:20:01.828431Z",
+          "timestamp": "2026-01-14T06:40:01.975378Z",
           "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 288, in ensure_connection\n    self.connect()\n  File \"/usr/local/lib/python3.11/site-packages/django/utils/asyncio.py\", line 26, in inner\n    return func(*args, **kwargs)\n        ...",
           "severity": "ERROR"
         },
         {
-          "timestamp": "2026-01-14T06:20:01.825731Z",
+          "timestamp": "2026-01-14T06:40:01.971826Z",
           "message": "Cloud SQL connection failed. Please see https://cloud.google.com/sql/docs/mysql/connect-run, https://cloud.google.com/sql/docs/postgres/connect-run, or https://cloud.google.com/sql/docs/sqlserver/connect-run for additional details: fetch ephemeral cert failed: refresh error: create ephemeral cert fa...",
           "severity": "ERROR"
         }
@@ -1468,18 +1468,18 @@
     "metrics": {
       "errors5xx": 10,
       "errors4xx": 0,
-      "avgLatencyMs": 83
+      "avgLatencyMs": 85
     },
     "interactions": {
-      "requests7d": 552,
-      "requests30d": 552
+      "requests7d": 541,
+      "requests30d": 541
     },
     "costEstimate": {
       "estimatedMonthly": 0.05,
-      "cpuCost": 0.05,
+      "cpuCost": 0.04,
       "memoryCost": 0.0,
       "requestCost": 0.0,
-      "estimatedRequests": 2373,
+      "estimatedRequests": 2326,
       "avgLatencyMs": 400,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -1927,15 +1927,15 @@
       "avgLatencyMs": 0
     },
     "interactions": {
-      "requests7d": 33,
-      "requests30d": 33
+      "requests7d": 32,
+      "requests30d": 32
     },
     "costEstimate": {
       "estimatedMonthly": 0.0,
       "cpuCost": 0.0,
       "memoryCost": 0.0,
       "requestCost": 0.0,
-      "estimatedRequests": 141,
+      "estimatedRequests": 137,
       "avgLatencyMs": 650,
       "cpuCores": 0.3333,
       "memoryGiB": 0.5,
