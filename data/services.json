@@ -14,7 +14,7 @@
     },
     "deployments": {
       "total": 15,
-      "last24h": 2,
+      "last24h": 1,
       "last7d": 15,
       "lastDeployment": "2026-01-14T16:31:11.956197Z",
       "recentDeployments": [
@@ -51,15 +51,15 @@
       "avgLatencyMs": 555
     },
     "interactions": {
-      "requests7d": 626,
-      "requests30d": 626
+      "requests7d": 674,
+      "requests30d": 674
     },
     "costEstimate": {
-      "estimatedMonthly": 0.12,
-      "cpuCost": 0.11,
+      "estimatedMonthly": 0.13,
+      "cpuCost": 0.12,
       "memoryCost": 0.01,
       "requestCost": 0.0,
-      "estimatedRequests": 2691,
+      "estimatedRequests": 2898,
       "avgLatencyMs": 855,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -68,7 +68,7 @@
       "usesConsolidatedDb": true,
       "hasDedicatedDb": false,
       "dedicatedDbName": null,
-      "totalWithSql": 1.43
+      "totalWithSql": 1.44
     }
   },
   {
@@ -79,76 +79,76 @@
     "repo": "https://github.com/mbrt26/carnesdelsebastian",
     "repoName": "carnesdelsebastian",
     "errors": {
-      "total": 3,
-      "last24h": 3,
-      "last7d": 3,
+      "total": 19,
+      "last24h": 19,
+      "last7d": 19,
       "recentErrors": [
         {
-          "timestamp": "2026-01-15T12:21:02.717367Z",
-          "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/core/handlers/exception.py\", line 55, in inner\n    response = get_response(request)\n               ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/core/handlers/base.py\", line 197, ...",
+          "timestamp": "2026-01-15T16:21:08.868981Z",
+          "message": "Traceback (most recent call last):\n  File \"/app/apps/calidad/views_control_higiene.py\", line 123, in control_higiene_crear\n    formset.save()\n  File \"/usr/local/lib/python3.11/site-packages/django/forms/models.py\", line 784, in save\n    return self.save_existing_objects(commit) + self.save_new_objec...",
           "severity": "ERROR"
         },
         {
-          "timestamp": "2026-01-15T12:21:02.717317Z",
+          "timestamp": "2026-01-15T16:21:08.868875Z",
           "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/utils.py\", line 89, in _execute\n    return self.cursor.execute(sql, params)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\npsycopg2.errors.InvalidTextRepresentation: invalid input syntax for type boole...",
           "severity": "ERROR"
         },
         {
-          "timestamp": "2026-01-15T12:21:02.599521Z",
-          "message": "{}",
+          "timestamp": "2026-01-15T16:18:35.265517Z",
+          "message": "Traceback (most recent call last):\n  File \"/app/apps/calidad/views_control_higiene.py\", line 123, in control_higiene_crear\n    formset.save()\n  File \"/usr/local/lib/python3.11/site-packages/django/forms/models.py\", line 784, in save\n    return self.save_existing_objects(commit) + self.save_new_objec...",
           "severity": "ERROR"
         }
       ]
     },
     "deployments": {
-      "total": 11,
-      "last24h": 4,
-      "last7d": 11,
-      "lastDeployment": "2026-01-15T14:14:33.647832Z",
+      "total": 17,
+      "last24h": 10,
+      "last7d": 17,
+      "lastDeployment": "2026-01-15T16:13:47.823753Z",
       "recentDeployments": [
         {
-          "revision": "carnesdelsebastian-00339-m7f",
-          "timestamp": "2026-01-15T14:14:33.647832Z",
+          "revision": "carnesdelsebastian-00345-f7q",
+          "timestamp": "2026-01-15T16:13:47.823753Z",
           "status": "True"
         },
         {
-          "revision": "carnesdelsebastian-00338-kfq",
-          "timestamp": "2026-01-15T13:54:05.234720Z",
+          "revision": "carnesdelsebastian-00344-jq5",
+          "timestamp": "2026-01-15T16:11:44.890137Z",
           "status": "True"
         },
         {
-          "revision": "carnesdelsebastian-00337-dmv",
-          "timestamp": "2026-01-15T13:43:59.314445Z",
+          "revision": "carnesdelsebastian-00343-krd",
+          "timestamp": "2026-01-15T15:56:09.753069Z",
           "status": "True"
         },
         {
-          "revision": "carnesdelsebastian-00336-n8k",
-          "timestamp": "2026-01-15T13:33:52.526845Z",
+          "revision": "carnesdelsebastian-00342-hfn",
+          "timestamp": "2026-01-15T15:41:59.249868Z",
           "status": "True"
         },
         {
-          "revision": "carnesdelsebastian-00335-q9l",
-          "timestamp": "2026-01-13T13:02:51.126921Z",
+          "revision": "carnesdelsebastian-00341-pwq",
+          "timestamp": "2026-01-15T15:32:56.465167Z",
           "status": "True"
         }
       ]
     },
     "metrics": {
-      "errors5xx": 1,
+      "errors5xx": 3,
       "errors4xx": 0,
-      "avgLatencyMs": 113
+      "avgLatencyMs": 2318
     },
     "interactions": {
-      "requests7d": 273,
-      "requests30d": 273
+      "requests7d": 335,
+      "requests30d": 335
     },
     "costEstimate": {
-      "estimatedMonthly": 0.05,
-      "cpuCost": 0.05,
-      "memoryCost": 0.0,
+      "estimatedMonthly": 0.29,
+      "cpuCost": 0.27,
+      "memoryCost": 0.03,
       "requestCost": 0.0,
-      "estimatedRequests": 1173,
-      "avgLatencyMs": 413,
+      "estimatedRequests": 1440,
+      "avgLatencyMs": 1922,
       "cpuCores": 2.0,
       "memoryGiB": 2.0,
       "note": "Estimacion incluye cold starts y overhead tipico",
@@ -156,7 +156,7 @@
       "usesConsolidatedDb": true,
       "hasDedicatedDb": false,
       "dedicatedDbName": null,
-      "totalWithSql": 1.36
+      "totalWithSql": 1.6
     }
   },
   {
@@ -271,11 +271,26 @@
       "recentErrors": []
     },
     "deployments": {
-      "total": 24,
-      "last24h": 22,
-      "last7d": 24,
-      "lastDeployment": "2026-01-15T00:53:04.235672Z",
+      "total": 27,
+      "last24h": 24,
+      "last7d": 27,
+      "lastDeployment": "2026-01-15T16:04:45.561725Z",
       "recentDeployments": [
+        {
+          "revision": "colorplastic-app-00053-bvp",
+          "timestamp": "2026-01-15T16:04:45.561725Z",
+          "status": "True"
+        },
+        {
+          "revision": "colorplastic-app-00052-mxd",
+          "timestamp": "2026-01-15T15:57:11.507546Z",
+          "status": "True"
+        },
+        {
+          "revision": "colorplastic-app-00051-v7q",
+          "timestamp": "2026-01-15T15:47:08.057866Z",
+          "status": "True"
+        },
         {
           "revision": "colorplastic-app-00050-xhk",
           "timestamp": "2026-01-15T00:53:04.235672Z",
@@ -284,21 +299,6 @@
         {
           "revision": "colorplastic-app-00049-ggh",
           "timestamp": "2026-01-15T00:45:45.824648Z",
-          "status": "True"
-        },
-        {
-          "revision": "colorplastic-app-00048-s8t",
-          "timestamp": "2026-01-15T00:39:35.508018Z",
-          "status": "True"
-        },
-        {
-          "revision": "colorplastic-app-00047-b8b",
-          "timestamp": "2026-01-15T00:32:06.497287Z",
-          "status": "True"
-        },
-        {
-          "revision": "colorplastic-app-00046-fdf",
-          "timestamp": "2026-01-15T00:24:37.740359Z",
           "status": "True"
         }
       ]
@@ -309,15 +309,15 @@
       "avgLatencyMs": 789
     },
     "interactions": {
-      "requests7d": 632,
-      "requests30d": 632
+      "requests7d": 732,
+      "requests30d": 732
     },
     "costEstimate": {
-      "estimatedMonthly": 0.15,
-      "cpuCost": 0.14,
+      "estimatedMonthly": 0.18,
+      "cpuCost": 0.16,
       "memoryCost": 0.01,
       "requestCost": 0.0,
-      "estimatedRequests": 2717,
+      "estimatedRequests": 3147,
       "avgLatencyMs": 1089,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -326,7 +326,7 @@
       "usesConsolidatedDb": true,
       "hasDedicatedDb": false,
       "dedicatedDbName": null,
-      "totalWithSql": 1.46
+      "totalWithSql": 1.49
     }
   },
   {
@@ -395,9 +395,9 @@
       "recentErrors": []
     },
     "deployments": {
-      "total": 41,
+      "total": 38,
       "last24h": 0,
-      "last7d": 41,
+      "last7d": 38,
       "lastDeployment": "2026-01-13T03:39:20.907987Z",
       "recentDeployments": [
         {
@@ -950,9 +950,9 @@
       ]
     },
     "deployments": {
-      "total": 29,
-      "last24h": 26,
-      "last7d": 29,
+      "total": 28,
+      "last24h": 21,
+      "last7d": 28,
       "lastDeployment": "2026-01-14T23:58:47.666862Z",
       "recentDeployments": [
         {
@@ -983,21 +983,21 @@
       ]
     },
     "metrics": {
-      "errors5xx": 347,
+      "errors5xx": 345,
       "errors4xx": 0,
-      "avgLatencyMs": 562
+      "avgLatencyMs": 563
     },
     "interactions": {
-      "requests7d": 3987,
-      "requests30d": 3987
+      "requests7d": 3647,
+      "requests30d": 3647
     },
     "costEstimate": {
-      "estimatedMonthly": 0.76,
-      "cpuCost": 0.71,
-      "memoryCost": 0.04,
+      "estimatedMonthly": 0.7,
+      "cpuCost": 0.65,
+      "memoryCost": 0.03,
       "requestCost": 0.01,
-      "estimatedRequests": 17144,
-      "avgLatencyMs": 862,
+      "estimatedRequests": 15682,
+      "avgLatencyMs": 863,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
       "note": "Estimacion incluye cold starts y overhead tipico",
@@ -1005,7 +1005,7 @@
       "usesConsolidatedDb": true,
       "hasDedicatedDb": false,
       "dedicatedDbName": null,
-      "totalWithSql": 2.07
+      "totalWithSql": 2.01
     }
   },
   {
@@ -1362,15 +1362,15 @@
       "avgLatencyMs": 0
     },
     "interactions": {
-      "requests7d": 230,
-      "requests30d": 230
+      "requests7d": 242,
+      "requests30d": 242
     },
     "costEstimate": {
       "estimatedMonthly": 0.03,
       "cpuCost": 0.03,
       "memoryCost": 0.0,
       "requestCost": 0.0,
-      "estimatedRequests": 989,
+      "estimatedRequests": 1040,
       "avgLatencyMs": 650,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -1442,9 +1442,9 @@
     "repo": "https://github.com/mbrt26/NOVAPCR",
     "repoName": "NOVAPCR",
     "errors": {
-      "total": 597,
-      "last24h": 597,
-      "last7d": 597,
+      "total": 581,
+      "last24h": 581,
+      "last7d": 581,
       "recentErrors": [
         {
           "timestamp": "2026-01-15T13:00:02.518782Z",
@@ -1464,9 +1464,9 @@
       ]
     },
     "deployments": {
-      "total": 41,
+      "total": 36,
       "last24h": 0,
-      "last7d": 41,
+      "last7d": 36,
       "lastDeployment": "2026-01-13T01:50:33.452124Z",
       "recentDeployments": [
         {
@@ -1502,15 +1502,15 @@
       "avgLatencyMs": 1305
     },
     "interactions": {
-      "requests7d": 581,
-      "requests30d": 581
+      "requests7d": 591,
+      "requests30d": 591
     },
     "costEstimate": {
-      "estimatedMonthly": 0.2,
-      "cpuCost": 0.19,
+      "estimatedMonthly": 0.21,
+      "cpuCost": 0.2,
       "memoryCost": 0.01,
       "requestCost": 0.0,
-      "estimatedRequests": 2498,
+      "estimatedRequests": 2541,
       "avgLatencyMs": 1605,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -1519,7 +1519,7 @@
       "usesConsolidatedDb": true,
       "hasDedicatedDb": false,
       "dedicatedDbName": null,
-      "totalWithSql": 1.51
+      "totalWithSql": 1.52
     }
   },
   {
@@ -1636,15 +1636,15 @@
       "avgLatencyMs": 0
     },
     "interactions": {
-      "requests7d": 1766,
-      "requests30d": 1766
+      "requests7d": 1840,
+      "requests30d": 1840
     },
     "costEstimate": {
-      "estimatedMonthly": 0.26,
-      "cpuCost": 0.24,
+      "estimatedMonthly": 0.27,
+      "cpuCost": 0.25,
       "memoryCost": 0.01,
       "requestCost": 0.0,
-      "estimatedRequests": 7593,
+      "estimatedRequests": 7912,
       "avgLatencyMs": 650,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -1653,7 +1653,7 @@
       "usesConsolidatedDb": false,
       "hasDedicatedDb": true,
       "dedicatedDbName": "rgd-aire-db",
-      "totalWithSql": 9.63
+      "totalWithSql": 9.64
     }
   },
   {
@@ -1806,15 +1806,15 @@
       "avgLatencyMs": 88
     },
     "interactions": {
-      "requests7d": 644,
-      "requests30d": 644
+      "requests7d": 678,
+      "requests30d": 678
     },
     "costEstimate": {
       "estimatedMonthly": 0.06,
-      "cpuCost": 0.05,
+      "cpuCost": 0.06,
       "memoryCost": 0.0,
       "requestCost": 0.0,
-      "estimatedRequests": 2769,
+      "estimatedRequests": 2915,
       "avgLatencyMs": 400,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
