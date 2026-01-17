@@ -49,7 +49,6 @@ async function loadData() {
 
         // Render everything
         updateSummary();
-        updateCosts();
         updateMetrics();
         renderDailyErrorsChart();
         renderUsageHeatmap();
@@ -77,70 +76,6 @@ function updateSummary() {
     document.getElementById('healthyServices').textContent = metaData.healthyServices || servicesData.filter(s => s.status === 'True').length;
     document.getElementById('unhealthyServices').textContent = metaData.unhealthyServices || servicesData.filter(s => s.status !== 'True').length;
     document.getElementById('totalRepos').textContent = metaData.totalRepos || reposData.length;
-}
-
-function updateCosts() {
-    const costs = metaData.costs || {};
-
-    // Format currency
-    const formatCurrency = (value) => {
-        if (value === undefined || value === null) return '--';
-        return '$' + value.toFixed(2);
-    };
-
-    // Update cost cards
-    const totalCostEl = document.getElementById('totalCost');
-    const sqlCostEl = document.getElementById('sqlCost');
-    const runCostEl = document.getElementById('runCost');
-    const otherCostEl = document.getElementById('otherCost');
-    const sqlInstancesEl = document.getElementById('sqlInstances');
-    const otherBreakdownEl = document.getElementById('otherBreakdown');
-    const costSourceEl = document.getElementById('costSource');
-
-    if (totalCostEl) totalCostEl.textContent = formatCurrency(costs.total);
-    if (sqlCostEl) sqlCostEl.textContent = formatCurrency(costs.cloudSql);
-    if (runCostEl) runCostEl.textContent = formatCurrency(costs.cloudRun);
-    if (otherCostEl) otherCostEl.textContent = formatCurrency(costs.other);
-
-    if (sqlInstancesEl && costs.sqlInstances) {
-        sqlInstancesEl.textContent = `${costs.sqlInstances.running} activas, ${costs.sqlInstances.stopped} detenidas`;
-    }
-
-    // Show other services breakdown
-    if (otherBreakdownEl && costs.otherBreakdown) {
-        const breakdown = costs.otherBreakdown;
-        const items = [];
-        if (breakdown.artifactRegistry > 0) items.push(`AR: $${breakdown.artifactRegistry.toFixed(0)}`);
-        if (breakdown.appEngine > 0) items.push(`AE: $${breakdown.appEngine.toFixed(0)}`);
-        if (breakdown.cloudBuild > 0) items.push(`CB: $${breakdown.cloudBuild.toFixed(0)}`);
-        if (breakdown.secretManager > 0) items.push(`SM: $${breakdown.secretManager.toFixed(0)}`);
-        if (breakdown.cloudStorage > 0) items.push(`GCS: $${breakdown.cloudStorage.toFixed(0)}`);
-        otherBreakdownEl.textContent = items.length > 0 ? items.join(', ') : '--';
-
-        // Update tooltip with full breakdown
-        const card = document.getElementById('otherCostCard');
-        if (card) {
-            const tooltipItems = [];
-            if (breakdown.artifactRegistry > 0) tooltipItems.push(`Artifact Registry: $${breakdown.artifactRegistry.toFixed(2)}`);
-            if (breakdown.appEngine > 0) tooltipItems.push(`App Engine: $${breakdown.appEngine.toFixed(2)}`);
-            if (breakdown.cloudBuild > 0) tooltipItems.push(`Cloud Build: $${breakdown.cloudBuild.toFixed(2)}`);
-            if (breakdown.secretManager > 0) tooltipItems.push(`Secret Manager: $${breakdown.secretManager.toFixed(2)}`);
-            if (breakdown.cloudStorage > 0) tooltipItems.push(`Cloud Storage: $${breakdown.cloudStorage.toFixed(2)}`);
-            if (breakdown.vertexAI > 0) tooltipItems.push(`Vertex AI: $${breakdown.vertexAI.toFixed(2)}`);
-            card.title = tooltipItems.join('\n');
-        }
-    }
-
-    // Show data source indicator
-    if (costSourceEl) {
-        if (costs.dataSource === 'bigquery') {
-            costSourceEl.innerHTML = '✓ Datos reales de facturacion GCP (proyeccion mensual)';
-            costSourceEl.style.color = '#10B981';
-        } else {
-            costSourceEl.innerHTML = '⚠ Estimaciones (BigQuery no disponible)';
-            costSourceEl.style.color = '#F59E0B';
-        }
-    }
 }
 
 function updateMetrics() {
