@@ -1,5 +1,16 @@
 [
   {
+    "id": "696bc143000945c23af664c7",
+    "service": "novapcr-app",
+    "revision": "novapcr-app-00150-bv6",
+    "timestamp": "2026-01-17T17:05:07.607682Z",
+    "severity": "ERROR",
+    "message": "Traceback (most recent call last):\n  File \"/app/integracion_siigo/tasks.py\", line 365, in sincronizar_balance_prueba_mes\n    registro = service.sync_balance_prueba(anio, mes)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/app/integracion_siigo/services.py\", line 1697, in sync_balance_prueba\n    balance_info = self.get_balance_prueba_tercero(anio, mes)\n                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/app/integracion_siigo/services.py\", line 1649, in get_balance_prueba_tercero\n    response = self._make_request('post', url, json=payload)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/app/integracion_siigo/services.py\", line 156, in _make_request\n    response.raise_for_status()\n  File \"/usr/local/lib/python3.11/site-packages/requests/models.py\", line 1024, in raise_for_status\n    raise HTTPError(http_error_msg, response=self)\nrequests.exceptions.HTTPError: 500 Server Error: Internal Server Error for url: https://api.siigo.com/v1/test-balance-report-by-thirdparty",
+    "httpRequest": null,
+    "trace": "",
+    "spanId": ""
+  },
+  {
     "id": "696ba7de000a986bd954a376",
     "service": "arcopack-erp",
     "revision": "arcopack-erp-00423-lxc",
@@ -24364,17 +24375,6 @@
     "timestamp": "2026-01-16T06:35:41.233177Z",
     "severity": "ERROR",
     "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/contrib/sessions/backends/base.py\", line 187, in _get_session\n    return self._session_cache\n           ^^^^^^^^^^^^^^^^^^^\nAttributeError: 'SessionStore' object has no attribute '_session_cache'",
-    "httpRequest": null,
-    "trace": "",
-    "spanId": ""
-  },
-  {
-    "id": "6969dc3d00037eb21c455271",
-    "service": "gestion-proveedores-isa",
-    "revision": "gestion-proveedores-isa-00108-fnb",
-    "timestamp": "2026-01-16T06:35:41.229042Z",
-    "severity": "ERROR",
-    "message": "Cloud SQL connection failed. Please see https://cloud.google.com/sql/docs/mysql/connect-run, https://cloud.google.com/sql/docs/postgres/connect-run, or https://cloud.google.com/sql/docs/sqlserver/connect-run for additional details: fetch ephemeral cert failed: refresh error: create ephemeral cert failed (connection name = \"appsindunnova:us-central1:postgres-consolidated\"): googleapi: Error 409: The instance or operation is not in an appropriate state to handle the request., invalidState",
     "httpRequest": null,
     "trace": "",
     "spanId": ""
