@@ -24,7 +24,7 @@
             </div>
             <div class="header-info">
                 <span class="last-update" id="lastUpdate">Ultima actualizacion: --</span>
-                <button class="refresh-btn" onclick="loadErrors()">
+                <button class="refresh-btn" onclick="loadAllData()">
                     <span class="refresh-icon">↻</span> Actualizar
                 </button>
             </div>
@@ -42,10 +42,10 @@
                 </div>
             </div>
             <div class="summary-card">
-                <div class="summary-icon">⏰</div>
+                <div class="summary-icon">📦</div>
                 <div class="summary-info">
-                    <span class="summary-value" id="errors24h">--</span>
-                    <span class="summary-label">Ultimas 24h</span>
+                    <span class="summary-value" id="totalGroups">--</span>
+                    <span class="summary-label">Tipos de Error</span>
                 </div>
             </div>
             <div class="summary-card">
@@ -64,61 +64,90 @@
             </div>
         </section>
 
-        <!-- Filtros -->
-        <section class="filters-section">
-            <div class="filter-group">
-                <label>Servicio:</label>
-                <select id="serviceFilter" onchange="applyFilters()">
-                    <option value="all">Todos los servicios</option>
-                </select>
-            </div>
-            <div class="filter-group">
-                <label>Severidad:</label>
-                <select id="severityFilter" onchange="applyFilters()">
-                    <option value="all">Todas</option>
-                    <option value="ERROR">ERROR</option>
-                    <option value="CRITICAL">CRITICAL</option>
-                    <option value="WARNING">WARNING</option>
-                </select>
-            </div>
-            <div class="filter-group">
-                <label>Desde:</label>
-                <input type="date" id="dateFrom" onchange="applyFilters()">
-            </div>
-            <div class="filter-group">
-                <label>Hasta:</label>
-                <input type="date" id="dateTo" onchange="applyFilters()">
-            </div>
-            <div class="filter-group">
-                <label>Buscar:</label>
-                <input type="text" id="searchFilter" placeholder="Buscar en mensaje..." oninput="applyFilters()">
-            </div>
-            <button class="clear-filters-btn" onclick="clearFilters()">Limpiar filtros</button>
-        </section>
-
-        <!-- Resultados -->
-        <section class="results-section">
-            <div class="results-header">
-                <span id="resultsCount">-- errores encontrados</span>
-                <div class="pagination-info">
-                    <span id="paginationInfo">Pagina 1 de 1</span>
+        <!-- Selector de Vista -->
+        <section class="view-selector-section">
+            <div class="view-selector">
+                <span class="view-label">Agrupar por:</span>
+                <div class="view-buttons">
+                    <button class="view-btn active" data-view="priority" onclick="setView('priority')">
+                        Prioridad
+                    </button>
+                    <button class="view-btn" data-view="service" onclick="setView('service')">
+                        Aplicativo
+                    </button>
+                    <button class="view-btn" data-view="list" onclick="setView('list')">
+                        Lista
+                    </button>
                 </div>
             </div>
-        </section>
-
-        <!-- Lista de Errores -->
-        <section class="errors-list-section">
-            <div class="errors-list" id="errorsList">
-                <div class="loading">Cargando errores...</div>
+            <div class="filter-inline">
+                <label>Servicio:</label>
+                <select id="serviceFilter" onchange="applyFilters()">
+                    <option value="all">Todos</option>
+                </select>
             </div>
         </section>
 
-        <!-- Paginacion -->
-        <section class="pagination-section">
-            <button class="pagination-btn" id="prevBtn" onclick="previousPage()" disabled>← Anterior</button>
-            <div class="page-numbers" id="pageNumbers"></div>
-            <button class="pagination-btn" id="nextBtn" onclick="nextPage()">Siguiente →</button>
+        <!-- Vista Agrupada -->
+        <section class="grouped-view" id="groupedView">
+            <div class="loading">Cargando errores...</div>
         </section>
+
+        <!-- Vista Lista (oculta por defecto) -->
+        <section class="list-view hidden" id="listView">
+            <div class="filters-section">
+                <div class="filter-group">
+                    <label>Severidad:</label>
+                    <select id="severityFilter" onchange="applyFilters()">
+                        <option value="all">Todas</option>
+                        <option value="ERROR">ERROR</option>
+                        <option value="CRITICAL">CRITICAL</option>
+                        <option value="WARNING">WARNING</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Desde:</label>
+                    <input type="date" id="dateFrom" onchange="applyFilters()">
+                </div>
+                <div class="filter-group">
+                    <label>Hasta:</label>
+                    <input type="date" id="dateTo" onchange="applyFilters()">
+                </div>
+                <div class="filter-group">
+                    <label>Buscar:</label>
+                    <input type="text" id="searchFilter" placeholder="Buscar en mensaje..." oninput="applyFilters()">
+                </div>
+                <button class="clear-filters-btn" onclick="clearFilters()">Limpiar</button>
+            </div>
+
+            <div class="results-section">
+                <div class="results-header">
+                    <span id="resultsCount">-- errores encontrados</span>
+                    <div class="pagination-info">
+                        <span id="paginationInfo">Pagina 1 de 1</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="errors-list" id="errorsList"></div>
+
+            <div class="pagination-section">
+                <button class="pagination-btn" id="prevBtn" onclick="previousPage()" disabled>← Anterior</button>
+                <div class="page-numbers" id="pageNumbers"></div>
+                <button class="pagination-btn" id="nextBtn" onclick="nextPage()">Siguiente →</button>
+            </div>
+        </section>
+
+        <!-- Modal de Analisis -->
+        <div class="modal" id="analysisModal">
+            <div class="modal-content modal-xlarge">
+                <div class="modal-header">
+                    <h3 id="analysisModalTitle">Analisis del Error</h3>
+                    <button class="modal-close" onclick="closeAnalysisModal()">&times;</button>
+                </div>
+                <div class="modal-body" id="analysisModalBody"></div>
+            </div>
+        </div>
 
         <!-- Modal de Detalle -->
         <div class="modal" id="errorModal">
@@ -127,8 +156,7 @@
                     <h3 id="modalTitle">Detalle del Error</h3>
                     <button class="modal-close" onclick="closeErrorModal()">&times;</button>
                 </div>
-                <div class="modal-body" id="errorModalBody">
-                </div>
+                <div class="modal-body" id="errorModalBody"></div>
             </div>
         </div>
     </main>
@@ -138,6 +166,6 @@
         <p>Datos de Cloud Logging | Proyecto: appsindunnova</p>
     </footer>
 
-    <script src="js/errors.js?v=20251226c"></script>
+    <script src="js/errors.js?v=20260117a"></script>
 </body>
 </html>

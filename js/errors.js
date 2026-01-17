@@ -1,13 +1,16 @@
 // Global state
 let allErrors = [];
+let consolidatedErrors = {};
+let errorAnalyses = {};
 let filteredErrors = [];
 let currentPage = 1;
+let currentView = 'priority';
 const errorsPerPage = 20;
 
 // Load data on page load
 document.addEventListener('DOMContentLoaded', () => {
     initializeDateFilters();
-    loadErrors();
+    loadAllData();
 });
 
 function initializeDateFilters() {
@@ -15,7 +18,6 @@ function initializeDateFilters() {
     const weekAgo = new Date(today);
     weekAgo.setDate(weekAgo.getDate() - 7);
 
-    // Format as YYYY-MM-DD using local timezone (not UTC)
     const formatLocalDate = (date) => {
         const year = date.getFullYear();
         const month = String(date.getMonth() + 1).padStart(2, '0');
@@ -23,43 +25,45 @@ function initializeDateFilters() {
         return `${year}-${month}-${day}`;
     };
 
-    document.getElementById('dateTo').value = formatLocalDate(today);
-    document.getElementById('dateFrom').value = formatLocalDate(weekAgo);
+    const dateToEl = document.getElementById('dateTo');
+    const dateFromEl = document.getElementById('dateFrom');
+    if (dateToEl) dateToEl.value = formatLocalDate(today);
+    if (dateFromEl) dateFromEl.value = formatLocalDate(weekAgo);
 }
 
-async function loadErrors() {
+async function loadAllData() {
     try {
-        // Add cache-busting timestamp to force fresh data
         const cacheBuster = `?t=${Date.now()}`;
 
-        // Load errors data
-        const errorsResponse = await fetch('data/errors.json' + cacheBuster);
-        allErrors = await errorsResponse.json();
+        // Load all data in parallel
+        const [errorsRes, consolidatedRes, analysesRes, metaRes] = await Promise.all([
+            fetch('data/errors.json' + cacheBuster),
+            fetch('data/consolidated_errors.json' + cacheBuster),
+            fetch('data/error_analyses.json' + cacheBuster),
+            fetch('data/meta.json' + cacheBuster)
+        ]);
 
-        // Load metadata
-        const metaResponse = await fetch('data/meta.json' + cacheBuster);
-        const meta = await metaResponse.json();
+        allErrors = await errorsRes.json();
+        consolidatedErrors = await consolidatedRes.json();
+        errorAnalyses = await analysesRes.json();
+        const meta = await metaRes.json();
 
         document.getElementById('lastUpdate').textContent = `Ultima actualizacion: ${formatDate(meta.lastUpdate)}`;
 
-        // Populate service filter
         populateServiceFilter();
-
-        // Apply initial filters
-        applyFilters();
-
-        // Update summary
         updateSummary();
+        applyFilters();
 
     } catch (error) {
         console.error('Error loading data:', error);
-        document.getElementById('errorsList').innerHTML = '<div class="loading">Error al cargar datos. Verifique que los archivos JSON existen.</div>';
+        document.getElementById('groupedView').innerHTML = '<div class="loading">Error al cargar datos. Verifique que los archivos JSON existen.</div>';
     }
 }
 
 function populateServiceFilter() {
-    const services = [...new Set(allErrors.map(e => e.service))].sort();
+    const services = [...new Set(allErrors.map(e => e.service).filter(s => s))].sort();
     const select = document.getElementById('serviceFilter');
+    select.innerHTML = '<option value="all">Todos</option>';
 
     services.forEach(service => {
         const option = document.createElement('option');
@@ -70,27 +74,366 @@ function populateServiceFilter() {
 }
 
 function updateSummary() {
-    const now = new Date();
-    const dayAgo = new Date(now);
-    dayAgo.setDate(dayAgo.getDate() - 1);
-
-    const errors24h = allErrors.filter(e => new Date(e.timestamp) > dayAgo).length;
-    const affectedServices = new Set(allErrors.map(e => e.service)).size;
+    const totalErrors = Object.values(consolidatedErrors).reduce((sum, e) => sum + e.count, 0);
+    const totalGroups = Object.keys(consolidatedErrors).length;
+    const allServices = new Set();
+    Object.values(consolidatedErrors).forEach(e => e.services.forEach(s => allServices.add(s)));
 
     // Find service with most errors
-    const errorCounts = {};
-    allErrors.forEach(e => {
-        errorCounts[e.service] = (errorCounts[e.service] || 0) + 1;
+    const serviceCounts = {};
+    Object.values(consolidatedErrors).forEach(e => {
+        e.services.forEach(s => {
+            serviceCounts[s] = (serviceCounts[s] || 0) + e.count;
+        });
     });
-    const topService = Object.entries(errorCounts).sort((a, b) => b[1] - a[1])[0];
+    const topService = Object.entries(serviceCounts).sort((a, b) => b[1] - a[1])[0];
 
-    document.getElementById('totalErrors').textContent = allErrors.length;
-    document.getElementById('errors24h').textContent = errors24h;
-    document.getElementById('affectedServices').textContent = affectedServices;
+    document.getElementById('totalErrors').textContent = totalErrors.toLocaleString();
+    document.getElementById('totalGroups').textContent = totalGroups;
+    document.getElementById('affectedServices').textContent = allServices.size;
     document.getElementById('topErrorService').textContent = topService ? topService[0] : '--';
 }
 
+function setView(view) {
+    currentView = view;
+
+    // Update button states
+    document.querySelectorAll('.view-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.view === view);
+    });
+
+    // Toggle views
+    const groupedView = document.getElementById('groupedView');
+    const listView = document.getElementById('listView');
+
+    if (view === 'list') {
+        groupedView.classList.add('hidden');
+        listView.classList.remove('hidden');
+    } else {
+        groupedView.classList.remove('hidden');
+        listView.classList.add('hidden');
+    }
+
+    applyFilters();
+}
+
+function calculatePriorityScore(errorData) {
+    let score = 0;
+
+    // Frequency score
+    score += errorData.count;
+
+    // Severity score
+    if (errorData.error_type === 'CRITICAL' || errorData.sample_message?.includes('CRITICAL')) {
+        score += 300;
+    } else if (errorData.error_type === 'OperationalError' || errorData.sample_message?.includes('Connection')) {
+        score += 250;
+    } else {
+        score += 200;
+    }
+
+    // Recency score
+    const lastSeen = new Date(errorData.last_seen);
+    const now = new Date();
+    const hoursAgo = (now - lastSeen) / (1000 * 60 * 60);
+    if (hoursAgo < 24) {
+        score += 100;
+    } else if (hoursAgo < 168) {
+        score += 50;
+    }
+
+    return score;
+}
+
+function getPriorityLevel(score) {
+    if (score >= 500) return { level: 'critical', label: 'CRITICO', icon: '🔴' };
+    if (score >= 300) return { level: 'high', label: 'ALTO', icon: '🟠' };
+    if (score >= 150) return { level: 'medium', label: 'MEDIO', icon: '🟡' };
+    return { level: 'low', label: 'BAJO', icon: '🟢' };
+}
+
 function applyFilters() {
+    const serviceFilter = document.getElementById('serviceFilter').value;
+
+    if (currentView === 'list') {
+        applyListFilters();
+    } else {
+        renderGroupedView(serviceFilter);
+    }
+}
+
+function renderGroupedView(serviceFilter) {
+    const container = document.getElementById('groupedView');
+
+    // Process consolidated errors
+    let processedErrors = Object.entries(consolidatedErrors).map(([hash, data]) => {
+        return {
+            hash,
+            ...data,
+            score: calculatePriorityScore(data),
+            hasAnalysis: !!errorAnalyses[hash]
+        };
+    });
+
+    // Filter by service if selected
+    if (serviceFilter !== 'all') {
+        processedErrors = processedErrors.filter(e => e.services.includes(serviceFilter));
+    }
+
+    if (processedErrors.length === 0) {
+        container.innerHTML = '<div class="loading">No se encontraron errores con los filtros seleccionados.</div>';
+        return;
+    }
+
+    if (currentView === 'priority') {
+        renderPriorityView(container, processedErrors);
+    } else if (currentView === 'service') {
+        renderServiceView(container, processedErrors);
+    }
+}
+
+function renderPriorityView(container, errors) {
+    // Sort by score descending
+    errors.sort((a, b) => b.score - a.score);
+
+    let html = '<div class="priority-list">';
+
+    errors.forEach((error, index) => {
+        const priority = getPriorityLevel(error.score);
+        const errorType = error.error_type || extractErrorType(error.sample_message);
+        const timeAgo = getTimeAgo(error.last_seen);
+
+        html += `
+            <div class="priority-card priority-${priority.level}">
+                <div class="priority-header">
+                    <div class="priority-rank">
+                        <span class="rank-number">#${index + 1}</span>
+                        <span class="priority-badge ${priority.level}">${priority.icon} ${priority.label}</span>
+                    </div>
+                    <div class="priority-score">
+                        <span class="score-value">${error.count.toLocaleString()}</span>
+                        <span class="score-label">ocurrencias</span>
+                    </div>
+                </div>
+                <div class="priority-body">
+                    <h3 class="error-type-title">${escapeHtml(errorType)}</h3>
+                    <div class="error-services">
+                        ${error.services.map(s => `<span class="service-tag">${s}</span>`).join('')}
+                    </div>
+                    <div class="error-timing">
+                        <span>Primera vez: ${formatDate(error.first_seen)}</span>
+                        <span>Ultima vez: ${timeAgo}</span>
+                    </div>
+                    <div class="error-message-preview-small">${escapeHtml(truncateMessage(error.sample_message, 200))}</div>
+                </div>
+                <div class="priority-footer">
+                    ${error.hasAnalysis ?
+                        `<button class="analysis-btn" onclick="showAnalysis('${error.hash}')">Ver Analisis</button>` :
+                        `<span class="no-analysis">Sin analisis</span>`
+                    }
+                    <button class="details-btn" onclick="showOccurrences('${error.hash}')">Ver ${error.occurrences?.length || 0} ocurrencias</button>
+                </div>
+            </div>
+        `;
+    });
+
+    html += '</div>';
+    container.innerHTML = html;
+}
+
+function renderServiceView(container, errors) {
+    // Group by service
+    const byService = {};
+    errors.forEach(error => {
+        error.services.forEach(service => {
+            if (!byService[service]) {
+                byService[service] = { errors: [], totalCount: 0 };
+            }
+            byService[service].errors.push(error);
+            byService[service].totalCount += error.count;
+        });
+    });
+
+    // Sort services by total count
+    const sortedServices = Object.entries(byService)
+        .sort((a, b) => b[1].totalCount - a[1].totalCount);
+
+    let html = '<div class="service-groups">';
+
+    sortedServices.forEach(([service, data]) => {
+        // Sort errors within service by count
+        data.errors.sort((a, b) => b.count - a.count);
+
+        const criticalCount = data.errors.filter(e => getPriorityLevel(e.score).level === 'critical').length;
+
+        html += `
+            <div class="service-group">
+                <div class="service-group-header" onclick="toggleServiceGroup(this)">
+                    <div class="service-group-info">
+                        <h3 class="service-group-name">${service || 'Sin servicio'}</h3>
+                        <div class="service-group-stats">
+                            <span class="stat-badge">${data.errors.length} tipos</span>
+                            <span class="stat-badge">${data.totalCount.toLocaleString()} errores</span>
+                            ${criticalCount > 0 ? `<span class="stat-badge critical">${criticalCount} criticos</span>` : ''}
+                        </div>
+                    </div>
+                    <span class="expand-icon">▼</span>
+                </div>
+                <div class="service-group-content expanded">
+                    ${data.errors.map((error, idx) => {
+                        const priority = getPriorityLevel(error.score);
+                        const errorType = error.error_type || extractErrorType(error.sample_message);
+                        return `
+                            <div class="service-error-item">
+                                <div class="service-error-info">
+                                    <span class="priority-dot ${priority.level}"></span>
+                                    <span class="service-error-type">${escapeHtml(errorType)}</span>
+                                    <span class="service-error-count">${error.count.toLocaleString()}</span>
+                                </div>
+                                <div class="service-error-actions">
+                                    ${error.hasAnalysis ?
+                                        `<button class="btn-small" onclick="showAnalysis('${error.hash}')">Analisis</button>` :
+                                        ''
+                                    }
+                                </div>
+                            </div>
+                        `;
+                    }).join('')}
+                </div>
+            </div>
+        `;
+    });
+
+    html += '</div>';
+    container.innerHTML = html;
+}
+
+function toggleServiceGroup(header) {
+    const content = header.nextElementSibling;
+    const icon = header.querySelector('.expand-icon');
+    content.classList.toggle('expanded');
+    icon.textContent = content.classList.contains('expanded') ? '▼' : '▶';
+}
+
+function showAnalysis(hash) {
+    const analysis = errorAnalyses[hash];
+    const errorData = consolidatedErrors[hash];
+
+    if (!analysis) {
+        alert('No hay analisis disponible para este error');
+        return;
+    }
+
+    const errorType = errorData?.error_type || extractErrorType(errorData?.sample_message);
+
+    document.getElementById('analysisModalTitle').textContent = `Analisis: ${errorType}`;
+
+    // Parse markdown-like content
+    let htmlContent = `
+        <div class="analysis-header">
+            <div class="analysis-meta">
+                <span><strong>Ocurrencias:</strong> ${errorData?.count?.toLocaleString() || '--'}</span>
+                <span><strong>Servicios:</strong> ${errorData?.services?.join(', ') || '--'}</span>
+                <span><strong>Analizado:</strong> ${formatDate(analysis.analyzed_at)}</span>
+            </div>
+        </div>
+        <div class="analysis-content">
+            ${formatAnalysisMarkdown(analysis.analysis)}
+        </div>
+    `;
+
+    document.getElementById('analysisModalBody').innerHTML = htmlContent;
+    document.getElementById('analysisModal').classList.add('active');
+}
+
+function formatAnalysisMarkdown(text) {
+    if (!text) return '';
+
+    // Convert markdown to HTML
+    let html = text
+        // Headers
+        .replace(/^### (.+)$/gm, '<h4>$1</h4>')
+        .replace(/^## (.+)$/gm, '<h3 class="analysis-section-title">$1</h3>')
+        .replace(/^# (.+)$/gm, '<h2>$1</h2>')
+        // Bold
+        .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+        // Code blocks
+        .replace(/```(\w+)?\n([\s\S]*?)```/g, '<pre class="code-block"><code>$2</code></pre>')
+        // Inline code
+        .replace(/`([^`]+)`/g, '<code class="inline-code">$1</code>')
+        // Lists
+        .replace(/^- (.+)$/gm, '<li>$1</li>')
+        .replace(/^(\d+)\. (.+)$/gm, '<li>$2</li>')
+        // Line breaks
+        .replace(/\n\n/g, '</p><p>')
+        .replace(/\n/g, '<br>');
+
+    // Wrap lists
+    html = html.replace(/(<li>.*?<\/li>)+/gs, '<ul>$&</ul>');
+
+    return `<p>${html}</p>`;
+}
+
+function showOccurrences(hash) {
+    const errorData = consolidatedErrors[hash];
+    if (!errorData || !errorData.occurrences) return;
+
+    const errorType = errorData.error_type || extractErrorType(errorData.sample_message);
+
+    document.getElementById('modalTitle').textContent = `Ocurrencias: ${errorType}`;
+
+    let html = `
+        <div class="occurrences-summary">
+            <p><strong>Total:</strong> ${errorData.count} ocurrencias</p>
+            <p><strong>Servicios:</strong> ${errorData.services.join(', ')}</p>
+            <p><strong>Revisiones:</strong> ${errorData.revisions?.join(', ') || '--'}</p>
+        </div>
+        <div class="occurrences-list">
+            <h4>Ultimas ocurrencias:</h4>
+            ${errorData.occurrences.slice(0, 10).map(occ => `
+                <div class="occurrence-item">
+                    <span class="occ-time">${formatDate(occ.timestamp)}</span>
+                    <span class="occ-service">${occ.service}</span>
+                    <span class="occ-revision">${occ.revision || '--'}</span>
+                    ${occ.http_status ? `<span class="occ-status">${occ.http_status}</span>` : ''}
+                </div>
+            `).join('')}
+        </div>
+        <div class="sample-message">
+            <h4>Mensaje de ejemplo:</h4>
+            <pre class="error-detail-content">${escapeHtml(errorData.sample_message || 'Sin mensaje')}</pre>
+        </div>
+    `;
+
+    document.getElementById('errorModalBody').innerHTML = html;
+    document.getElementById('errorModal').classList.add('active');
+}
+
+function closeAnalysisModal() {
+    document.getElementById('analysisModal').classList.remove('active');
+}
+
+function closeErrorModal() {
+    document.getElementById('errorModal').classList.remove('active');
+}
+
+// Close modals on outside click
+document.addEventListener('click', (e) => {
+    if (e.target.classList.contains('modal')) {
+        e.target.classList.remove('active');
+    }
+});
+
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        closeAnalysisModal();
+        closeErrorModal();
+    }
+});
+
+// ==================== LIST VIEW FUNCTIONS ====================
+
+function applyListFilters() {
     const serviceFilter = document.getElementById('serviceFilter').value;
     const severityFilter = document.getElementById('severityFilter').value;
     const dateFrom = document.getElementById('dateFrom').value;
@@ -98,58 +441,35 @@ function applyFilters() {
     const searchFilter = document.getElementById('searchFilter').value.toLowerCase();
 
     filteredErrors = allErrors.filter(error => {
-        // Service filter
-        if (serviceFilter !== 'all' && error.service !== serviceFilter) {
-            return false;
-        }
+        if (serviceFilter !== 'all' && error.service !== serviceFilter) return false;
+        if (severityFilter !== 'all' && error.severity !== severityFilter) return false;
 
-        // Severity filter
-        if (severityFilter !== 'all' && error.severity !== severityFilter) {
-            return false;
-        }
-
-        // Date from filter (use UTC to avoid timezone issues)
         if (dateFrom) {
             const errorDate = new Date(error.timestamp);
-            // Parse as local date and set to start of day in local timezone
             const [year, month, day] = dateFrom.split('-').map(Number);
             const fromDate = new Date(year, month - 1, day, 0, 0, 0, 0);
-            if (errorDate < fromDate) {
-                return false;
-            }
+            if (errorDate < fromDate) return false;
         }
 
-        // Date to filter (use UTC to avoid timezone issues)
         if (dateTo) {
             const errorDate = new Date(error.timestamp);
-            // Parse as local date and set to end of day in local timezone
             const [year, month, day] = dateTo.split('-').map(Number);
             const toDate = new Date(year, month - 1, day, 23, 59, 59, 999);
-            if (errorDate > toDate) {
-                return false;
-            }
+            if (errorDate > toDate) return false;
         }
 
-        // Search filter
         if (searchFilter) {
             const message = (error.message || '').toLowerCase();
             const service = (error.service || '').toLowerCase();
-            if (!message.includes(searchFilter) && !service.includes(searchFilter)) {
-                return false;
-            }
+            if (!message.includes(searchFilter) && !service.includes(searchFilter)) return false;
         }
 
         return true;
     });
 
-    // Sort by timestamp (newest first)
     filteredErrors.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
-
-    // Reset to page 1
     currentPage = 1;
-
-    // Render
-    renderErrors();
+    renderListErrors();
     updatePagination();
 }
 
@@ -161,7 +481,7 @@ function clearFilters() {
     applyFilters();
 }
 
-function renderErrors() {
+function renderListErrors() {
     const container = document.getElementById('errorsList');
     const startIndex = (currentPage - 1) * errorsPerPage;
     const endIndex = startIndex + errorsPerPage;
@@ -175,9 +495,8 @@ function renderErrors() {
     }
 
     container.innerHTML = pageErrors.map((error, index) => {
-        const severityClass = error.severity.toLowerCase();
+        const severityClass = error.severity?.toLowerCase() || 'error';
         const messagePreview = truncateMessage(error.message, 300);
-        const isTruncated = error.message && error.message.length > 300;
 
         return `
             <div class="error-item-card severity-${severityClass}">
@@ -192,13 +511,12 @@ function renderErrors() {
                     </div>
                 </div>
                 <div class="error-item-body">
-                    <div class="error-message-preview ${isTruncated ? 'truncated' : ''}">${escapeHtml(messagePreview)}</div>
+                    <div class="error-message-preview">${escapeHtml(messagePreview)}</div>
                 </div>
                 <div class="error-item-footer">
                     <div class="error-item-meta">
-                        <span>📦 ${error.revision || '--'}</span>
-                        ${error.httpRequest ? `<span>🌐 ${error.httpRequest.method} ${truncateUrl(error.httpRequest.url)}</span>` : ''}
-                        ${error.trace ? `<span>🔍 Trace disponible</span>` : ''}
+                        <span>${error.revision || '--'}</span>
+                        ${error.httpRequest ? `<span>${error.httpRequest.method} ${truncateUrl(error.httpRequest.url)}</span>` : ''}
                     </div>
                     <button class="view-details-btn" onclick="showErrorDetails(${startIndex + index})">Ver detalles</button>
                 </div>
@@ -214,7 +532,6 @@ function updatePagination() {
     document.getElementById('prevBtn').disabled = currentPage <= 1;
     document.getElementById('nextBtn').disabled = currentPage >= totalPages;
 
-    // Generate page numbers
     const pageNumbers = document.getElementById('pageNumbers');
     pageNumbers.innerHTML = '';
 
@@ -223,29 +540,17 @@ function updatePagination() {
             pageNumbers.appendChild(createPageButton(i));
         }
     } else {
-        // Always show first page
         pageNumbers.appendChild(createPageButton(1));
+        if (currentPage > 3) pageNumbers.appendChild(createEllipsis());
 
-        if (currentPage > 3) {
-            pageNumbers.appendChild(createEllipsis());
-        }
-
-        // Show pages around current
         const start = Math.max(2, currentPage - 1);
         const end = Math.min(totalPages - 1, currentPage + 1);
-
         for (let i = start; i <= end; i++) {
             pageNumbers.appendChild(createPageButton(i));
         }
 
-        if (currentPage < totalPages - 2) {
-            pageNumbers.appendChild(createEllipsis());
-        }
-
-        // Always show last page
-        if (totalPages > 1) {
-            pageNumbers.appendChild(createPageButton(totalPages));
-        }
+        if (currentPage < totalPages - 2) pageNumbers.appendChild(createEllipsis());
+        if (totalPages > 1) pageNumbers.appendChild(createPageButton(totalPages));
     }
 }
 
@@ -266,22 +571,18 @@ function createEllipsis() {
 
 function goToPage(page) {
     currentPage = page;
-    renderErrors();
+    renderListErrors();
     updatePagination();
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 function previousPage() {
-    if (currentPage > 1) {
-        goToPage(currentPage - 1);
-    }
+    if (currentPage > 1) goToPage(currentPage - 1);
 }
 
 function nextPage() {
     const totalPages = Math.ceil(filteredErrors.length / errorsPerPage);
-    if (currentPage < totalPages) {
-        goToPage(currentPage + 1);
-    }
+    if (currentPage < totalPages) goToPage(currentPage + 1);
 }
 
 function showErrorDetails(index) {
@@ -290,10 +591,7 @@ function showErrorDetails(index) {
 
     document.getElementById('modalTitle').textContent = `Error en ${error.service}`;
 
-    let html = '';
-
-    // Basic info
-    html += `
+    let html = `
         <div class="error-detail-section">
             <h4>Informacion General</h4>
             <div class="error-detail-grid">
@@ -307,7 +605,7 @@ function showErrorDetails(index) {
                 </div>
                 <div class="error-detail-item">
                     <label>Severidad</label>
-                    <span class="severity-badge ${error.severity.toLowerCase()}">${error.severity}</span>
+                    <span class="severity-badge ${error.severity?.toLowerCase()}">${error.severity}</span>
                 </div>
                 <div class="error-detail-item">
                     <label>Timestamp</label>
@@ -317,43 +615,22 @@ function showErrorDetails(index) {
         </div>
     `;
 
-    // HTTP Request info
     if (error.httpRequest) {
         const statusClass = error.httpRequest.status >= 500 ? 'status-5xx' : 'status-4xx';
         html += `
             <div class="error-detail-section">
                 <h4>Request HTTP</h4>
                 <table class="http-info-table">
-                    <tr>
-                        <td>Metodo</td>
-                        <td>${error.httpRequest.method}</td>
-                    </tr>
-                    <tr>
-                        <td>URL</td>
-                        <td style="word-break: break-all;">${error.httpRequest.url}</td>
-                    </tr>
-                    <tr>
-                        <td>Status</td>
-                        <td><span class="http-status-badge ${statusClass}">${error.httpRequest.status}</span></td>
-                    </tr>
-                    <tr>
-                        <td>Latencia</td>
-                        <td>${error.httpRequest.latency || '--'}</td>
-                    </tr>
-                    <tr>
-                        <td>IP Remota</td>
-                        <td>${error.httpRequest.remoteIp || '--'}</td>
-                    </tr>
-                    <tr>
-                        <td>User Agent</td>
-                        <td style="word-break: break-all; font-size: 0.75rem;">${error.httpRequest.userAgent || '--'}</td>
-                    </tr>
+                    <tr><td>Metodo</td><td>${error.httpRequest.method}</td></tr>
+                    <tr><td>URL</td><td style="word-break: break-all;">${error.httpRequest.url}</td></tr>
+                    <tr><td>Status</td><td><span class="http-status-badge ${statusClass}">${error.httpRequest.status}</span></td></tr>
+                    <tr><td>Latencia</td><td>${error.httpRequest.latency || '--'}</td></tr>
+                    <tr><td>IP Remota</td><td>${error.httpRequest.remoteIp || '--'}</td></tr>
                 </table>
             </div>
         `;
     }
 
-    // Error message
     html += `
         <div class="error-detail-section">
             <h4>Mensaje de Error</h4>
@@ -361,53 +638,48 @@ function showErrorDetails(index) {
         </div>
     `;
 
-    // Trace info
-    if (error.trace || error.spanId) {
-        html += `
-            <div class="error-detail-section">
-                <h4>Trace</h4>
-                <div class="error-detail-grid">
-                    ${error.trace ? `
-                        <div class="error-detail-item">
-                            <label>Trace ID</label>
-                            <span style="font-size: 0.75rem;">${error.trace}</span>
-                        </div>
-                    ` : ''}
-                    ${error.spanId ? `
-                        <div class="error-detail-item">
-                            <label>Span ID</label>
-                            <span>${error.spanId}</span>
-                        </div>
-                    ` : ''}
-                </div>
-            </div>
-        `;
-    }
-
     document.getElementById('errorModalBody').innerHTML = html;
     document.getElementById('errorModal').classList.add('active');
 }
 
-function closeErrorModal() {
-    document.getElementById('errorModal').classList.remove('active');
+// ==================== UTILITY FUNCTIONS ====================
+
+function extractErrorType(message) {
+    if (!message) return 'Error desconocido';
+
+    // Try to extract error type from message
+    const patterns = [
+        /(\w+Error):/,
+        /(\w+Exception):/,
+        /^(Error|ERROR):/,
+        /django\.db\.utils\.(\w+)/,
+        /psycopg2\.(\w+)/,
+    ];
+
+    for (const pattern of patterns) {
+        const match = message.match(pattern);
+        if (match) return match[1];
+    }
+
+    // Return first line truncated
+    const firstLine = message.split('\n')[0];
+    return truncateMessage(firstLine, 50);
 }
 
-// Close modal on outside click
-document.addEventListener('click', (e) => {
-    const modal = document.getElementById('errorModal');
-    if (e.target === modal) {
-        closeErrorModal();
-    }
-});
+function getTimeAgo(dateString) {
+    const date = new Date(dateString);
+    const now = new Date();
+    const diffMs = now - date;
+    const diffMins = Math.floor(diffMs / 60000);
+    const diffHours = Math.floor(diffMs / 3600000);
+    const diffDays = Math.floor(diffMs / 86400000);
 
-// Close modal on Escape key
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-        closeErrorModal();
-    }
-});
+    if (diffMins < 60) return `hace ${diffMins} min`;
+    if (diffHours < 24) return `hace ${diffHours}h`;
+    if (diffDays < 7) return `hace ${diffDays}d`;
+    return formatDate(dateString);
+}
 
-// Utility functions
 function formatDate(dateString) {
     if (!dateString) return '--';
     const date = new Date(dateString);
@@ -416,8 +688,7 @@ function formatDate(dateString) {
         month: 'short',
         day: 'numeric',
         hour: '2-digit',
-        minute: '2-digit',
-        second: '2-digit'
+        minute: '2-digit'
     });
 }
 
@@ -432,10 +703,7 @@ function truncateUrl(url) {
     try {
         const urlObj = new URL(url);
         const path = urlObj.pathname;
-        if (path.length > 50) {
-            return path.substring(0, 50) + '...';
-        }
-        return path;
+        return path.length > 50 ? path.substring(0, 50) + '...' : path;
     } catch {
         return url.length > 50 ? url.substring(0, 50) + '...' : url;
     }
