@@ -25,7 +25,7 @@
     },
     "deployments": {
       "total": 43,
-      "last24h": 23,
+      "last24h": 18,
       "last7d": 43,
       "lastDeployment": "2026-01-17T17:31:49.964407Z",
       "recentDeployments": [
@@ -62,15 +62,15 @@
       "avgLatencyMs": 451
     },
     "interactions": {
-      "requests7d": 732,
-      "requests30d": 732
+      "requests7d": 731,
+      "requests30d": 731
     },
     "costEstimate": {
       "estimatedMonthly": 0.12,
       "cpuCost": 0.11,
       "memoryCost": 0.01,
       "requestCost": 0.0,
-      "estimatedRequests": 3147,
+      "estimatedRequests": 3143,
       "avgLatencyMs": 751,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -134,15 +134,15 @@
       "avgLatencyMs": 1763
     },
     "interactions": {
-      "requests7d": 134,
-      "requests30d": 134
+      "requests7d": 105,
+      "requests30d": 105
     },
     "costEstimate": {
-      "estimatedMonthly": 0.13,
-      "cpuCost": 0.11,
+      "estimatedMonthly": 0.1,
+      "cpuCost": 0.09,
       "memoryCost": 0.01,
       "requestCost": 0.0,
-      "estimatedRequests": 576,
+      "estimatedRequests": 451,
       "avgLatencyMs": 2063,
       "cpuCores": 2.0,
       "memoryGiB": 2.0,
@@ -151,7 +151,7 @@
       "usesConsolidatedDb": true,
       "hasDedicatedDb": false,
       "dedicatedDbName": null,
-      "totalWithSql": 1.39
+      "totalWithSql": 1.36
     }
   },
   {
@@ -935,15 +935,15 @@
       "avgLatencyMs": 298
     },
     "interactions": {
-      "requests7d": 2124,
-      "requests30d": 2124
+      "requests7d": 2159,
+      "requests30d": 2159
     },
     "costEstimate": {
-      "estimatedMonthly": 0.28,
-      "cpuCost": 0.26,
+      "estimatedMonthly": 0.29,
+      "cpuCost": 0.27,
       "memoryCost": 0.01,
       "requestCost": 0.0,
-      "estimatedRequests": 9133,
+      "estimatedRequests": 9283,
       "avgLatencyMs": 598,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -952,7 +952,7 @@
       "usesConsolidatedDb": true,
       "hasDedicatedDb": false,
       "dedicatedDbName": null,
-      "totalWithSql": 1.54
+      "totalWithSql": 1.55
     }
   },
   {
@@ -1304,15 +1304,15 @@
       "avgLatencyMs": 6635
     },
     "interactions": {
-      "requests7d": 304,
-      "requests30d": 304
+      "requests7d": 287,
+      "requests30d": 287
     },
     "costEstimate": {
-      "estimatedMonthly": 0.33,
-      "cpuCost": 0.31,
+      "estimatedMonthly": 0.31,
+      "cpuCost": 0.29,
       "memoryCost": 0.02,
       "requestCost": 0.0,
-      "estimatedRequests": 1307,
+      "estimatedRequests": 1234,
       "avgLatencyMs": 4944,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -1321,7 +1321,7 @@
       "usesConsolidatedDb": true,
       "hasDedicatedDb": false,
       "dedicatedDbName": null,
-      "totalWithSql": 1.59
+      "totalWithSql": 1.57
     }
   },
   {
@@ -1371,15 +1371,15 @@
       "avgLatencyMs": 6635
     },
     "interactions": {
-      "requests7d": 304,
-      "requests30d": 304
+      "requests7d": 287,
+      "requests30d": 287
     },
     "costEstimate": {
-      "estimatedMonthly": 0.33,
-      "cpuCost": 0.31,
+      "estimatedMonthly": 0.31,
+      "cpuCost": 0.29,
       "memoryCost": 0.02,
       "requestCost": 0.0,
-      "estimatedRequests": 1307,
+      "estimatedRequests": 1234,
       "avgLatencyMs": 4944,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -1388,7 +1388,7 @@
       "usesConsolidatedDb": true,
       "hasDedicatedDb": false,
       "dedicatedDbName": null,
-      "totalWithSql": 1.59
+      "totalWithSql": 1.57
     }
   },
   {
@@ -1450,18 +1450,18 @@
       "last7d": 542,
       "recentErrors": [
         {
-          "timestamp": "2026-01-17T17:05:07.607682Z",
+          "timestamp": "2026-01-18T00:05:36.357811Z",
           "message": "Traceback (most recent call last):\n  File \"/app/integracion_siigo/tasks.py\", line 365, in sincronizar_balance_prueba_mes\n    registro = service.sync_balance_prueba(anio, mes)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/app/integracion_siigo/services.py\", line 1697, in sync_balance...",
           "severity": "ERROR"
         },
         {
-          "timestamp": "2026-01-17T11:00:03.913273Z",
-          "message": "Traceback (most recent call last):\n  File \"/app/reportes_financieros/views.py\", line 983, in cron_sync_journals\n    resultado = service.sincronizar(dias=7)  # \u00daltimos 7 d\u00edas por defecto\n                ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/app/reportes_financieros/services/sincronizacion_contable.py\"...",
+          "timestamp": "2026-01-18T00:05:36.357792Z",
+          "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/requests/adapters.py\", line 667, in send\n    resp = conn.urlopen(\n           ^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/urllib3/connectionpool.py\", line 841, in urlopen\n    retries = retries.increme...",
           "severity": "ERROR"
         },
         {
-          "timestamp": "2026-01-17T11:00:03.913238Z",
-          "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 288, in ensure_connection\n    self.connect()\n  File \"/usr/local/lib/python3.11/site-packages/django/utils/asyncio.py\", line 26, in inner\n    return func(*args, **kwargs)\n        ...",
+          "timestamp": "2026-01-18T00:05:36.357775Z",
+          "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/urllib3/connectionpool.py\", line 534, in _make_request\n    response = conn.getresponse()\n               ^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/urllib3/connection.py\", line 571, in getrespon...",
           "severity": "ERROR"
         }
       ]
@@ -1479,15 +1479,15 @@
       "avgLatencyMs": 752
     },
     "interactions": {
-      "requests7d": 823,
-      "requests30d": 823
+      "requests7d": 857,
+      "requests30d": 857
     },
     "costEstimate": {
-      "estimatedMonthly": 0.19,
-      "cpuCost": 0.18,
+      "estimatedMonthly": 0.2,
+      "cpuCost": 0.19,
       "memoryCost": 0.01,
       "requestCost": 0.0,
-      "estimatedRequests": 3538,
+      "estimatedRequests": 3685,
       "avgLatencyMs": 1052,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -1496,7 +1496,7 @@
       "usesConsolidatedDb": true,
       "hasDedicatedDb": false,
       "dedicatedDbName": null,
-      "totalWithSql": 1.45
+      "totalWithSql": 1.46
     }
   },
   {
@@ -1640,15 +1640,15 @@
       "avgLatencyMs": 47
     },
     "interactions": {
-      "requests7d": 3229,
-      "requests30d": 3229
+      "requests7d": 3217,
+      "requests30d": 3217
     },
     "costEstimate": {
       "estimatedMonthly": 0.29,
       "cpuCost": 0.27,
       "memoryCost": 0.01,
       "requestCost": 0.01,
-      "estimatedRequests": 13884,
+      "estimatedRequests": 13833,
       "avgLatencyMs": 400,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -1702,15 +1702,15 @@
       "avgLatencyMs": 6643
     },
     "interactions": {
-      "requests7d": 73,
-      "requests30d": 73
+      "requests7d": 72,
+      "requests30d": 72
     },
     "costEstimate": {
       "estimatedMonthly": 0.08,
       "cpuCost": 0.07,
       "memoryCost": 0.0,
       "requestCost": 0.0,
-      "estimatedRequests": 313,
+      "estimatedRequests": 309,
       "avgLatencyMs": 4950,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -1820,15 +1820,15 @@
       "avgLatencyMs": 189
     },
     "interactions": {
-      "requests7d": 358,
-      "requests30d": 358
+      "requests7d": 347,
+      "requests30d": 347
     },
     "costEstimate": {
       "estimatedMonthly": 0.04,
       "cpuCost": 0.04,
       "memoryCost": 0.0,
       "requestCost": 0.0,
-      "estimatedRequests": 1539,
+      "estimatedRequests": 1492,
       "avgLatencyMs": 489,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -2004,15 +2004,15 @@
       "avgLatencyMs": 0
     },
     "interactions": {
-      "requests7d": 54,
-      "requests30d": 54
+      "requests7d": 56,
+      "requests30d": 56
     },
     "costEstimate": {
       "estimatedMonthly": 0.0,
       "cpuCost": 0.0,
       "memoryCost": 0.0,
       "requestCost": 0.0,
-      "estimatedRequests": 232,
+      "estimatedRequests": 240,
       "avgLatencyMs": 650,
       "cpuCores": 0.3333,
       "memoryGiB": 0.5,
