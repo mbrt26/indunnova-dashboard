@@ -1,11 +1,11 @@
 {
-  "lastUpdate": "2026-01-18T10:14:26.629602+00:00",
+  "lastUpdate": "2026-01-18T11:11:54.383360+00:00",
   "project": "appsindunnova",
   "totalServices": 39,
   "totalRepos": 1,
   "healthyServices": 36,
   "unhealthyServices": 3,
-  "totalErrors24h": 536,
+  "totalErrors24h": 491,
   "totalErrors7d": 1000,
   "totalDeployments24h": 23,
   "totalDeployments7d": 204,
@@ -16,8 +16,8 @@
     "other": 57.04,
     "total": 128.46,
     "sqlInstances": {
-      "running": 2,
-      "stopped": 2
+      "running": 4,
+      "stopped": 0
     },
     "breakdown": {
       "artifactRegistry": 34.05,
@@ -43,15 +43,15 @@
     },
     {
       "name": "postgres-consolidated",
-      "state": "STOPPED",
+      "state": "RUNNABLE",
       "tier": "db-g1-small",
       "diskSizeGb": 50,
       "diskType": "PD_SSD",
       "region": "us-central1",
       "databaseVersion": "POSTGRES_15",
-      "computeCost": 0,
+      "computeCost": 25.55,
       "storageCost": 8.5,
-      "totalCost": 8.5
+      "totalCost": 34.05
     },
     {
       "name": "arcopack-db",
@@ -67,15 +67,15 @@
     },
     {
       "name": "rgd-aire-db",
-      "state": "STOPPED",
+      "state": "RUNNABLE",
       "tier": "db-f1-micro",
       "diskSizeGb": 10,
       "diskType": "PD_SSD",
       "region": "us-central1",
       "databaseVersion": "POSTGRES_14",
-      "computeCost": 0,
+      "computeCost": 7.67,
       "storageCost": 1.7,
-      "totalCost": 1.7
+      "totalCost": 9.37
     }
   ]
 }
