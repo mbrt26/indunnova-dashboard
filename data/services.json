@@ -2,37 +2,52 @@
   {
     "name": "arcopack-erp",
     "url": "https://arcopack-erp-381877373634.us-central1.run.app",
-    "status": "Unknown",
+    "status": "True",
     "region": "us-central1",
     "repo": "https://github.com/mbrt26/Arcopack",
     "repoName": "Arcopack",
     "errors": {
-      "total": 2,
-      "last24h": 2,
-      "last7d": 2,
+      "total": 4,
+      "last24h": 4,
+      "last7d": 4,
       "recentErrors": [
         {
-          "timestamp": "2026-01-19T20:18:02.644249Z",
+          "timestamp": "2026-01-19T21:17:43.308139Z",
           "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/core/handlers/exception.py\", line 55, in inner\n    response = get_response(request)\n               ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/core/handlers/base.py\", line 197, ...",
           "severity": "ERROR"
         },
         {
-          "timestamp": "2026-01-19T20:18:02.505323Z",
+          "timestamp": "2026-01-19T21:17:43.196427Z",
           "message": "{}",
+          "severity": "ERROR"
+        },
+        {
+          "timestamp": "2026-01-19T20:18:02.644249Z",
+          "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/core/handlers/exception.py\", line 55, in inner\n    response = get_response(request)\n               ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/core/handlers/base.py\", line 197, ...",
           "severity": "ERROR"
         }
       ]
     },
     "deployments": {
-      "total": 47,
-      "last24h": 6,
-      "last7d": 47,
-      "lastDeployment": "2026-01-19T21:13:04.483889Z",
+      "total": 39,
+      "last24h": 8,
+      "last7d": 39,
+      "lastDeployment": "2026-01-19T21:41:59.663796Z",
       "recentDeployments": [
+        {
+          "revision": "arcopack-erp-00448-5mr",
+          "timestamp": "2026-01-19T21:41:59.663796Z",
+          "status": "True"
+        },
+        {
+          "revision": "arcopack-erp-00447-xlb",
+          "timestamp": "2026-01-19T21:25:03.864446Z",
+          "status": "True"
+        },
         {
           "revision": "arcopack-erp-00446-2fj",
           "timestamp": "2026-01-19T21:13:04.483889Z",
-          "status": "Unknown"
+          "status": "True"
         },
         {
           "revision": "arcopack-erp-00445-rxp",
@@ -43,35 +58,25 @@
           "revision": "arcopack-erp-00444-rlw",
           "timestamp": "2026-01-19T19:47:43.177022Z",
           "status": "True"
-        },
-        {
-          "revision": "arcopack-erp-00443-4g5",
-          "timestamp": "2026-01-19T19:17:01.098729Z",
-          "status": "True"
-        },
-        {
-          "revision": "arcopack-erp-00442-fjh",
-          "timestamp": "2026-01-19T19:09:28.282587Z",
-          "status": "True"
         }
       ]
     },
     "metrics": {
-      "errors5xx": 13,
+      "errors5xx": 14,
       "errors4xx": 0,
-      "avgLatencyMs": 427
+      "avgLatencyMs": 404
     },
     "interactions": {
-      "requests7d": 1017,
-      "requests30d": 1017
+      "requests7d": 911,
+      "requests30d": 911
     },
     "costEstimate": {
-      "estimatedMonthly": 0.16,
-      "cpuCost": 0.15,
+      "estimatedMonthly": 0.14,
+      "cpuCost": 0.13,
       "memoryCost": 0.01,
       "requestCost": 0.0,
-      "estimatedRequests": 4373,
-      "avgLatencyMs": 727,
+      "estimatedRequests": 3917,
+      "avgLatencyMs": 704,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
       "note": "Estimacion incluye cold starts y overhead tipico",
@@ -79,7 +84,7 @@
       "usesConsolidatedDb": true,
       "hasDedicatedDb": false,
       "dedicatedDbName": null,
-      "totalWithSql": 1.42
+      "totalWithSql": 1.4
     }
   },
   {
@@ -314,15 +319,15 @@
       "avgLatencyMs": 0
     },
     "interactions": {
-      "requests7d": 110,
-      "requests30d": 110
+      "requests7d": 120,
+      "requests30d": 120
     },
     "costEstimate": {
       "estimatedMonthly": 0.02,
-      "cpuCost": 0.01,
+      "cpuCost": 0.02,
       "memoryCost": 0.0,
       "requestCost": 0.0,
-      "estimatedRequests": 473,
+      "estimatedRequests": 516,
       "avgLatencyMs": 650,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -394,19 +399,34 @@
       "recentErrors": []
     },
     "deployments": {
-      "total": 2,
-      "last24h": 0,
-      "last7d": 2,
-      "lastDeployment": "2026-01-17T17:52:07.245098Z",
+      "total": 12,
+      "last24h": 10,
+      "last7d": 12,
+      "lastDeployment": "2026-01-19T22:07:23.514540Z",
       "recentDeployments": [
         {
-          "revision": "contabilidad-indunnova-00135-vjs",
-          "timestamp": "2026-01-17T17:52:07.245098Z",
+          "revision": "contabilidad-indunnova-00145-hnn",
+          "timestamp": "2026-01-19T22:07:23.514540Z",
           "status": "True"
         },
         {
-          "revision": "contabilidad-indunnova-00134-prz",
-          "timestamp": "2026-01-17T17:47:43.385764Z",
+          "revision": "contabilidad-indunnova-00144-5j8",
+          "timestamp": "2026-01-19T22:05:26.774119Z",
+          "status": "True"
+        },
+        {
+          "revision": "contabilidad-indunnova-00143-lbm",
+          "timestamp": "2026-01-19T22:00:03.093203Z",
+          "status": "True"
+        },
+        {
+          "revision": "contabilidad-indunnova-00142-x2d",
+          "timestamp": "2026-01-19T21:55:33.223806Z",
+          "status": "True"
+        },
+        {
+          "revision": "contabilidad-indunnova-00141-vxl",
+          "timestamp": "2026-01-19T21:51:06.255649Z",
           "status": "True"
         }
       ]
@@ -417,15 +437,15 @@
       "avgLatencyMs": 0
     },
     "interactions": {
-      "requests7d": 367,
-      "requests30d": 367
+      "requests7d": 998,
+      "requests30d": 998
     },
     "costEstimate": {
-      "estimatedMonthly": 0.05,
-      "cpuCost": 0.05,
-      "memoryCost": 0.0,
+      "estimatedMonthly": 0.14,
+      "cpuCost": 0.13,
+      "memoryCost": 0.01,
       "requestCost": 0.0,
-      "estimatedRequests": 1578,
+      "estimatedRequests": 4291,
       "avgLatencyMs": 650,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -434,7 +454,7 @@
       "usesConsolidatedDb": false,
       "hasDedicatedDb": false,
       "dedicatedDbName": null,
-      "totalWithSql": 0.05
+      "totalWithSql": 0.14
     }
   },
   {
@@ -509,15 +529,15 @@
       "avgLatencyMs": 0
     },
     "interactions": {
-      "requests7d": 100,
-      "requests30d": 100
+      "requests7d": 98,
+      "requests30d": 98
     },
     "costEstimate": {
       "estimatedMonthly": 0.01,
       "cpuCost": 0.01,
       "memoryCost": 0.0,
       "requestCost": 0.0,
-      "estimatedRequests": 430,
+      "estimatedRequests": 421,
       "avgLatencyMs": 650,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -807,15 +827,15 @@
       "avgLatencyMs": 0
     },
     "interactions": {
-      "requests7d": 781,
-      "requests30d": 781
+      "requests7d": 791,
+      "requests30d": 791
     },
     "costEstimate": {
       "estimatedMonthly": 0.11,
-      "cpuCost": 0.1,
+      "cpuCost": 0.11,
       "memoryCost": 0.01,
       "requestCost": 0.0,
-      "estimatedRequests": 3358,
+      "estimatedRequests": 3401,
       "avgLatencyMs": 650,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -903,9 +923,9 @@
       ]
     },
     "deployments": {
-      "total": 28,
+      "total": 26,
       "last24h": 0,
-      "last7d": 28,
+      "last7d": 26,
       "lastDeployment": "2026-01-16T17:41:13.508469Z",
       "recentDeployments": [
         {
@@ -941,15 +961,15 @@
       "avgLatencyMs": 317
     },
     "interactions": {
-      "requests7d": 2516,
-      "requests30d": 2516
+      "requests7d": 2424,
+      "requests30d": 2424
     },
     "costEstimate": {
-      "estimatedMonthly": 0.35,
-      "cpuCost": 0.32,
+      "estimatedMonthly": 0.33,
+      "cpuCost": 0.31,
       "memoryCost": 0.02,
       "requestCost": 0.0,
-      "estimatedRequests": 10818,
+      "estimatedRequests": 10423,
       "avgLatencyMs": 617,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -958,7 +978,7 @@
       "usesConsolidatedDb": true,
       "hasDedicatedDb": false,
       "dedicatedDbName": null,
-      "totalWithSql": 1.61
+      "totalWithSql": 1.59
     }
   },
   {
@@ -1013,15 +1033,15 @@
       "avgLatencyMs": 129
     },
     "interactions": {
-      "requests7d": 19,
-      "requests30d": 19
+      "requests7d": 1,
+      "requests30d": 1
     },
     "costEstimate": {
       "estimatedMonthly": 0.0,
       "cpuCost": 0.0,
       "memoryCost": 0.0,
       "requestCost": 0.0,
-      "estimatedRequests": 81,
+      "estimatedRequests": 4,
       "avgLatencyMs": 429,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -1311,15 +1331,15 @@
       "avgLatencyMs": 5231
     },
     "interactions": {
-      "requests7d": 119,
-      "requests30d": 119
+      "requests7d": 95,
+      "requests30d": 95
     },
     "costEstimate": {
-      "estimatedMonthly": 0.1,
-      "cpuCost": 0.1,
-      "memoryCost": 0.01,
+      "estimatedMonthly": 0.08,
+      "cpuCost": 0.08,
+      "memoryCost": 0.0,
       "requestCost": 0.0,
-      "estimatedRequests": 511,
+      "estimatedRequests": 408,
       "avgLatencyMs": 3961,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -1328,7 +1348,7 @@
       "usesConsolidatedDb": true,
       "hasDedicatedDb": false,
       "dedicatedDbName": null,
-      "totalWithSql": 1.36
+      "totalWithSql": 1.34
     }
   },
   {
@@ -1368,15 +1388,15 @@
       "avgLatencyMs": 5231
     },
     "interactions": {
-      "requests7d": 119,
-      "requests30d": 119
+      "requests7d": 95,
+      "requests30d": 95
     },
     "costEstimate": {
-      "estimatedMonthly": 0.1,
-      "cpuCost": 0.1,
-      "memoryCost": 0.01,
+      "estimatedMonthly": 0.08,
+      "cpuCost": 0.08,
+      "memoryCost": 0.0,
       "requestCost": 0.0,
-      "estimatedRequests": 511,
+      "estimatedRequests": 408,
       "avgLatencyMs": 3961,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -1385,7 +1405,7 @@
       "usesConsolidatedDb": true,
       "hasDedicatedDb": false,
       "dedicatedDbName": null,
-      "totalWithSql": 1.36
+      "totalWithSql": 1.34
     }
   },
   {
@@ -1487,21 +1507,21 @@
       "recentDeployments": []
     },
     "metrics": {
-      "errors5xx": 108,
+      "errors5xx": 107,
       "errors4xx": 0,
-      "avgLatencyMs": 559
+      "avgLatencyMs": 563
     },
     "interactions": {
-      "requests7d": 978,
-      "requests30d": 978
+      "requests7d": 955,
+      "requests30d": 955
     },
     "costEstimate": {
-      "estimatedMonthly": 0.19,
+      "estimatedMonthly": 0.18,
       "cpuCost": 0.17,
       "memoryCost": 0.01,
       "requestCost": 0.0,
-      "estimatedRequests": 4205,
-      "avgLatencyMs": 859,
+      "estimatedRequests": 4106,
+      "avgLatencyMs": 863,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
       "note": "Estimacion incluye cold starts y overhead tipico",
@@ -1509,7 +1529,7 @@
       "usesConsolidatedDb": true,
       "hasDedicatedDb": false,
       "dedicatedDbName": null,
-      "totalWithSql": 1.45
+      "totalWithSql": 1.44
     }
   },
   {
@@ -1520,9 +1540,9 @@
     "repo": "https://github.com/mbrt26/PlasticosAmbientales",
     "repoName": "PlasticosAmbientales",
     "errors": {
-      "total": 6,
+      "total": 5,
       "last24h": 0,
-      "last7d": 6,
+      "last7d": 5,
       "recentErrors": [
         {
           "timestamp": "2026-01-17T19:11:18.223267Z",
@@ -1668,15 +1688,15 @@
       "avgLatencyMs": 0
     },
     "interactions": {
-      "requests7d": 2911,
-      "requests30d": 2911
+      "requests7d": 2734,
+      "requests30d": 2734
     },
     "costEstimate": {
-      "estimatedMonthly": 0.42,
-      "cpuCost": 0.39,
+      "estimatedMonthly": 0.4,
+      "cpuCost": 0.37,
       "memoryCost": 0.02,
-      "requestCost": 0.01,
-      "estimatedRequests": 12517,
+      "requestCost": 0.0,
+      "estimatedRequests": 11756,
       "avgLatencyMs": 650,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -1685,7 +1705,7 @@
       "usesConsolidatedDb": false,
       "hasDedicatedDb": true,
       "dedicatedDbName": "rgd-aire-db",
-      "totalWithSql": 9.79
+      "totalWithSql": 9.77
     }
   },
   {
@@ -1696,9 +1716,9 @@
     "repo": null,
     "repoName": null,
     "errors": {
-      "total": 157,
+      "total": 156,
       "last24h": 80,
-      "last7d": 157,
+      "last7d": 156,
       "recentErrors": [
         {
           "timestamp": "2026-01-19T18:04:27.680205Z",
@@ -1848,15 +1868,15 @@
       "avgLatencyMs": 189
     },
     "interactions": {
-      "requests7d": 645,
-      "requests30d": 645
+      "requests7d": 457,
+      "requests30d": 457
     },
     "costEstimate": {
-      "estimatedMonthly": 0.07,
-      "cpuCost": 0.07,
+      "estimatedMonthly": 0.05,
+      "cpuCost": 0.05,
       "memoryCost": 0.0,
       "requestCost": 0.0,
-      "estimatedRequests": 2773,
+      "estimatedRequests": 1965,
       "avgLatencyMs": 489,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -1865,7 +1885,7 @@
       "usesConsolidatedDb": true,
       "hasDedicatedDb": false,
       "dedicatedDbName": null,
-      "totalWithSql": 1.33
+      "totalWithSql": 1.31
     }
   },
   {
@@ -2032,15 +2052,15 @@
       "avgLatencyMs": 0
     },
     "interactions": {
-      "requests7d": 75,
-      "requests30d": 75
+      "requests7d": 73,
+      "requests30d": 73
     },
     "costEstimate": {
       "estimatedMonthly": 0.0,
       "cpuCost": 0.0,
       "memoryCost": 0.0,
       "requestCost": 0.0,
-      "estimatedRequests": 322,
+      "estimatedRequests": 313,
       "avgLatencyMs": 650,
       "cpuCores": 0.3333,
       "memoryGiB": 0.5,
@@ -2124,15 +2144,15 @@
       "avgLatencyMs": 0
     },
     "interactions": {
-      "requests7d": 19,
-      "requests30d": 19
+      "requests7d": 0,
+      "requests30d": 0
     },
     "costEstimate": {
       "estimatedMonthly": 0.0,
       "cpuCost": 0.0,
       "memoryCost": 0.0,
       "requestCost": 0.0,
-      "estimatedRequests": 81,
+      "estimatedRequests": 0,
       "avgLatencyMs": 650,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
