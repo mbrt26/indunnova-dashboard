@@ -7,22 +7,22 @@
     "repo": "https://github.com/mbrt26/Arcopack",
     "repoName": "Arcopack",
     "errors": {
-      "total": 38,
-      "last24h": 8,
-      "last7d": 38,
+      "total": 41,
+      "last24h": 11,
+      "last7d": 41,
       "recentErrors": [
         {
-          "timestamp": "2026-01-24T02:04:31.115593Z",
+          "timestamp": "2026-01-24T04:10:41.202592Z",
           "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/core/handlers/exception.py\", line 55, in inner\n    response = get_response(request)\n               ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/core/handlers/base.py\", line 197, ...",
           "severity": "ERROR"
         },
         {
-          "timestamp": "2026-01-24T02:04:31.115517Z",
+          "timestamp": "2026-01-24T04:10:41.202502Z",
           "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/utils.py\", line 89, in _execute\n    return self.cursor.execute(sql, params)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\npsycopg2.errors.UniqueViolation: duplicate key value violates unique constrain...",
           "severity": "ERROR"
         },
         {
-          "timestamp": "2026-01-24T02:04:31.047321Z",
+          "timestamp": "2026-01-24T04:10:17.291698Z",
           "message": "{}",
           "severity": "ERROR"
         }
@@ -62,21 +62,21 @@
       ]
     },
     "metrics": {
-      "errors5xx": 27,
+      "errors5xx": 28,
       "errors4xx": 0,
-      "avgLatencyMs": 54
+      "avgLatencyMs": 898
     },
     "interactions": {
-      "requests7d": 1473,
-      "requests30d": 1473
+      "requests7d": 1474,
+      "requests30d": 1474
     },
     "costEstimate": {
-      "estimatedMonthly": 0.13,
-      "cpuCost": 0.12,
-      "memoryCost": 0.01,
+      "estimatedMonthly": 0.39,
+      "cpuCost": 0.36,
+      "memoryCost": 0.02,
       "requestCost": 0.0,
-      "estimatedRequests": 6333,
-      "avgLatencyMs": 400,
+      "estimatedRequests": 6338,
+      "avgLatencyMs": 1198,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
       "note": "Estimacion incluye cold starts y overhead tipico",
@@ -84,7 +84,7 @@
       "usesConsolidatedDb": true,
       "hasDedicatedDb": false,
       "dedicatedDbName": null,
-      "totalWithSql": 1.39
+      "totalWithSql": 1.65
     }
   },
   {
@@ -1040,20 +1040,20 @@
       ]
     },
     "metrics": {
-      "errors5xx": 143,
+      "errors5xx": 142,
       "errors4xx": 0,
       "avgLatencyMs": 81
     },
     "interactions": {
-      "requests7d": 2403,
-      "requests30d": 2403
+      "requests7d": 2407,
+      "requests30d": 2407
     },
     "costEstimate": {
       "estimatedMonthly": 0.22,
       "cpuCost": 0.2,
       "memoryCost": 0.01,
       "requestCost": 0.0,
-      "estimatedRequests": 10332,
+      "estimatedRequests": 10350,
       "avgLatencyMs": 400,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -1457,15 +1457,15 @@
       "avgLatencyMs": 1562
     },
     "interactions": {
-      "requests7d": 845,
-      "requests30d": 845
+      "requests7d": 831,
+      "requests30d": 831
     },
     "costEstimate": {
       "estimatedMonthly": 0.34,
       "cpuCost": 0.32,
       "memoryCost": 0.02,
       "requestCost": 0.0,
-      "estimatedRequests": 3633,
+      "estimatedRequests": 3573,
       "avgLatencyMs": 1862,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -1540,15 +1540,15 @@
       "avgLatencyMs": 1562
     },
     "interactions": {
-      "requests7d": 845,
-      "requests30d": 845
+      "requests7d": 831,
+      "requests30d": 831
     },
     "costEstimate": {
       "estimatedMonthly": 0.34,
       "cpuCost": 0.32,
       "memoryCost": 0.02,
       "requestCost": 0.0,
-      "estimatedRequests": 3633,
+      "estimatedRequests": 3573,
       "avgLatencyMs": 1862,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -1690,15 +1690,15 @@
       "avgLatencyMs": 8110
     },
     "interactions": {
-      "requests7d": 501,
-      "requests30d": 501
+      "requests7d": 514,
+      "requests30d": 514
     },
     "costEstimate": {
-      "estimatedMonthly": 0.65,
-      "cpuCost": 0.62,
+      "estimatedMonthly": 0.67,
+      "cpuCost": 0.63,
       "memoryCost": 0.03,
       "requestCost": 0.0,
-      "estimatedRequests": 2154,
+      "estimatedRequests": 2210,
       "avgLatencyMs": 5977,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -1707,7 +1707,7 @@
       "usesConsolidatedDb": true,
       "hasDedicatedDb": false,
       "dedicatedDbName": null,
-      "totalWithSql": 1.91
+      "totalWithSql": 1.93
     }
   },
   {
@@ -1866,15 +1866,15 @@
       "avgLatencyMs": 1465
     },
     "interactions": {
-      "requests7d": 1966,
-      "requests30d": 1966
+      "requests7d": 1961,
+      "requests30d": 1961
     },
     "costEstimate": {
       "estimatedMonthly": 0.76,
-      "cpuCost": 0.72,
+      "cpuCost": 0.71,
       "memoryCost": 0.04,
       "requestCost": 0.0,
-      "estimatedRequests": 8453,
+      "estimatedRequests": 8432,
       "avgLatencyMs": 1765,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -2002,9 +2002,9 @@
     "repo": "https://github.com/mbrt26/seyca_produccion",
     "repoName": "seyca_produccion",
     "errors": {
-      "total": 17,
+      "total": 14,
       "last24h": 0,
-      "last7d": 17,
+      "last7d": 14,
       "recentErrors": [
         {
           "timestamp": "2026-01-20T20:27:50.636340Z",
@@ -2236,15 +2236,15 @@
       "avgLatencyMs": 300001
     },
     "interactions": {
-      "requests7d": 39,
-      "requests30d": 39
+      "requests7d": 40,
+      "requests30d": 40
     },
     "costEstimate": {
-      "estimatedMonthly": 0.65,
-      "cpuCost": 0.56,
+      "estimatedMonthly": 0.67,
+      "cpuCost": 0.58,
       "memoryCost": 0.09,
       "requestCost": 0.0,
-      "estimatedRequests": 167,
+      "estimatedRequests": 172,
       "avgLatencyMs": 210300,
       "cpuCores": 0.3333,
       "memoryGiB": 0.5,
@@ -2253,7 +2253,7 @@
       "usesConsolidatedDb": false,
       "hasDedicatedDb": false,
       "dedicatedDbName": null,
-      "totalWithSql": 0.65
+      "totalWithSql": 0.67
     }
   },
   {
