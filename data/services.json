@@ -67,15 +67,15 @@
       "avgLatencyMs": 762
     },
     "interactions": {
-      "requests7d": 1865,
-      "requests30d": 1865
+      "requests7d": 1858,
+      "requests30d": 1858
     },
     "costEstimate": {
-      "estimatedMonthly": 0.44,
+      "estimatedMonthly": 0.43,
       "cpuCost": 0.41,
       "memoryCost": 0.02,
       "requestCost": 0.0,
-      "estimatedRequests": 8019,
+      "estimatedRequests": 7989,
       "avgLatencyMs": 1062,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -84,7 +84,7 @@
       "usesConsolidatedDb": true,
       "hasDedicatedDb": false,
       "dedicatedDbName": null,
-      "totalWithSql": 1.7
+      "totalWithSql": 1.69
     }
   },
   {
@@ -950,21 +950,21 @@
     "repoName": "GestionProveedoresISA",
     "errors": {
       "total": 251,
-      "last24h": 188,
+      "last24h": 192,
       "last7d": 251,
       "recentErrors": [
         {
-          "timestamp": "2026-01-26T04:35:00.713005Z",
+          "timestamp": "2026-01-26T05:36:51.088847Z",
           "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/asgiref/sync.py\", line 555, in thread_handler\n    raise exc_info[1]\n  File \"/usr/local/lib/python3.11/site-packages/django/core/handlers/exception.py\", line 42, in inner\n    response = await get_response(request)\n    ...",
           "severity": "ERROR"
         },
         {
-          "timestamp": "2026-01-26T04:35:00.712898Z",
+          "timestamp": "2026-01-26T05:36:51.088712Z",
           "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 288, in ensure_connection\n    self.connect()\n  File \"/usr/local/lib/python3.11/site-packages/django/utils/asyncio.py\", line 26, in inner\n    return func(*args, **kwargs)\n        ...",
           "severity": "ERROR"
         },
         {
-          "timestamp": "2026-01-26T04:35:00.712863Z",
+          "timestamp": "2026-01-26T05:36:51.088674Z",
           "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/contrib/sessions/backends/base.py\", line 187, in _get_session\n    return self._session_cache\n           ^^^^^^^^^^^^^^^^^^^\nAttributeError: 'SessionStore' object has no attribute '_session_cache'",
           "severity": "ERROR"
         }
@@ -1006,19 +1006,19 @@
     "metrics": {
       "errors5xx": 119,
       "errors4xx": 0,
-      "avgLatencyMs": 618
+      "avgLatencyMs": 620
     },
     "interactions": {
-      "requests7d": 1716,
-      "requests30d": 1716
+      "requests7d": 1722,
+      "requests30d": 1722
     },
     "costEstimate": {
       "estimatedMonthly": 0.35,
       "cpuCost": 0.33,
       "memoryCost": 0.02,
       "requestCost": 0.0,
-      "estimatedRequests": 7378,
-      "avgLatencyMs": 918,
+      "estimatedRequests": 7404,
+      "avgLatencyMs": 920,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
       "note": "Estimacion incluye cold starts y overhead tipico",
@@ -2267,15 +2267,15 @@
       "avgLatencyMs": 300001
     },
     "interactions": {
-      "requests7d": 69,
-      "requests30d": 69
+      "requests7d": 70,
+      "requests30d": 70
     },
     "costEstimate": {
-      "estimatedMonthly": 1.15,
-      "cpuCost": 1.0,
+      "estimatedMonthly": 1.17,
+      "cpuCost": 1.01,
       "memoryCost": 0.16,
       "requestCost": 0.0,
-      "estimatedRequests": 296,
+      "estimatedRequests": 301,
       "avgLatencyMs": 210300,
       "cpuCores": 0.3333,
       "memoryGiB": 0.5,
@@ -2284,7 +2284,7 @@
       "usesConsolidatedDb": false,
       "hasDedicatedDb": false,
       "dedicatedDbName": null,
-      "totalWithSql": 1.15
+      "totalWithSql": 1.17
     }
   },
   {
