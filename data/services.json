@@ -7,9 +7,9 @@
     "repo": "https://github.com/mbrt26/Arcopack",
     "repoName": "Arcopack",
     "errors": {
-      "total": 39,
+      "total": 33,
       "last24h": 0,
-      "last7d": 39,
+      "last7d": 33,
       "recentErrors": [
         {
           "timestamp": "2026-01-24T16:07:21.585841Z",
@@ -62,21 +62,21 @@
       ]
     },
     "metrics": {
-      "errors5xx": 34,
+      "errors5xx": 23,
       "errors4xx": 0,
-      "avgLatencyMs": 804
+      "avgLatencyMs": 1171
     },
     "interactions": {
-      "requests7d": 1818,
-      "requests30d": 1818
+      "requests7d": 1809,
+      "requests30d": 1809
     },
     "costEstimate": {
-      "estimatedMonthly": 0.44,
-      "cpuCost": 0.41,
-      "memoryCost": 0.02,
+      "estimatedMonthly": 0.58,
+      "cpuCost": 0.55,
+      "memoryCost": 0.03,
       "requestCost": 0.0,
-      "estimatedRequests": 7817,
-      "avgLatencyMs": 1104,
+      "estimatedRequests": 7778,
+      "avgLatencyMs": 1471,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
       "note": "Estimacion incluye cold starts y overhead tipico",
@@ -84,7 +84,7 @@
       "usesConsolidatedDb": true,
       "hasDedicatedDb": false,
       "dedicatedDbName": null,
-      "totalWithSql": 1.7
+      "totalWithSql": 1.84
     }
   },
   {
@@ -95,9 +95,9 @@
     "repo": "https://github.com/mbrt26/carnesdelsebastian",
     "repoName": "carnesdelsebastian",
     "errors": {
-      "total": 147,
+      "total": 141,
       "last24h": 36,
-      "last7d": 147,
+      "last7d": 141,
       "recentErrors": [
         {
           "timestamp": "2026-01-25T18:17:28.044470Z",
@@ -155,15 +155,15 @@
       "avgLatencyMs": 971
     },
     "interactions": {
-      "requests7d": 451,
-      "requests30d": 451
+      "requests7d": 418,
+      "requests30d": 418
     },
     "costEstimate": {
-      "estimatedMonthly": 0.26,
-      "cpuCost": 0.24,
+      "estimatedMonthly": 0.24,
+      "cpuCost": 0.22,
       "memoryCost": 0.02,
       "requestCost": 0.0,
-      "estimatedRequests": 1939,
+      "estimatedRequests": 1797,
       "avgLatencyMs": 1271,
       "cpuCores": 2.0,
       "memoryGiB": 2.0,
@@ -172,7 +172,7 @@
       "usesConsolidatedDb": true,
       "hasDedicatedDb": false,
       "dedicatedDbName": null,
-      "totalWithSql": 1.52
+      "totalWithSql": 1.5
     }
   },
   {
@@ -875,15 +875,15 @@
       "avgLatencyMs": 1933
     },
     "interactions": {
-      "requests7d": 104,
-      "requests30d": 104
+      "requests7d": 132,
+      "requests30d": 132
     },
     "costEstimate": {
-      "estimatedMonthly": 0.05,
-      "cpuCost": 0.05,
+      "estimatedMonthly": 0.06,
+      "cpuCost": 0.06,
       "memoryCost": 0.0,
       "requestCost": 0.0,
-      "estimatedRequests": 447,
+      "estimatedRequests": 567,
       "avgLatencyMs": 2233,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -892,7 +892,7 @@
       "usesConsolidatedDb": true,
       "hasDedicatedDb": false,
       "dedicatedDbName": null,
-      "totalWithSql": 1.31
+      "totalWithSql": 1.32
     }
   },
   {
@@ -949,22 +949,22 @@
     "repo": "https://github.com/mbrt26/GestionProveedoresISA",
     "repoName": "GestionProveedoresISA",
     "errors": {
-      "total": 262,
-      "last24h": 208,
-      "last7d": 262,
+      "total": 298,
+      "last24h": 256,
+      "last7d": 298,
       "recentErrors": [
         {
-          "timestamp": "2026-01-26T10:43:46.808344Z",
+          "timestamp": "2026-01-26T12:30:10.943111Z",
           "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/asgiref/sync.py\", line 555, in thread_handler\n    raise exc_info[1]\n  File \"/usr/local/lib/python3.11/site-packages/django/core/handlers/exception.py\", line 42, in inner\n    response = await get_response(request)\n    ...",
           "severity": "ERROR"
         },
         {
-          "timestamp": "2026-01-26T10:43:46.808174Z",
+          "timestamp": "2026-01-26T12:30:10.942941Z",
           "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 288, in ensure_connection\n    self.connect()\n  File \"/usr/local/lib/python3.11/site-packages/django/utils/asyncio.py\", line 26, in inner\n    return func(*args, **kwargs)\n        ...",
           "severity": "ERROR"
         },
         {
-          "timestamp": "2026-01-26T10:43:46.808119Z",
+          "timestamp": "2026-01-26T12:30:10.942903Z",
           "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/contrib/sessions/backends/base.py\", line 187, in _get_session\n    return self._session_cache\n           ^^^^^^^^^^^^^^^^^^^\nAttributeError: 'SessionStore' object has no attribute '_session_cache'",
           "severity": "ERROR"
         }
@@ -1004,21 +1004,21 @@
       ]
     },
     "metrics": {
-      "errors5xx": 112,
+      "errors5xx": 119,
       "errors4xx": 0,
-      "avgLatencyMs": 877
+      "avgLatencyMs": 1040
     },
     "interactions": {
-      "requests7d": 1763,
-      "requests30d": 1763
+      "requests7d": 1755,
+      "requests30d": 1755
     },
     "costEstimate": {
-      "estimatedMonthly": 0.46,
-      "cpuCost": 0.43,
-      "memoryCost": 0.02,
+      "estimatedMonthly": 0.52,
+      "cpuCost": 0.49,
+      "memoryCost": 0.03,
       "requestCost": 0.0,
-      "estimatedRequests": 7580,
-      "avgLatencyMs": 1177,
+      "estimatedRequests": 7546,
+      "avgLatencyMs": 1340,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
       "note": "Estimacion incluye cold starts y overhead tipico",
@@ -1026,7 +1026,7 @@
       "usesConsolidatedDb": true,
       "hasDedicatedDb": false,
       "dedicatedDbName": null,
-      "totalWithSql": 1.72
+      "totalWithSql": 1.78
     }
   },
   {
@@ -1431,23 +1431,23 @@
     "repo": "https://github.com/mbrt26/MoldesyMecanizados",
     "repoName": "MoldesyMecanizados",
     "errors": {
-      "total": 22,
-      "last24h": 0,
-      "last7d": 22,
+      "total": 38,
+      "last24h": 16,
+      "last7d": 38,
       "recentErrors": [
         {
-          "timestamp": "2026-01-22T18:54:21.095317Z",
-          "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/core/handlers/exception.py\", line 55, in inner\n    response = get_response(request)\n               ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/core/handlers/base.py\", line 220, ...",
+          "timestamp": "2026-01-26T12:07:09.387724Z",
+          "message": "Default STARTUP TCP probe failed 1 time consecutively for container \"moldes-mecanizados-app-1\" on port 8080. The instance was not started.\nConnection failed with status CANCELLED.",
           "severity": "ERROR"
         },
         {
-          "timestamp": "2026-01-22T18:54:21.056862Z",
-          "message": "{}",
+          "timestamp": "2026-01-26T12:07:08.427722Z",
+          "message": "Traceback (most recent call last):\n  File \"/app/manage.py\", line 22, in <module>\n    main()\n  File \"/app/manage.py\", line 18, in main\n    execute_from_command_line(sys.argv)\n  File \"/usr/local/lib/python3.11/site-packages/django/core/management/__init__.py\", line 442, in execute_from_command_line\n  ...",
           "severity": "ERROR"
         },
         {
-          "timestamp": "2026-01-22T18:53:25.488322Z",
-          "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/core/handlers/exception.py\", line 55, in inner\n    response = get_response(request)\n               ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/core/handlers/base.py\", line 220, ...",
+          "timestamp": "2026-01-26T12:07:08.408995Z",
+          "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 288, in ensure_connection\n    self.connect()\n  File \"/usr/local/lib/python3.11/site-packages/django/utils/asyncio.py\", line 26, in inner\n    return func(*args, **kwargs)\n        ...",
           "severity": "ERROR"
         }
       ]
@@ -1481,21 +1481,21 @@
       ]
     },
     "metrics": {
-      "errors5xx": 14,
+      "errors5xx": 18,
       "errors4xx": 0,
-      "avgLatencyMs": 1562
+      "avgLatencyMs": 2805
     },
     "interactions": {
-      "requests7d": 387,
-      "requests30d": 387
+      "requests7d": 391,
+      "requests30d": 391
     },
     "costEstimate": {
-      "estimatedMonthly": 0.16,
-      "cpuCost": 0.15,
+      "estimatedMonthly": 0.19,
+      "cpuCost": 0.18,
       "memoryCost": 0.01,
       "requestCost": 0.0,
-      "estimatedRequests": 1664,
-      "avgLatencyMs": 1862,
+      "estimatedRequests": 1681,
+      "avgLatencyMs": 2263,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
       "note": "Estimacion incluye cold starts y overhead tipico",
@@ -1503,7 +1503,7 @@
       "usesConsolidatedDb": true,
       "hasDedicatedDb": false,
       "dedicatedDbName": null,
-      "totalWithSql": 1.42
+      "totalWithSql": 1.45
     }
   },
   {
@@ -1514,23 +1514,23 @@
     "repo": "https://github.com/mbrt26/MoldesyMecanizados",
     "repoName": "MoldesyMecanizados",
     "errors": {
-      "total": 22,
-      "last24h": 0,
-      "last7d": 22,
+      "total": 38,
+      "last24h": 16,
+      "last7d": 38,
       "recentErrors": [
         {
-          "timestamp": "2026-01-22T18:54:21.095317Z",
-          "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/core/handlers/exception.py\", line 55, in inner\n    response = get_response(request)\n               ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/core/handlers/base.py\", line 220, ...",
+          "timestamp": "2026-01-26T12:07:09.387724Z",
+          "message": "Default STARTUP TCP probe failed 1 time consecutively for container \"moldes-mecanizados-app-1\" on port 8080. The instance was not started.\nConnection failed with status CANCELLED.",
           "severity": "ERROR"
         },
         {
-          "timestamp": "2026-01-22T18:54:21.056862Z",
-          "message": "{}",
+          "timestamp": "2026-01-26T12:07:08.427722Z",
+          "message": "Traceback (most recent call last):\n  File \"/app/manage.py\", line 22, in <module>\n    main()\n  File \"/app/manage.py\", line 18, in main\n    execute_from_command_line(sys.argv)\n  File \"/usr/local/lib/python3.11/site-packages/django/core/management/__init__.py\", line 442, in execute_from_command_line\n  ...",
           "severity": "ERROR"
         },
         {
-          "timestamp": "2026-01-22T18:53:25.488322Z",
-          "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/core/handlers/exception.py\", line 55, in inner\n    response = get_response(request)\n               ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/core/handlers/base.py\", line 220, ...",
+          "timestamp": "2026-01-26T12:07:08.408995Z",
+          "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/base.py\", line 288, in ensure_connection\n    self.connect()\n  File \"/usr/local/lib/python3.11/site-packages/django/utils/asyncio.py\", line 26, in inner\n    return func(*args, **kwargs)\n        ...",
           "severity": "ERROR"
         }
       ]
@@ -1564,21 +1564,21 @@
       ]
     },
     "metrics": {
-      "errors5xx": 14,
+      "errors5xx": 18,
       "errors4xx": 0,
-      "avgLatencyMs": 1562
+      "avgLatencyMs": 2805
     },
     "interactions": {
-      "requests7d": 387,
-      "requests30d": 387
+      "requests7d": 391,
+      "requests30d": 391
     },
     "costEstimate": {
-      "estimatedMonthly": 0.16,
-      "cpuCost": 0.15,
+      "estimatedMonthly": 0.19,
+      "cpuCost": 0.18,
       "memoryCost": 0.01,
       "requestCost": 0.0,
-      "estimatedRequests": 1664,
-      "avgLatencyMs": 1862,
+      "estimatedRequests": 1681,
+      "avgLatencyMs": 2263,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
       "note": "Estimacion incluye cold starts y overhead tipico",
@@ -1586,7 +1586,7 @@
       "usesConsolidatedDb": true,
       "hasDedicatedDb": false,
       "dedicatedDbName": null,
-      "totalWithSql": 1.42
+      "totalWithSql": 1.45
     }
   },
   {
@@ -1685,9 +1685,9 @@
     "repo": "https://github.com/mbrt26/NOVAPCR",
     "repoName": "NOVAPCR",
     "errors": {
-      "total": 26,
+      "total": 25,
       "last24h": 20,
-      "last7d": 26,
+      "last7d": 25,
       "recentErrors": [
         {
           "timestamp": "2026-01-26T11:00:02.106847Z",
@@ -1730,15 +1730,15 @@
       "avgLatencyMs": 36015
     },
     "interactions": {
-      "requests7d": 844,
-      "requests30d": 844
+      "requests7d": 859,
+      "requests30d": 859
     },
     "costEstimate": {
-      "estimatedMonthly": 4.68,
-      "cpuCost": 4.44,
-      "memoryCost": 0.23,
+      "estimatedMonthly": 4.76,
+      "cpuCost": 4.52,
+      "memoryCost": 0.24,
       "requestCost": 0.0,
-      "estimatedRequests": 3629,
+      "estimatedRequests": 3693,
       "avgLatencyMs": 25510,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -1747,7 +1747,7 @@
       "usesConsolidatedDb": true,
       "hasDedicatedDb": false,
       "dedicatedDbName": null,
-      "totalWithSql": 5.94
+      "totalWithSql": 6.02
     }
   },
   {
@@ -1891,15 +1891,15 @@
       "avgLatencyMs": 1557
     },
     "interactions": {
-      "requests7d": 3064,
-      "requests30d": 3064
+      "requests7d": 3066,
+      "requests30d": 3066
     },
     "costEstimate": {
       "estimatedMonthly": 1.25,
-      "cpuCost": 1.17,
+      "cpuCost": 1.18,
       "memoryCost": 0.06,
       "requestCost": 0.01,
-      "estimatedRequests": 13175,
+      "estimatedRequests": 13183,
       "avgLatencyMs": 1857,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -1919,9 +1919,9 @@
     "repo": null,
     "repoName": null,
     "errors": {
-      "total": 341,
+      "total": 302,
       "last24h": 89,
-      "last7d": 341,
+      "last7d": 302,
       "recentErrors": [
         {
           "timestamp": "2026-01-26T10:17:48.172542Z",
@@ -2267,15 +2267,15 @@
       "avgLatencyMs": 300001
     },
     "interactions": {
-      "requests7d": 76,
-      "requests30d": 76
+      "requests7d": 77,
+      "requests30d": 77
     },
     "costEstimate": {
-      "estimatedMonthly": 1.27,
-      "cpuCost": 1.1,
+      "estimatedMonthly": 1.29,
+      "cpuCost": 1.11,
       "memoryCost": 0.17,
       "requestCost": 0.0,
-      "estimatedRequests": 326,
+      "estimatedRequests": 331,
       "avgLatencyMs": 210300,
       "cpuCores": 0.3333,
       "memoryGiB": 0.5,
@@ -2284,7 +2284,7 @@
       "usesConsolidatedDb": false,
       "hasDedicatedDb": false,
       "dedicatedDbName": null,
-      "totalWithSql": 1.27
+      "totalWithSql": 1.29
     }
   },
   {
