@@ -961,7 +961,7 @@
     "repoName": "GestionProveedoresISA",
     "errors": {
       "total": 315,
-      "last24h": 127,
+      "last24h": 123,
       "last7d": 315,
       "recentErrors": [
         {
@@ -1020,15 +1020,15 @@
       "avgLatencyMs": 1066
     },
     "interactions": {
-      "requests7d": 2154,
-      "requests30d": 2154
+      "requests7d": 2140,
+      "requests30d": 2140
     },
     "costEstimate": {
-      "estimatedMonthly": 0.65,
-      "cpuCost": 0.61,
+      "estimatedMonthly": 0.64,
+      "cpuCost": 0.6,
       "memoryCost": 0.03,
       "requestCost": 0.0,
-      "estimatedRequests": 9262,
+      "estimatedRequests": 9202,
       "avgLatencyMs": 1366,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -1037,7 +1037,7 @@
       "usesConsolidatedDb": true,
       "hasDedicatedDb": false,
       "dedicatedDbName": null,
-      "totalWithSql": 1.91
+      "totalWithSql": 1.9
     }
   },
   {
@@ -1745,15 +1745,15 @@
       "avgLatencyMs": 30196
     },
     "interactions": {
-      "requests7d": 1001,
-      "requests30d": 1001
+      "requests7d": 1007,
+      "requests30d": 1007
     },
     "costEstimate": {
-      "estimatedMonthly": 4.66,
-      "cpuCost": 4.43,
+      "estimatedMonthly": 4.69,
+      "cpuCost": 4.46,
       "memoryCost": 0.23,
       "requestCost": 0.0,
-      "estimatedRequests": 4304,
+      "estimatedRequests": 4330,
       "avgLatencyMs": 21437,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
@@ -1762,7 +1762,7 @@
       "usesConsolidatedDb": true,
       "hasDedicatedDb": false,
       "dedicatedDbName": null,
-      "totalWithSql": 5.92
+      "totalWithSql": 5.95
     }
   },
   {
@@ -1773,9 +1773,9 @@
     "repo": "https://github.com/mbrt26/PlasticosAmbientales",
     "repoName": "PlasticosAmbientales",
     "errors": {
-      "total": 48,
+      "total": 32,
       "last24h": 31,
-      "last7d": 48,
+      "last7d": 32,
       "recentErrors": [
         {
           "timestamp": "2026-01-26T23:40:29.146694Z",
@@ -1916,21 +1916,21 @@
       ]
     },
     "metrics": {
-      "errors5xx": 20,
+      "errors5xx": 13,
       "errors4xx": 0,
-      "avgLatencyMs": 1772
+      "avgLatencyMs": 793
     },
     "interactions": {
       "requests7d": 2566,
       "requests30d": 2566
     },
     "costEstimate": {
-      "estimatedMonthly": 1.16,
-      "cpuCost": 1.1,
-      "memoryCost": 0.06,
+      "estimatedMonthly": 0.62,
+      "cpuCost": 0.58,
+      "memoryCost": 0.03,
       "requestCost": 0.0,
       "estimatedRequests": 11033,
-      "avgLatencyMs": 2072,
+      "avgLatencyMs": 1093,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
       "note": "Estimacion incluye cold starts y overhead tipico",
@@ -1938,7 +1938,7 @@
       "usesConsolidatedDb": false,
       "hasDedicatedDb": true,
       "dedicatedDbName": "rgd-aire-db",
-      "totalWithSql": 1.16
+      "totalWithSql": 0.62
     }
   },
   {
@@ -1949,22 +1949,22 @@
     "repo": null,
     "repoName": null,
     "errors": {
-      "total": 252,
-      "last24h": 65,
-      "last7d": 252,
+      "total": 268,
+      "last24h": 81,
+      "last7d": 268,
       "recentErrors": [
         {
-          "timestamp": "2026-01-27T02:08:32.213177Z",
+          "timestamp": "2026-01-27T05:52:16.641486Z",
           "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.12/site-packages/gunicorn/arbiter.py\", line 608, in spawn_worker\n    worker.init_process()\n  File \"/usr/local/lib/python3.12/site-packages/gunicorn/workers/gthread.py\", line 94, in init_process\n    super().init_process()\n  File \"/usr/...",
           "severity": "ERROR"
         },
         {
-          "timestamp": "2026-01-27T01:57:18.500635Z",
+          "timestamp": "2026-01-27T05:42:08.696860Z",
           "message": "Traceback (most recent call last):\n  File \"/app/manage.py\", line 26, in <module>\n    main()\n  File \"/app/manage.py\", line 22, in main\n    execute_from_command_line(sys.argv)\n  File \"/usr/local/lib/python3.12/site-packages/django/core/management/__init__.py\", line 442, in execute_from_command_line\n  ...",
           "severity": "ERROR"
         },
         {
-          "timestamp": "2026-01-27T01:57:14.294412Z",
+          "timestamp": "2026-01-27T05:42:04.625089Z",
           "message": "Traceback (most recent call last):\n  File \"/app/manage.py\", line 26, in <module>\n    main()\n  File \"/app/manage.py\", line 22, in main\n    execute_from_command_line(sys.argv)\n  File \"/usr/local/lib/python3.12/site-packages/django/core/management/__init__.py\", line 442, in execute_from_command_line\n  ...",
           "severity": "ERROR"
         }
@@ -1994,21 +1994,21 @@
       ]
     },
     "metrics": {
-      "errors5xx": 145,
+      "errors5xx": 152,
       "errors4xx": 0,
-      "avgLatencyMs": 6548
+      "avgLatencyMs": 6516
     },
     "interactions": {
-      "requests7d": 120,
-      "requests30d": 120
+      "requests7d": 127,
+      "requests30d": 127
     },
     "costEstimate": {
       "estimatedMonthly": 0.13,
-      "cpuCost": 0.12,
+      "cpuCost": 0.13,
       "memoryCost": 0.01,
       "requestCost": 0.0,
-      "estimatedRequests": 516,
-      "avgLatencyMs": 4883,
+      "estimatedRequests": 546,
+      "avgLatencyMs": 4861,
       "cpuCores": 1.0,
       "memoryGiB": 0.5,
       "note": "Estimacion incluye cold starts y overhead tipico",
@@ -2281,15 +2281,15 @@
       "avgLatencyMs": 300001
     },
     "interactions": {
-      "requests7d": 83,
-      "requests30d": 83
+      "requests7d": 84,
+      "requests30d": 84
     },
     "costEstimate": {
-      "estimatedMonthly": 1.39,
-      "cpuCost": 1.2,
+      "estimatedMonthly": 1.4,
+      "cpuCost": 1.21,
       "memoryCost": 0.19,
       "requestCost": 0.0,
-      "estimatedRequests": 356,
+      "estimatedRequests": 361,
       "avgLatencyMs": 210300,
       "cpuCores": 0.3333,
       "memoryGiB": 0.5,
@@ -2298,7 +2298,7 @@
       "usesConsolidatedDb": false,
       "hasDedicatedDb": false,
       "dedicatedDbName": null,
-      "totalWithSql": 1.39
+      "totalWithSql": 1.4
     }
   },
   {
