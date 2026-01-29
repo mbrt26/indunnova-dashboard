@@ -1,5 +1,314 @@
 [
   {
+    "id": "697ba5760000c822a1b65ccb",
+    "service": "rgd-aire-staging",
+    "revision": "rgd-aire-staging-00012-hkb",
+    "timestamp": "2026-01-29T18:22:46.051234Z",
+    "severity": "ERROR",
+    "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.12/site-packages/gunicorn/arbiter.py\", line 608, in spawn_worker\n    worker.init_process()\n  File \"/usr/local/lib/python3.12/site-packages/gunicorn/workers/gthread.py\", line 94, in init_process\n    super().init_process()\n  File \"/usr/local/lib/python3.12/site-packages/gunicorn/workers/base.py\", line 135, in init_process\n    self.load_wsgi()\n  File \"/usr/local/lib/python3.12/site-packages/gunicorn/workers/base.py\", line 147, in load_wsgi\n    self.wsgi = self.app.wsgi()\n                ^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/site-packages/gunicorn/app/base.py\", line 66, in wsgi\n    self.callable = self.load()\n                    ^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/site-packages/gunicorn/app/wsgiapp.py\", line 57, in load\n    return self.load_wsgiapp()\n           ^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/site-packages/gunicorn/app/wsgiapp.py\", line 47, in load_wsgiapp\n    return util.import_app(self.app_uri)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/site-packages/gunicorn/util.py\", line 370, in import_app\n    mod = importlib.import_module(module)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/importlib/__init__.py\", line 90, in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<frozen importlib._bootstrap>\", line 1387, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1360, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 1331, in _find_and_load_unlocked\n  File \"<frozen importlib._bootstrap>\", line 935, in _load_unlocked\n  File \"<frozen importlib._bootstrap_external>\", line 999, in exec_module\n  File \"<frozen importlib._bootstrap>\", line 488, in _call_with_frames_removed\n  File \"/app/rgd_aire/wsgi.py\", line 21, in <module>\n    application = get_wsgi_application()\n                  ^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/site-packages/django/core/wsgi.py\", line 12, in get_wsgi_application\n    django.setup(set_prefix=False)\n  File \"/usr/local/lib/python3.12/site-packages/django/__init__.py\", line 24, in setup\n    apps.populate(settings.INSTALLED_APPS)\n  File \"/usr/local/lib/python3.12/site-packages/django/apps/registry.py\", line 116, in populate\n    app_config.import_models()\n  File \"/usr/local/lib/python3.12/site-packages/django/apps/config.py\", line 269, in import_models\n    self.models_module = import_module(models_module_name)\n                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/importlib/__init__.py\", line 90, in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<frozen importlib._bootstrap>\", line 1387, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1360, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 1331, in _find_and_load_unlocked\n  File \"<frozen importlib._bootstrap>\", line 935, in _load_unlocked\n  File \"<frozen importlib._bootstrap_external>\", line 999, in exec_module\n  File \"<frozen importlib._bootstrap>\", line 488, in _call_with_frames_removed\n  File \"/app/proyectos/models/__init__.py\", line 2, in <module>\n    from ..models_original import *\n  File \"/app/proyectos/models_original.py\", line 1136, in <module>\n    class ComiteProyecto(models.Model):\n  File \"/app/proyectos/models_original.py\", line 1162, in ComiteProyecto\n    Colaborador,\n    ^^^^^^^^^^^\nNameError: name 'Colaborador' is not defined",
+    "httpRequest": null,
+    "trace": "",
+    "spanId": ""
+  },
+  {
+    "id": "697ba34400062ad55a2e1b04",
+    "service": "rgd-aire-staging",
+    "revision": "rgd-aire-staging-00012-hkb",
+    "timestamp": "2026-01-29T18:13:24.404181Z",
+    "severity": "ERROR",
+    "message": "Traceback (most recent call last):\n  File \"/app/manage.py\", line 26, in <module>\n    main()\n  File \"/app/manage.py\", line 22, in main\n    execute_from_command_line(sys.argv)\n  File \"/usr/local/lib/python3.12/site-packages/django/core/management/__init__.py\", line 442, in execute_from_command_line\n    utility.execute()\n  File \"/usr/local/lib/python3.12/site-packages/django/core/management/__init__.py\", line 416, in execute\n    django.setup()\n  File \"/usr/local/lib/python3.12/site-packages/django/__init__.py\", line 24, in setup\n    apps.populate(settings.INSTALLED_APPS)\n  File \"/usr/local/lib/python3.12/site-packages/django/apps/registry.py\", line 116, in populate\n    app_config.import_models()\n  File \"/usr/local/lib/python3.12/site-packages/django/apps/config.py\", line 269, in import_models\n    self.models_module = import_module(models_module_name)\n                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/importlib/__init__.py\", line 90, in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<frozen importlib._bootstrap>\", line 1387, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1360, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 1331, in _find_and_load_unlocked\n  File \"<frozen importlib._bootstrap>\", line 935, in _load_unlocked\n  File \"<frozen importlib._bootstrap_external>\", line 999, in exec_module\n  File \"<frozen importlib._bootstrap>\", line 488, in _call_with_frames_removed\n  File \"/app/proyectos/models/__init__.py\", line 2, in <module>\n    from ..models_original import *\n  File \"/app/proyectos/models_original.py\", line 1136, in <module>\n    class ComiteProyecto(models.Model):\n  File \"/app/proyectos/models_original.py\", line 1162, in ComiteProyecto\n    Colaborador,\n    ^^^^^^^^^^^\nNameError: name 'Colaborador' is not defined",
+    "httpRequest": null,
+    "trace": "",
+    "spanId": ""
+  },
+  {
+    "id": "697ba34000030212218afd5e",
+    "service": "rgd-aire-staging",
+    "revision": "rgd-aire-staging-00012-hkb",
+    "timestamp": "2026-01-29T18:13:20.197138Z",
+    "severity": "ERROR",
+    "message": "Traceback (most recent call last):\n  File \"/app/manage.py\", line 26, in <module>\n    main()\n  File \"/app/manage.py\", line 22, in main\n    execute_from_command_line(sys.argv)\n  File \"/usr/local/lib/python3.12/site-packages/django/core/management/__init__.py\", line 442, in execute_from_command_line\n    utility.execute()\n  File \"/usr/local/lib/python3.12/site-packages/django/core/management/__init__.py\", line 416, in execute\n    django.setup()\n  File \"/usr/local/lib/python3.12/site-packages/django/__init__.py\", line 24, in setup\n    apps.populate(settings.INSTALLED_APPS)\n  File \"/usr/local/lib/python3.12/site-packages/django/apps/registry.py\", line 116, in populate\n    app_config.import_models()\n  File \"/usr/local/lib/python3.12/site-packages/django/apps/config.py\", line 269, in import_models\n    self.models_module = import_module(models_module_name)\n                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/importlib/__init__.py\", line 90, in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<frozen importlib._bootstrap>\", line 1387, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1360, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 1331, in _find_and_load_unlocked\n  File \"<frozen importlib._bootstrap>\", line 935, in _load_unlocked\n  File \"<frozen importlib._bootstrap_external>\", line 999, in exec_module\n  File \"<frozen importlib._bootstrap>\", line 488, in _call_with_frames_removed\n  File \"/app/proyectos/models/__init__.py\", line 2, in <module>\n    from ..models_original import *\n  File \"/app/proyectos/models_original.py\", line 1136, in <module>\n    class ComiteProyecto(models.Model):\n  File \"/app/proyectos/models_original.py\", line 1162, in ComiteProyecto\n    Colaborador,\n    ^^^^^^^^^^^\nNameError: name 'Colaborador' is not defined",
+    "httpRequest": null,
+    "trace": "",
+    "spanId": ""
+  },
+  {
+    "id": "697ba2ff00074191d096626e",
+    "service": "rgd-aire-staging",
+    "revision": "rgd-aire-staging-00012-hkb",
+    "timestamp": "2026-01-29T18:12:15.475537Z",
+    "severity": "ERROR",
+    "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.12/site-packages/gunicorn/arbiter.py\", line 608, in spawn_worker\n    worker.init_process()\n  File \"/usr/local/lib/python3.12/site-packages/gunicorn/workers/gthread.py\", line 94, in init_process\n    super().init_process()\n  File \"/usr/local/lib/python3.12/site-packages/gunicorn/workers/base.py\", line 135, in init_process\n    self.load_wsgi()\n  File \"/usr/local/lib/python3.12/site-packages/gunicorn/workers/base.py\", line 147, in load_wsgi\n    self.wsgi = self.app.wsgi()\n                ^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/site-packages/gunicorn/app/base.py\", line 66, in wsgi\n    self.callable = self.load()\n                    ^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/site-packages/gunicorn/app/wsgiapp.py\", line 57, in load\n    return self.load_wsgiapp()\n           ^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/site-packages/gunicorn/app/wsgiapp.py\", line 47, in load_wsgiapp\n    return util.import_app(self.app_uri)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/site-packages/gunicorn/util.py\", line 370, in import_app\n    mod = importlib.import_module(module)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/importlib/__init__.py\", line 90, in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<frozen importlib._bootstrap>\", line 1387, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1360, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 1331, in _find_and_load_unlocked\n  File \"<frozen importlib._bootstrap>\", line 935, in _load_unlocked\n  File \"<frozen importlib._bootstrap_external>\", line 999, in exec_module\n  File \"<frozen importlib._bootstrap>\", line 488, in _call_with_frames_removed\n  File \"/app/rgd_aire/wsgi.py\", line 21, in <module>\n    application = get_wsgi_application()\n                  ^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/site-packages/django/core/wsgi.py\", line 12, in get_wsgi_application\n    django.setup(set_prefix=False)\n  File \"/usr/local/lib/python3.12/site-packages/django/__init__.py\", line 24, in setup\n    apps.populate(settings.INSTALLED_APPS)\n  File \"/usr/local/lib/python3.12/site-packages/django/apps/registry.py\", line 116, in populate\n    app_config.import_models()\n  File \"/usr/local/lib/python3.12/site-packages/django/apps/config.py\", line 269, in import_models\n    self.models_module = import_module(models_module_name)\n                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/importlib/__init__.py\", line 90, in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<frozen importlib._bootstrap>\", line 1387, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1360, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 1331, in _find_and_load_unlocked\n  File \"<frozen importlib._bootstrap>\", line 935, in _load_unlocked\n  File \"<frozen importlib._bootstrap_external>\", line 999, in exec_module\n  File \"<frozen importlib._bootstrap>\", line 488, in _call_with_frames_removed\n  File \"/app/proyectos/models/__init__.py\", line 2, in <module>\n    from ..models_original import *\n  File \"/app/proyectos/models_original.py\", line 1136, in <module>\n    class ComiteProyecto(models.Model):\n  File \"/app/proyectos/models_original.py\", line 1162, in ComiteProyecto\n    Colaborador,\n    ^^^^^^^^^^^\nNameError: name 'Colaborador' is not defined",
+    "httpRequest": null,
+    "trace": "",
+    "spanId": ""
+  },
+  {
+    "id": "697ba09d00061a90ee1476d9",
+    "service": "rgd-aire-staging",
+    "revision": "rgd-aire-staging-00012-hkb",
+    "timestamp": "2026-01-29T18:02:05.400016Z",
+    "severity": "ERROR",
+    "message": "Traceback (most recent call last):\n  File \"/app/manage.py\", line 26, in <module>\n    main()\n  File \"/app/manage.py\", line 22, in main\n    execute_from_command_line(sys.argv)\n  File \"/usr/local/lib/python3.12/site-packages/django/core/management/__init__.py\", line 442, in execute_from_command_line\n    utility.execute()\n  File \"/usr/local/lib/python3.12/site-packages/django/core/management/__init__.py\", line 416, in execute\n    django.setup()\n  File \"/usr/local/lib/python3.12/site-packages/django/__init__.py\", line 24, in setup\n    apps.populate(settings.INSTALLED_APPS)\n  File \"/usr/local/lib/python3.12/site-packages/django/apps/registry.py\", line 116, in populate\n    app_config.import_models()\n  File \"/usr/local/lib/python3.12/site-packages/django/apps/config.py\", line 269, in import_models\n    self.models_module = import_module(models_module_name)\n                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/importlib/__init__.py\", line 90, in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<frozen importlib._bootstrap>\", line 1387, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1360, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 1331, in _find_and_load_unlocked\n  File \"<frozen importlib._bootstrap>\", line 935, in _load_unlocked\n  File \"<frozen importlib._bootstrap_external>\", line 999, in exec_module\n  File \"<frozen importlib._bootstrap>\", line 488, in _call_with_frames_removed\n  File \"/app/proyectos/models/__init__.py\", line 2, in <module>\n    from ..models_original import *\n  File \"/app/proyectos/models_original.py\", line 1136, in <module>\n    class ComiteProyecto(models.Model):\n  File \"/app/proyectos/models_original.py\", line 1162, in ComiteProyecto\n    Colaborador,\n    ^^^^^^^^^^^\nNameError: name 'Colaborador' is not defined",
+    "httpRequest": null,
+    "trace": "",
+    "spanId": ""
+  },
+  {
+    "id": "697ba099000bbce1987cf3d4",
+    "service": "rgd-aire-staging",
+    "revision": "rgd-aire-staging-00012-hkb",
+    "timestamp": "2026-01-29T18:02:01.769249Z",
+    "severity": "ERROR",
+    "message": "Traceback (most recent call last):\n  File \"/app/manage.py\", line 26, in <module>\n    main()\n  File \"/app/manage.py\", line 22, in main\n    execute_from_command_line(sys.argv)\n  File \"/usr/local/lib/python3.12/site-packages/django/core/management/__init__.py\", line 442, in execute_from_command_line\n    utility.execute()\n  File \"/usr/local/lib/python3.12/site-packages/django/core/management/__init__.py\", line 416, in execute\n    django.setup()\n  File \"/usr/local/lib/python3.12/site-packages/django/__init__.py\", line 24, in setup\n    apps.populate(settings.INSTALLED_APPS)\n  File \"/usr/local/lib/python3.12/site-packages/django/apps/registry.py\", line 116, in populate\n    app_config.import_models()\n  File \"/usr/local/lib/python3.12/site-packages/django/apps/config.py\", line 269, in import_models\n    self.models_module = import_module(models_module_name)\n                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/importlib/__init__.py\", line 90, in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<frozen importlib._bootstrap>\", line 1387, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1360, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 1331, in _find_and_load_unlocked\n  File \"<frozen importlib._bootstrap>\", line 935, in _load_unlocked\n  File \"<frozen importlib._bootstrap_external>\", line 999, in exec_module\n  File \"<frozen importlib._bootstrap>\", line 488, in _call_with_frames_removed\n  File \"/app/proyectos/models/__init__.py\", line 2, in <module>\n    from ..models_original import *\n  File \"/app/proyectos/models_original.py\", line 1136, in <module>\n    class ComiteProyecto(models.Model):\n  File \"/app/proyectos/models_original.py\", line 1162, in ComiteProyecto\n    Colaborador,\n    ^^^^^^^^^^^\nNameError: name 'Colaborador' is not defined",
+    "httpRequest": null,
+    "trace": "",
+    "spanId": ""
+  },
+  {
+    "id": "697ba095000cd840936b9e55",
+    "service": "rgd-aire-staging",
+    "revision": "rgd-aire-staging-00012-hkb",
+    "timestamp": "2026-01-29T18:01:57.841792Z",
+    "severity": "ERROR",
+    "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.12/site-packages/gunicorn/arbiter.py\", line 608, in spawn_worker\n    worker.init_process()\n  File \"/usr/local/lib/python3.12/site-packages/gunicorn/workers/gthread.py\", line 94, in init_process\n    super().init_process()\n  File \"/usr/local/lib/python3.12/site-packages/gunicorn/workers/base.py\", line 135, in init_process\n    self.load_wsgi()\n  File \"/usr/local/lib/python3.12/site-packages/gunicorn/workers/base.py\", line 147, in load_wsgi\n    self.wsgi = self.app.wsgi()\n                ^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/site-packages/gunicorn/app/base.py\", line 66, in wsgi\n    self.callable = self.load()\n                    ^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/site-packages/gunicorn/app/wsgiapp.py\", line 57, in load\n    return self.load_wsgiapp()\n           ^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/site-packages/gunicorn/app/wsgiapp.py\", line 47, in load_wsgiapp\n    return util.import_app(self.app_uri)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/site-packages/gunicorn/util.py\", line 370, in import_app\n    mod = importlib.import_module(module)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/importlib/__init__.py\", line 90, in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<frozen importlib._bootstrap>\", line 1387, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1360, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 1331, in _find_and_load_unlocked\n  File \"<frozen importlib._bootstrap>\", line 935, in _load_unlocked\n  File \"<frozen importlib._bootstrap_external>\", line 999, in exec_module\n  File \"<frozen importlib._bootstrap>\", line 488, in _call_with_frames_removed\n  File \"/app/rgd_aire/wsgi.py\", line 21, in <module>\n    application = get_wsgi_application()\n                  ^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/site-packages/django/core/wsgi.py\", line 12, in get_wsgi_application\n    django.setup(set_prefix=False)\n  File \"/usr/local/lib/python3.12/site-packages/django/__init__.py\", line 24, in setup\n    apps.populate(settings.INSTALLED_APPS)\n  File \"/usr/local/lib/python3.12/site-packages/django/apps/registry.py\", line 116, in populate\n    app_config.import_models()\n  File \"/usr/local/lib/python3.12/site-packages/django/apps/config.py\", line 269, in import_models\n    self.models_module = import_module(models_module_name)\n                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/importlib/__init__.py\", line 90, in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<frozen importlib._bootstrap>\", line 1387, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1360, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 1331, in _find_and_load_unlocked\n  File \"<frozen importlib._bootstrap>\", line 935, in _load_unlocked\n  File \"<frozen importlib._bootstrap_external>\", line 999, in exec_module\n  File \"<frozen importlib._bootstrap>\", line 488, in _call_with_frames_removed\n  File \"/app/proyectos/models/__init__.py\", line 2, in <module>\n    from ..models_original import *\n  File \"/app/proyectos/models_original.py\", line 1136, in <module>\n    class ComiteProyecto(models.Model):\n  File \"/app/proyectos/models_original.py\", line 1162, in ComiteProyecto\n    Colaborador,\n    ^^^^^^^^^^^\nNameError: name 'Colaborador' is not defined",
+    "httpRequest": null,
+    "trace": "",
+    "spanId": ""
+  },
+  {
+    "id": "697ba0920001f0c98ceab20d",
+    "service": "rgd-aire-staging",
+    "revision": "rgd-aire-staging-00012-hkb",
+    "timestamp": "2026-01-29T18:01:54.127177Z",
+    "severity": "ERROR",
+    "message": "Traceback (most recent call last):\n  File \"/app/manage.py\", line 26, in <module>\n    main()\n  File \"/app/manage.py\", line 22, in main\n    execute_from_command_line(sys.argv)\n  File \"/usr/local/lib/python3.12/site-packages/django/core/management/__init__.py\", line 442, in execute_from_command_line\n    utility.execute()\n  File \"/usr/local/lib/python3.12/site-packages/django/core/management/__init__.py\", line 416, in execute\n    django.setup()\n  File \"/usr/local/lib/python3.12/site-packages/django/__init__.py\", line 24, in setup\n    apps.populate(settings.INSTALLED_APPS)\n  File \"/usr/local/lib/python3.12/site-packages/django/apps/registry.py\", line 116, in populate\n    app_config.import_models()\n  File \"/usr/local/lib/python3.12/site-packages/django/apps/config.py\", line 269, in import_models\n    self.models_module = import_module(models_module_name)\n                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/importlib/__init__.py\", line 90, in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<frozen importlib._bootstrap>\", line 1387, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1360, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 1331, in _find_and_load_unlocked\n  File \"<frozen importlib._bootstrap>\", line 935, in _load_unlocked\n  File \"<frozen importlib._bootstrap_external>\", line 999, in exec_module\n  File \"<frozen importlib._bootstrap>\", line 488, in _call_with_frames_removed\n  File \"/app/proyectos/models/__init__.py\", line 2, in <module>\n    from ..models_original import *\n  File \"/app/proyectos/models_original.py\", line 1136, in <module>\n    class ComiteProyecto(models.Model):\n  File \"/app/proyectos/models_original.py\", line 1162, in ComiteProyecto\n    Colaborador,\n    ^^^^^^^^^^^\nNameError: name 'Colaborador' is not defined",
+    "httpRequest": null,
+    "trace": "",
+    "spanId": ""
+  },
+  {
+    "id": "697ba09600000aeeda57009a",
+    "service": "rgd-aire-staging",
+    "revision": "rgd-aire-staging-00012-hkb",
+    "timestamp": "2026-01-29T18:01:51.590897Z",
+    "severity": "ERROR",
+    "message": "The request failed because either the HTTP response was malformed or connection to the instance had an error. Additional troubleshooting documentation can be found at: https://cloud.google.com/run/docs/troubleshooting#malformed-response-or-connection-error",
+    "httpRequest": {
+      "method": "GET",
+      "url": "https://rgd-aire-staging-381877373634.us-central1.run.app/",
+      "status": 503,
+      "latency": "2.785229945s",
+      "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 12_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148",
+      "remoteIp": "18.213.111.203"
+    },
+    "trace": "projects/appsindunnova/traces/8c2dc414ccdb62dd702c61a7f34efc29",
+    "spanId": "753e6a9c8e12f9c2"
+  },
+  {
+    "id": "697ba09600000ae3431f6a4f",
+    "service": "rgd-aire-staging",
+    "revision": "rgd-aire-staging-00012-hkb",
+    "timestamp": "2026-01-29T18:01:51.368728Z",
+    "severity": "ERROR",
+    "message": "The request failed because either the HTTP response was malformed or connection to the instance had an error. Additional troubleshooting documentation can be found at: https://cloud.google.com/run/docs/troubleshooting#malformed-response-or-connection-error",
+    "httpRequest": {
+      "method": "GET",
+      "url": "https://rgd-aire-staging-381877373634.us-central1.run.app/",
+      "status": 503,
+      "latency": "2.785235063s",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+      "remoteIp": "54.161.9.171"
+    },
+    "trace": "projects/appsindunnova/traces/44457eda05e222da706e8adf1d2800f1",
+    "spanId": "2f0daa5df7d2458b"
+  },
+  {
+    "id": "697ba08d000d684ed681f70d",
+    "service": "rgd-aire-staging",
+    "revision": "rgd-aire-staging-00012-hkb",
+    "timestamp": "2026-01-29T18:01:49.878670Z",
+    "severity": "ERROR",
+    "message": "Traceback (most recent call last):\n  File \"/app/manage.py\", line 26, in <module>\n    main()\n  File \"/app/manage.py\", line 22, in main\n    execute_from_command_line(sys.argv)\n  File \"/usr/local/lib/python3.12/site-packages/django/core/management/__init__.py\", line 442, in execute_from_command_line\n    utility.execute()\n  File \"/usr/local/lib/python3.12/site-packages/django/core/management/__init__.py\", line 416, in execute\n    django.setup()\n  File \"/usr/local/lib/python3.12/site-packages/django/__init__.py\", line 24, in setup\n    apps.populate(settings.INSTALLED_APPS)\n  File \"/usr/local/lib/python3.12/site-packages/django/apps/registry.py\", line 116, in populate\n    app_config.import_models()\n  File \"/usr/local/lib/python3.12/site-packages/django/apps/config.py\", line 269, in import_models\n    self.models_module = import_module(models_module_name)\n                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/importlib/__init__.py\", line 90, in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<frozen importlib._bootstrap>\", line 1387, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1360, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 1331, in _find_and_load_unlocked\n  File \"<frozen importlib._bootstrap>\", line 935, in _load_unlocked\n  File \"<frozen importlib._bootstrap_external>\", line 999, in exec_module\n  File \"<frozen importlib._bootstrap>\", line 488, in _call_with_frames_removed\n  File \"/app/proyectos/models/__init__.py\", line 2, in <module>\n    from ..models_original import *\n  File \"/app/proyectos/models_original.py\", line 1136, in <module>\n    class ComiteProyecto(models.Model):\n  File \"/app/proyectos/models_original.py\", line 1162, in ComiteProyecto\n    Colaborador,\n    ^^^^^^^^^^^\nNameError: name 'Colaborador' is not defined",
+    "httpRequest": null,
+    "trace": "",
+    "spanId": ""
+  },
+  {
+    "id": "697ba087000b6b4da7548ae3",
+    "service": "rgd-aire-staging",
+    "revision": "rgd-aire-staging-00012-hkb",
+    "timestamp": "2026-01-29T18:01:43.748365Z",
+    "severity": "ERROR",
+    "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.12/site-packages/gunicorn/arbiter.py\", line 608, in spawn_worker\n    worker.init_process()\n  File \"/usr/local/lib/python3.12/site-packages/gunicorn/workers/gthread.py\", line 94, in init_process\n    super().init_process()\n  File \"/usr/local/lib/python3.12/site-packages/gunicorn/workers/base.py\", line 135, in init_process\n    self.load_wsgi()\n  File \"/usr/local/lib/python3.12/site-packages/gunicorn/workers/base.py\", line 147, in load_wsgi\n    self.wsgi = self.app.wsgi()\n                ^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/site-packages/gunicorn/app/base.py\", line 66, in wsgi\n    self.callable = self.load()\n                    ^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/site-packages/gunicorn/app/wsgiapp.py\", line 57, in load\n    return self.load_wsgiapp()\n           ^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/site-packages/gunicorn/app/wsgiapp.py\", line 47, in load_wsgiapp\n    return util.import_app(self.app_uri)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/site-packages/gunicorn/util.py\", line 370, in import_app\n    mod = importlib.import_module(module)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/importlib/__init__.py\", line 90, in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<frozen importlib._bootstrap>\", line 1387, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1360, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 1331, in _find_and_load_unlocked\n  File \"<frozen importlib._bootstrap>\", line 935, in _load_unlocked\n  File \"<frozen importlib._bootstrap_external>\", line 999, in exec_module\n  File \"<frozen importlib._bootstrap>\", line 488, in _call_with_frames_removed\n  File \"/app/rgd_aire/wsgi.py\", line 21, in <module>\n    application = get_wsgi_application()\n                  ^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/site-packages/django/core/wsgi.py\", line 12, in get_wsgi_application\n    django.setup(set_prefix=False)\n  File \"/usr/local/lib/python3.12/site-packages/django/__init__.py\", line 24, in setup\n    apps.populate(settings.INSTALLED_APPS)\n  File \"/usr/local/lib/python3.12/site-packages/django/apps/registry.py\", line 116, in populate\n    app_config.import_models()\n  File \"/usr/local/lib/python3.12/site-packages/django/apps/config.py\", line 269, in import_models\n    self.models_module = import_module(models_module_name)\n                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/importlib/__init__.py\", line 90, in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<frozen importlib._bootstrap>\", line 1387, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1360, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 1331, in _find_and_load_unlocked\n  File \"<frozen importlib._bootstrap>\", line 935, in _load_unlocked\n  File \"<frozen importlib._bootstrap_external>\", line 999, in exec_module\n  File \"<frozen importlib._bootstrap>\", line 488, in _call_with_frames_removed\n  File \"/app/proyectos/models/__init__.py\", line 2, in <module>\n    from ..models_original import *\n  File \"/app/proyectos/models_original.py\", line 1136, in <module>\n    class ComiteProyecto(models.Model):\n  File \"/app/proyectos/models_original.py\", line 1162, in ComiteProyecto\n    Colaborador,\n    ^^^^^^^^^^^\nNameError: name 'Colaborador' is not defined",
+    "httpRequest": null,
+    "trace": "",
+    "spanId": ""
+  },
+  {
+    "id": "697ba083000580a2cd7f1e05",
+    "service": "rgd-aire-staging",
+    "revision": "rgd-aire-staging-00012-hkb",
+    "timestamp": "2026-01-29T18:01:39.360610Z",
+    "severity": "ERROR",
+    "message": "Traceback (most recent call last):\n  File \"/app/manage.py\", line 26, in <module>\n    main()\n  File \"/app/manage.py\", line 22, in main\n    execute_from_command_line(sys.argv)\n  File \"/usr/local/lib/python3.12/site-packages/django/core/management/__init__.py\", line 442, in execute_from_command_line\n    utility.execute()\n  File \"/usr/local/lib/python3.12/site-packages/django/core/management/__init__.py\", line 416, in execute\n    django.setup()\n  File \"/usr/local/lib/python3.12/site-packages/django/__init__.py\", line 24, in setup\n    apps.populate(settings.INSTALLED_APPS)\n  File \"/usr/local/lib/python3.12/site-packages/django/apps/registry.py\", line 116, in populate\n    app_config.import_models()\n  File \"/usr/local/lib/python3.12/site-packages/django/apps/config.py\", line 269, in import_models\n    self.models_module = import_module(models_module_name)\n                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/importlib/__init__.py\", line 90, in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<frozen importlib._bootstrap>\", line 1387, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1360, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 1331, in _find_and_load_unlocked\n  File \"<frozen importlib._bootstrap>\", line 935, in _load_unlocked\n  File \"<frozen importlib._bootstrap_external>\", line 999, in exec_module\n  File \"<frozen importlib._bootstrap>\", line 488, in _call_with_frames_removed\n  File \"/app/proyectos/models/__init__.py\", line 2, in <module>\n    from ..models_original import *\n  File \"/app/proyectos/models_original.py\", line 1136, in <module>\n    class ComiteProyecto(models.Model):\n  File \"/app/proyectos/models_original.py\", line 1162, in ComiteProyecto\n    Colaborador,\n    ^^^^^^^^^^^\nNameError: name 'Colaborador' is not defined",
+    "httpRequest": null,
+    "trace": "",
+    "spanId": ""
+  },
+  {
+    "id": "697ba07f0006cb56a5823d9b",
+    "service": "rgd-aire-staging",
+    "revision": "rgd-aire-staging-00012-hkb",
+    "timestamp": "2026-01-29T18:01:35.445270Z",
+    "severity": "ERROR",
+    "message": "Traceback (most recent call last):\n  File \"/app/manage.py\", line 26, in <module>\n    main()\n  File \"/app/manage.py\", line 22, in main\n    execute_from_command_line(sys.argv)\n  File \"/usr/local/lib/python3.12/site-packages/django/core/management/__init__.py\", line 442, in execute_from_command_line\n    utility.execute()\n  File \"/usr/local/lib/python3.12/site-packages/django/core/management/__init__.py\", line 416, in execute\n    django.setup()\n  File \"/usr/local/lib/python3.12/site-packages/django/__init__.py\", line 24, in setup\n    apps.populate(settings.INSTALLED_APPS)\n  File \"/usr/local/lib/python3.12/site-packages/django/apps/registry.py\", line 116, in populate\n    app_config.import_models()\n  File \"/usr/local/lib/python3.12/site-packages/django/apps/config.py\", line 269, in import_models\n    self.models_module = import_module(models_module_name)\n                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/importlib/__init__.py\", line 90, in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<frozen importlib._bootstrap>\", line 1387, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1360, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 1331, in _find_and_load_unlocked\n  File \"<frozen importlib._bootstrap>\", line 935, in _load_unlocked\n  File \"<frozen importlib._bootstrap_external>\", line 999, in exec_module\n  File \"<frozen importlib._bootstrap>\", line 488, in _call_with_frames_removed\n  File \"/app/proyectos/models/__init__.py\", line 2, in <module>\n    from ..models_original import *\n  File \"/app/proyectos/models_original.py\", line 1136, in <module>\n    class ComiteProyecto(models.Model):\n  File \"/app/proyectos/models_original.py\", line 1162, in ComiteProyecto\n    Colaborador,\n    ^^^^^^^^^^^\nNameError: name 'Colaborador' is not defined",
+    "httpRequest": null,
+    "trace": "",
+    "spanId": ""
+  },
+  {
+    "id": "697ba087000de7696490b3cf",
+    "service": "rgd-aire-staging",
+    "revision": "rgd-aire-staging-00012-hkb",
+    "timestamp": "2026-01-29T18:01:31.615736Z",
+    "severity": "ERROR",
+    "message": "The request failed because either the HTTP response was malformed or connection to the instance had an error. Additional troubleshooting documentation can be found at: https://cloud.google.com/run/docs/troubleshooting#malformed-response-or-connection-error",
+    "httpRequest": {
+      "method": "GET",
+      "url": "https://rgd-aire-staging-381877373634.us-central1.run.app/",
+      "status": 503,
+      "latency": "2.902112957s",
+      "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 12_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148",
+      "remoteIp": "18.213.111.203"
+    },
+    "trace": "projects/appsindunnova/traces/1e235fd6aa834231f1f18355f7373408",
+    "spanId": "28f6403bf2e575c8"
+  },
+  {
+    "id": "697ba087000e172411f6f977",
+    "service": "rgd-aire-staging",
+    "revision": "rgd-aire-staging-00012-hkb",
+    "timestamp": "2026-01-29T18:01:31.392659Z",
+    "severity": "ERROR",
+    "message": "The request failed because either the HTTP response was malformed or connection to the instance had an error. Additional troubleshooting documentation can be found at: https://cloud.google.com/run/docs/troubleshooting#malformed-response-or-connection-error",
+    "httpRequest": {
+      "method": "GET",
+      "url": "https://rgd-aire-staging-381877373634.us-central1.run.app/",
+      "status": 503,
+      "latency": "12.369792358s",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+      "remoteIp": "54.161.9.171"
+    },
+    "trace": "projects/appsindunnova/traces/6a1576c43481f7bb41ba89ac2a1b89f9",
+    "spanId": "888321ad5470651b"
+  },
+  {
+    "id": "697ba03b0007fe49145af149",
+    "service": "rgd-aire-staging",
+    "revision": "rgd-aire-staging-00012-hkb",
+    "timestamp": "2026-01-29T18:00:27.523849Z",
+    "severity": "ERROR",
+    "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.12/site-packages/gunicorn/arbiter.py\", line 608, in spawn_worker\n    worker.init_process()\n  File \"/usr/local/lib/python3.12/site-packages/gunicorn/workers/gthread.py\", line 94, in init_process\n    super().init_process()\n  File \"/usr/local/lib/python3.12/site-packages/gunicorn/workers/base.py\", line 135, in init_process\n    self.load_wsgi()\n  File \"/usr/local/lib/python3.12/site-packages/gunicorn/workers/base.py\", line 147, in load_wsgi\n    self.wsgi = self.app.wsgi()\n                ^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/site-packages/gunicorn/app/base.py\", line 66, in wsgi\n    self.callable = self.load()\n                    ^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/site-packages/gunicorn/app/wsgiapp.py\", line 57, in load\n    return self.load_wsgiapp()\n           ^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/site-packages/gunicorn/app/wsgiapp.py\", line 47, in load_wsgiapp\n    return util.import_app(self.app_uri)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/site-packages/gunicorn/util.py\", line 370, in import_app\n    mod = importlib.import_module(module)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/importlib/__init__.py\", line 90, in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<frozen importlib._bootstrap>\", line 1387, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1360, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 1331, in _find_and_load_unlocked\n  File \"<frozen importlib._bootstrap>\", line 935, in _load_unlocked\n  File \"<frozen importlib._bootstrap_external>\", line 999, in exec_module\n  File \"<frozen importlib._bootstrap>\", line 488, in _call_with_frames_removed\n  File \"/app/rgd_aire/wsgi.py\", line 21, in <module>\n    application = get_wsgi_application()\n                  ^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/site-packages/django/core/wsgi.py\", line 12, in get_wsgi_application\n    django.setup(set_prefix=False)\n  File \"/usr/local/lib/python3.12/site-packages/django/__init__.py\", line 24, in setup\n    apps.populate(settings.INSTALLED_APPS)\n  File \"/usr/local/lib/python3.12/site-packages/django/apps/registry.py\", line 116, in populate\n    app_config.import_models()\n  File \"/usr/local/lib/python3.12/site-packages/django/apps/config.py\", line 269, in import_models\n    self.models_module = import_module(models_module_name)\n                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/importlib/__init__.py\", line 90, in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<frozen importlib._bootstrap>\", line 1387, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1360, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 1331, in _find_and_load_unlocked\n  File \"<frozen importlib._bootstrap>\", line 935, in _load_unlocked\n  File \"<frozen importlib._bootstrap_external>\", line 999, in exec_module\n  File \"<frozen importlib._bootstrap>\", line 488, in _call_with_frames_removed\n  File \"/app/proyectos/models/__init__.py\", line 2, in <module>\n    from ..models_original import *\n  File \"/app/proyectos/models_original.py\", line 1136, in <module>\n    class ComiteProyecto(models.Model):\n  File \"/app/proyectos/models_original.py\", line 1162, in ComiteProyecto\n    Colaborador,\n    ^^^^^^^^^^^\nNameError: name 'Colaborador' is not defined",
+    "httpRequest": null,
+    "trace": "",
+    "spanId": ""
+  },
+  {
+    "id": "697ba03b000a7aa2fb8670e1",
+    "service": "rgd-aire-staging",
+    "revision": "rgd-aire-staging-00012-hkb",
+    "timestamp": "2026-01-29T18:00:23.588465Z",
+    "severity": "ERROR",
+    "message": "The request failed because either the HTTP response was malformed or connection to the instance had an error. Additional troubleshooting documentation can be found at: https://cloud.google.com/run/docs/troubleshooting#malformed-response-or-connection-error",
+    "httpRequest": {
+      "method": "GET",
+      "url": "https://rgd-aire-staging-381877373634.us-central1.run.app/",
+      "status": 503,
+      "latency": "3.002675224s",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+      "remoteIp": "18.208.162.96"
+    },
+    "trace": "projects/appsindunnova/traces/37db2d0eda4e3e735a8d4e614673be9b",
+    "spanId": "6c825e453e9c525c"
+  },
+  {
+    "id": "697ba0370007c417af786dae",
+    "service": "rgd-aire-staging",
+    "revision": "rgd-aire-staging-00012-hkb",
+    "timestamp": "2026-01-29T18:00:23.508951Z",
+    "severity": "ERROR",
+    "message": "Traceback (most recent call last):\n  File \"/app/manage.py\", line 26, in <module>\n    main()\n  File \"/app/manage.py\", line 22, in main\n    execute_from_command_line(sys.argv)\n  File \"/usr/local/lib/python3.12/site-packages/django/core/management/__init__.py\", line 442, in execute_from_command_line\n    utility.execute()\n  File \"/usr/local/lib/python3.12/site-packages/django/core/management/__init__.py\", line 416, in execute\n    django.setup()\n  File \"/usr/local/lib/python3.12/site-packages/django/__init__.py\", line 24, in setup\n    apps.populate(settings.INSTALLED_APPS)\n  File \"/usr/local/lib/python3.12/site-packages/django/apps/registry.py\", line 116, in populate\n    app_config.import_models()\n  File \"/usr/local/lib/python3.12/site-packages/django/apps/config.py\", line 269, in import_models\n    self.models_module = import_module(models_module_name)\n                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/importlib/__init__.py\", line 90, in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<frozen importlib._bootstrap>\", line 1387, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1360, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 1331, in _find_and_load_unlocked\n  File \"<frozen importlib._bootstrap>\", line 935, in _load_unlocked\n  File \"<frozen importlib._bootstrap_external>\", line 999, in exec_module\n  File \"<frozen importlib._bootstrap>\", line 488, in _call_with_frames_removed\n  File \"/app/proyectos/models/__init__.py\", line 2, in <module>\n    from ..models_original import *\n  File \"/app/proyectos/models_original.py\", line 1136, in <module>\n    class ComiteProyecto(models.Model):\n  File \"/app/proyectos/models_original.py\", line 1162, in ComiteProyecto\n    Colaborador,\n    ^^^^^^^^^^^\nNameError: name 'Colaborador' is not defined",
+    "httpRequest": null,
+    "trace": "",
+    "spanId": ""
+  },
+  {
+    "id": "697ba03b000a7ac93535412b",
+    "service": "rgd-aire-staging",
+    "revision": "rgd-aire-staging-00012-hkb",
+    "timestamp": "2026-01-29T18:00:23.284512Z",
+    "severity": "ERROR",
+    "message": "The request failed because either the HTTP response was malformed or connection to the instance had an error. Additional troubleshooting documentation can be found at: https://cloud.google.com/run/docs/troubleshooting#malformed-response-or-connection-error",
+    "httpRequest": {
+      "method": "GET",
+      "url": "https://rgd-aire-staging-381877373634.us-central1.run.app/",
+      "status": 503,
+      "latency": "3.002878168s",
+      "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 12_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148",
+      "remoteIp": "54.205.214.121"
+    },
+    "trace": "projects/appsindunnova/traces/5b7cb12b3656854723b68a1d96d762f6",
+    "spanId": "ec7de38837a1a031"
+  },
+  {
+    "id": "697ba033000d87022c463e46",
+    "service": "rgd-aire-staging",
+    "revision": "rgd-aire-staging-00012-hkb",
+    "timestamp": "2026-01-29T18:00:19.886530Z",
+    "severity": "ERROR",
+    "message": "Traceback (most recent call last):\n  File \"/app/manage.py\", line 26, in <module>\n    main()\n  File \"/app/manage.py\", line 22, in main\n    execute_from_command_line(sys.argv)\n  File \"/usr/local/lib/python3.12/site-packages/django/core/management/__init__.py\", line 442, in execute_from_command_line\n    utility.execute()\n  File \"/usr/local/lib/python3.12/site-packages/django/core/management/__init__.py\", line 416, in execute\n    django.setup()\n  File \"/usr/local/lib/python3.12/site-packages/django/__init__.py\", line 24, in setup\n    apps.populate(settings.INSTALLED_APPS)\n  File \"/usr/local/lib/python3.12/site-packages/django/apps/registry.py\", line 116, in populate\n    app_config.import_models()\n  File \"/usr/local/lib/python3.12/site-packages/django/apps/config.py\", line 269, in import_models\n    self.models_module = import_module(models_module_name)\n                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/importlib/__init__.py\", line 90, in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<frozen importlib._bootstrap>\", line 1387, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1360, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 1331, in _find_and_load_unlocked\n  File \"<frozen importlib._bootstrap>\", line 935, in _load_unlocked\n  File \"<frozen importlib._bootstrap_external>\", line 999, in exec_module\n  File \"<frozen importlib._bootstrap>\", line 488, in _call_with_frames_removed\n  File \"/app/proyectos/models/__init__.py\", line 2, in <module>\n    from ..models_original import *\n  File \"/app/proyectos/models_original.py\", line 1136, in <module>\n    class ComiteProyecto(models.Model):\n  File \"/app/proyectos/models_original.py\", line 1162, in ComiteProyecto\n    Colaborador,\n    ^^^^^^^^^^^\nNameError: name 'Colaborador' is not defined",
+    "httpRequest": null,
+    "trace": "",
+    "spanId": ""
+  },
+  {
+    "id": "697ba03b000a7aa425571063",
+    "service": "rgd-aire-staging",
+    "revision": "rgd-aire-staging-00012-hkb",
+    "timestamp": "2026-01-29T18:00:13.667256Z",
+    "severity": "ERROR",
+    "message": "The request failed because either the HTTP response was malformed or connection to the instance had an error. Additional troubleshooting documentation can be found at: https://cloud.google.com/run/docs/troubleshooting#malformed-response-or-connection-error",
+    "httpRequest": {
+      "method": "GET",
+      "url": "https://rgd-aire-staging-381877373634.us-central1.run.app/",
+      "status": 503,
+      "latency": "3.003051968s",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+      "remoteIp": "18.208.162.96"
+    },
+    "trace": "projects/appsindunnova/traces/e2cc7a9907fd2a64c9622ded4a855bbd",
+    "spanId": "7d6a7eaba2327490"
+  },
+  {
+    "id": "697ba03b000ab2b874275f68",
+    "service": "rgd-aire-staging",
+    "revision": "rgd-aire-staging-00012-hkb",
+    "timestamp": "2026-01-29T18:00:13.302674Z",
+    "severity": "ERROR",
+    "message": "The request failed because either the HTTP response was malformed or connection to the instance had an error. Additional troubleshooting documentation can be found at: https://cloud.google.com/run/docs/troubleshooting#malformed-response-or-connection-error",
+    "httpRequest": {
+      "method": "GET",
+      "url": "https://rgd-aire-staging-381877373634.us-central1.run.app/",
+      "status": 503,
+      "latency": "14.138966314s",
+      "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 12_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148",
+      "remoteIp": "54.205.214.121"
+    },
+    "trace": "projects/appsindunnova/traces/6183d19153b2629ef0509010bd0702da",
+    "spanId": "a772abc6eaaee32f"
+  },
+  {
     "id": "697b6e10000788934e061294",
     "service": "arcopack-erp",
     "revision": "arcopack-erp-00523-h48",
@@ -21684,380 +21993,5 @@
     },
     "trace": "projects/appsindunnova/traces/e7091f025f619b4a7cced2e2422df8ef",
     "spanId": "40a33b4fe7cfb7f7"
-  },
-  {
-    "id": "69726b69000868d3fc8c83d7",
-    "service": "moldes-mecanizados-app",
-    "revision": "moldes-mecanizados-app-00044-pf9",
-    "timestamp": "2026-01-22T18:24:41.551123Z",
-    "severity": "ERROR",
-    "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/core/handlers/exception.py\", line 55, in inner\n    response = get_response(request)\n               ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/core/handlers/base.py\", line 220, in _get_response\n    response = response.render()\n               ^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/response.py\", line 114, in render\n    self.content = self.rendered_content\n                   ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/response.py\", line 92, in rendered_content\n    return template.render(context, self._request)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/backends/django.py\", line 61, in render\n    return self.template.render(context)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/base.py\", line 175, in render\n    return self._render(context)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/base.py\", line 167, in _render\n    return self.nodelist.render(context)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/base.py\", line 1005, in render\n    return SafeString(\"\".join([node.render_annotated(context) for node in self]))\n                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/base.py\", line 1005, in <listcomp>\n    return SafeString(\"\".join([node.render_annotated(context) for node in self]))\n                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/base.py\", line 966, in render_annotated\n    return self.render(context)\n           ^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/loader_tags.py\", line 157, in render\n    return compiled_parent._render(context)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/base.py\", line 167, in _render\n    return self.nodelist.render(context)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/base.py\", line 1005, in render\n    return SafeString(\"\".join([node.render_annotated(context) for node in self]))\n                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/base.py\", line 1005, in <listcomp>\n    return SafeString(\"\".join([node.render_annotated(context) for node in self]))\n                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/base.py\", line 966, in render_annotated\n    return self.render(context)\n           ^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/loader_tags.py\", line 63, in render\n    result = block.nodelist.render(context)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/base.py\", line 1005, in render\n    return SafeString(\"\".join([node.render_annotated(context) for node in self]))\n                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/base.py\", line 1005, in <listcomp>\n    return SafeString(\"\".join([node.render_annotated(context) for node in self]))\n                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/base.py\", line 966, in render_annotated\n    return self.render(context)\n           ^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/defaulttags.py\", line 238, in render\n    nodelist.append(node.render_annotated(context))\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/base.py\", line 966, in render_annotated\n    return self.render(context)\n           ^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/template/defaulttags.py\", line 471, in render\n    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/urls/base.py\", line 88, in reverse\n    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/urls/resolvers.py\", line 828, in _reverse_with_prefix\n    raise NoReverseMatch(msg)\ndjango.urls.exceptions.NoReverseMatch: Reverse for 'movimientos_por_lote' with arguments '(UUID('70037653-aaa5-4e4f-8af1-a83a0e47a2d9'), 'N/A')' not found. 1 pattern(s) tried: ['inventarios/movimientos\\\\-lote/(?P<materia_prima_id>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})/(?P<lote>[^/]+)/\\\\Z']",
-    "httpRequest": null,
-    "trace": "",
-    "spanId": ""
-  },
-  {
-    "id": "69726b6900086db0943390b7",
-    "service": "moldes-mecanizados-app",
-    "revision": "moldes-mecanizados-app-00044-pf9",
-    "timestamp": "2026-01-22T18:24:41.512127Z",
-    "severity": "ERROR",
-    "message": "",
-    "httpRequest": {
-      "method": "GET",
-      "url": "https://moldes-mecanizados-app-381877373634.us-central1.run.app/inventarios/stock/",
-      "status": 500,
-      "latency": "0.038637313s",
-      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
-      "remoteIp": "190.249.179.216"
-    },
-    "trace": "projects/appsindunnova/traces/546c3ae54647d57b9bb7090e484d1d46",
-    "spanId": "599bd7cffca307c4"
-  },
-  {
-    "id": "6972686b00083a72cd6cb49c",
-    "service": "rgd-aire-staging",
-    "revision": "rgd-aire-staging-00009-z2v",
-    "timestamp": "2026-01-22T18:11:55.539250Z",
-    "severity": "ERROR",
-    "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.12/site-packages/gunicorn/arbiter.py\", line 608, in spawn_worker\n    worker.init_process()\n  File \"/usr/local/lib/python3.12/site-packages/gunicorn/workers/gthread.py\", line 94, in init_process\n    super().init_process()\n  File \"/usr/local/lib/python3.12/site-packages/gunicorn/workers/base.py\", line 135, in init_process\n    self.load_wsgi()\n  File \"/usr/local/lib/python3.12/site-packages/gunicorn/workers/base.py\", line 147, in load_wsgi\n    self.wsgi = self.app.wsgi()\n                ^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/site-packages/gunicorn/app/base.py\", line 66, in wsgi\n    self.callable = self.load()\n                    ^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/site-packages/gunicorn/app/wsgiapp.py\", line 57, in load\n    return self.load_wsgiapp()\n           ^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/site-packages/gunicorn/app/wsgiapp.py\", line 47, in load_wsgiapp\n    return util.import_app(self.app_uri)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/site-packages/gunicorn/util.py\", line 370, in import_app\n    mod = importlib.import_module(module)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/importlib/__init__.py\", line 90, in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<frozen importlib._bootstrap>\", line 1387, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1360, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 1331, in _find_and_load_unlocked\n  File \"<frozen importlib._bootstrap>\", line 935, in _load_unlocked\n  File \"<frozen importlib._bootstrap_external>\", line 999, in exec_module\n  File \"<frozen importlib._bootstrap>\", line 488, in _call_with_frames_removed\n  File \"/app/rgd_aire/wsgi.py\", line 21, in <module>\n    application = get_wsgi_application()\n                  ^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/site-packages/django/core/wsgi.py\", line 12, in get_wsgi_application\n    django.setup(set_prefix=False)\n  File \"/usr/local/lib/python3.12/site-packages/django/__init__.py\", line 24, in setup\n    apps.populate(settings.INSTALLED_APPS)\n  File \"/usr/local/lib/python3.12/site-packages/django/apps/registry.py\", line 116, in populate\n    app_config.import_models()\n  File \"/usr/local/lib/python3.12/site-packages/django/apps/config.py\", line 269, in import_models\n    self.models_module = import_module(models_module_name)\n                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/importlib/__init__.py\", line 90, in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<frozen importlib._bootstrap>\", line 1387, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1360, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 1331, in _find_and_load_unlocked\n  File \"<frozen importlib._bootstrap>\", line 935, in _load_unlocked\n  File \"<frozen importlib._bootstrap_external>\", line 999, in exec_module\n  File \"<frozen importlib._bootstrap>\", line 488, in _call_with_frames_removed\n  File \"/app/proyectos/models/__init__.py\", line 2, in <module>\n    from ..models_original import *\n  File \"/app/proyectos/models_original.py\", line 1136, in <module>\n    class ComiteProyecto(models.Model):\n  File \"/app/proyectos/models_original.py\", line 1162, in ComiteProyecto\n    Colaborador,\n    ^^^^^^^^^^^\nNameError: name 'Colaborador' is not defined",
-    "httpRequest": null,
-    "trace": "",
-    "spanId": ""
-  },
-  {
-    "id": "6972669e000f0b22a19c5aee",
-    "service": "rgd-aire-staging",
-    "revision": "rgd-aire-staging-00009-z2v",
-    "timestamp": "2026-01-22T18:04:14.985890Z",
-    "severity": "ERROR",
-    "message": "Traceback (most recent call last):\n  File \"/app/manage.py\", line 26, in <module>\n    main()\n  File \"/app/manage.py\", line 22, in main\n    execute_from_command_line(sys.argv)\n  File \"/usr/local/lib/python3.12/site-packages/django/core/management/__init__.py\", line 442, in execute_from_command_line\n    utility.execute()\n  File \"/usr/local/lib/python3.12/site-packages/django/core/management/__init__.py\", line 416, in execute\n    django.setup()\n  File \"/usr/local/lib/python3.12/site-packages/django/__init__.py\", line 24, in setup\n    apps.populate(settings.INSTALLED_APPS)\n  File \"/usr/local/lib/python3.12/site-packages/django/apps/registry.py\", line 116, in populate\n    app_config.import_models()\n  File \"/usr/local/lib/python3.12/site-packages/django/apps/config.py\", line 269, in import_models\n    self.models_module = import_module(models_module_name)\n                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/importlib/__init__.py\", line 90, in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<frozen importlib._bootstrap>\", line 1387, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1360, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 1331, in _find_and_load_unlocked\n  File \"<frozen importlib._bootstrap>\", line 935, in _load_unlocked\n  File \"<frozen importlib._bootstrap_external>\", line 999, in exec_module\n  File \"<frozen importlib._bootstrap>\", line 488, in _call_with_frames_removed\n  File \"/app/proyectos/models/__init__.py\", line 2, in <module>\n    from ..models_original import *\n  File \"/app/proyectos/models_original.py\", line 1136, in <module>\n    class ComiteProyecto(models.Model):\n  File \"/app/proyectos/models_original.py\", line 1162, in ComiteProyecto\n    Colaborador,\n    ^^^^^^^^^^^\nNameError: name 'Colaborador' is not defined",
-    "httpRequest": null,
-    "trace": "",
-    "spanId": ""
-  },
-  {
-    "id": "6972669b0009da64bfa968b3",
-    "service": "rgd-aire-staging",
-    "revision": "rgd-aire-staging-00009-z2v",
-    "timestamp": "2026-01-22T18:04:11.645732Z",
-    "severity": "ERROR",
-    "message": "Traceback (most recent call last):\n  File \"/app/manage.py\", line 26, in <module>\n    main()\n  File \"/app/manage.py\", line 22, in main\n    execute_from_command_line(sys.argv)\n  File \"/usr/local/lib/python3.12/site-packages/django/core/management/__init__.py\", line 442, in execute_from_command_line\n    utility.execute()\n  File \"/usr/local/lib/python3.12/site-packages/django/core/management/__init__.py\", line 416, in execute\n    django.setup()\n  File \"/usr/local/lib/python3.12/site-packages/django/__init__.py\", line 24, in setup\n    apps.populate(settings.INSTALLED_APPS)\n  File \"/usr/local/lib/python3.12/site-packages/django/apps/registry.py\", line 116, in populate\n    app_config.import_models()\n  File \"/usr/local/lib/python3.12/site-packages/django/apps/config.py\", line 269, in import_models\n    self.models_module = import_module(models_module_name)\n                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/importlib/__init__.py\", line 90, in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<frozen importlib._bootstrap>\", line 1387, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1360, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 1331, in _find_and_load_unlocked\n  File \"<frozen importlib._bootstrap>\", line 935, in _load_unlocked\n  File \"<frozen importlib._bootstrap_external>\", line 999, in exec_module\n  File \"<frozen importlib._bootstrap>\", line 488, in _call_with_frames_removed\n  File \"/app/proyectos/models/__init__.py\", line 2, in <module>\n    from ..models_original import *\n  File \"/app/proyectos/models_original.py\", line 1136, in <module>\n    class ComiteProyecto(models.Model):\n  File \"/app/proyectos/models_original.py\", line 1162, in ComiteProyecto\n    Colaborador,\n    ^^^^^^^^^^^\nNameError: name 'Colaborador' is not defined",
-    "httpRequest": null,
-    "trace": "",
-    "spanId": ""
-  },
-  {
-    "id": "69726660000d00dd16e929d8",
-    "service": "rgd-aire-staging",
-    "revision": "rgd-aire-staging-00009-z2v",
-    "timestamp": "2026-01-22T18:03:12.852189Z",
-    "severity": "ERROR",
-    "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.12/site-packages/gunicorn/arbiter.py\", line 608, in spawn_worker\n    worker.init_process()\n  File \"/usr/local/lib/python3.12/site-packages/gunicorn/workers/gthread.py\", line 94, in init_process\n    super().init_process()\n  File \"/usr/local/lib/python3.12/site-packages/gunicorn/workers/base.py\", line 135, in init_process\n    self.load_wsgi()\n  File \"/usr/local/lib/python3.12/site-packages/gunicorn/workers/base.py\", line 147, in load_wsgi\n    self.wsgi = self.app.wsgi()\n                ^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/site-packages/gunicorn/app/base.py\", line 66, in wsgi\n    self.callable = self.load()\n                    ^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/site-packages/gunicorn/app/wsgiapp.py\", line 57, in load\n    return self.load_wsgiapp()\n           ^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/site-packages/gunicorn/app/wsgiapp.py\", line 47, in load_wsgiapp\n    return util.import_app(self.app_uri)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/site-packages/gunicorn/util.py\", line 370, in import_app\n    mod = importlib.import_module(module)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/importlib/__init__.py\", line 90, in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<frozen importlib._bootstrap>\", line 1387, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1360, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 1331, in _find_and_load_unlocked\n  File \"<frozen importlib._bootstrap>\", line 935, in _load_unlocked\n  File \"<frozen importlib._bootstrap_external>\", line 999, in exec_module\n  File \"<frozen importlib._bootstrap>\", line 488, in _call_with_frames_removed\n  File \"/app/rgd_aire/wsgi.py\", line 21, in <module>\n    application = get_wsgi_application()\n                  ^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/site-packages/django/core/wsgi.py\", line 12, in get_wsgi_application\n    django.setup(set_prefix=False)\n  File \"/usr/local/lib/python3.12/site-packages/django/__init__.py\", line 24, in setup\n    apps.populate(settings.INSTALLED_APPS)\n  File \"/usr/local/lib/python3.12/site-packages/django/apps/registry.py\", line 116, in populate\n    app_config.import_models()\n  File \"/usr/local/lib/python3.12/site-packages/django/apps/config.py\", line 269, in import_models\n    self.models_module = import_module(models_module_name)\n                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/importlib/__init__.py\", line 90, in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<frozen importlib._bootstrap>\", line 1387, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1360, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 1331, in _find_and_load_unlocked\n  File \"<frozen importlib._bootstrap>\", line 935, in _load_unlocked\n  File \"<frozen importlib._bootstrap_external>\", line 999, in exec_module\n  File \"<frozen importlib._bootstrap>\", line 488, in _call_with_frames_removed\n  File \"/app/proyectos/models/__init__.py\", line 2, in <module>\n    from ..models_original import *\n  File \"/app/proyectos/models_original.py\", line 1136, in <module>\n    class ComiteProyecto(models.Model):\n  File \"/app/proyectos/models_original.py\", line 1162, in ComiteProyecto\n    Colaborador,\n    ^^^^^^^^^^^\nNameError: name 'Colaborador' is not defined",
-    "httpRequest": null,
-    "trace": "",
-    "spanId": ""
-  },
-  {
-    "id": "6972646f0002bba0a910f0d8",
-    "service": "rgd-aire-staging",
-    "revision": "rgd-aire-staging-00009-z2v",
-    "timestamp": "2026-01-22T17:54:55.179104Z",
-    "severity": "ERROR",
-    "message": "Traceback (most recent call last):\n  File \"/app/manage.py\", line 26, in <module>\n    main()\n  File \"/app/manage.py\", line 22, in main\n    execute_from_command_line(sys.argv)\n  File \"/usr/local/lib/python3.12/site-packages/django/core/management/__init__.py\", line 442, in execute_from_command_line\n    utility.execute()\n  File \"/usr/local/lib/python3.12/site-packages/django/core/management/__init__.py\", line 416, in execute\n    django.setup()\n  File \"/usr/local/lib/python3.12/site-packages/django/__init__.py\", line 24, in setup\n    apps.populate(settings.INSTALLED_APPS)\n  File \"/usr/local/lib/python3.12/site-packages/django/apps/registry.py\", line 116, in populate\n    app_config.import_models()\n  File \"/usr/local/lib/python3.12/site-packages/django/apps/config.py\", line 269, in import_models\n    self.models_module = import_module(models_module_name)\n                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/importlib/__init__.py\", line 90, in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<frozen importlib._bootstrap>\", line 1387, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1360, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 1331, in _find_and_load_unlocked\n  File \"<frozen importlib._bootstrap>\", line 935, in _load_unlocked\n  File \"<frozen importlib._bootstrap_external>\", line 999, in exec_module\n  File \"<frozen importlib._bootstrap>\", line 488, in _call_with_frames_removed\n  File \"/app/proyectos/models/__init__.py\", line 2, in <module>\n    from ..models_original import *\n  File \"/app/proyectos/models_original.py\", line 1136, in <module>\n    class ComiteProyecto(models.Model):\n  File \"/app/proyectos/models_original.py\", line 1162, in ComiteProyecto\n    Colaborador,\n    ^^^^^^^^^^^\nNameError: name 'Colaborador' is not defined",
-    "httpRequest": null,
-    "trace": "",
-    "spanId": ""
-  },
-  {
-    "id": "6972646b0008dc45f36b99e2",
-    "service": "rgd-aire-staging",
-    "revision": "rgd-aire-staging-00009-z2v",
-    "timestamp": "2026-01-22T17:54:51.580677Z",
-    "severity": "ERROR",
-    "message": "Traceback (most recent call last):\n  File \"/app/manage.py\", line 26, in <module>\n    main()\n  File \"/app/manage.py\", line 22, in main\n    execute_from_command_line(sys.argv)\n  File \"/usr/local/lib/python3.12/site-packages/django/core/management/__init__.py\", line 442, in execute_from_command_line\n    utility.execute()\n  File \"/usr/local/lib/python3.12/site-packages/django/core/management/__init__.py\", line 416, in execute\n    django.setup()\n  File \"/usr/local/lib/python3.12/site-packages/django/__init__.py\", line 24, in setup\n    apps.populate(settings.INSTALLED_APPS)\n  File \"/usr/local/lib/python3.12/site-packages/django/apps/registry.py\", line 116, in populate\n    app_config.import_models()\n  File \"/usr/local/lib/python3.12/site-packages/django/apps/config.py\", line 269, in import_models\n    self.models_module = import_module(models_module_name)\n                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/importlib/__init__.py\", line 90, in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<frozen importlib._bootstrap>\", line 1387, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1360, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 1331, in _find_and_load_unlocked\n  File \"<frozen importlib._bootstrap>\", line 935, in _load_unlocked\n  File \"<frozen importlib._bootstrap_external>\", line 999, in exec_module\n  File \"<frozen importlib._bootstrap>\", line 488, in _call_with_frames_removed\n  File \"/app/proyectos/models/__init__.py\", line 2, in <module>\n    from ..models_original import *\n  File \"/app/proyectos/models_original.py\", line 1136, in <module>\n    class ComiteProyecto(models.Model):\n  File \"/app/proyectos/models_original.py\", line 1162, in ComiteProyecto\n    Colaborador,\n    ^^^^^^^^^^^\nNameError: name 'Colaborador' is not defined",
-    "httpRequest": null,
-    "trace": "",
-    "spanId": ""
-  },
-  {
-    "id": "697264250005c6b9e1c69c74",
-    "service": "rgd-aire-staging",
-    "revision": "rgd-aire-staging-00009-z2v",
-    "timestamp": "2026-01-22T17:53:41.378553Z",
-    "severity": "ERROR",
-    "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.12/site-packages/gunicorn/arbiter.py\", line 608, in spawn_worker\n    worker.init_process()\n  File \"/usr/local/lib/python3.12/site-packages/gunicorn/workers/gthread.py\", line 94, in init_process\n    super().init_process()\n  File \"/usr/local/lib/python3.12/site-packages/gunicorn/workers/base.py\", line 135, in init_process\n    self.load_wsgi()\n  File \"/usr/local/lib/python3.12/site-packages/gunicorn/workers/base.py\", line 147, in load_wsgi\n    self.wsgi = self.app.wsgi()\n                ^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/site-packages/gunicorn/app/base.py\", line 66, in wsgi\n    self.callable = self.load()\n                    ^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/site-packages/gunicorn/app/wsgiapp.py\", line 57, in load\n    return self.load_wsgiapp()\n           ^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/site-packages/gunicorn/app/wsgiapp.py\", line 47, in load_wsgiapp\n    return util.import_app(self.app_uri)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/site-packages/gunicorn/util.py\", line 370, in import_app\n    mod = importlib.import_module(module)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/importlib/__init__.py\", line 90, in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<frozen importlib._bootstrap>\", line 1387, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1360, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 1331, in _find_and_load_unlocked\n  File \"<frozen importlib._bootstrap>\", line 935, in _load_unlocked\n  File \"<frozen importlib._bootstrap_external>\", line 999, in exec_module\n  File \"<frozen importlib._bootstrap>\", line 488, in _call_with_frames_removed\n  File \"/app/rgd_aire/wsgi.py\", line 21, in <module>\n    application = get_wsgi_application()\n                  ^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/site-packages/django/core/wsgi.py\", line 12, in get_wsgi_application\n    django.setup(set_prefix=False)\n  File \"/usr/local/lib/python3.12/site-packages/django/__init__.py\", line 24, in setup\n    apps.populate(settings.INSTALLED_APPS)\n  File \"/usr/local/lib/python3.12/site-packages/django/apps/registry.py\", line 116, in populate\n    app_config.import_models()\n  File \"/usr/local/lib/python3.12/site-packages/django/apps/config.py\", line 269, in import_models\n    self.models_module = import_module(models_module_name)\n                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/importlib/__init__.py\", line 90, in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<frozen importlib._bootstrap>\", line 1387, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1360, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 1331, in _find_and_load_unlocked\n  File \"<frozen importlib._bootstrap>\", line 935, in _load_unlocked\n  File \"<frozen importlib._bootstrap_external>\", line 999, in exec_module\n  File \"<frozen importlib._bootstrap>\", line 488, in _call_with_frames_removed\n  File \"/app/proyectos/models/__init__.py\", line 2, in <module>\n    from ..models_original import *\n  File \"/app/proyectos/models_original.py\", line 1136, in <module>\n    class ComiteProyecto(models.Model):\n  File \"/app/proyectos/models_original.py\", line 1162, in ComiteProyecto\n    Colaborador,\n    ^^^^^^^^^^^\nNameError: name 'Colaborador' is not defined",
-    "httpRequest": null,
-    "trace": "",
-    "spanId": ""
-  },
-  {
-    "id": "69726421000d1877e0d75a36",
-    "service": "rgd-aire-staging",
-    "revision": "rgd-aire-staging-00009-z2v",
-    "timestamp": "2026-01-22T17:53:37.858231Z",
-    "severity": "ERROR",
-    "message": "Traceback (most recent call last):\n  File \"/app/manage.py\", line 26, in <module>\n    main()\n  File \"/app/manage.py\", line 22, in main\n    execute_from_command_line(sys.argv)\n  File \"/usr/local/lib/python3.12/site-packages/django/core/management/__init__.py\", line 442, in execute_from_command_line\n    utility.execute()\n  File \"/usr/local/lib/python3.12/site-packages/django/core/management/__init__.py\", line 416, in execute\n    django.setup()\n  File \"/usr/local/lib/python3.12/site-packages/django/__init__.py\", line 24, in setup\n    apps.populate(settings.INSTALLED_APPS)\n  File \"/usr/local/lib/python3.12/site-packages/django/apps/registry.py\", line 116, in populate\n    app_config.import_models()\n  File \"/usr/local/lib/python3.12/site-packages/django/apps/config.py\", line 269, in import_models\n    self.models_module = import_module(models_module_name)\n                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/importlib/__init__.py\", line 90, in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<frozen importlib._bootstrap>\", line 1387, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1360, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 1331, in _find_and_load_unlocked\n  File \"<frozen importlib._bootstrap>\", line 935, in _load_unlocked\n  File \"<frozen importlib._bootstrap_external>\", line 999, in exec_module\n  File \"<frozen importlib._bootstrap>\", line 488, in _call_with_frames_removed\n  File \"/app/proyectos/models/__init__.py\", line 2, in <module>\n    from ..models_original import *\n  File \"/app/proyectos/models_original.py\", line 1136, in <module>\n    class ComiteProyecto(models.Model):\n  File \"/app/proyectos/models_original.py\", line 1162, in ComiteProyecto\n    Colaborador,\n    ^^^^^^^^^^^\nNameError: name 'Colaborador' is not defined",
-    "httpRequest": null,
-    "trace": "",
-    "spanId": ""
-  },
-  {
-    "id": "6972641e000704a40191ec3b",
-    "service": "rgd-aire-staging",
-    "revision": "rgd-aire-staging-00009-z2v",
-    "timestamp": "2026-01-22T17:53:34.459940Z",
-    "severity": "ERROR",
-    "message": "Traceback (most recent call last):\n  File \"/app/manage.py\", line 26, in <module>\n    main()\n  File \"/app/manage.py\", line 22, in main\n    execute_from_command_line(sys.argv)\n  File \"/usr/local/lib/python3.12/site-packages/django/core/management/__init__.py\", line 442, in execute_from_command_line\n    utility.execute()\n  File \"/usr/local/lib/python3.12/site-packages/django/core/management/__init__.py\", line 416, in execute\n    django.setup()\n  File \"/usr/local/lib/python3.12/site-packages/django/__init__.py\", line 24, in setup\n    apps.populate(settings.INSTALLED_APPS)\n  File \"/usr/local/lib/python3.12/site-packages/django/apps/registry.py\", line 116, in populate\n    app_config.import_models()\n  File \"/usr/local/lib/python3.12/site-packages/django/apps/config.py\", line 269, in import_models\n    self.models_module = import_module(models_module_name)\n                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/importlib/__init__.py\", line 90, in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<frozen importlib._bootstrap>\", line 1387, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1360, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 1331, in _find_and_load_unlocked\n  File \"<frozen importlib._bootstrap>\", line 935, in _load_unlocked\n  File \"<frozen importlib._bootstrap_external>\", line 999, in exec_module\n  File \"<frozen importlib._bootstrap>\", line 488, in _call_with_frames_removed\n  File \"/app/proyectos/models/__init__.py\", line 2, in <module>\n    from ..models_original import *\n  File \"/app/proyectos/models_original.py\", line 1136, in <module>\n    class ComiteProyecto(models.Model):\n  File \"/app/proyectos/models_original.py\", line 1162, in ComiteProyecto\n    Colaborador,\n    ^^^^^^^^^^^\nNameError: name 'Colaborador' is not defined",
-    "httpRequest": null,
-    "trace": "",
-    "spanId": ""
-  },
-  {
-    "id": "69726425000772fd8da102f4",
-    "service": "rgd-aire-staging",
-    "revision": "rgd-aire-staging-00009-z2v",
-    "timestamp": "2026-01-22T17:53:33.845164Z",
-    "severity": "ERROR",
-    "message": "The request failed because either the HTTP response was malformed or connection to the instance had an error. Additional troubleshooting documentation can be found at: https://cloud.google.com/run/docs/troubleshooting#malformed-response-or-connection-error",
-    "httpRequest": {
-      "method": "GET",
-      "url": "https://rgd-aire-staging-381877373634.us-central1.run.app/",
-      "status": 503,
-      "latency": "2.382476945s",
-      "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 12_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148",
-      "remoteIp": "3.222.205.223"
-    },
-    "trace": "projects/appsindunnova/traces/545449927c82bc03cb2493ee3e7562f5",
-    "spanId": "173e52e09efde040"
-  },
-  {
-    "id": "697264250007afba53b9bc67",
-    "service": "rgd-aire-staging",
-    "revision": "rgd-aire-staging-00009-z2v",
-    "timestamp": "2026-01-22T17:53:30.925496Z",
-    "severity": "ERROR",
-    "message": "The request failed because either the HTTP response was malformed or connection to the instance had an error. Additional troubleshooting documentation can be found at: https://cloud.google.com/run/docs/troubleshooting#malformed-response-or-connection-error",
-    "httpRequest": {
-      "method": "GET",
-      "url": "https://rgd-aire-staging-381877373634.us-central1.run.app/",
-      "status": 503,
-      "latency": "10.339215411s",
-      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
-      "remoteIp": "34.229.103.76"
-    },
-    "trace": "projects/appsindunnova/traces/06768abb217ce524d8a3b191dfffcaf9",
-    "spanId": "ddcd2a7ff8aaced6"
-  },
-  {
-    "id": "69726412000942ea17473ddd",
-    "service": "rgd-aire-staging",
-    "revision": "rgd-aire-staging-00009-z2v",
-    "timestamp": "2026-01-22T17:53:22.606954Z",
-    "severity": "ERROR",
-    "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.12/site-packages/gunicorn/arbiter.py\", line 608, in spawn_worker\n    worker.init_process()\n  File \"/usr/local/lib/python3.12/site-packages/gunicorn/workers/gthread.py\", line 94, in init_process\n    super().init_process()\n  File \"/usr/local/lib/python3.12/site-packages/gunicorn/workers/base.py\", line 135, in init_process\n    self.load_wsgi()\n  File \"/usr/local/lib/python3.12/site-packages/gunicorn/workers/base.py\", line 147, in load_wsgi\n    self.wsgi = self.app.wsgi()\n                ^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/site-packages/gunicorn/app/base.py\", line 66, in wsgi\n    self.callable = self.load()\n                    ^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/site-packages/gunicorn/app/wsgiapp.py\", line 57, in load\n    return self.load_wsgiapp()\n           ^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/site-packages/gunicorn/app/wsgiapp.py\", line 47, in load_wsgiapp\n    return util.import_app(self.app_uri)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/site-packages/gunicorn/util.py\", line 370, in import_app\n    mod = importlib.import_module(module)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/importlib/__init__.py\", line 90, in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<frozen importlib._bootstrap>\", line 1387, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1360, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 1331, in _find_and_load_unlocked\n  File \"<frozen importlib._bootstrap>\", line 935, in _load_unlocked\n  File \"<frozen importlib._bootstrap_external>\", line 999, in exec_module\n  File \"<frozen importlib._bootstrap>\", line 488, in _call_with_frames_removed\n  File \"/app/rgd_aire/wsgi.py\", line 21, in <module>\n    application = get_wsgi_application()\n                  ^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/site-packages/django/core/wsgi.py\", line 12, in get_wsgi_application\n    django.setup(set_prefix=False)\n  File \"/usr/local/lib/python3.12/site-packages/django/__init__.py\", line 24, in setup\n    apps.populate(settings.INSTALLED_APPS)\n  File \"/usr/local/lib/python3.12/site-packages/django/apps/registry.py\", line 116, in populate\n    app_config.import_models()\n  File \"/usr/local/lib/python3.12/site-packages/django/apps/config.py\", line 269, in import_models\n    self.models_module = import_module(models_module_name)\n                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/importlib/__init__.py\", line 90, in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<frozen importlib._bootstrap>\", line 1387, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1360, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 1331, in _find_and_load_unlocked\n  File \"<frozen importlib._bootstrap>\", line 935, in _load_unlocked\n  File \"<frozen importlib._bootstrap_external>\", line 999, in exec_module\n  File \"<frozen importlib._bootstrap>\", line 488, in _call_with_frames_removed\n  File \"/app/proyectos/models/__init__.py\", line 2, in <module>\n    from ..models_original import *\n  File \"/app/proyectos/models_original.py\", line 1136, in <module>\n    class ComiteProyecto(models.Model):\n  File \"/app/proyectos/models_original.py\", line 1162, in ComiteProyecto\n    Colaborador,\n    ^^^^^^^^^^^\nNameError: name 'Colaborador' is not defined",
-    "httpRequest": null,
-    "trace": "",
-    "spanId": ""
-  },
-  {
-    "id": "6972640e0009457056fb68f7",
-    "service": "rgd-aire-staging",
-    "revision": "rgd-aire-staging-00009-z2v",
-    "timestamp": "2026-01-22T17:53:18.607600Z",
-    "severity": "ERROR",
-    "message": "Traceback (most recent call last):\n  File \"/app/manage.py\", line 26, in <module>\n    main()\n  File \"/app/manage.py\", line 22, in main\n    execute_from_command_line(sys.argv)\n  File \"/usr/local/lib/python3.12/site-packages/django/core/management/__init__.py\", line 442, in execute_from_command_line\n    utility.execute()\n  File \"/usr/local/lib/python3.12/site-packages/django/core/management/__init__.py\", line 416, in execute\n    django.setup()\n  File \"/usr/local/lib/python3.12/site-packages/django/__init__.py\", line 24, in setup\n    apps.populate(settings.INSTALLED_APPS)\n  File \"/usr/local/lib/python3.12/site-packages/django/apps/registry.py\", line 116, in populate\n    app_config.import_models()\n  File \"/usr/local/lib/python3.12/site-packages/django/apps/config.py\", line 269, in import_models\n    self.models_module = import_module(models_module_name)\n                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/importlib/__init__.py\", line 90, in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<frozen importlib._bootstrap>\", line 1387, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1360, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 1331, in _find_and_load_unlocked\n  File \"<frozen importlib._bootstrap>\", line 935, in _load_unlocked\n  File \"<frozen importlib._bootstrap_external>\", line 999, in exec_module\n  File \"<frozen importlib._bootstrap>\", line 488, in _call_with_frames_removed\n  File \"/app/proyectos/models/__init__.py\", line 2, in <module>\n    from ..models_original import *\n  File \"/app/proyectos/models_original.py\", line 1136, in <module>\n    class ComiteProyecto(models.Model):\n  File \"/app/proyectos/models_original.py\", line 1162, in ComiteProyecto\n    Colaborador,\n    ^^^^^^^^^^^\nNameError: name 'Colaborador' is not defined",
-    "httpRequest": null,
-    "trace": "",
-    "spanId": ""
-  },
-  {
-    "id": "6972640a000c0c5542d68096",
-    "service": "rgd-aire-staging",
-    "revision": "rgd-aire-staging-00009-z2v",
-    "timestamp": "2026-01-22T17:53:14.789589Z",
-    "severity": "ERROR",
-    "message": "Traceback (most recent call last):\n  File \"/app/manage.py\", line 26, in <module>\n    main()\n  File \"/app/manage.py\", line 22, in main\n    execute_from_command_line(sys.argv)\n  File \"/usr/local/lib/python3.12/site-packages/django/core/management/__init__.py\", line 442, in execute_from_command_line\n    utility.execute()\n  File \"/usr/local/lib/python3.12/site-packages/django/core/management/__init__.py\", line 416, in execute\n    django.setup()\n  File \"/usr/local/lib/python3.12/site-packages/django/__init__.py\", line 24, in setup\n    apps.populate(settings.INSTALLED_APPS)\n  File \"/usr/local/lib/python3.12/site-packages/django/apps/registry.py\", line 116, in populate\n    app_config.import_models()\n  File \"/usr/local/lib/python3.12/site-packages/django/apps/config.py\", line 269, in import_models\n    self.models_module = import_module(models_module_name)\n                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/importlib/__init__.py\", line 90, in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<frozen importlib._bootstrap>\", line 1387, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1360, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 1331, in _find_and_load_unlocked\n  File \"<frozen importlib._bootstrap>\", line 935, in _load_unlocked\n  File \"<frozen importlib._bootstrap_external>\", line 999, in exec_module\n  File \"<frozen importlib._bootstrap>\", line 488, in _call_with_frames_removed\n  File \"/app/proyectos/models/__init__.py\", line 2, in <module>\n    from ..models_original import *\n  File \"/app/proyectos/models_original.py\", line 1136, in <module>\n    class ComiteProyecto(models.Model):\n  File \"/app/proyectos/models_original.py\", line 1162, in ComiteProyecto\n    Colaborador,\n    ^^^^^^^^^^^\nNameError: name 'Colaborador' is not defined",
-    "httpRequest": null,
-    "trace": "",
-    "spanId": ""
-  },
-  {
-    "id": "69726412000b04e68cf8765e",
-    "service": "rgd-aire-staging",
-    "revision": "rgd-aire-staging-00009-z2v",
-    "timestamp": "2026-01-22T17:53:13.888552Z",
-    "severity": "ERROR",
-    "message": "The request failed because either the HTTP response was malformed or connection to the instance had an error. Additional troubleshooting documentation can be found at: https://cloud.google.com/run/docs/troubleshooting#malformed-response-or-connection-error",
-    "httpRequest": {
-      "method": "GET",
-      "url": "https://rgd-aire-staging-381877373634.us-central1.run.app/",
-      "status": 503,
-      "latency": "2.967519655s",
-      "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 12_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148",
-      "remoteIp": "3.222.205.223"
-    },
-    "trace": "projects/appsindunnova/traces/e1c6c94b2974e38d37f3d7c59b03c330",
-    "spanId": "3f8035e5ba3395e8"
-  },
-  {
-    "id": "69726412000b4392608f75c0",
-    "service": "rgd-aire-staging",
-    "revision": "rgd-aire-staging-00009-z2v",
-    "timestamp": "2026-01-22T17:53:10.942903Z",
-    "severity": "ERROR",
-    "message": "The request failed because either the HTTP response was malformed or connection to the instance had an error. Additional troubleshooting documentation can be found at: https://cloud.google.com/run/docs/troubleshooting#malformed-response-or-connection-error",
-    "httpRequest": {
-      "method": "GET",
-      "url": "https://rgd-aire-staging-381877373634.us-central1.run.app/",
-      "status": 503,
-      "latency": "11.324812424s",
-      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
-      "remoteIp": "34.229.103.76"
-    },
-    "trace": "projects/appsindunnova/traces/59963519bc1772ff694693b9630a3178",
-    "spanId": "ded8ed472e56af10"
-  },
-  {
-    "id": "697263ca000cc5ce2ead015d",
-    "service": "rgd-aire-staging",
-    "revision": "rgd-aire-staging-00009-z2v",
-    "timestamp": "2026-01-22T17:52:10.837070Z",
-    "severity": "ERROR",
-    "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.12/site-packages/gunicorn/arbiter.py\", line 608, in spawn_worker\n    worker.init_process()\n  File \"/usr/local/lib/python3.12/site-packages/gunicorn/workers/gthread.py\", line 94, in init_process\n    super().init_process()\n  File \"/usr/local/lib/python3.12/site-packages/gunicorn/workers/base.py\", line 135, in init_process\n    self.load_wsgi()\n  File \"/usr/local/lib/python3.12/site-packages/gunicorn/workers/base.py\", line 147, in load_wsgi\n    self.wsgi = self.app.wsgi()\n                ^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/site-packages/gunicorn/app/base.py\", line 66, in wsgi\n    self.callable = self.load()\n                    ^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/site-packages/gunicorn/app/wsgiapp.py\", line 57, in load\n    return self.load_wsgiapp()\n           ^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/site-packages/gunicorn/app/wsgiapp.py\", line 47, in load_wsgiapp\n    return util.import_app(self.app_uri)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/site-packages/gunicorn/util.py\", line 370, in import_app\n    mod = importlib.import_module(module)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/importlib/__init__.py\", line 90, in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<frozen importlib._bootstrap>\", line 1387, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1360, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 1331, in _find_and_load_unlocked\n  File \"<frozen importlib._bootstrap>\", line 935, in _load_unlocked\n  File \"<frozen importlib._bootstrap_external>\", line 999, in exec_module\n  File \"<frozen importlib._bootstrap>\", line 488, in _call_with_frames_removed\n  File \"/app/rgd_aire/wsgi.py\", line 21, in <module>\n    application = get_wsgi_application()\n                  ^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/site-packages/django/core/wsgi.py\", line 12, in get_wsgi_application\n    django.setup(set_prefix=False)\n  File \"/usr/local/lib/python3.12/site-packages/django/__init__.py\", line 24, in setup\n    apps.populate(settings.INSTALLED_APPS)\n  File \"/usr/local/lib/python3.12/site-packages/django/apps/registry.py\", line 116, in populate\n    app_config.import_models()\n  File \"/usr/local/lib/python3.12/site-packages/django/apps/config.py\", line 269, in import_models\n    self.models_module = import_module(models_module_name)\n                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/importlib/__init__.py\", line 90, in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<frozen importlib._bootstrap>\", line 1387, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1360, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 1331, in _find_and_load_unlocked\n  File \"<frozen importlib._bootstrap>\", line 935, in _load_unlocked\n  File \"<frozen importlib._bootstrap_external>\", line 999, in exec_module\n  File \"<frozen importlib._bootstrap>\", line 488, in _call_with_frames_removed\n  File \"/app/proyectos/models/__init__.py\", line 2, in <module>\n    from ..models_original import *\n  File \"/app/proyectos/models_original.py\", line 1136, in <module>\n    class ComiteProyecto(models.Model):\n  File \"/app/proyectos/models_original.py\", line 1162, in ComiteProyecto\n    Colaborador,\n    ^^^^^^^^^^^\nNameError: name 'Colaborador' is not defined",
-    "httpRequest": null,
-    "trace": "",
-    "spanId": ""
-  },
-  {
-    "id": "697263c7000341e2770f5bdb",
-    "service": "rgd-aire-staging",
-    "revision": "rgd-aire-staging-00009-z2v",
-    "timestamp": "2026-01-22T17:52:07.213474Z",
-    "severity": "ERROR",
-    "message": "Traceback (most recent call last):\n  File \"/app/manage.py\", line 26, in <module>\n    main()\n  File \"/app/manage.py\", line 22, in main\n    execute_from_command_line(sys.argv)\n  File \"/usr/local/lib/python3.12/site-packages/django/core/management/__init__.py\", line 442, in execute_from_command_line\n    utility.execute()\n  File \"/usr/local/lib/python3.12/site-packages/django/core/management/__init__.py\", line 416, in execute\n    django.setup()\n  File \"/usr/local/lib/python3.12/site-packages/django/__init__.py\", line 24, in setup\n    apps.populate(settings.INSTALLED_APPS)\n  File \"/usr/local/lib/python3.12/site-packages/django/apps/registry.py\", line 116, in populate\n    app_config.import_models()\n  File \"/usr/local/lib/python3.12/site-packages/django/apps/config.py\", line 269, in import_models\n    self.models_module = import_module(models_module_name)\n                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/importlib/__init__.py\", line 90, in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<frozen importlib._bootstrap>\", line 1387, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1360, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 1331, in _find_and_load_unlocked\n  File \"<frozen importlib._bootstrap>\", line 935, in _load_unlocked\n  File \"<frozen importlib._bootstrap_external>\", line 999, in exec_module\n  File \"<frozen importlib._bootstrap>\", line 488, in _call_with_frames_removed\n  File \"/app/proyectos/models/__init__.py\", line 2, in <module>\n    from ..models_original import *\n  File \"/app/proyectos/models_original.py\", line 1136, in <module>\n    class ComiteProyecto(models.Model):\n  File \"/app/proyectos/models_original.py\", line 1162, in ComiteProyecto\n    Colaborador,\n    ^^^^^^^^^^^\nNameError: name 'Colaborador' is not defined",
-    "httpRequest": null,
-    "trace": "",
-    "spanId": ""
-  },
-  {
-    "id": "697263ca000ee15140857733",
-    "service": "rgd-aire-staging",
-    "revision": "rgd-aire-staging-00009-z2v",
-    "timestamp": "2026-01-22T17:52:07.159155Z",
-    "severity": "ERROR",
-    "message": "The request failed because either the HTTP response was malformed or connection to the instance had an error. Additional troubleshooting documentation can be found at: https://cloud.google.com/run/docs/troubleshooting#malformed-response-or-connection-error",
-    "httpRequest": {
-      "method": "GET",
-      "url": "https://rgd-aire-staging-381877373634.us-central1.run.app/",
-      "status": 503,
-      "latency": "1.812433821s",
-      "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 12_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148",
-      "remoteIp": "13.218.55.149"
-    },
-    "trace": "projects/appsindunnova/traces/0cc68cde1e991f2836636e0d3e21cccb",
-    "spanId": "b89e483de02d1cac"
-  },
-  {
-    "id": "697263c30009d262e03e7dd3",
-    "service": "rgd-aire-staging",
-    "revision": "rgd-aire-staging-00009-z2v",
-    "timestamp": "2026-01-22T17:52:03.643682Z",
-    "severity": "ERROR",
-    "message": "Traceback (most recent call last):\n  File \"/app/manage.py\", line 26, in <module>\n    main()\n  File \"/app/manage.py\", line 22, in main\n    execute_from_command_line(sys.argv)\n  File \"/usr/local/lib/python3.12/site-packages/django/core/management/__init__.py\", line 442, in execute_from_command_line\n    utility.execute()\n  File \"/usr/local/lib/python3.12/site-packages/django/core/management/__init__.py\", line 416, in execute\n    django.setup()\n  File \"/usr/local/lib/python3.12/site-packages/django/__init__.py\", line 24, in setup\n    apps.populate(settings.INSTALLED_APPS)\n  File \"/usr/local/lib/python3.12/site-packages/django/apps/registry.py\", line 116, in populate\n    app_config.import_models()\n  File \"/usr/local/lib/python3.12/site-packages/django/apps/config.py\", line 269, in import_models\n    self.models_module = import_module(models_module_name)\n                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/importlib/__init__.py\", line 90, in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<frozen importlib._bootstrap>\", line 1387, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1360, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 1331, in _find_and_load_unlocked\n  File \"<frozen importlib._bootstrap>\", line 935, in _load_unlocked\n  File \"<frozen importlib._bootstrap_external>\", line 999, in exec_module\n  File \"<frozen importlib._bootstrap>\", line 488, in _call_with_frames_removed\n  File \"/app/proyectos/models/__init__.py\", line 2, in <module>\n    from ..models_original import *\n  File \"/app/proyectos/models_original.py\", line 1136, in <module>\n    class ComiteProyecto(models.Model):\n  File \"/app/proyectos/models_original.py\", line 1162, in ComiteProyecto\n    Colaborador,\n    ^^^^^^^^^^^\nNameError: name 'Colaborador' is not defined",
-    "httpRequest": null,
-    "trace": "",
-    "spanId": ""
-  },
-  {
-    "id": "697263ca000ee14bd69b9717",
-    "service": "rgd-aire-staging",
-    "revision": "rgd-aire-staging-00009-z2v",
-    "timestamp": "2026-01-22T17:51:57.196250Z",
-    "severity": "ERROR",
-    "message": "The request failed because either the HTTP response was malformed or connection to the instance had an error. Additional troubleshooting documentation can be found at: https://cloud.google.com/run/docs/troubleshooting#malformed-response-or-connection-error",
-    "httpRequest": {
-      "method": "GET",
-      "url": "https://rgd-aire-staging-381877373634.us-central1.run.app/",
-      "status": 503,
-      "latency": "1.812596931s",
-      "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 12_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148",
-      "remoteIp": "13.218.55.149"
-    },
-    "trace": "projects/appsindunnova/traces/a07faee797e91a6a70733c6490f77338",
-    "spanId": "0661d619f49c88ac"
-  },
-  {
-    "id": "697263ca000f1bc29378fcfd",
-    "service": "rgd-aire-staging",
-    "revision": "rgd-aire-staging-00009-z2v",
-    "timestamp": "2026-01-22T17:51:55.915486Z",
-    "severity": "ERROR",
-    "message": "The request failed because either the HTTP response was malformed or connection to the instance had an error. Additional troubleshooting documentation can be found at: https://cloud.google.com/run/docs/troubleshooting#malformed-response-or-connection-error",
-    "httpRequest": {
-      "method": "GET",
-      "url": "https://rgd-aire-staging-381877373634.us-central1.run.app/",
-      "status": 503,
-      "latency": "14.556888155s",
-      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
-      "remoteIp": "54.147.39.123"
-    },
-    "trace": "projects/appsindunnova/traces/d9248b7262f83b63607a7939555210fa",
-    "spanId": "16d4ad271f8a8fda"
-  },
-  {
-    "id": "tpojnidl3iu",
-    "service": "hemisferio-erp",
-    "revision": "",
-    "timestamp": "2026-01-22T17:47:55.761656Z",
-    "severity": "ERROR",
-    "message": "",
-    "httpRequest": null,
-    "trace": "",
-    "spanId": ""
-  },
-  {
-    "id": "-2rud15dqk78",
-    "service": "hemisferio-erp",
-    "revision": "hemisferio-erp-00071-7gj",
-    "timestamp": "2026-01-22T17:47:55.691349Z",
-    "severity": "ERROR",
-    "message": "",
-    "httpRequest": null,
-    "trace": "",
-    "spanId": ""
-  },
-  {
-    "id": "697262cb000a6288d4e5759d",
-    "service": "hemisferio-erp",
-    "revision": "hemisferio-erp-00071-7gj",
-    "timestamp": "2026-01-22T17:47:55.680584Z",
-    "severity": "ERROR",
-    "message": "Default STARTUP TCP probe failed 1 time consecutively for container \"hemisferio-erp-1\" on port 8080. The instance was not started.\nConnection failed with status CANCELLED.",
-    "httpRequest": null,
-    "trace": "",
-    "spanId": ""
-  },
-  {
-    "id": "697262ca00073005a41d12b2",
-    "service": "hemisferio-erp",
-    "revision": "hemisferio-erp-00071-7gj",
-    "timestamp": "2026-01-22T17:47:54.471045Z",
-    "severity": "ERROR",
-    "message": "Traceback (most recent call last):\n  File \"/app/manage.py\", line 22, in <module>\n    main()\n  File \"/app/manage.py\", line 18, in main\n    execute_from_command_line(sys.argv)\n  File \"/usr/local/lib/python3.11/site-packages/django/core/management/__init__.py\", line 442, in execute_from_command_line\n    utility.execute()\n  File \"/usr/local/lib/python3.11/site-packages/django/core/management/__init__.py\", line 436, in execute\n    self.fetch_command(subcommand).run_from_argv(self.argv)\n  File \"/usr/local/lib/python3.11/site-packages/django/core/management/base.py\", line 420, in run_from_argv\n    self.execute(*args, **cmd_options)\n  File \"/usr/local/lib/python3.11/site-packages/django/core/management/base.py\", line 464, in execute\n    output = self.handle(*args, **options)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/core/management/base.py\", line 111, in wrapper\n    res = handle_func(*args, **kwargs)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/core/management/commands/migrate.py\", line 353, in handle\n    post_migrate_state = executor.migrate(\n                         ^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/migrations/executor.py\", line 135, in migrate\n    state = self._migrate_all_forwards(\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/migrations/executor.py\", line 167, in _migrate_all_forwards\n    state = self.apply_migration(\n            ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/migrations/executor.py\", line 255, in apply_migration\n    state = migration.apply(state, schema_editor)\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/migrations/migration.py\", line 132, in apply\n    operation.database_forwards(\n  File \"/usr/local/lib/python3.11/site-packages/django/db/migrations/operations/fields.py\", line 241, in database_forwards\n    schema_editor.alter_field(from_model, from_field, to_field)\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/schema.py\", line 912, in alter_field\n    self._alter_field(\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/postgresql/schema.py\", line 274, in _alter_field\n    super()._alter_field(\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/schema.py\", line 972, in _alter_field\n    self.execute(self._delete_fk_sql(model, fk_name))\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/postgresql/schema.py\", line 48, in execute\n    return super().execute(sql, None)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/base/schema.py\", line 204, in execute\n    cursor.execute(sql, params)\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/utils.py\", line 79, in execute\n    return self._execute_with_wrappers(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/utils.py\", line 92, in _execute_with_wrappers\n    return executor(sql, params, many, context)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/utils.py\", line 100, in _execute\n    with self.db.wrap_database_errors:\n  File \"/usr/local/lib/python3.11/site-packages/django/db/utils.py\", line 91, in __exit__\n    raise dj_exc_value.with_traceback(traceback) from exc_value\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/utils.py\", line 103, in _execute\n    return self.cursor.execute(sql)\n           ^^^^^^^^^^^^^^^^^^^^^^^^\ndjango.db.utils.OperationalError: cannot ALTER TABLE \"comercial_cotizacion\" because it has pending trigger events",
-    "httpRequest": null,
-    "trace": "",
-    "spanId": ""
-  },
-  {
-    "id": "697262ca0006c2ee4e084690",
-    "service": "hemisferio-erp",
-    "revision": "hemisferio-erp-00071-7gj",
-    "timestamp": "2026-01-22T17:47:54.443118Z",
-    "severity": "ERROR",
-    "message": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.11/site-packages/django/db/backends/utils.py\", line 103, in _execute\n    return self.cursor.execute(sql)\n           ^^^^^^^^^^^^^^^^^^^^^^^^\npsycopg2.errors.ObjectInUse: cannot ALTER TABLE \"comercial_cotizacion\" because it has pending trigger events",
-    "httpRequest": null,
-    "trace": "",
-    "spanId": ""
   }
 ]
